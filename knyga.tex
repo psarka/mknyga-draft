@@ -1,0 +1,36 @@
+%\documentclass[a4paper,11pt,twoside]{book} %BW
+\documentclass[a4paper,11pt,oneside]{book} %Color
+
+\usepackage{knyga}
+\makeindex
+\begin{document}
+\frontmatter
+\includepdf[pages=1]{./iliustracijos/kitos/virselis.pdf} %Color
+%\includepdf[pages=1]{./iliustracijos/kitos/virselisBW.pdf} %BW
+\include{title}
+\addtocontents{toc}{\protect\thispagestyle{empty}}
+\tableofcontents
+\enlargethispage{\baselineskip}
+\mainmatter
+\include{pratarme}
+\include{skteorijaC}
+\include{algebraC}
+\include{kombinatorikaC}
+%\include{geometrijaC}
+\include{sprendimaiC} 
+\include{literaturaC}
+\backmatter
+%\addcontentsline{toc}{chapter}{Index} 
+%\printindex
+\end{document}
+
+
+
+
+
+
+
+
+
+
+

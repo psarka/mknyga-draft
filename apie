@@ -1,0 +1,22 @@
+Matematikos knygą sudaro:
+
+Pagrindiniai failai, sujungiantis visas dalis: knyga.tex ir knygaBW.tex
+Matematinio turinio failai: skteorija.tex, algebra.tex, kombinatorika.tex ir geometrija.tex. 
+Stiliaus failai: knyga.sty ir knygaBW.sty
+Smulkių knygos dalių failai: title.tex, pratarme.tex, literatura.tex ir
+literaturaC.tex
+Pagalbiniai failai: prg.cpp ir prgBW.cpp
+Iliustracijos.
+
+prg.cpp ir prgBW.cpp yra C++ kalba parašytos programos, kurios iš
+matematinio turinio failų sugeneruoja sprendimų failus ir sudeda nuorodas.
+Spausdinimui skirtoje versijoje (BW) nuorodų nėra, tad programos rezultatas
+yra failas sprendimai.tex. Kompiuterinėje versijoje nuorodos yra, tad
+programos rezultatas yra sprendimaiC.tex, algebraC.tex, skteorijaC.tex,
+kombinatorikaC.tex ir geometrijaC.tex.
+
+pastaba. Programos prg ir prgBW nekorektiškai veikia Windows (bent jau Xp,
+bent jau mano kompiuteryje) operacinėje sistemoje. Gali būti, kad dėl to yra
+kaltas skirtingas naujos eilutės traktavimas, nei Unix tipo sistemose,
+tačiau labiau tikėtina, kad tai bus programos autoriaus nenusimanimo
+pasekmė.

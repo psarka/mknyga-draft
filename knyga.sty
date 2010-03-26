@@ -1,0 +1,144 @@
+\ProvidesPackage{knyga}
+
+\pdfoutput=1 
+\usepackage[utf8x]{inputenc}  
+\usepackage[L7x]{fontenc}     
+\usepackage[lithuanian]{babel}
+\usepackage[colorlinks,pdftex,unicode, pdfview=FitB]{hyperref}
+\usepackage[pdftex]{graphicx}
+\usepackage{lmodern}
+\usepackage{amssymb, amsmath, amsthm}
+\usepackage{subfig}
+\usepackage{pdfpages}
+\usepackage{fancyhdr}
+\usepackage[Conny]{fncychap}
+
+%Teksto dydis
+%\addtolength{\oddsidemargin}{-.25in}
+%\addtolength{\evensidemargin}{-.5in}
+%\addtolength{\textwidth}{.75in}         %BW
+%\addtolength{\topmargin}{-.15in}
+%\addtolength{\textheight}{0.5in}
+
+\addtolength{\oddsidemargin}{-0.3in}
+\addtolength{\evensidemargin}{-0.3in}
+\addtolength{\textwidth}{.75in}          %Color
+\addtolength{\topmargin}{-.15in}
+\addtolength{\textheight}{0.5in}
+
+%Toliau einantis kodas sukeičia vietomis skaičių ir pavadinimą skyrių
+%antraštėse. Kas padarys skaičių romėnišką taip, kad tas romėniškas
+%nesivilktų per visą numeraciją, gaus saldainį.
+
+\renewcommand{\DOCH}{%
+    \mghrulefill{3\RW}\par\nobreak
+    \vskip -0.5\baselineskip
+    \mghrulefill{\RW}\par\nobreak
+    \CNoV\thechapter \space \CNV\FmN{\@chapapp} 
+    \par\nobreak
+    \vskip -0.5\baselineskip
+}
+
+%No border arround Links
+\def\pdfBorderAttrs{/Border [0 0 0] } 
+
+%Vaizdavimo turinyje gylis
+\setcounter{tocdepth}{2} 
+
+%Pakeistas subsubsection, kad atrodytų kaip subsection ir subsection, kad
+%atrodytų kaip section.
+\makeatletter
+\renewcommand\subsubsection{\@startsection{subsubsection}{3}{\z@}
+{-3.25ex\@plus -1ex\@minus -.2ex}
+{1.5ex \@plus .2ex}
+{\normalfont\large\bfseries\centering}}
+
+\renewcommand\subsection{\@startsection{subsection}{2}{\z@}
+{-3.25ex\@plus -1ex\@minus -.2ex}
+{2.3ex \@plus .2ex}
+{\normalfont\Large\bfseries}}
+
+\renewcommand\section{\@startsection{section}{1}{\z@}
+{-3.25ex\@plus -1ex\@minus -.2ex}
+{5.3ex \@plus .2ex}
+{\normalfont\LARGE\bfseries}}
+
+   %\renewcommand\subsubsection{\@startsection{subsubsection}{3}{\z@}
+   %{-3.25ex\@plus -1ex\@minus -.2ex}
+   %{1.5ex \@plus .2ex}
+   %{\normalfont\large\bfseries\underline}}
+
+   %\renewcommand\subsection{\@startsection{subsection}{2}{\z@}
+   %{-3.25ex\@plus -1ex\@minus -.2ex}
+   %{2.3ex \@plus .2ex}
+   %{\normalfont\Large\bfseries}}
+
+\newcommand\solsec{\@startsection{subsection}{2}{\z@}
+{-1ex\@plus -1ex\@minus -.2ex}
+{1ex \@plus .2ex}
+{\normalfont\large\bfseries}}
+\makeatother
+
+%Fancy headers parametrai
+\pagestyle{fancy}
+\addtolength{\headheight}{2.5pt}
+\renewcommand{\chaptermark}[1]{\markboth{ #1}{}}
+\renewcommand{\sectionmark}[1]{\markright{\thesection. \ #1}}
+%\fancyhead[LE,RO]{\bfseries\rightmark}   %BW
+%\fancyhead[LO,RE]{\leftmark}
+\fancyfoot{}                              %C
+\fancyfoot[R]{\thepage}
+
+%Tušti puslapiai tampa tušti
+\renewcommand{\cleardoublepage}
+{\clearpage\if@twoside \ifodd\c@page\else
+\hbox{}\thispagestyle{empty}\newpage\if@twocolumn\hbox{}\newpage\fi\fi\fi}
+
+
+%'Sprendimas' aplinka. Puikiai kompiliuojasi, blogai deda trikampį, kai
+%sprendimo paskutinė eilutė užpildo visą ilgį.
+%\newcommand{\trikampis}{\hfill \mbox{\raggedright $\triangle$}}
+%\newenvironment{sprendimas}[1][Sprendimas. ]{\noindent \textit{#1 }}
+%	{\hfill\trikampis\vspace{10pt}}
+
+%'Sprendimas' aplinka. Nusižiūrėta nuo thmp2e.sty, kartais skundžiasi
+%kompiliuojant. Kas ras trečią 'Sprendimas' aplinkos sprendimą, kuris
+%neveiks trečiu būdu, irgi gaus saldainį.
+\newenvironment{sprendimas}[1][Sprendimas.]{\noindent \textit{#1 }}{
+\unskip\nobreak\hfil\penalty50
+\quad\hbox{}\nobreak\hfil $\triangle$ 
+\parfillskip=0pt \finalhyphendemerits=0 \par\vspace{10pt}}
+
+%Matematinių simbolių santrumpos
+\def\leq{\leqslant}
+\def\geq{\geqslant}
+\def\C{\mathbb C}
+\def\F{\mathbb F}
+\def\N{\mathbb N}
+\def\R{\mathbb R}
+\def\Q{\mathbb Q}
+\def\Z{\mathbb Z}
+\def\eps{\varepsilon}
+\def\ro{\varrho}
+\DeclareMathOperator{\dbd}{dbd}
+\DeclareMathOperator{\mbk}{mbk}
+\DeclareMathOperator{\arctanh}{arctanh}
+
+%Aplinkos
+\newcounter{foo}[section]
+\newtheorem*{teig}{Teiginys}
+\newtheorem*{thm}{Teorema}
+\newtheorem*{isv}{Išvada}
+\newtheorem*{pav}{Pavyzdys}
+\newtheorem{teignr}{Teiginys}
+\newtheorem{thmnr}{Teorema}
+\newtheorem{isvnr}{Išvada}
+\newtheorem{pavnr}[foo]{Pavyzdys}
+\theoremstyle{definition} \newtheorem*{api}{Apibrėžimas}
+\theoremstyle{remark} \newtheorem*{pastaba}{Pastaba}
+
+%Ležandro simbolio ir modulio santrumpos
+\newcommand{\lez}[2]{\left(\frac{#1}{#2}\right)}
+\newcommand{\m}[1]{\ensuremath{\ (\text{mod } #1)}}
+
+
