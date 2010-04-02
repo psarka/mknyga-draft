@@ -13,18 +13,21 @@
 \usepackage{fancyhdr}
 \usepackage[Conny]{fncychap}
 
-%Teksto dydis
-%\addtolength{\oddsidemargin}{-.25in}
-%\addtolength{\evensidemargin}{-.5in}
-%\addtolength{\textwidth}{.75in}         %BW
-%\addtolength{\topmargin}{-.15in}
-%\addtolength{\textheight}{0.5in}
-
-\addtolength{\oddsidemargin}{-0.3in}
-\addtolength{\evensidemargin}{-0.3in}
-\addtolength{\textwidth}{.75in}          %Color
+\opt{BW}{
+\addtolength{\oddsidemargin}{-.25in}
+\addtolength{\evensidemargin}{-.5in}
+\addtolength{\textwidth}{.75in}
 \addtolength{\topmargin}{-.15in}
 \addtolength{\textheight}{0.5in}
+}
+
+\opt{color}{
+\addtolength{\oddsidemargin}{-0.3in}
+\addtolength{\evensidemargin}{-0.3in}
+\addtolength{\textwidth}{.75in}
+\addtolength{\topmargin}{-.15in}
+\addtolength{\textheight}{0.5in}
+}
 
 %Toliau einantis kodas sukeičia vietomis skaičių ir pavadinimą skyrių
 %antraštėse. Kas padarys skaičių romėnišką taip, kad tas romėniškas
@@ -84,10 +87,14 @@
 \addtolength{\headheight}{2.5pt}
 \renewcommand{\chaptermark}[1]{\markboth{ #1}{}}
 \renewcommand{\sectionmark}[1]{\markright{\thesection. \ #1}}
-%\fancyhead[LE,RO]{\bfseries\rightmark}   %BW
-%\fancyhead[LO,RE]{\leftmark}
-\fancyfoot{}                              %C
+\opt{BW}{
+\fancyhead[LE,RO]{\bfseries\rightmark}
+\fancyhead[LO,RE]{\leftmark}
+}
+\opt{color}{
+\fancyfoot{}
 \fancyfoot[R]{\thepage}
+}
 
 %Tušti puslapiai tampa tušti
 \renewcommand{\cleardoublepage}

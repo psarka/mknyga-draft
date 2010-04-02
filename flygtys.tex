@@ -1,0 +1,1282 @@
+\section{Funkcinės lygtys}
+Dauguma suprantame, ką reiškia išspręsti lygtį. Tai yra rasti visus užrašytos
+lygybės sprendinius ir įrodyti, kad daugiau jų nėra. Išspręsti funkcinę
+lygtį reiškia beveik tą patį - rasti visas funkcijas, tenkinančias lygybę ir
+įrodyti, kad daugiau tokių nėra. Daugumos funkcinių lygčių sprendimai turi
+panašų pobūdį - manipuliuojama duota lygtimi siekiant gauti kuo daugiau
+apribojimų tikėtiniems sprendiniams. Sėkmės atveju, apribojimų pakanka ir
+galima nusakyti sprendinių aibę (kartais ji būna tuščia) bei patikrinti,
+kad išties visos rastos funkcijos yra sprendiniai. Pirmąjame skyrelyje
+supažindinsime su pačia pagrindine sprendimo idėja - fiksuotų reikšmių
+įstatymu vietoje kintamųjų funkcinėje lygtyje. Antrąjame parodysime, kaip
+iš duotos lygties gauti informacijos apie funkcijos tipą (pvz. lyginumą,
+monotoniškumą, injektyvumą), bei kaip ją pritaikyti. Trečiąjame išspręsime
+žymiąją Cauchy funkcinę lygtį ir panaudosime ją spręsdami sudėtingesnius
+uždavinius.
+
+\subsection{Įsistatykime $x=0$}
+
+Nieko nelaukdami užsirašykime pirmąją funkcinę lygtį:
+
+\begin{pavnr}Raskite visas funkcijas $f:\R \to \R$, tenkinančias lygtį
+  $$f(x+y)=f(x)$$ su visais realiaisiais $x$ ir $y$, bei lygybę $f(0)=0$.
+\end{pavnr}
+
+Šios funkcinės lygties sąlyga susideda iš keturių dalių. Apžvelkime jas:
+\begin{itemize}
+  \item[-] Ieškomų funkcijų apibrėžimo ir reikšmių sritys. Šiuo atveju
+    duota $f:\R \to \R$, t.y. sprendinių reikia ieškoti tarp visų funkcijų
+    apibrėžtų realiuosiuose skaičiuose ir su realiomis reikšmėmis.
+  \item[-] Lygtis, kurią turi tenkinti ieškomos funkcijos.
+  \item[-] Lygtyje dalyvaujančių kintamųjų kitimo sritys. Šiuo atveju
+    duota, kad lygtį funkcijos turi tenkinti su visomis realiomis $x$ ir
+    $y$ reikšmėmis
+  \item[-] Papildomos sąlygos. Šiuo atveju duota, kad reikia ieškoti tik tų
+    lygties sprendinių, kurie papildomai tenkina $f(0) = 0$.
+\end{itemize}
+
+\begin{sprendimas} Įsistatykime $x=0$, gausime $f(y)=f(0)=0$, t.y. $f(y)=0$
+  su visais $y \in \R$. Patikrinę gauname, kad sprendinys tinka.
+\end{sprendimas}
+
+Sprendimas trumpesnis už sąlygą, tad su nespėjusiais pastebėti, kaip jis
+pralekė, pasižiūrėkime sulėtintą kartojimą. Sąlygoje duota, kad ieškomos
+funkcijos turi tenkinti lygtį $f(x+y) = f(x)$ su visomis realiosiomis $x$
+ir $y$ reikšmėmis. Vadinasi, turės tenkinti lygtį ir kai vienam iš
+kintamųjų parinksime konkrečią reikšmę, ką paprastai įvardijome kaip
+,,įstatykime $x=0$''. Toliau, žinodami, kad ieškomos funkcijos turi su
+visomis realiomis $y$ reikšmėmis tenkinti lygtį $f(y) = f(0)$, bei kad
+ieškomos funkcijos turi tenkinti papildomą sąlygą $f(0)=0$, darome išvadą,
+kad ieškomos funkcijos turi su visomis realiosiomis $y$ reikšmėmis tenkinti
+$f(y)=0$. Tačiau ši sąlyga yra tokia stipri, kad ji nurodo vieną vienintelę
+funkciją! Lieka patikrinti, ar ji yra sprendinys. Kadangi visuose realiuose
+taškuose ji įgyja reikšmę $0$, tai įstatę ją į lygtį gausime akivaizdžiai
+teisingą lygybę $0=0$. Lygtis išspręsta.
+
+Įsistatyti vietoje vieno ar kelių kintamojų nulį yra dažniausiai
+pasitaikanti funkcinių lygčių sprendimo idėja, nuo kurios neretai verta
+pradėti spręsti nematytą lygtį. Tačiau reikia turėti omenyje, kad retai
+kada vien šio triuko užteks, tad svarbu turėti ir kitų ginklų.
+Pavyzdžiui:
+
+\begin{pavnr}Raskite visas funkcijas $f:\R \to \R$, kurios tenkina lygtį
+  $$f(x+y)=f(x^2+y^2)$$ su visais realiaisiais $x$ ir $y$.
+\end{pavnr}
+
+\begin{sprendimas}
+  Įsistatykime $x=y$, gausime $f(2y)=f(2y^2)$. Įsistatykime $x=-y$, gausime
+  $f(0) = f(2y^2)$. Abi lygybės turi galioti su visomis realiosiomis $y$
+  reikšmėmis, tad galime jas sujungti: $f(2y)=f(0)$. Lieka įsižiūrėjus
+  konstatuoti, kad ieškomos funkcijos visuose realiuose taškuose įgis tą
+  pačią reikšmę kaip ir taške $0$. Tokių funkcijų be galo daug, ir jos
+  įprastai užrašomos $f(x)=c$, kur $c$ - bet kuris iš realiųjų skaičių (dar
+  vadinamas konstanta). Lieka patikrinti, ar visos tokios funkcijos tinka.
+  Įstatę gausime $c=c$, vadinasi tinka.
+\end{sprendimas}
+
+Naudodami šias paprastas nulio ir $x=y$ įsistatymo idėjas išspręskime dar
+keletą lygčių. Atkreipsime dėmesį į tai, kad labai svarbi dalis yra
+teisingai interpretuoti gautą po įsistatymo lygybę. Kartais ji būna
+bevertė, o kartais sujungus su kažkuo papildomu galima gauti ką nors
+naudingo.  Sunkesniuose uždaviniuose tai ne visuomet pavyksta, tad verta
+apsišarvuoti kantrybe ir bandyti įsistatyti įvairias kintamųjų reikšmių
+kombinacijas.
+
+\begin{pavnr} \emph{[LitKo 2008]} Raskite visas tokias realiąsias funkcijas
+  $f$, kad $f(x)f(y) - f(xy) = x+y$ su visomis realiųjų skaičių $x$ ir $y$
+  poromis.
+\end{pavnr}
+
+\begin{sprendimas} Įsistatykime $x=0$ ir $y=0$. Gausime $f(0)^2=f(0)$, t.y.
+  $f(0)=0$ arba $f(0)=1$. Panagrinėkime abu atvejus:
+  \begin{description}
+    \item[$f(0)=0$ -] Įsistatykime į pradinę lygtį $x=0$, gausime $0=y$. Ši
+      lygybė jokiai funkcijai negalioja su visomis realiomis $y$
+      reikšmėmis, todėl šį atvejį atmetame.
+    \item[$f(0)=1$ -] Įsistatykime į pradinę lygti $x=0$, gausime $f(y) =
+      y+1$. Patikrinę matome, kad ši funkcija tinka: $(x+1)(y+1) - (xy + 1)
+      = x+y$.
+  \end{description}
+  Gavome, kad funkcija $f(x)=x+1$ bus vienintėlis sprendinys.
+\end{sprendimas}
+
+\begin{pavnr}
+  Raskite visas funkcijas $f: \R\to\R_{\geq 0}$ \footnote{$\R_{\geq0 }$
+  žymėsime visus neneigiamus realiuosius, o $\R^+$ visus teigiamus
+  realiuosius skaičius.} tenkinančias lygybę $$f(2u)=f(u+v)f(v-u)+f(u-v)f(-u-v)$$ su
+  visomis realiomis $u$ ir $v$ reikšmėmis.
+\end{pavnr}
+
+\begin{sprendimas} Įsistatykime $u=0$ ir $v=0$. Gausime $f(0)=2f(0)^2$,
+  t.y. $f(0)=0$ arba $f(0) = \frac{1}{2}$. Panagrinėkime abu atvejus:
+  \begin{description}
+    \item[$f(0)=0$ -] Įsistatykime $u = 0$, gausime $0 = f(v)^2 +
+      f(-v)^2$. Šią lygtį tenkina vienintėlė funkcija - $f(v)=0$.
+    \item[$f(0)=\frac{1}{2}$ -] Vieną kartą įsistatykime $u = 0$, kitą $u =
+      v$, gausime dvi lygtis: $\frac{1}{2} = f(v)^2 + f(-v)^2$ ir $f(2v) =
+      f(-2v)$. Iš jų seka, kad $\frac{1}{2} = f(v)^2 + f(v)^2 = 2f(v)^2$
+      ir, kadangi ieškome funkcijų įgyjančių tik neneigiamas reikšmes,
+      $f(v)= \frac{1}{2}$.
+  \end{description}
+Patikrinę matome, kad abi rastos funkcijos $f(v)=0$ ir $f(v)=\frac{1}{2}$
+tinka.
+\end{sprendimas}
+
+\begin{pavnr}
+  Raskite visas funkcijas $f:\R \to \R$, kurios su visais realiaisiais $x$
+  ir $y$ tenkina $f(x+f(y))=x+f(f(y))$ ir $f(2004)=2005$.
+\end{pavnr}
+
+\begin{sprendimas} Įstatykime $y=0$, gausime $f(x+f(0)) = x + f(f(0))$.
+  Įsižiūrėjus į gautą lygybę tampa aišku, kad ją tenkina tiktai funkcijos
+  $f(x)=x+c$, kur $c$ - konstanta.  Pridėjus papildomą sąlyga lieka
+  vienintelė funkcija $f(x)=x+1$, kuri ir yra sprendinys.
+\end{sprendimas}
+
+Pasiaiškinkime kiek išsamiau, kaip iš lygybės $f(x + f(0)) = x + f(f(0))$
+gauti $f(x) = x+c$. Paimkime bet kurią funkciją, kuri tenkina pirmąją
+lygtį. Kad ir kokia ji būtų, $f(0)$ ir $f(f(0))$ bus konretūs skaičiai,
+nepriklausantys nuo $x$. Patogumo dėlei pakeiskime $t=x+f(0)$, tuomet
+gausime, kad su visomis realiosiomis $t$ reikšmėmis $f(t) = t + f(f(0)) -
+f(0)$. Lieka tik konkretų skaičių $f(f(0)) - f(0)$ pažymėti $c$. Ši
+nekintančių reiškinių pažymėjimo idėja yra gana dažna, tad verta ją
+įsidėmėti.
+
+\subsubsection{Uždaviniai}
+
+\begin{enumerate}
+  \item Raskite visas funkcijas $f:\R\to\R$, kurios su
+    visais realiaisiais $x$, $y$ tenkina $$f(x+y)+f(x-y)=2x^2+2y^2.$$
+    %Įsistatykime $y=0$, gausime $f(x)=x^2$. Patikrinę matome, kad ši
+    %funkcija tinka.
+  \item Raskite visas funkcijas $f:\R\to\R$, kurios su visais realiaisiais
+    $x$, $y$ tenkina $$f(x)+f(x+y)=y+2.$$
+    %Įsistatykime $y=0.$ Gausime, kad su visais $x$ turi būti $f(x)=1,$
+    %tačiau ši funkcija lygties netenkina. Sprendinių nėra.
+  \item Raskite visas funkcijas $f:\R\to\R$, kurios su visais realiaisiais
+    $x$, $y$ tenkina $$f(x)=(x-y)f((x-y+1)x) + f(y).$$
+    %Įsistatę $x=0$ gauname $f(y) = (y+1)f(0)$, t.y. vienintelės funkcijos
+    %kurios galėtų tikti yra $f(x)=c(x+1)$. Patikrinę gauname, kad tinka tik
+    %$c=0$, t.y. $f(x)=0$.
+  \item Raskite visas funkcijas $f:\R\to\R$, kurios su visais realiaisiais
+    $x$ ir $y$ tenkina $$yf(x) = xf(y).$$
+    %Įsistatykime vietoje $y$ bet kokį nelygų nuliui skaičių, pavyzdžiui
+    %$1$. Gausime $f(x)=f(1)x$, vadinasi, ieškomos funkcijos bus pavidalo
+    %$f(x)=cx$, kur $c$ reali konstanta. Patikrinę gauname, kad visos
+    %tokios funkcijos tinka.
+  \item Raskite visas funkcijas $f:\R\to\R$ su visais realiaisiais
+    $x$ ir $y$ tenkinančias lygtį $$f(x +f(y)) = f(x) + yf(x).$$
+    %Įsistatykime $y=-1$, gausime $f(x+f(-1))=0$. Kadangi $f(-1)$ yra
+    %konkretus skaičius, tai $x=f(-1)$ įgyja visas realias reikšmes, iš kur
+    %gauname, kad funkcija turi tenkinti $f(x)=0$. Patikrinę matome, kad
+    %šis sprendinys tinka.
+  \item Raskite visas funkcijas $f:\R\to\R$ su visais $x\in \R$ tenkinančias
+    lygtį $$xf(x) + f(-x) + 1 = 0.$$
+    %Įsistatykime $x=-x.$ Gausime $-xf(-x) + f(x) + 1 = 0.$ Iš pradinės
+    %lygties išsireiškę $f(-x)$ ir įsistatę gausime
+    %$f(x)=-\frac{1+x}{1+x^2},$ kas ir yra sprendinys.
+  \item Raskite visas funkcijas $f:\R\to\R$ su visais $x\in\R, x\neq 0,1$
+    tenkinančias lygtį $$f(x) + f(\frac{x-1}{x})= 1-x.$$
+    %Įsistatę $x=\frac{x-1}{x}$ ir $x=\frac{1}{1-x}$ kartu su pradine turime
+    %tris lygtis, iš kurių paplušėję išsireiškiame $f(x)$. Gauname
+    %$f(x)=\frac{x^3-3x^2+2x-1}{2x-2x^2}$.
+  \item Raskite visas funkcijas $f:\R\to\R$, kurios su visais realiaisiais
+    $x$, $y$, $t$ tenkina $$(x+t)f(z) = f(xz) + f(tz).$$
+    %Įsistatę $x=1$ ir $z=1$ gauname $f(t) = tf(1)$, t.y. funkcija gali
+    %būti tiktai pavidalo $f(x)=ax, a\in \R$. Patikrinę matome, kad visos
+    %tokios funkcijos tinka.
+  \item \text{[LitMo 2000, Pan African 2003]} Raskite funkcijas $f:\R\to\R$ su visomis realiosiomis
+    $x$,$y$ reikšmėmis tenkinančias lygtį
+    $$(x+y)(f(x)-f(y))=f(x^2)-f(y^2).$$
+    %Įsistatykime $y=0$ ir $y=1$. Iš gautų lygybių gauname, kad $f(x)$ -
+    %tiesinė funkcija ($f(x) = (f(1)-f(0))x +f(0)$). Patikrinę matome, kad
+    %funkcijos $f(x)=ax+b$ tinka su visais $a,b\in \R.$
+  \item Raskite visas funkcijas $f:\R\to\R$, kurios su visais realiaisiais
+    $x$, $t$ tenkina $$f(x)f(t) = f(x) + f(t) + xt -1.$$
+    %Įstatę vietoje t bet kokią reikšmę, su kuria $f(t)\neq 0$ gauname, kad
+    %$f(x)$ - tiesinė funkcija. Patikrinę gauname, kad tinka tik $f(x) = x
+    %+ 1$.
+  \item \text{[LitMo 1994]} Ar egzistuoja bent viena funkcija $f:\R \to \R$
+    tenkinanti lygtį $$f(f(x))=x^3 \text{ ?}$$
+    %Taip: $$f(x) = \begin{cases}-x,& x<0, \\ x^3,& x\geq 0.\end{cases}$$
+  \item Raskite visas funkcijas $f:\R\to\R$, kurios su visais realiaisiais
+    $x$, $y$ tenkina $$f(f(x-y)) = f(x) - f(y) - f(x)f(x) - xy.$$
+    %Įsistatę $x=y$ gauname $f(f(0)) = -x^2 - f(x)^2$. Įsistatę $x=y=0$
+    %gauname $f(f(0)) = -f(0)^2$. Iš šių dviejų lygybių gauname $f(0)^2 -
+    %x^2 = f(x)^2 \geq 0$, kas negalioja su visais $x \in \R$. Vadinasi
+    %funkcijų tenkinančių lygtį nėra.
+  \item Raskite visas funkcijas $f:\R\to\R$, kurios su visais realiaisiais
+    $x$, $y$ tenkina $$(x-y)^2f(x+y)=(x+y)^2f(x-y).$$
+    %Kadangi visiems realiesiems $a$, $b$ egzistuoja tokie $x$,$y$, kad
+    %$x+y=a$ ir $x-y=b$, tai lygtį galime užrašyti $b^2f(a)=a^2f(b)$. Jei
+    %egzistuoja toks $b_0$, kad $f(b_0) \neq 0$, tai jį įstatę vietoje $b$
+    %gauname $f(a)=ca^2$, kur $c$ - konstanta (jei neegzistuoja, tai
+    %$f(x)=0$). Įstatę gauname, kad $c$ tegali būti lygus $1$, vadinasi,
+    %sprendiniai yra $f(x)=x$ ir $f(x)=0$.
+    \item Raskite visas funkcijas $f:\R\to\R$, kurios su visais realiaisiais
+    $x$, $y$ tenkina $$f(x+f(y))=f(f(x))+y.$$
+    %Įstatę $x=0$ ir įstatę $y=0$ gauname $f(f(x))=f(f(0)) +x$ ir
+    %$f(x+f(0))=f(f(x))$, iš kur $f(x+f(0))=f(f(0))+x\implies
+    %f(x)=x+c$.
+  \item Raskite visas funkcijas $f:\R\to\R$, kurios tenkina $f(1)=1$ ir su
+    visais realiaisiais $x$, $y$ $$f(x+y)=3^y\cdot f(x)+2^x\cdot f(y)$$
+    %Įsistatykime $x=y$ ir $y=x$ (t.y sukeiskime kintamuosius vietomis).
+    %Gausime $f(x+y)=3^x\cdot f(y)+2^y\cdot f(x)$. Atėmę iš šios lygybės
+    %pradinę ir įsistatę $y=1$ gausime $f(x) = 3^x-2^x$. Patikriname -
+    %tinka.
+  \item \text{[LitMo 2008]} Funkcija $f(x)$ apibrėžta teigiamiems
+    skaičiams, įgyja teigiamąsias reikšmes ir su visais teigiamais $x$,
+    $y$ tenkina lygybę $$f(x)f(y) = f(xy) + f(\frac{x}{y}).$$
+    a.) Nurodykite bent tris tokias funkcijas.  \\[0.5cm]
+    b.) Įrodykite, kad $f(x)\geq 2$, $f(1)=2$.  \\[0.5cm]
+    c.) Įrodykite, kad jei $f(x)$ tenkina sąlygą, tai ją tenkina ir
+    funkcija $f^2(x)-2$.
+    %Rasti bent vieną funkciją nėra visai paprasta, tačiau kiek pamąstę
+    %matome, kad $f(x)=x+\frac{1}{x}$. Taip pat tiks ir
+    %$f(x)=x^2+\frac{1}{x^2}$ ir $f(x)=x^3+\frac{1}{x^3}$.
+    %
+    %Įstatykime $x=1$ ir $y=1$. Gausime $f(1)^2=2f(1)$. Kadangi funkcija
+    %įgyja tik teigiamas reikšmes, tai $f(1)=2$.
+    %
+    %Įstatykime $y=x$. Gausime, kad $f(x)^2 = f(x^2) + 2$. Kadangi su
+    %visais $x\in \R$ $f(x^2)\geq 0$, tai su visais $x \in \R$ $f(x)\geq
+    %\sqrt{2}$. Dabar, kadangi su visais $x\in \R$ $f(x^2)\geq \sqrt{2}$,
+    %tai su visais $x \in \R$ $f(x)\geq \sqrt{2+\sqrt{2}}$. Taip tęsdami,
+    %gauname, kad su kiekvienu $x$ ir kiekvienu $n\in \N$ $$f(x)\geq
+    %\underbrace{\sqrt{2+\sqrt{2+\cdots +\sqrt{2+\sqrt{2}}}}}_{n}.$$
+    %
+    %Kadangi, kai $n$ artėja į begalybę, $\underbrace{\sqrt{2+\sqrt{2+\cdots
+    %+\sqrt{2+\sqrt{2}}}}}_{n}$ artėja į $2$ (seka akivaizdžiai didėjanti,
+    %mažesnė už $2$ $\Rightarrow$ turi ribą. Ją randame išsprendę
+    %$\sqrt{2+x}=x \Rightarrow x=2$), tai $f(x) \geq 2$.  \\
+    %c.) dalyje užtenka pasinaudoti įsistačius $f(x)^2 = f(x^2) + 2$,
+    %ir norint įsitikinti, kad $f^2(x)-2\geq 0$ - b.) dalyje gauta nelygybe.
+  \item Raskite visas funkcijas $f:\R ^{+}\to \R ^{+}$ su visais teigiamais
+    $x$ ir $y$ tenkinančias lygtį $$f(xy)=f(x+y).$$
+    %Atkreipsime dėmesį, kad jei nebūtų lygties apribojimo vien teigiamiems
+    %skaičiams, tai įsistatę $y = 0$ iš karto gautume, kad $f(x)=c$. Tačiau
+    %apribojimas yra, todėl suktis teks kiek kitaip.
+    %
+    %Fiksuokime sumą ir žiūrėkime, kaip kinta sandauga. T.y. įsistatykime
+    %pvz., $y=2-x$. Gausime $f(x(2-x))=f(2)$. Kadangi galime statyti tik
+    %teigiamas reikšmes, tai ši lygybė yra teisinga tik, kai $x\in (0,2)$.
+    %Šiame intervale, kintant $x$ reikšmei, reiškinio $x(2-x)$ reikšmė kinta
+    %nuo $0$ iki $1$, t.y. $x(2-x)\in(0,1]$. Tad gauname, kad $f(x)$ yra
+    %pastovi intervale $(0,1]$. Lieka pastebėti, kad ji periodinė: įstatę
+    %$y=1$ gausime $f(x)=f(x+1)$, todėl pastovi ir visur.
+  \item Raskite visas funkcijas $f:\R\to\R$, kurios su visais realiaisiais
+    $x$ ir $y$, nelygiais nuliui, tenkina $$f(x+y)=f(1/x+1/y).$$
+    %Fiksuokime sumą. Tegu $x=2-y$. Tuomet $f(2)=f(\frac{2}{x(2-x)})$.
+    %Kai $x$ kinta nuo $-\infty$ iki $\infty$ reiškinys
+    %$\frac{2}{x(2-x)}$ kinta intervaluose
+    %$(-\infty,0)\cup[\frac{1}{2},\infty)$, kartu ir funkcija tuose
+    %intervaluose pastovi. Likusią dalį $(0,\frac{1}{2})$ galime
+    %prijungti naudodami $f(x+\frac{1}{2}) = f(\frac{1}{x}+2)$.
+    %Pastebėsime, kad funkcijos reikšmė taške 0 taip ir lieka
+    %neapibrėžta. Atsakymas $$f(x) = \begin{cases}a,& x\neq0 \\ b,& x= 0
+    %\text{      \ \ \ \ \   } a,b\in\R\end{cases}$$
+  \item \text{[Brazil 1993]} Raskite bent vieną funkciją $f:\R\to\R$ su kiekvienu $x \in \R$
+    tenkinančią $$f(0)=0 \text{ ir } f(2x+1)=3f(x)+5.$$
+    %Atsikratykime penketo: įsistatykime $f(x) = g(x) -\frac{5}{2}$.
+    %Gausime, kad $g$ tenkina lygtį $g(2x+1)=g(x)$. Pabandę pirmas keletą
+    %reikšmių gausime, kad $$g(1)=g(0), g(3)=3g(0), g(7)=3^2g(0), g(15) =
+    %3^3g(0).$$ Įsižiūrėję pamatysime, kad taip tęsdami gausime
+    %$$g(2^n-1)=3^{n-1}g(0).$$ Pažymėję $2^n-1 = x$ gauname $n =
+    %\log_2(x+1)$ arba $g(x)=3^{\log_2\frac{x+1}{2}}\cdot g(0).$ Iš
+    %$f(0)=0$ seka, kad $g(0)=\frac{5}{2}$ ir susitvarkę su neigiamų
+    %skaičių keliamais nepatogumais gauname, kad  $$f(x) =
+    %3^{\log_2\frac{|x+1|}{2}}\cdot \frac{5}{2} - \frac{5}{2}$$ tenkina
+    %lygtį.
+  \item Raskite visas funkcijas $f:\R\to\R$, kurios su visais realiaisiais
+    $x$, $y$ tenkina $$f(x^{3})-f(y^{3})=(x^{2}+xy+y^{2})(f(x)-f(y))$$
+    %Įsistatykime $y=0$ ir $y=1$:
+    %\begin{eqnarray*}
+    %  f(x^3) &=& (x^2 + x + 1)(f(x)-f(1))+f(1),\\
+    %  f(x^3) &=& x^2 (f(x)-f(0)) + f(0).
+    %\end{eqnarray*}
+    %Lygybės teisingos su visomis $x$ reikšmėmis, tad sulyginę dešiniąsias
+    %puses gausime $$f(x)=xf(1) + (1-x)f(0),$$ t.y. funkcija tiesinė.
+    %Patikrinę matome, kad lygtį tenkina visos funkcijos $f(x)=ax+b$, kur
+    %$a,b\in \R.$
+  \item Raskite visas funkcijas $f:\R\to\R$ tenkinančias lygybę $f(x)^2=1$
+    su kiekvienu $x\in\R$ .
+    %Šis uždavinys, nors ir paprastas, yra gerai žinomi spąstai. Iš pirmo
+    %žvilgsnio padaryta išvada, kad sprendinai yra tik $f(x)=1$ ir
+    %$f(x)=-1$ nėra teisinga. Atidžiau pažvelgus tampa aišku, kad viskas, ką
+    %galima pasakyti apie funkciją, yra tai, kad bet kuriame taške ji įgyja
+    %reikšmę $1$ arba $-1$. Užrašius tą matematiškiau, sprendiniai atrodo
+    %kaip $$f(x) = \begin{cases}1,& x\in A, \\ -1,& x\not\in A,\end{cases}$$
+    %kur $A$ bet koks $\R$ poaibis.
+
+\end{enumerate}
+
+\newpage
+\subsection{Funkcijų tipai}
+
+Šioje užduotyje panagrinėsime įvarius funkcijų tipus, sutinkamus sprendžiant
+funkcines lygtis. Greičiausiai jau yra tekę girdėti, kas yra lyginė,
+nelyginė, monotoninė ar periodinė funkcija, tad per daug nesiplėsdami
+prisiminkime tikslius apibrėžimus.
+
+\begin{api}
+Funkciją $f:A\to B$, kur aibė $A$ simetrinė nulio atžvilgiu,
+vadinsime lygine, jei $\forall x \in A$ teisinga $f(-x)=f(x) $, ir nelygine,
+jei $\forall x \in A$ teisinga $f(-x) = -f(x)$.
+\end{api}
+
+\begin{api}
+Funkciją $f:A\to B$ vadinsime periodine, jei egzistuoja toks $a\in A$, kad
+$f(a+x)=f(x)$ $\forall x\in A$.
+\end{api}
+
+\begin{api}
+Funkciją $f:A\to B$ vadinsime monotonine, jei ji yra arba nedidėjanti, arba
+nemažėjanti, t.y. arba $f(x)\leq f(y)$ su visais $x>y$ $(x,y\in A)$, arba
+$f(x)\geq f(y)$ su visais $x>y$ $(x,y \in A)$.
+\end{api}
+
+Atkreipsime dėmesį, kad didėjanti funkcija dažniausiai reiškia nemažėjanti
+(ir atvirkščiai mažėjanti - nedidėjanti), todėl yra vartojami terminai
+\emph{griežtai didėjanti} ir \emph{griežtai mažėjanti}, norint pabrėžti,
+jog funkcija negali būti pastovi.
+
+Vos prisiminę, lyginumą, nelyginumą, periodiškumą ir monotoniškumą iš karto
+paliksime nuošalyje ir pereisime prie \emph{injektyvių} ir
+\emph{surjektyvių} funkcijų nagrinėjimo. Vargu ar suklysime teigdami, kad
+šios dvi sąvokos yra centrinės sprendžiant kiek sudėtingesnes olimpiadose
+sutinkamas funkcines lygtis, tad joms skirsime labai daug dėmesio.
+
+\subsubsection{Injektyvumas ir surjektyvumas}
+
+Funkciją vadinsime injektyvia, jei ji kiekvieną reikšmę įgyja tik vieną
+kartą. Dažnai sutinkamos injektyvios funkcijos yra tiesės $f(x)=ax +
+b$, $a\neq 0$ (ypač $f(x)=x$ ir $f(x)=-x$), bet nesunku rasti ir daugiau pavyzdžių:
+$f(x)=x^3$, $f(x)=\frac{1}{x}$, $f(x)=e^{x}$. Elementariausias
+neinjektyvios funkcijos pavyzdys - $f(x)=x^2$. Iš ties - ji, pavyzdžiui,
+reikšmę $1$ įgyja du kartus: $f(1)=f(-1)=1$.
+
+Atkreipsime dėmesį, kad nagrinėjant injektyvumą yra svarbi apibrėžimo
+sritis. Pavyzdžiui, nors $f(x)=x^2$ ir nėra injektyvi visoje realiųjų
+tiesėje, ji tokia tampa apribojus apibrėžimo sritį iki neneigiamų skaičių.
+
+Pateiksime formalų apibrėžimą, kurį, kaip pamatysime, labai patogu
+tiesiogiai taikyti sprendžiant funkcines lygtis:
+
+\begin{api}
+Funkciją $f:A\to B$ vadinsime injektyvia, jei visiems $a,b \in A$ teisinga $$f(a)=f(b) \Rightarrow a=b.$$
+\end{api}
+
+Antroji sąvoka - surjektyvumas - apibūdina funkcijas, kurios įgyja visas
+savo reikšmių srities reikšmes. Jei nagrinėsime funkcijas $f:\R \to \R$,
+tai surjektyviomis bus tos pačios tiesės $f(x)=ax +b$, $a\neq 0$, arba,
+pavyzdžiui, visi nelyginio laipsnio daugianariai. Nesurjektyvios bus
+pavyzdžiui $f(x)=x^2$ ir $f(x)=e^x$, nes neįgyja neigiamų reikšmių.
+
+Vėlgi, apribojus reikšmių sritį nesurjektyvi funkcija gali tapti
+surjektyvia, tad visada reikia aiškiai suprasti, kas tiksliai yra
+apibrėžimo ir kas yra reikšmių sritis kiekvienu atveju ir po kiekvieno
+pertvarkymo.
+
+Formalus surjektyvumo apibrėžimas:
+
+\begin{api}
+Funkciją $f:A\to B$ vadinsime surjektyvia, jei kiekvienam $b\in B$
+egzistuoja toks $a\in A$, kad $f(a)=b$.
+\end{api}
+
+Funkciją, kuri yra ir injektyvi, ir surjektyvi, vadinsime
+\emph{bijektyvia}.  Bijektyvi funkcija, arba tiesiog bijekcija, kiekvienam
+apibrėžimo srities elementui priskiria unikalų reikšmių srities elementą,
+ir kiekvienas reikšmių srities elementas yra priskirtas. Kaip jau žinote
+(arba jei ne, tai nesunku suvokti), bijektyvi funkcija turi atvirkštinę.
+
+\subsubsection{Panaudojimas}
+
+Panagrinėkime keletą situacijų darydami prielaidą, kad ieškoma funkcija yra
+injektyvi arba surjektyvi.
+
+\begin{pav}
+Raskite visas funkcijas $f:\R \to \R$, tenkinančias lygtį $$f(f(x))=f(x).$$
+\end{pav}
+
+Ši lygtis turi be galo daug sprendinių, kurių struktūra kiek komplikuota.
+Galite pabandyti juos rasti.
+
+Kas pasikeistų, jei žinotume, kad ieškoma funkcija yra injektyvi?
+Pažiūrėkime - jei funkcija injektyvi, tai iš $f(a)=f(b)$ seka, kad $a=b$ su
+visais $a$, $b$. Šiuo atveju vietoje $a$ stovi $f(x)$, o vietoje $b$ stovi
+$x$, todėl iš $f(f(x))=f(x)$ sektų $f(x)=x$ su visais $x$ - lygtis
+išspręsta!
+
+Kas atsitiktų, jei žinotume, kad mūsų ieškoma funkcija yra surjektyvi?
+Surjektyvi funkcija įgyja visas reiškmių srities reikšmes, šiuo atveju
+visus realiuosius skaičius. Jei $f(x)$ galėtų būti bet koks realus skaičius,
+tai tuomet pažymėję $f(x)=y$ gautume $f(y)=y$ su visais realiaisiais $y$ -
+lygtis išspręsta!
+
+\begin{pav}
+Raskite visas funkcijas $f:\R \to \R$, tenkinančias lygtį $$f(x+f(y)) =
+f(f(x)+y).$$
+\end{pav}
+
+Jei žinotume, kad funkcija yra injektyvi, iš karto gautume $f(x+f(y)) =
+f(f(x)+y) \Rightarrow x+f(y) = f(x)+y$, o tokią lygtį jau spręsti mokame.
+Užtenka įsistatyti, pavyzdžiui, $y=0$ ir gauti $f(x)=x+c$, kur $c$ bet koks
+realus skaičius.
+
+\begin{pav}
+Raskite visas funkcijas $f:\R \to \R$, tenkinančias lygtį $$f(x+f(y)) =
+f(y^2 + x^2f(y)) + xf(x).$$
+\end{pav}
+
+Jei žinotume, kad ieškoma funkcija injektyvi, užtektų įsistatyti $x = 0$ ir
+iš lygties $f(f(y))=f(y^2)$ gauti, kad $f(y)=y^2$ su visais $y \in \R$.
+Patikrinę pastebėtume, kad ši funkcija netinka, vadinasi sprendinių nebūtų.
+
+\begin{pav}
+Funkcija $f:\R \to \R$ tenkina lygtį $f(f(x)+x) = x$. Raskite $f(0)$.
+\end{pav}
+
+Jei žinotume, kad $f$ yra surjektyvi funkcija, tai reikštų, kad egzistuoja
+toks $a$, kad $f(a)=0$ (kitaip sakant - nulis yra įgyjamas). Įstatę $x
+= a$, gautume $f(f(a)+a)= a \Rightarrow f(0+a)=a \Rightarrow 0 =a$,
+vadinasi $a = 0$, t.y. $f(0)=0$.
+
+Šį uždavinį galima buvo išspręsti ir kitaip - įsistačius $x=0$ bei
+$x=f(0)$, tačiau idėja, kuria pasinaudojome, yra daug bendresnė ir neretai
+labai naudinga.
+
+\subsubsection{Gavimas}
+\bigskip
+
+Pamačius, kad kartais injektyvumas ir surjektyvumas tikrai yra naudingi,
+kyla klausimas, kaip gauti, jog ieškomos funkcijos pasižymėtų šitomis
+savybėmis. Pabandykime pasiaiškinti.
+
+\begin{pav}
+Funkcija $f:\R \to \R$ tenkina lygtį $f(f(x)) = x$. Įrodykite, kad ji yra
+injektyvi ir surjektyvi.
+\end{pav}
+
+Injektyvumas. Mums reikia įrodyti, kad jei $f(a)=f(b)$, tai $a=b$. Pasirodo,
+tai visai nesudėtinga. Jei $f(a)=f(b),$ tai ir $f(f(a))=f(f(b))$ (funkcija
+nuo vienodų argumentų tikrai duoda vienodas reikšmes), bet kadangi
+$f(f(a))=a$ ir $f(f(b))=b,$ tai aišku, kad $a=b.$
+
+
+Surjektyvumas. Mums reikia įrodyti, kad kiekvienam $a$ egzistuoja toks $b$,
+kad $f(b)=a$. Bet pažiūrėkime į lygtį dar kartą - jei įstatysime $x=a$
+gausime $f(f(a))=a$, t.y. $f$ nuo kažko lygu $a$, vadinasi reikšmė $a$ yra
+įgyjama. Šiuo atvėju, žinoma, ieškomas $b$ bus lygus $f(a)$, bet
+dažniausiai mums jis nelabai įdomus - pakanka žinoti, kad egzistuoja.
+
+\begin{pav}
+Funkcija $f:\R \to \R$ tenkina lygtį $f(x +f(y)) = f(x) + y$. Įrodykite,
+kad ji yra injektyvi ir surjektyvi.
+\end{pav}
+
+Injektyvumas. Mums reikia įrodyti, kad jei $f(a)=f(b)$, tai $a=b$.
+Pasinaudosime laisvu kintamuoju $y$: perrašę lygtį $y=f(x+f(y))-f(x)$
+ir vietoje $y$ paeiliui įstatę $a$ ir $b$ gauname, kad dešiniosios pusės
+bus vienodos (nes $f(a)=f(b)$), todėl vienodomis turės būti ir kairiosios.
+
+Surjektyvumas. Mums rekia įrodyti, kad funkcija įgyja visas reikšmes.
+Laisvas kintamasis $y$ čia taip pat pravers, nes jis gali įgyti bet kokią
+reikšmę. Iš pažiūros lyg ir trukdo $f(x)$, bet lengvai galime jį apeiti -
+įstatę $x=0$ gausime $f(f(y))=f(0) + y$. Kadangi $f(0)$ yra skaičius, o $y$
+įgyja visas reikšmes, tai ir $f(0)+y$ įgyja visas reikšmes. Iš čia jau
+aišku, kad ir funkcija jas visas įgis.
+
+\begin{pav}
+Funkcijos $f,g:\R \to \R$ tenkina lygtį $f(g(x)) = x$. Įrodykite, kad $g$ yra injektyvi, o $f$ surjektyvi.
+\end{pav}
+
+Jei dvi funkcijos vienoje lygtyje neišgąsdina, tai sprendimas akivaizdus.
+Injektyvumas - jei $g(a)=g(b)$, tai ir $f(g(a))=f(g(b)) \Rightarrow a=b$. Surjektyvumas
+dar paprastesnis, mat kiekvienam $a$ teisinga $f(g(a))=a$, taigi $f$
+reikšmę $a$ įgyja.
+
+Taigi, bendru atveju, strategija paprasta. Norėdami įrodyti ieškomos
+funkcijos injektyvumą tariame, kad $f(a)=f(b)$, ir statomės $a$ ir $b$ į
+lygtį, tikėdamiesi kokiu nors būdu gauti $a=b$. Norėdami įrodyti
+surjektyvumą bandome gauti $f$ nuo bet kokio argumento lygią reiškiniui,
+kuris gali įgyti visas reikšmes. Abi strategijos yra gana bendros ir
+atskiru atveju jas pritaikyti gali būti gana sudėtinga, tad nusiteikite
+pakovoti dėl šių naudingų funkcijos savybių.
+
+
+\subsubsection{Pavyzdžiai}
+
+\begin{pavnr} Raskite visas funkcijas $f:\R \to \R$ su visomis $x$ ir $y$
+  reikšmėmis tenkinančias $$f(f(x)+y) = 2x +f(f(y)-x).$$
+\end{pavnr}
+
+\begin{sprendimas}
+  Įstatykime $y = -f(x)$, gausime, kad su visais $x$ teisinga $f(0) - 2x =
+  f(f(y)-x)$, vadinasi, funkcija surjektyvi.  Įrodysime, kad funkcija
+  yra ir injektyvi. Jei ji tokia nėra, tai egzistuoja tokie $a$, $b$,
+  kad $f(a)=f(b)$ ir $a\neq b$. Įstatykime $y=a$ ir $y=b$, gausime
+  $$f(f(x)+a) = 2x +f(f(a)-x),$$ $$f(f(x)+b) = 2x +f(f(b)-x)$$ ir iš čia
+  $$f(f(x)+a)=f(f(x)+b).$$ Kandangi funkcija surjektyvi, tai gauname
+  $$f(x+a)=f(x+b) \Rightarrow f(x)=f(x+(b-a)).$$ Pažymėję $b-a=r$
+  gauname, kad funkcija periodinė su periodu $r \neq 0$. Tačiau įstatę
+  $x=y=r$ į pradinę lygtį, gauname $f(f(r))=2r + f(f(r)) \Rightarrow r =
+  0$, prieštara.  Gavome, kad funkcija turi būti injektyvi, ir įstatę $x
+  = 0$ gauname $f(y) = y + c$.
+\end{sprendimas}
+
+\begin{pavnr} Raskite visas funkcijas $f: \R \to \R$ su visais
+  realiaisiais $x$, $y$ tenkinančias lygtį $$f(xy+f(x))=xf(y)+f(x).$$
+\end{pavnr}
+
+\begin{sprendimas}
+  Pabandykime įrodyti, kad funkcija injektyvi. Tam pasinaudosime labai
+  elegantiška idėja - sukeisime vietomis kintamuosius:
+  $$f(xy+f(y)) = yf(x) + f(y).$$
+  Jei tarsime, kad $f(x)=f(y)$, tai gautos ir pradinės lygčių kairiosios
+  pusės bus lygios, vadinasi, turės būti lygios ir dešiniosios: 
+  $$xf(y) + f(x) = yf(x) + f(y) \implies f(y)(x-1)=f(x)(y-1).$$ 
+  Iš čia gauname, kad funkcija visas reikšmes įgyja po vieną kartą,
+  išskyrus, galbūt, nulį (nes jei $f(x)\neq 0$, tai $f(x)=f(y)\implies
+  x=y$). 
+  
+  Natūralus sprendimo tęsinys, patyrinėti, kas atsitinka, kai funkcija
+  įgyja nulį keliuose taškuose, tad tarkime, kad $f(x_0) = 0$ ir $x_0 \neq
+  0$.  Įsistatykime $x=x_0, y=1$, gausime $f(1)=0$. Įstatę $y=1$, gausime
+  $f(x+f(x))=f(x)$. Jei kokiam nors taške $f(x)\neq 0$, tai, kaip jau
+  žinome, tame taške funkcija yra injektyvi, bet tada $x + f(x) = x \implies f(x)=0$ -
+  prieštara. Vadinasi, jei funkcija įgyja reikšmę $0$ ne tik nulyje, tai ji
+  tapačiai lygi nuliui.  
+  
+  Liko išnagrinėti atvejį, kai funkcija nulį įgyja tik nulyje. Tuomet
+  žinome, kad funkcija injektyvi. Įstatę $x=0$ gauname $f(f(0))=f(0)
+  \implies f(0)=0$, įstatę $y=0$ gauname $f(f(x))=f(x) \implies f(x)=x$.
+\end{sprendimas}
+ 
+\subsubsection{Uždaviniai}
+
+\begin{enumerate}
+  \item Įrodykite, kad griežtai didėjanti funkcija yra injektyvi. Ar
+    būtinai bijektyvi funkcija turi būti monotoniška?
+    %Jei funkcija griežtai didėjanti, tai visiems skirtingiems $a>b$
+    %turėsime $f(a)>f(b)$, todėl funkcija neįgis vienodų reikšmių. 
+    %
+    %Bijektyvi funkcija nebūtinai turi būti monotoniška. Pavyzdžiui,
+    %$f(x)=\frac{1}{x}$, kai $x\neq 0$, ir $f(0)=0$.
+  \item Ar funkcija $f:\R \to \R$ tenkinanti lygtį $f(x+y) = f(x^2) +
+    f(y^2)$ su visais $x,y \in \R$ gali būti injektyvi?
+    %Negali, nes, pavyzdžiui, įstatę $x=0$ matome, kad $f(y)=f(-y)$ su visais $y$.
+  \item Įrodykite, kad funkcija $f:\R\to\R$ tenkinanti lygtį $f(x+y) =
+    xf(y^2) + yf(x^2)$ yra nelyginė.
+    %Įstatę $x=-x$ ir $y=-y$ gauname $f(x+y) = -f(-x-y)\Rightarrow
+    %f(t)=-f(-t)$ $\forall t \in \R.$
+  \item Raskite visas lygines monotonines ir lygines injektyvias funkcijas.
+    Raskite bent vieną lyginę surjektyvią funkciją.
+    %Lyginės monotoninės yra tik $f(x)=c$, $f:A\to \R$, lyginė injektyvi
+    %tik $f(0)=c$, $f:\{0\}\to \R$ (jei dar bent viena taškų pora
+    %priklausytų apibrėžimo sričiai iš karto gautume neinjektyvią). Lyginės
+    %surjektyvios pavyzdys gali būti $f(x)=ln|x|$, kai $x\neq 0$, $f(0)=0$.
+  \item Žinome, kad $f:\R^+ \to \R^+$ tenkina $f(x)\leq 1$ su visais $x\in
+    \R^+$ ir $f(x+y)f^2(y)=f(x)$. Įrodykite, kad $f$ didėjanti.  ($\R^+$
+    čia ir toliau žymi teigiamus realiuosius)
+    %Tegu $a>b$. Įstatę $x =b$, $y = a-b$ gausime $f(a)f^2(a-b)=f(b)$.
+    %Kadangi $f(a-b)^2\leq 1$, tai $f(a)\geq f(b)$.
+  \item Funkcija $f:\R \to \R$ tenkina lygtį $f(xf(x)) = x$ ir yra
+    surjektyvi. Raskite $f(1)$.
+    %Jei žinome, kad funkcija yra surjektyvi, tai egzistuoja toks $a$, kad
+    %$f(a)=1$. Įstatę gauname $f(a\cdot 1) =a \Rightarrow 1 = a$, vadinasi
+    %$f(1)=1$.
+  \item Raskite visas didėjančias funkcijas $f:\R\to\R$ tenkinančias lygtį
+    $f(f(x))=x$.
+    %Įrodysime, kad $f(x)=x$. Tarkime priešingai - tegu egzistuoja toks
+    %$a$, kad $f(a)>a$. Tuomet, kad kadangi $f$ yra didėjanti, tai $$f(a)>a
+    %\Rightarrow f(f(a))>f(a) \Rightarrow f(f(a))>f(a)>a \Rightarrow
+    %f(f(a))\neq a \text { - prieštara}.$$ Tardami, kad $f(a)<a$, prieštarą
+    %gauname analogiškai.
+  \item Tegu $f:\R \to \R$ yra injektyvi ir su visais $x$ tenkina
+    $$f(x)f(1-x)=f(ax+b).$$ Įrodykite, kad $a=0$, $f(1-b)=1$ ir kad $f$
+    nėra surjektyvi.
+    %Įstatę $x=0$ ir $x=1$ gauname, kad $f(a+b)=f(b)$, todėl pasinaudoję injektyvumu gauname $a = 0$.
+    %Įstatę $x=b$ gauname $f(b)f(1-b)=f(b)$, tad arba $f(1-b)=1$, arba
+    %$f(b)=0$. Tačiau $f(b)$ negali būti lygus nuliui, nes gautume
+    %$f(x)f(1-x)=0$, o iš čia be galo daug reikšmių, su kuriomis funkcija
+    %lygi nuliui, kas prieštarauja injektyvumui.
+    %Galiausiai pastebėkime, kad funkcija nulio iš vis neįgyja, nes jei,
+    %tarkime, $f(c)=0$, tai įstatę gauname $f(b)=0$, ko negali būti. Taigi
+    %ji nėra surjektyvi.
+  \item Raskite visas griežtai didėjančias funkcijas $f:\R\to\R$ su visais
+    $x,y \in \R$ tenkinančias lygybę $$f(x+f(y))=f(x+y)+2005.$$
+    %Įsistatykime $x=y$, $y=x$, gausime $f(x+f(y))=f(y+f(x))$. Kadangi $f$
+    %yra griežtai didėjanti, tai ji injektyvi, tai $x+f(y)=y+f(x)
+    %\Rightarrow f(x)=x+c$. Įstatę randame $c=2005$.
+  \item Raskite visas funkcijas $f:\R^+\to\R^+$ su visais $x, y \in \R^+$
+    tenkinančias lygybę $$(x+y)f(f(x)y)=x^2f(f(x)+f(y)).$$
+    %Įsistatykime $x=y$, gausime $(y+y)(f(y)y)=y^2f(f(y)+f(y))$. Jei
+    %$f(x)=f(y)$, tai iš abiejų lygybių gauname $\frac{x^2}{x+y} =
+    %\frac{y^2}{y+y} \Rightarrow x=y$. Gavome kad funkcija injektyvi.
+    %Įstatykime $y=1$ ir $x=\frac{1+\sqrt{5}}{2}=\lambda$, t.y. lygties
+    %$x+1=x^2$ sprendinį. Tuomet gausime, kad
+    %$f(f(\lambda))=f(f(1)+f(\lambda))\Rightarrow f(1)=0$, o taip būti
+    %negali.
+  \item Raskite visas funkcijas $f:\R^+\to\R^+$ su visais $x, y \in \R^+$
+    tenkinančias lygybę $$(x+y)f(yf(x))=x^2(f(x)+f(y)).$$
+    %Nesunku pastebėti, kad funkcija yra injektyvi. Įsistatę $x=1,y=1$
+    %gauname $f(f(1))=f(1) \implies f(1)=1$. Įsistatę $x=1$ gauname
+    %$(y+1)f(y)=f(y)+1 \implies f(y)=\frac{1}{y}.$
+  \item Raskite visas funkcijas $f,g:\R\to\R$, kur $g$ yra bijekcija ir
+    kurios su visais realiaisiais $x$, $y$ tenkina $$f(g(x)+y)=g(f(y)+x).$$
+    %Kadangi $g$ yra surjektyvi ir $f(y)+x$ įgyja visas realiąsias reikšmes,
+    %tai iš lygybės gauname, kad ir $f$ surjektyvi. Tegu $a$ toks, kad
+    %$g(a) = 0$. Įstatę $x=a$ gauname $f(y)=g(f(y)+a)$. Kadangi $f$
+    %surjektyvi, tai $g(x)=x-a$ su visas $x\in \R$. Įstatę $g$ išraišką į
+    %pradinę lygybę gauname, kad $f(x+y-a)=f(y)+x-a$. Įstatę $y=a$ gauname
+    %$f(x)=x+b$. Vadinasi, sprendiniai yra $g(x) =x+a$, $f(x)=x+b$, kur $a,b
+    %\in \R$.
+  \item Raskite visas funkcijas $f:\R\to\R$ su visais $x, y \in \R$
+    tenkinančias lygybę $$f(x+y +f(xy)) = f(f(x+y)) + xy.$$
+    %Įrodykime, kad $f$ injektyvi. Naudodami keitinį $x+y =a$, $xy =b$
+    %gauname lygtį $f(a+f(b))=f(f(a)) + b$.  Tačiau ji galioja ne visiems
+    %$a$ ir $b$, o tik tenkinantiems sąlygą $4b\leq a^2$, nes kitaip
+    %sistema $x+y =a$, $xy =b$ neturi sprendinių.  Bet tai ne bėda -
+    %kiekvieniem $b_1$ ir $b_2$ galime paimti $a$ tokį, kad $4b_1 \leq a^2$
+    %ir $4b_2 \leq a^2$. Tuomet galime naudotis lygtimi ir iš
+    %$f(b_1)=f(b_2)$ gauname $b_1 = b_2$ - injektyvumas įrodytas.
+    %Įstatykime į pradinę lygtį $y=0$, gausime $f(x + f(0))=f(f(x))$, iš
+    %injektyvumo $f(x)=x+c$.
+  \item Įrodykite, kad nėra funkcijų $f,g:$ $\R \to \R$ su visais
+    realiaisiais $x$ tenkinančių lygybes $$g(f(x)) = x^3 \text{ ir }
+    f(g(x))=x^2.$$
+    %Iš lygybės $g(f(x))=x^3$ seka, kad $f$ yra injektyvi ir kad
+    %$f(g(f(x)))=f(x^3)\Rightarrow f^2(x)=f(x^3)$.  Įsistatę $x=-1,0,1$
+    %gauname, kad $f(-1)$, $f(0)$ ir $f(1)$ gali įgyti tik reikšmes $0$
+    %arba $1$, kas prieštarauja injektyvumui.
+  \item Tegu funkcija $f: \R \to \R$ su visais realiaisiais $x$ tenkina
+    lygtį $$4f(f(x))= 2f(x)+x$$ Įrodykite, kad $f(x)=0$ tada ir tik tada,
+    kai $x=0$.
+    %Pastebėkime, kad $f$ injektyvi. Įstatykime $x = 0$, gausime
+    %$f(f(0))=\frac{f(0)}{2}$.  Įstatykime $x = f(0)$, gausime $4f(f(f(0)))
+    %= 2f(f(0)) + f(0) = f(0) + f(0) = 2f(0)$, iš kur
+    %$f(f(f(0)))=\frac{f(0)}{2} = f(f(0))$. Naudodamiesi injektyvumu
+    %gauname $$f(f(f(0)))=f(f(0)) \Rightarrow f(f(0)) = f(0) \Rightarrow
+    %f(0) = 0.$$ Kadangi funkcija injektyvi, tai išties $f(x)=0
+    %\Leftrightarrow x=0$.
+  \item Raskite visas funkcijas $f:\R^+\to\R^+$ su visais $x, y \in \R^+$
+    tenkinančias lygybę $$f(x)f(yf(x))=f(x+y).$$
+    %Patyrinėkime keitinį $y=\frac{x}{f(x)-1}$. Iš pradžių gali pasirodyti,
+    %kad jis yra nuleistas iš dangaus, bet viskas daug paparasčiau - jis
+    %tiesiog kyla iš natūralaus noro sulyginti $f(yf(x))$ ir $f(x+y)$
+    %($yf(x)=x+y\implies y=\frac{x}{f(x)-1}$). Tačiau prisiminkime, kad
+    %funkcijos apibrėžimo sritis yra teigiami skaičiai. Tuomet tenka
+    %samprotauti taip: jei egzistuoja toks $x$, kad $f(x)>1$, tai galime
+    %įsistatyti $y=\frac{x}{f(x)-1}$ ir gausime
+    %$f(x)f(\frac{xf(x)}{f(x)-1})=f(\frac{xf(x)}{f(x)-1}) \Rightarrow
+    %f(x)=1$ - prieštara!
+    %
+    %Vadinasi gavome, kad $f(x)\leq 1$ ir, iš pradinės lygybės, $f$ yra
+    %nedidėjanti ($f(x+y)=f(x)f(yf(x))\leq f(x)$).
+    %
+    %Nagrinėkime injektyvumą: Jei egzistuoja tokie $a < b$, kad
+    %$f(a)=f(b)$, tai gauname, kad $f(a+y)=f(b+y)$ su visais $y$, todėl
+    %$f(y)=f(b-a+y)$ su visais $y>a$, vadinasi, funkcija yra monotoniška ir
+    %periodinė $\Rightarrow f(x)= c$ su visais $x >a$. Įsistatę į pradinę
+    %lygtį pakankamai didelius $x$ ir $y$ gauname $c = 1$, o įsistatę $x$
+    %pakankamai didelį gauname $f(y)=1$ su visais $y$.
+    %Lieka atvejis, kai funkcija yra injektyvi. Pakeitę $y=\frac{z}{f(x)}$
+    %gausime $f(x)f(z)=f(x+\frac{z}{f(x)})$ su visais $z,x >0$. Sukeitę $x$
+    %ir $z$ vietomis bei pasinaudoję injektyvumu gauname $x +
+    %\frac{z}{f(x)} = z + \frac{x}{f(z)}$, iš kur lengvai randame
+    %$f(x)=\frac{1}{1+cx}$, kur $c\in \R^+$.
+   \item Raskite visas funkcijas $f:\R^+ \to \R^+$ tenkinančias lygybę
+    $$f(x+yf(x))=f(x)f(y), \forall x,y \in \R^+,$$ jei žinome, jog
+    egzistuoja tik baigtinis skaičius tokių $x \in \ \R^+$, kad $f(x)=1$.
+    %Tegu $f(x_0)=1$, tada įsistatę $x=x_0$ gauname $f(x_0+y)=f(y)$,
+    %vadinasi, funkcija yra periodinė ir vienetą įgis be galo daug kartų, o
+    %to būti negali, vadinasi, $f(x)\neq 1, \forall x\in \R^+$.
+    %
+    %Tegu $f(a)=f(a+b)$, tuomet įsistatykime $x=a, y=\frac{b}{f(a)}$,
+    %gausime $1=f(\frac{b}{f(a)})$, prieštara, vadinasi funkcija injektyvi.
+    %
+    %Pradinėje lygtyje įstatykime $x=y$, $y=x$, gausime
+    %$f(x+yf(x))=f(x)f(y) =f(y+xf(y))$. Kadangi $f$ injektyvi, tai
+    %$x+yf(x)=y+xf(y) \rightarrow f(x)=kx+1$. Patikrinę matome, kad tinka.
+  \item Raskite visas funkcijas $f: \R \to \R$ su visais realiaisiais $x$,
+    $y$ tenkinančias lygtį $$f(y)+f(x+f(y))= y + f(f(x)+f(f(y))).$$
+    %Pastebėkime, kad $f$ injektyvi.  Įstatę $x=0$, $y=0$ ir pažymėję
+    %$f(0)+f(f(0))=u$ gauname $f(u)=u$.  Įstatę $y=u$ gauname
+    %$f(x+u)=f(f(x)+u) \Rightarrow f(x)+u=x+u \Rightarrow f(x)=x$.
+  \item Raskite visas funkcijas $f: \R \to \R$ su visais realiaisiais $x$,
+    $y$ tenkinančias lygtį $$f(f^2(x)+f(y))=xf(x)+y.$$
+    %Funkcija akivaizdžiai bijektyvi, todėl egzistuoja toks $x_0$, kad
+    %$f(x_0)=0$. Įsistatę $x=x_0$ gauname $f(f(y))=y$.  Įsistatę $x=f(x)$
+    %gauname $f(x^2+f(y))=xf(x)+y=f(f^2(x)+f(y))$. Kadangi $f$ injektyvi,
+    %tai $f^2(x)=f(x)^2$. Vadinasi, kiekviename taške $x$ funkcija lygi arba
+    %$x$, arba $-x$. Tegu egzistuoja du nenuliniai taškai, kuriuose $f(x)=x$
+    %ir $f(y)=-y$. Tuomet gauname $f(x^2+y)=x^2-y$, kas yra neįmanoma
+    %($x^2+y = x^2-y\implies y=0$, $-x^2-y = x^2-y\implies x=0$ ).
+    %Vadinasi, tinka tik $f(x)=x$ ir $f(x)=-x$.
+  \item Raskite visas funkcijas $f: \R \to \R$ su visais realiaisiais $x$,
+    $y$ tenkinančias lygtį $$f(xf(x)+f(y))=f^2(x)+y.$$
+    %Funkcija bijektyvi. Įstatykime $x=0$ ir $x=a$, kur $a$ toks, kad
+    %$f(a)=0$. Gausime lygybes $f(f(y))=f^2(0) + y$ ir $f(f(y))=y$, iš kur
+    %$f(0) = 0$ ir $a=0$.
+    %
+    %Įstatykime $x = f(x)$ ir pasinaudokime lygybe $f(f(x))=x$. Gausime
+    %$f(f(x)x + f(y))=x^2 + y$, vadinasi $f^2(x)=x^2$ su visais $x$.
+    %
+    %Tegu $x$ ir $y$ tokie, kad $f(x)=x$ ir $f(y)=y$ ir $x$,$y$ $\neq 0$.
+    %Tada iš pradinės lygties gauname $f(x^2 - y) = x^2 + y$. Kadangi
+    %$f(x^2 - y)$ gali būti lygus tik $x^2 -y$ arba $y-x^2$, tai gauname,
+    %kad arba $y=0$ arba $x=0$ - prieštara. Vadinasi, sprendiniai yra
+    %$f(x)=x$ ir $f(x)=-x$.
+  \item Raskite visas funkcijas $f,g,h:\R\to\R$, kurios su visais
+    realiaisiais $x$, $y$, $z$ tenkina $$f(h(g(x))
+    +y)+g(z+f(y))=h(y)+g(y+f(z))+x.$$
+    %Įstatę $y=z=0$ gauname $f(h(g(x)))=x+h(0)$. Įstatę $y=0$ gauname
+    %$g(z+f(0))=g(f(z))$. Kadangi $g$ injektyvi (atkreipkite dėmesį į
+    %kintamąjį $x$ pradinėje lygtyje), tai $f(x)=x+a$.
+    %
+    %Įsistatę gauname lygtį $h(g(x)) + y + a = h(y) + x$, iš kurios
+    %akivaizdžiai $h(x)=x+b$, ir $g(x)=x-a$.
+ \item Raskite visas funkcijas $f: \R \to \R$ su visais realiaisiais $x$,
+    $y$ tenkinančias lygtį $$f(x^2 + xy +f(y))=f^2(x)+xf(y)+y.$$
+    %Funkcija injektyvi. Raskime $f(0)$: $x=0 \Rightarrow f(f(y))=y +
+    %f^2(0) \Rightarrow f(f(0))=f^2(0)$. Pažymėkime $f(0)=a$, tuomet
+    %paskutinioji lygybė pavirsta į $f(a)=a^2$. Įstatykime $x=0$, $y=a$ ir
+    %$x=a$, $y=0$. Gausime $f(a^2)=a^2+a$ ir $f(a^2+a)=a^4+a^2$. Iš čia
+    %$f(f(a^2))=f(a^2+a)\implies 2a^2 = a^4 + a^2 \implies a=-1$,$0$
+    %arba $1$.
+    %
+    %Jei $f(0)=1$, tai tuomet iš $f(f(y))=y + f^2(0)$ gauname $f(1)=1$ -
+    %prieštara injektyvumui.
+    %
+    %Jei $f(0)=-1$, tai iš $f(f(y))=y + f^2(0)$ gauname $f(-1)=1
+    %\Rightarrow f(1)=0 \Rightarrow f(0)=2$ - prieštara.
+    %
+    %Vadinasi, $f(0)=0$. Tuomet $f(f(x))=x$ ir $f(x^2)=f^2(x)$. Įstatę
+    %$x=-y$ gauname $f(f(y))=f^2(-y) -yf(y) + y \Rightarrow y = f((-y)^2) -
+    %yf(y) + y\Rightarrow f^(y)=yf(y)$. Kadangi funkcija injektyvi, tai
+    %$f(y)=0$ tik kai $y=0 \Rightarrow f(y)=y$.
+  \item Raskite visas funkcijas $f: \R \to \R$ su visais realiaisiais $x$,
+    $y$ tenkinančias lygtį $$f(f(x)-f(y))=(x-y)^2f(x+y).$$
+    %$f(x)=0$ yra sprendinys, ieškosime likusių. Įrodykime, kad $f$ turi
+    %būti lyginė. Pastebėkime, kad $f(f(x)-f(y))=f(f(y)-f(x))$, todėl
+    %užtenka įrodyti, kad $f(x)-f(y)$ įgyja visas reikšmes. Išties, tegu
+    %$a$ toks, kad $f(a)\neq 0$. Įstatykime $y= a-x \implies
+    %f(f(x)-f(a-x))=(2x-a)^2f(a)$. Iš čia matome, kad $f$ įgyja visas
+    %teigiamas arba visas neigiamas reikšmes (priklausomai nuo $f(a)$),
+    %vadinasi, $f(x)-f(y)$ tikrai įgyja visas realiąsias reikšmes.
+    %
+    %Įstatykime $y=-y$. Gausime $f(f(x)-f(y))=(x+y)^2f(x-y) \implies
+    %(x-y)^2f(x+y)=(x+y)^2f(x-y)$. Kadangi visiems realiesiems $a$, $b$
+    %egzistuoja tokie $x$,$y$, kad $x+y=a$ ir $x-y=b$, tai lygtį galime
+    %užrašyti $b^2f(a)=a^2f(b) \implies f(x)=cx^2$. Patikrinę gauname
+    %$c=1$, vadinasi, sprendiniai yra $f(x)=x$ ir $f(x)=0$.
+  \item Raskite visas funkcijas $f,g:\R\to\R$, kurios su visais
+    realiaisiais $x$, $y$ tenkina $$f(xg(y+1))+y=xf(y) + f(x+g(y))$$ ir
+    $$f(0)+g(0)=0.$$
+    %Įstatykime $x = 0$, gausime $f(0)+y=f(g(y))$, vadinasi $f$ surjektyvi,
+    %$g$ injektyvi.
+    %
+    %Įrodykime, kad $g(1)=1$. Įstatykime $y = 0$, gausime $f(xg(1)) = xf(0)
+    %+ f(x + g(0))$. Jei $g(1)\neq 1$, tai galime sulyginti $xg(1)=x+g(0)$
+    %paėmę $x = \frac{g(0)}{g(1)-1}$. Tuomet gauname
+    %$\frac{g(0)f(0)}{g(1)-1}=0 \Rightarrow f(0)=g(0)=0$ (pasinaudojus
+    %antrąja sąlyga). Įsistatę $y = -1$ gauname $f(x)=ax$ ir
+    %$g(x)=\frac{x}{a}$. Patikrinę gauname, kad $a =1$, taigi $f(x)=g(x)=x$
+    %- prieštara prielaidai $g(1)\neq 1$.
+    %
+    %Iš $f$ surjektyvumo žinome, kad egzistuoja toks $u$, kad $g(u)=0$.
+    %Įrodykime, kad $u = 0$.  Tegu $u \neq 0$, tada $g(u+1)\neq g(1)=1$ (iš
+    %$g$ injektyvumo).  Įstatykime $x = \frac{g(u)}{g(u+1)-1}$ ir $y = u$,
+    %gausime $u = 0$ - prieštara.
+    %Taigi gavome, kad $f(0)=0$ ir $g(0)=0$, ir iš čia jau žinome, kad
+    %gaunasi $f(x)=g(x)=x$.
+   \item Raskite visas funkcijas $f:\R\to\R$, kurios su visais realiaisiais
+    $x$, $y$ tenkina $$f(x^2 + f(y)) = y + xf(x).$$
+    %Įstatykime $x = 0$. Gausime $f(f(y))=y$. Įstatykime $x=f(x)$, gausime
+    %$f(f^2(x) + f(y)) = y + f(x)x = f(x^2 + f(y))$. Kadangi funkcija
+    %tenkinanti lygtį yra akivaizdžiai bijektyvi, tai gauname
+    %$f^2(x)=x^2 \Rightarrow f(x)=\pm x$.
+    %
+    %Tegu $x$ ir $y$ tokie, kad $f(x)=x$ ir $f(y)=-y$ bei $x$,$y$ $\neq 0$.
+    %Tada pradinė lygtis tampa $f(x^2 - y)=y+x^2$. Kadangi $f(x^2-y)$ =
+    %$x^2 - y$ arba $f(x^2-y) = y -x^2$, tai gauname $y=0$ arba $x = 0$ -
+    %prieštara. Vadinasi, sprendiniai yra tik $f(x)=x$ ir $f(x)=-x$.
+  \item \text{[IMO 1992]} Raskite visas funkcijas $f:\R\to\R$, kurios su
+    visais realiaisiais $x$, $y$ tenkina $$f(x^2 + f(y)) = y + f^2(x).$$
+    %Funkcija bijektyvi, todėl egzistuoja toks $a$, kad $f(a)=0$. Įsistatę
+    %$x=y=a$ gauname $f(a^2)=a \Rightarrow f(f(a^2))=0$. Tačiau kadangi
+    %$f(f(y))=y + f^2(0)$, tai $a^2+f^2(0)=0 \Rightarrow a=0$ ir $f(0)=0$.
+    %
+    %Tuomet iš pradinės lygties gauname, kad $f(x^2)=f^2(x)=f(-x)^2$. Dėl
+    %injektyvumo $f(x)\neq f(-x)$, todėl $f(x)=-f(-x)$. Iš čia ir iš
+    %$f(x^2)=f^2(x)$ gauname, kad $f(x)>0$, kai $x>0$ ir $f(x)<0$, kai
+    %$x<0$.
+    %
+    %Galiausiai įstatę $y=-x^2$ gauname, kad $f(x^2-f^2(x))=-(x^2-f^2(x))
+    %\Rightarrow f^2(x)=x^2 \Rightarrow f(x)=x$.
+  \item Raskite visas funkcijas $f:\R \to \R$ su visomis $x$ ir $y$
+    reikšmėmis tenkinančias $$f(x +f(xy))=f(x+f(x)f(y))=f(x)+xf(y).$$
+    %$f(x)=0$ yra sprendinys, nagrinėkime galimus likusius. Tegu $f(a)=0$,
+    %tuomet įstatę $x=a$ gausime $0=af(y) \implies a=0$, vadinasi, jei
+    %$0$ yra įgyjamas, tai tik taške $0$. Įstatę $x=y=-1$ gausime
+    %$f(f(1)-1)=0 \implies f(0)=0, f(1)=1$.
+    %
+    %Įstatę $x=1$ gauname $f(f(y)+1)=f(y)+1(*)$ iš kur $f(n)=n$ visiems
+    %$n\in \N$. Įrodysime, kad $f$-injektyvi. Pažymėję $xy=a$ gauname
+    %$f(x+f(a))=f(x)+xf(\frac{a}{x})$. Jei $f(a)=f(b)$, tai visiems $x$
+    %teisinga $f(\frac{a}{x}) = f(\frac{b}{x})$. Pakeitę $x=\frac{b}{y}$ ir pažymėję
+    %$\frac{a}{b}=m$, gausime, kad su visomis $y$ reikšmėmis $f(ym)=f(y)$. Iš čia
+    %randame $f(m)=1$. Įstatę $x=m$ gauname $f(m + f(y))=1+mf(y)$, iš kur
+    %$f(m+1)=m+1$ $(y=1)$ ir $f(m+2)=1+2m$ $(y=2)$. Tačiau pagal (*)
+    %$f(m+2)=m+2$ $(y=m+1)$, todėl $1+2m = m+2 \implies m=1 \implies
+    %a=b \implies f$ injektyvi.
+    %
+    %Įstatykime $x=y=-2 \implies f(-2)=-2 \implies f(-1)=-1$.
+    %Įstatykime $x=-1 \implies f(-1+f(-y))=-1-f(y)$.
+    %
+    %Naudodamiesi $f(-1+f(-y))=-1-f(y)$ ir $f(f(y)+1)=f(y)+1$ gausime, kad
+    %kiekvienam $x$ egzistuoja toks $y$, kad $f(x)=f(y)+1$. Išties: jei
+    %$a$ priklauso $f$ vaizdui $\implies -1 -a$ priklauso vaizdui
+    %$\implies -a$ priklauso vaizdui $\implies -1 + a$ priklauso
+    %vaizdui. Kadangi kiekvienam $x$ $f(x)$ priklauso vaizdui, tai $f(x)-1$
+    %priklauso vaizdui, todėl egzistuoja toks $y$, kad $f(y)=f(x)-1$.
+    %Įstatę į $f(f(y)+1)=f(y)+1$ gauname, kad kiekvienam $x$
+    %$f(f(x))=f(x)$. Kadangi $f$ injektyvi, tai $f(x)=x$.
+  \item Raskite visas funkcijas $f:\R\to\R$, kurios su visais realiaisiais
+    $x$, $y$ tenkina $$f(xf(y))+f(yf(x))=2xy.$$
+    %Pastebėkime, kad $f(0)=0$ ir $f(xf(x))=x^2$(*). Įstatę $x=1$ gauname
+    %$f(f(1))=1$, įstatę $x=f(1)$ gauname $1=f(1)^2$. Jei $f(1)=1$, tai
+    %$f(x)+f(f(x))=2x$ - $f$ injektyvi. Jei $f(1)=-1$, tai įstatę $x=y=1$
+    %gauname $f(-1)=1$ ir įstatę $y=-1$ gauname $f(x)+f(-f(x))=-2x$ - $f$
+    %injektyvi.
+    %
+    %Įrodysime, kad $f(\frac{1}{x})= \frac{1}{f(x)}$. Įstatykime
+    %$y=f(\frac{1}{x})\frac{1}{x}$: $$f(xf(f(\frac{1}{x})\frac{1}{x}))+
+    %f(f(\frac{1}{x})\frac{1}{x}f(x))=2f(\frac{1}{x}).$$
+    %Iš (*) gauname, kad $$f(f(\frac{1}{x})\frac{1}{x}) = \frac{1}{x^2},$$
+    %todėl lygybę galime perrašyti į
+    %$$f(f(\frac{1}{x})\frac{1}{x}f(x))=f(\frac{1}{x}).$$ Lieka pasinaudoti
+    %injektyvumu ir gauname $f(x)=\frac{1}{x}$.
+    %
+    %Jei $f(1)=1$, tai įstatę $x=\frac{1}{x}$ į $f(x)+f(f(x))=2x$ gauname
+    %$$\frac{1}{f(x)} + \frac{1}{f(f(x))}= \frac{2}{x} \Rightarrow \\
+    %\frac{1}{f(x)} + \frac{1}{2x - f(x)}= \frac{2}{x} \\ \Rightarrow
+    %(f(x)-x)^2=0 \Rightarrow f(x)=x.$$
+    %Jei $f(-1)=-1$, tai $x = \frac{1}{x}$ statome į $f(x)+f(-f(x))=-2x$ ir
+    %analogiškai gauname $f(x) = -x$.
+  \item *Raskite visas funkcijas $f:\R\to\R$, kurios su visais realiaisiais
+    $x$, $y$ tenkina $$f(xf(y))=(1-y)f(xy)+x^2y^2f(y).$$
+  \item *Raskite visas funkcijas $f:\R^+\to\R^+$, kurios su visais
+    realiaisiais $x$, $y$ tenkina $$f(x+f(y))=f(x+y)+f(y).$$
+  \item *[Japan 2008] Raskite visas funkcijas $f: \R \to \R$ su visais
+    realiaisiais $x$, $y$ tenkinančias lygtį
+    $$f(x+y)f(f(x)-y)=xf(x)-yf(y).$$
+  \item *Raskite visas funkcijas $f: \R \to \R$ su visais realiaisiais $x$,
+    $y$ tenkinančias lygtį $$f(x+y+f(xy))=xy+f(x+y).$$
+  \item *[Brazil 2006] Raskite visas funkcijas $f:\R\to\R$, kurios su
+    visais realiaisiais $x$, $y$ tenkina $$f(xf(y)+f(x))=2f(x)+xy.$$
+    %%Long Solution in "Nice funct.equation" + "Yet another (but nice!) functional equation" + "f.e.9"
+  \item *[Dan Barbilian 2005] Tegu $f:\R^+ \to \R^+$ yra nelygi konstantai
+    funkcija su visais $x,y,z \in \R^+$ tenkinanti
+    $$f(x)f(yf(x))f(zf(x+y))=f(x+y+z)$$ Įrodykite, kad $f$ yra injektyvi ir
+    raskite visas tokias funkcijas.
+    %%Very long solution in "funcional eq('Barbilian' contest)"
+  \item *Raskite visas funkcijas $f:\R^+\to\R^+$, kurios su visais
+    teigiamais $x$, $y$ tenkina $$f\left(\frac{f(x)}{yf(x) + 1}\right) =
+    \frac{x}{xf(y)+1}.$$
+    %%Sudėtingas sprendimas "Nested fraction function equation"
+\end{enumerate}
+
+\newpage
+\subsection{Cauchy funkcinė lygtis}
+
+Sprendžiant sudėtingas funkcines lygtis dažnai susiduriama su lygtimi:
+$$f(x+y)=f(x)+f(y).$$
+Ši lygtis vadinama Cauchy funkcine lygtimi. Ją nesudėtinga išspręsti jei
+ieškosime funkcijų, kurių apibrėžimo sritis racionalieji skaičiai. Tą ir
+padarykime:
+
+\begin{thm}
+  Jei $f:\Q \to \R$ tenkina lygtį $f(x+y)=f(x)+f(y)$ su visais
+  racionaliaisiais $x$ ir $y$, tai $f$ - tiesinė, t.y. $f(q)=kq$ visiems $q
+  \in Q$, kur $k\in \R$ - konstanta.
+\end{thm}
+
+\begin{proof}[Įrodymas]
+  Įstatę $y=x$, gausime $f(2x)=2f(x)$. Įstatę $y=2x$, gausime $f(3x)=3f(x)$.
+  Taip tęsdami toliau, po nesudėtingos indukcijos turėsime
+  $$f(nx)=nf(x).$$
+  Į šią lygybę įstatę $x=\frac{1}{n}$ gausime
+  $\frac{f(1)}{n}=f(\frac{1}{n})$. Tada, pradinėje lygtyje imdami
+  $x=\frac{1}{n}$, o $y=\frac{1}{n},\frac{2}{n},\frac{3}{n}$ ir t.t., vėl po
+  paprastos indukcijos išreikšime:
+  $$f(\frac{m}{n})=mf(\frac{1}{n})=f(1)\frac{m}{n},$$ kur $m$ ir $n$ -
+  bet kokie natūralieji skaičiai, vadinasi, $\frac{m}{n}$ - bet koks teigiamas
+  racionalusis. Tada, pažymėję $f(1)=k$, gausime $$f(q)=kq,$$ kur $k$ -
+  realioji konstanta, o $q$ - bet koks teigiamas racionalusis. Kita vertus,
+  pradinėje lygtyje paėmę $y=0$ ir $y=-x$, gausime $f(0)=0$ ir $f(-x)=-f(x)$
+  $\forall x\in\R$, taigi, $f(q)=kq$ bus lygties sprendinys ir neigiamiems
+  racionaliesiems.
+\end{proof}
+
+Deja, jei pradinę salygą $f:\Q\rightarrow\R$ pakeisime į
+$f:\R\rightarrow\R$, tai Cauchy funkcinę lygtį išspręsti pasidarys labai
+sudėtinga. Racionaliesiems skaičiams ir toliau galios $f(q)=kq$, tad būtų
+visai natūralu manyti, kad  $f(x)=kx$ visiem realiesiems $x$, tačiau
+įrodyta, kad egzistuoja begalybė labai neelementarių, netiesinių
+sprendinių. Jų egzistenciją priimsime be įrodymo ir žvilgtelsime į labai
+svarbią šių sprendinių savybę:
+
+\begin{thm}
+  Tarkime, turime funkciją $f:\R\to\R$, kuri tenkina Cauchy funkcinę lygtį ir
+  $f(q)=q$ visiems $q\in\Q$, o kažkokiam $\alpha\in\R: f(\alpha) \neq
+  \alpha$. Duoti trys skaičiai $x, y, r \in \Q$, $r>0$, $x\neq y$.  Jei $(x,
+  y)$ pažymėsime apskritimo centro kordinates, o $r$ - jo spindulį, tai
+  nesvarbu, kokius $x, y, r$ parinksime, tame apskritime visados galėsime
+  rasti funkcijos $f$ grafiko tašką.
+\end{thm}
+
+\begin{proof}[Įrodymas]
+  Tarkime, kad $f(\alpha)=\alpha+\delta,$ $\delta\not=0$. Pažymėkime
+  $\beta=\frac{y-x}{\delta}$. Aišku, kad įmanoma pasirinkti tokį racionalų
+  skaičių $b\not=0$, kad: $|\beta-b|<\frac{r}{2|\delta|}$, ir tokį racionalų
+  skaičių $a$, kad: $|\alpha-a|<\frac{r}{2|b|}$. Pažymėkime $X=x+b(\alpha-a)$. Tada
+  \begin{align*}
+    f(X) & =f(x+b(\alpha-a))\\
+    & = x+bf(\alpha)-bf(a)\\
+    & = y-\delta\beta+b(\alpha+\delta)-ba\\
+    & = y+b(\alpha-a)-\delta(\beta-b).
+  \end{align*}
+  Aišku, kad $x-r<X<x+r$ ir $y-r<f(X)<y+r$, todėl taškas $(X,f(X))$ bus mūsų
+  apskritimo viduje.
+\end{proof}
+
+\begin{pastaba}
+  Nors teoremą įrodėme tik atveju, kai $f(q)=q$ visiems $q \in \Q$, nesunku
+  įsitikinti, kad teorema galios ir bendru atveju, kai $f(q)=kq$.
+\end{pastaba}
+
+Jei sugebėtume nupiešti Cauchy lygties netiesinio sprendinio grafiką, tokio
+grafiko taškų galėtume rasti, kur tik sugalvotume, visoje begalinėje
+plokštumoje - išties labai žavu ir gražu, bet taip pat aišku, kad rimtai
+sprendžiant uždavinius, geriau su šiais sprendiniais neprasidėti. Jei
+turime funkciją iš realiųjų į realiuosius ir lygtis susiveda į Cauchy
+lygtį, reikia ieškoti kažkokių papildomų sąlygų, kurios leistų atmesti
+,,žaviuosius'' Cauchy lygties sprendinius.
+
+\subsubsection{Papildomos sąlygos}
+Naudodamiesi paskutiniąja teorema nesunkiai galime sugalvoti keletą sąlygų,
+leisiančių atmesti imantriuosius netiesinius sprendinius. Tarkime,
+$f:\R\rightarrow\R$ - funkcija visiems realiesiems tenkinanti Cauchy
+funkcinę lygtį. Tada:
+
+\begin{thm}
+  Jei egzistuoja intervalas $(a,b)$, kuriame funkcija $f$ aprėžta (t.y.
+  $f(x)>m$ arba $f(x)<M$ su visomis $x\in(a,b)$ reikšmėmis, $m$, $M$ -
+  konstantos), tai $f$ - tiesinė.
+\end{thm}
+
+\begin{proof}[Įrodymas]
+  Iš tikrųjų, iš antrosios teoremos seka, kad jei $f$ - netiesinė, tai ji
+  gali bet kuriame intervale įgyti reikšmę iš bet kokio mūsų norimo
+  intervalo, vadinasi, jei $f$ yra apribota kažkokiame intervale, tai ji gali
+  būti tik tiesinė.
+\end{proof}
+
+\begin{thm}
+  Jei egzistuoja intervalas, kuriame $f$ yra monotoninė, tai $f$ - tiesinė.
+\end{thm}
+
+\begin{proof}[Įrodymas]
+  Jei $f$ - monotoninė kažkokiame intervale (jei intervalas neuždaras, tai
+  galime paimti kokią nors jo uždarą dalį), tai tame intervale ji bus ir
+  aprėžta - egzistuos jos maksimumas arba minimumas, taigi, ji gali
+  būti tik tiesinė.
+\end{proof}
+
+\begin{thm}
+  Jei egzistuoja intervalas, kuriame $f$ yra tolydi, tai $f$ - tiesinė.
+\end{thm}
+
+\begin{proof}[Įrodymas]
+  Jei $f$ - tolydi kažkokiame intervale (jei intervalas neuždaras, tai
+  galime paimti kokią nors jo uždarą dalį), tai tame intervale ji ir aprėžta,
+  taigi, ji gali būti tik tiesinė.
+\end{proof}
+
+Trys pastarosios teoremos - klasikiniai, gerai žinomi faktai. Naudojant jas
+kokioje nors rimtoje olimpiadoje įrodyti jų nebūtina.
+
+\subsubsection{Pavyzdžiai}
+
+\begin{pavnr}
+  Raskite visas funkcijas $f:\Q\to\R$, kurios su visomis racionaliųjų
+  skaičių poromis $x$ ir $y$ tenkina $f(x+y)=f(x)+f(y)+xy(x+y)$.
+\end{pavnr}
+
+\begin{sprendimas}
+  Pakeiskime - $f(x)=g(x)+\frac{x^{3}}{3}$. Įstatę į pradinę lygtį gausime
+  $g(x+y)=g(x)+g(y)$, t.y. Cauchy funkcinę lygtį racionaliesiems skaičiams.
+  Gauname $g(x)=kx$, kur $k$ - kažkokia realioji konstanta, o tada
+  $f(x)=kx+\frac{x^{3}}{3}$.
+\end{sprendimas}
+
+
+\begin{pavnr}
+  Raskite visas funkcijas $f:\R\to\R$, kurios su visomis realiųjų
+  skaičių poromis $x$ ir $y$ tenkina $f(x+y)=f(x)+f(y)$, ir su visais
+  $x\not=0$ tenkina $f(x)f(\frac{1}{x})=1$.
+\end{pavnr}
+
+\begin{sprendimas}
+  Turime Cauchy funkcinę lygtį realiesiems skaičiams, taigi, iš duotosios
+  sąlygos $f(x)f(\frac{1}{x})=1$ reikia išpešti ką nors naudingo. Iš šios
+  sąlygos išplaukia, kad $f(x)$ ir $f(\frac{1}{x})$ yra vienodo ženklo, t.y.
+  abu neigiami arba teigiami. Įstatę į Cauchy lygti $y=\frac{1}{x}$ gausime:
+  $$|f(x+\frac{1}{x})|=|f(x)|+|f(\frac{1}{x})|\geq2\sqrt{|f(x)|*|f(\frac{1}{x})|}=2.$$
+  Reiškinys $x+\frac{1}{x}$, keičiant $x$, įgauna bet kokią reikšmę iš
+  intervalo $[2,+\infty)$, vadinasi intervale $[2,+\infty)$ $f(x)\geq2$, arba
+  $f(x)\leq-2$. Gavome, kad funkcija šiame intervale yra savotiškai aprėžta
+  (neįgauna reikšmių iš intervalo $(-2,2)$), tad galime atmesti netiesinius
+  Cauchy lygties sprendinius. Belieka į antrą sąlygą įstatyti $f(x)=kx$.
+  Gausime $k=1$ arba $k=-1$, ir, nesunku patikrinti, kad sprendiniai $f(x)=x$ ir
+  $f(x)=-x$ tiks.
+\end{sprendimas}
+
+\begin{pavnr}
+  Raskite visas funkcijas $f:\R\to\R$, kurios su visomis realiųjų skaičių
+  poromis $x$ ir $y$ tenkina $f(xy)=f(x)f(y)$ ir $f(x+y)=f(x)+f(y).$
+\end{pavnr}
+
+\begin{sprendimas}
+  Pirmoje lygtyje pakeitę $y=x$ gausime, kad $f(x^{2})=f(x)^{2}$, vadinasi,
+  visiems neneigiamiems $x$, $f(x)\geq0$ ir intervale $[0,+\infty)$ funkcija
+  yra aprėžta. Tada $f(x)=kx$. Patikrinę randame, kad tiks tik $k=1$.
+\end{sprendimas}
+
+\begin{pavnr}
+  Raskite visas funkcijas $f:\R\to\R$, kurios su visomis realiųjų
+  skaičių poromis $x$ ir $y$ tenkina $f(xy)=f(x)f(y)$ ir intervale
+  $(0,+\infty)$ yra monotoniškos.
+\end{pavnr}
+
+\begin{sprendimas}
+  Statykime $x=y=0$, gausime $f(0)=0$, arba $f(0)=1$. Jei $f(0)=1$, tai
+  įsistatę $x=0$ gausime $f(x)=1$ visiems $x$, tad nagrinėkime atvejį, kai
+  $f(0)=0$.
+
+  Tarkime, kad egzistuoja $z\not=0$, toks, kad $f(z)=0$. Tada pradinėje
+  lygtyje paėmę $x=\frac{x}{z}$ ir $y=z$ gausime $f(y)=0$ visiems $y$.
+
+  Belieka išnagrinėti atvejį, kai $f(0)=0$ ir su jokia kita reikšme funkcija
+  nelygi nuliui. Pradinėje lygtyje įstatę $y=x$ gausime, kad
+  $f(x^{2})=f(x)^{2}$, arba $f(x)>0$, kai $x>0$. Vadinasi teigiamiems $x,y$
+  galios:
+  $$\ln f(xy)=\ln f(x)f(y)=\ln f(x) + \ln f(y).$$
+  Pažymėję $\ln f(x)=g(x)$, gausime $g(xy)=g(x)+g(y)$. Aišku, kad ir funkcija
+  $g$ yra monotoniška. Kintamieji $x$ ir $y$ teigiami, taigi galime pakeisti
+  $x=e^{x}$, $y=e^{y}$. Gausime $$g(e^{x+y})=g(e^{x})+g(e^{y}).$$ Pažymėję dar
+  kartą $h(x)=g(e^{x})$, gausime, kad $h$ - monotoninė ir jai galioja
+  $$h(x+y)=h(x)+h(y),$$ taigi $h(x)=kx$. Lieka grįžti atgal - $g(e^{x})=kx$,
+  kur pakeitę $x=\ln x$, gausime $g(x)=k \ln x=\ln x^{k}$. Vadinasi, $\ln
+  f(x)=\ln x^{k}$, arba $f(x)=x^{k}$, kur  $k$ - kažkoks realusis, o $x$ -
+  teigiamas.
+
+  Lieka rasti tik reikšmes neigiamiems skaičiams. Statykime į pagrindinę lygtį
+  $x=y=-1$, gausime $f(-1)=-1$, arba $f(-1)=1$. Tuomet įsistatę į lygtį $y=-1$
+  gausime $f(x)=-f(-x)$, arba $f(x)=-f(x)$. Pirmu atveju neigiamiems $x$
+  gausime $f(x)=x|x|^{k-1}$, antruoju: $f(x)=|x|^{k}$. Taigi, visus sprendinius
+  galime užrašyti taip:
+  $$f(x)=0,  \hspace{13 mm}
+  f(x)=
+  \left\{\begin{array}{cc}
+    x^{k}, & x>0,\\
+    0, & x=0,\\
+    |x|^{k}, & x<0;\\
+  \end{array}  \right.\hspace{10 mm}
+  f(x)=
+  \left\{\begin{array}{cc}
+    x^{k}, & x>0,\\
+    0, & x=0,\\
+    x|x|^{k-1}, & x<0.\\
+  \end{array}  \right. $$
+  \mbox{}
+
+\end{sprendimas}
+
+
+Prie šio pavyzdžio galėtume paminėti dar dvi dažnai pasitaikančias
+paprastesnes, vadinamąsias "Cauchy tipo" lygtis - $t(x+y)=t(x)t(y)$ ir
+$z(xy)=z(x)+z(y)$. Turint atitinkamus apribojimus (tolydumas,
+monotoniškumas (aprėžtumas netiks, nes darant ketinius jis dingsta)) jų
+sprendiniai yra atitinkamai $t(x)=a^x$ ir $z(x)=log_a x$, ir sprendžiamos
+jos analogiškais keitiniais.
+
+\subsubsection{Uždaviniai}
+
+\begin{enumerate}
+  \item Raskite visas funkcijas $f:\Q\to\R$, kurios su visomis
+    racionaliųjų skaičių poromis $x$ ir $y$ tenkina $f(x+y)=f(x)+f(y)+2xy$.
+    %Pasižymėkime $f(x)=g(x)+x^2$. Gausime $g(x+y)=g(x)+g(y)$. Tada
+    %$g(x)=kx$, ir $f(x)=kx+x^2$. Nesunku patikrinti, kad sprendinys tiks.
+  \item Raskite visas funkcijas $f:\Q\to\R$, kurios su visomis
+    racionaliųjų skaičių poromis $x$ ir $y$ tenkina $f(x+f(y))=f(x+1)+y$.
+    %Pasižymėkime $f(x)=g(x)+1$. Gausime $g(x+1+g(y))=g(x+1)+y$, arba
+    %$g(t+g(y))=g(t)+y$. Iš čia nesunku įsitikinti, kad funkcija bijektyvi.
+    %Įstatę $t=y=0$, gausime $g(0)=0$, o paskui įstatę $t=0$ - $g(g(y))=y$.
+    %Tada prieš tai gautoje lygtyje pakeitę $y=g(y)$, gausime Cauchy
+    %funkcinę lygtį, iš kur $g(x)=kx$. Nesunku patikrinti, kad tiks tik
+    %$k=1$ arba -1. Randame sprendinius $f(x)=x+1$ arba $f(x)=1-x$.
+  \item Raskite visus tolydžių funkcijų  $f,g,h:\R\to\R$ trejetus,
+    kurie su visomis realiųjų skaičių poromis $x$ ir $y$ tenkina
+    $f(x+y)=g(x)+h(y)$.
+    %Statykime $x=y=0$. Gausime $h(0)=f(0)-g(0)$. Paimkime pradinėje
+    %lygtyje $y=0$. Tada turėsime $g(x)=f(x)-h(0)=f(x)+g(0)-f(0)$. Paimkime
+    %pradinėje lygtyje $x=0$. Gausime $h(y)=f(y)-g(0)$. Įstatę gautas
+    %$g(x)$ ir $h(y)$ išraiškas į pradinę lygtį gausime:
+    %$f(x+y)=f(x)+f(y)-f(0)$. Įsivedę keitinį $i(x)=f(x)-f(0)$, gausime,
+    %kad $i$ tenkina Cauchy funkcinę lygtį ir yra tolydi vadinasi
+    %$i(x)=kx$. Tada, jei pažymėsime $f(0)=a$ ir $g(0)=b$, gausime
+    %$f(x)=kx+a$, $g(x)=kx+b-a$, $h(x)=kx-b$
+    %
+    %Įstatę į pradinę lygtį, gausime, kad $a=0$, o $k$ ir $b$ - bet kokios
+    %realiosios konstantos.
+  \item Raskite visas funkcijas $f:\R\to\R$, kurios su visomis realiųjų
+    skaičių poromis $x$ ir $y$ tenkina $f(xy)=f(x)f(y)-f(x+y)+1$.
+    %Pasižymėkime $f(x)=g(x)+1$. Tada pradinė lygtis virs
+    %$g(xy)+g(x+y)=g(x)g(y)+g(x)+g(y)$. Įsistatę $x=y=0$ gausime $g(0)=0$.
+    %Tada, pažymėję $g(1)=k$, po nesudėtingos indukcijos gausime
+    %$$g(n)=k^{n}+k^{n-1}+...+k, \forall \, n\in\N.$$ Jei $g(1)=1$, tai gausime
+    %$g(n)=n$, kitu atveju $g(n)=\frac{k^{n+1}-1}{k-1}-1$. Įstatę į
+    %prieš tai turėtą lygtį ir išprastinę gausime
+    %$$k^{xy+2}-k^{xy+1}-k^{x+y+1}=k^{2}-k^{x+1}-k^{y+1}.$$ Čia galime
+    %statyti bet kokius naturaliuosius $x$ ir $y$. Tą darydami, nesunkiai
+    %gausime $k=1,0,-1$. Kai $k=0$ gausime sprendinį $f(x)=1$. Kai $k=-1$,
+    %nesunkiai gausime prieštarą. Kai $k=1$, pradinėje lygtyje įstatę $x=1,
+    %y=-1$ gausime $g(-1)=-1$. Tada pradinėje lygtyje paėmę $y=-1$, o
+    %paskui $x=-x, y=1$ ir sudėję abi gautas lygybes gausime $-g(x)=g(-x)$
+    %visiems $x\in\R$. Tada pradinėje lygybėje paėmę $x=-x,y=-y$ ir
+    %pritaikę paskutiniąją lygybę gausime:
+    %$g(xy)-g(x+y)=g(x)g(y)-g(x)-g(y)$. Sudėję su pradine lygybę
+    %gausime $g(x+y)=g(x)+g(y)$ ir $g(xy)=g(x)g(y)$, iš ko, kaip jau matėme
+    %pavyzdyje, gausime $g(x)=x$. Taigi, šios lygties sprendiniai yra
+    %$f(x)=x+1$ ir $f(x)=1$.
+  \item Raskite visas funkcijas $f:\R\to[0,+\infty)$, kurios su visomis
+    realiųjų skaičių poromis $x$ ir $y$ tenkina
+    $f(x^{2}+y^{2})=f(x^{2}-y^{2})+f(2yx)$.
+    %Nesunku atspėti, kad $f(x)=x^2$ yra lygties sprendinys. Iš čia kyla
+    %idėja įsivesti keitinį $f(x)=g(x^2)$, visiems $x\geq 0$. Gausime
+    %$g((x^2-y^2)^2+(2xy)^2)=g((x^2-y^2)^2)+g((2xy)^2)$. Kita vertus, jei
+    %pažymėsime $a=x^2-y^2$ ir $b=2xy$, tai nesunku įsitikinti, kad lygčių
+    %sistema
+    %$$\left\{\begin{array}{cc}
+    %a&=x^2-y^2\\
+    %b&=2xy\\
+    %\end{array}  \right.$$ visados turės sprendinių, kad ir kokius $a$ ir
+    %$b$ pasirinktume (tiesiog išsireikštume iš antros lygties $x$,
+    %įstatytume į pirmą ir gautume kvadratinę lygtį $y^2$ atžvilgiu, kurios
+    %diskriminantas tikrai teigiamas). Tada gautą funkcinę lygtį galime
+    %pasikeisti į $g(a^2+b^2)=g(a^2)+g(b^2)$ , arba į $g(z+t)=g(z)+g(t)$,
+    %kur $z$ ir $t$ bet kokie neneigiami realieji. Kadangi turime
+    %$f:\R\rightarrow[0,+\infty)$, funkcija $g$ bus aprėžta iš apačios ir
+    %galime teigti, kad $g(x)=kx$ visiems neneigiamiems $x$ (nors funkcija
+    %Cauchy lygtį tenkina tik neneigiamiems skaičiams, nesunku įsitikinti,
+    %kad aprėžtumo vistiek užteks). Tada $f(x)=kx^2$ visiems teigiamiems
+    %$x$, bet pradinėje lygtyje paėmę $y=0$, gausim $f(0)=0$, o tada vėl
+    %pradinėje lygtyje paėmę $x=0$ gautume $f(y)=f(-y)$ visiems $y$, taigi
+    %$f(x)=kx^2$ ir neigiamiems $x$.
+  \item Raskite visas funkcijas $f:\R\to\R$, kurios su visomis realiųjų
+    skaičių poromis $x$ ir $y$ ir $2\leq n\in\N$ tenkina
+    $f(x^{n}+f(y))=f^{n}(x)+y$.
+    %Nesunku įsitikinti, kad funkcija bijektyvi. Įstačius $x=0$, $y=x^n$,
+    %gausime: $f(f(x^n))=x^n+f(0)^n$. Iš bijektyvumo aišku, kad egzistuoja
+    %toks $t$, kad  $f(t)=0$ ir $z$, kad  $f(z)=t$. Tada įsistatę pradinėje
+    %lygtyje $y=t$ gausime: $f(x^n)=f(x)^n+t$. Panaudoję tai
+    %ankščiau gautoje lygtyje gauname $f(f(x)^n+t)=x^n+f(0)^n$. Dabar pradinėje
+    %lygtyje pakeitę $x$ į $f(x)$ ir $y$ į $z$, gausime, kad
+    %$f(f(x)^n+t)=f(f(x))^n+z$ ir, sulyginę tai su prieš tai gauta lygtimi,
+    %gausime $f(f(x))^n+z=x^n+f(0)^n$. Galiausiai pagrindinėje lygtyje
+    %paėmę $x=0$ ir $y=x$, gausime $f(f(x))=x+f(0)^n$. Šią $f(f(x))$
+    %išraišką įstatę į prieš tai gautą lygtį gauname:
+    %$(x+f(0)^n)^n+z=x^n+f(0)^n$ visiems $x$, iš kur lengvai gauname
+    %$f(0)=t=z=0$. Tai įstatę į prieš tai turėtas lygtis gausime $f(f(x))=x$
+    %ir $f(x^n)=f(x)^n$. Tada pradinėje lygtyje pakeitę $y$ į $f(y)$
+    %turėsime $f(x^n+y)=f(x^n)+f(y)$, kas jau labai panašu į Cauchy
+    %funkcinę lygtį.  Lyginiams $n$ $f(x+y)=f(x)+f(y)$, kur $x$ teigiamas, o
+    %$y$ - betkoks. Tada paėmę $y=-x$ gauname, kad $f(-x)=-f(x)$ $ \forall
+    %x\geq 0$ ir taip $f(x+y)=f(x)+f(y)$ bet kokiems realiesiems $x,y$.
+    %Tačiau ankščiau turėjome $f(x^n)=f(x)^n$, taigi $f(x)\geq 0$ visiems
+    %$x\geq 0$ ir funkcija yra aprėžta intervale, vadinasi, - pavidalo $kx$.
+    %Patikrinę pradinėje lygtyje gauname, kad tiks tik $k=1$, taigi kai $n$
+    %- lyginis gauname sprendinį $f(x)=x$.
+    %
+    %Kai $n$ - nelyginis, tai iškart gauname, kad $f(x+y)=f(x)+f(y)$ bet
+    %kokiems realiesiems $x,y$. Be to, turėjome, kad $f(x^n)=f(x)^n$, tada
+    %$f(1)=f(1)^n$ ir $f(1)=1,-1$ ($0$ netiks, nes $f$ - injektyvi). Tada
+    %gauname du atvejus: $f(p)=p$ arba $-p$ $\forall p\in\Z$ ir abiem
+    %atvejais galios $f(px)=pf(x)$. Pažymėkime $b_{k}=f(x^k)$,
+    %$k=2,3,...,n$ ir $q=f(x)$. Iš ankščiau gauto rezultato galios
+    %$f((x+p)^n)=(f(x+p))^n=(f(x)+f(p))^n$. Čia galime statyti bet kokį
+    %sveiką $p$ ir tai yra tiesinė lygtis bet kurio  $b_{k}$ atžvilgiu. Tada
+    %keisdami įvairias $p$ reikšmes galime gauti $n-1$ neekvivalenčių
+    %lygčių su $n-1$ kintamųjų $b_{k}$. Tada aišku, kad tokia tiesinių
+    %lygčių sistema turės daugiausiai tik vieną sprendinį. Nesunku
+    %patikrinti, kad pirmam atvejui tiks sprendinys $b_{k}=q^k$, o antram
+    %$b_{k}=-q^k$, lyginiams $k$ ir $b_{k}=q^k$ nelyginiams $k$. Tada pirmu
+    %atveju gausime  $f(x^2)=f(x)^2$, o antru $f(x^2)=-f(x)^2$. Iš čia
+    %funkcija ir vėl aprėžta ir gausime, kad kai $n$ - nelyginis, tiks tik
+    %tiesiniai sprendiniai $f(x)=x$ ir $f(x)=-x$.
+  \item Raskite visus funkcijų  $f,g:\R\rightarrow\R$ dvejetus tokius,
+    kad:\\
+    a) Jei $x<y$, $f(x)<f(y)$.\\
+    b) Visoms realiųjų poroms $x$ ir $y$ galioja $f(xy)=g(y)f(x)+f(y)$.
+    %Įstatę duotojoje lygtyje $x=0$, gausime $f(0)\not=0$, nes kitaip
+    %$f(y)=0$ visiems $y$, bet $f$ -  nekonstanta. Taigi
+    %$g(y)=1-\frac{f(y)}{f(0)}$. Įstatę pradinėję lygtyje $x=y=1$ ir
+    %panaudoję a), gausime $f(1)=0$ ir tada galime pažymėti $f(0)=-k$, kur
+    %$k$ - kažkoks teigiamas skaičius. Tada įstatę $g$ išraišką į pradinę
+    %lygtį gausime $f(xy)=f(x)+f(y)+\frac{f(x)f(y)}{k}$, arba:
+    %$k+f(xy)=(\sqrt{k}+\frac{f(x)}{\sqrt{k}})(\sqrt{k}+\frac{f(y)}{\sqrt{k}})$.
+    %Pakeitę $h(x)=\sqrt{k}+\frac{f(x)}{\sqrt{k}}$, gausime
+    %$\sqrt{k}h(xy)=h(x)h(y)$, o tada pakeitę $h(x)=\sqrt{k}i(x)$:
+    %$i(xy)=i(x)i(y)$. Monotoniškumas niekur nedingo ir šią lygtį jau esamę
+    %sprendę, tad nesunku gauti atsakymą:
+    %
+    %$$f(x)=-k+k\cdot sgn(x)\cdot |x|^a \text{ ir } g(y)=sgn(y)\cdot |y|^a,$$
+    %kur $sgn(x)$ - $x$ ženklo funkcija.
+  \item Raskite visas funkcijas  $u:\R\to\R$, kurioms egzistuoja tokia
+    griežtai monotoninė funkcija $f:\R\to\R$, kad visoms realiųjų poroms
+    $x$ ir $y$ yra teisinga lygybė $f(x+y)=u(y)f(x)+f(y)$.
+    %Įstatę į pradinę lygtį $x=y=0$, gausime, kad $f(0)=0$ (jei $u(0)=0$,
+    %$f$ - konstanta). $f$ - griežtai monotoninė, taigi $0$ ji neįgys su
+    %jokia kita argumento reikšme. Iš pradinės lygties
+    %$u(y)f(x)+f(y)=f(x+y)=u(x)f(y)+f(x)$. Čia fiksavę $y$, gausime:
+    %$u(x)=\frac{u(y)-1}{f(y)}f(x)+1=Af(x)+1$. Jei $u(z)=1$, visiems
+    %realiesiems $z$, tai egzistuos $f(x)=x$, tenkinanti pradines sąlygas.
+    %Kitu atveju: $f(x+y)=Af(x)f(y)+f(x)+f(y)$. Tada pakeitę $h(x)=Af(x)+1$
+    %gausime $$h(x+y)=h(x)h(y).$$ Tai viena iš Cauchy tipo lygčių, kurias
+    %sutikome ankščiau. Kadangi $f$ monotoninė, $h$ irgi monotoninė ir
+    %$h(x)=b^x$, kur $b>0$. Tada $f(x)=A^{-1}(b^x-1)$ ir $u(y)=b^y$ bus
+    %sprendiniai. Viską apibendrinus, $u(x)=b^x$, kur $b>0$ (įskaitant ir
+    %$b=1$), bus vienintelės sąlygas tenkinančios funkcijos.
+  \item Raskite visas funkcijas $f:(-1,1)\rightarrow\R$, kurios su visomis
+    realiųjų skaičių poromis $x$ ir $y$ tenkina
+    $f(\frac{x+y}{1+xy})=\frac{f(x)f(y)}{|1+xy|}$ ir yra tolydžios.
+    %Pirmiausiai darykime keitinį $f(x)=g(x)|1+x|$. Pradinė lygtis taps:
+    %$g(\frac{x+y}{1+xy})=g(x)g(y)$. Pastebėkime, kad reiškinys
+    %$\frac{x+y}{1+xy}$ primena tangentų sumos formulę, tačiau tangentas
+    %nepaprastas, o - hiperbolinis. Hiperbolinis tangentas - tai funkcija
+    %$\tanh (x)=\frac{e^{2x}-1}{e^{2x}+1}$. Nesunku įsitikinti, kad irgi
+    %galios panaši į tangentų sumos formulė, t.y. $\tanh(x+y)=\frac{\tanh
+    %(x)+\tanh (y)}{1+\tanh (x) \tanh (y)}$. Taigi keičiame lygtyje
+    %$x=\tanh(x)$, $y=\tanh(y)$. Gausime $g(\tanh(x+y))=g(\tanh(x))g(\tanh(y))$.
+    %Įsiveskime keitinį $h(x)=g(\tanh(x))$. Gausime lygtį $h(x+y)=h(x)h(y)$.
+    %Galime nesunkiai įsitikinti, kad tolydumas niekur nedingo, tai viena
+    %iš Cauchy tipo lygčių, kurios sprendiniai bus $h(x)=a^{x}$, kur $a\geq
+    %0$. Tada $a^{x}=g(\tanh(x))\implies g(x)=a^{\arctanh(x)}$,
+    %$f(x)=a^{\arctanh(x)}|1+x|$.
+\end{enumerate}
+
+
+
