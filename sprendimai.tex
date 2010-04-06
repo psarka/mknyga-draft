@@ -419,7 +419,7 @@
     baigtiniam skaičiui pirminių $p_1, \ldots p_k$ tenkina $f(p_k) = p_k$,
     visiems kitiems pirminiams $f(p)=1$, o sudėtiniams $a$ turi galioti
     $f(a) \equiv a \m{p_i}$, $i=1\ldots k$.
-    f(p)|p, f(p)=p tik baigtinį skaičių kartų, p|f(n) - n. 
+    $f(p)|p$, $f(p)=p$ tik baigtinį skaičių kartų, $p|f(n) - n$. 
 \item
     Parodysime, kad kiekvienam pirminiam $p$ atsiras toks $n$, kad
     $p|a_n$. Atvejai $p=2$ (tinka visos $n$ reikšmės) ir $p=3$ (tinka
@@ -946,10 +946,9 @@
     $2x^2 + 1$ dalo $9$ tik kai $x=0$, $x=\pm 1$ arba $x=\pm 2$. Tinka tik
     pastarasis, randame sprendinį $(\pm 2, \pm 2)$.
 \item
-    Išskaidę dauginamaisiais $1989 = 13\cdot17\cdot9$ matome, kad
-    $x$ turi dalintis iš $17$, o $y$ iš $13$. Pakeitę $x=17a$, $y=13b$
-    gauname lygtį $17a^2 + 13b^2 = 17\cdot13\cdot 9^2$, iš kurios vėl
-    gauname, kad
+    Išskaidę dauginamaisiais $1989 = 13\cdot17\cdot9$ matome, kad $x$ turi
+    dalintis iš $17$, o $y$ iš $13$. Pakeitę $x=17a$, $y=13b$ gauname
+    lygtį $17a^2 + 13b^2 = 17\cdot13\cdot 9^2$, iš kurios vėl gauname, kad
     $a=13k$, $b=17l$. Įstatę ir suprastinę gauname $13k^2 + 17l^2 = 81$.
     Pastaroji labai paprasta, randame, kad $k=1$, $l=2$, vadinasi pradinės
     lygties sprendinys bus $(17\cdot13, 2\cdot 17\cdot 13)$.
@@ -972,7 +971,7 @@
     $y|x$. Pažymėję $x=ky$ gauname $(ky)^{y} = y^{(k-1)y}$, arba
     $k = y^{k-2}$. Ši lygtis turi tik du sprendinius $k=3,y=3$ ir
     $k=4, y=2$, nes jei $k>4$ tai $k<2^{k-2}\leq y^{k-2}$. Pakeitę atgal,
-    gauname pradinės lygties sprendinius (6,3) ir $(8,2)$.
+    gauname pradinės lygties sprendinius $(6,3)$ ir $(8,2)$.
 \item
     Uždavinys ekvivalentus tokiam - išskaidykite $6!$ į paeiliui einančių
     skaičių sandaugą. Daugiausia jį galima išskaidyti į $6$
@@ -1000,7 +999,7 @@
 \item
     Jei $b=0$, tai lygtis užrašoma kaip $2^a = (c-3)(c+3)$. Vienintėliai
     dvejeto laipsniai besiskiriantys per $6$ yra $2$ ir $8$, randame
-    sprendinį (4,0,5). Tegu $b>0$, tuomet $c$ dalijasi iš trijų ir
+    sprendinį $(4,0,5)$. Tegu $b>0$, tuomet $c$ dalijasi iš trijų ir
     $b\geq 2$. Pažymėję $b-2 = d$, $c = 3n$ gauname $2^a3^d =
     (n-1)(n+1)$. Kadangi $\dbd(n-1, n+1) \leq 2$, tai vienas iš dauginamųjų
     nesidalija iš $3$. Tada jis arba yra lygus $1$, arba dalijasi iš
@@ -1020,10 +1019,10 @@
     Išskaidykime $x^3 = 4(y-1)(3y^2 + 3y -1)$. Kadangi su visomis $y$
     reikšmėmis $3y^2 + 3y - 1 \equiv 2 \m{3}$, tai jis turės pirminį
     daliklį duodantį liekaną $2$ moduliu $3$. Tačiau kairioji lygties pusė
-    tokio daliklio turėti negali, nes moduliu pirminio $p \equiv 2
-    \m{3}$ $-3$ negali būti kvadratinė liekana.  Vadinasi, $3y^2 + 3y - 1$
-    turi būti lygus $-1$, todėl $y=0$ arba $y=-1$. Tinka tik pirmasis,
-    randame sprendinį $(\pm 1,0)$. 
+    tokio daliklio turėti negali, nes $-3$ negali būti kvadratinė liekana
+    moduliu pirminio $p \equiv 2 \m{3}$. Vadinasi, $3y^2 + 3y - 1$ turi
+    būti lygus $-1$, todėl $y=0$ arba $y=-1$. Tinka tik pirmasis, randame
+    sprendinį $(\pm 1,0)$. 
 \end{enumerate} 
 \section*{Algebra}
 \subsection*{Nelygybės}
@@ -1777,8 +1776,8 @@
     Jei funkcija griežtai didėjanti, tai visiems skirtingiems $a>b$
     turėsime $f(a)>f(b)$, todėl funkcija neįgis vienodų reikšmių. 
     
-    Bijektyvi funkcija nebūtinai turi būti monotoniška. Pavyzdžiui
-    $f(x)=\frac{1}{x}$, kai $x\neq 0$ ir $f(0)=0$.
+    Bijektyvi funkcija nebūtinai turi būti monotoniška. Pavyzdžiui,
+    $f(x)=\frac{1}{x}$, kai $x\neq 0$, ir $f(0)=0$.
 \item
     Negali, nes, pavyzdžiui, įstatę $x=0$ matome, kad $f(y)=f(-y)$ su visais $y$.
 \item
@@ -2047,6 +2046,7 @@
     (f(x)-x)^2=0 \Rightarrow f(x)=x.$$
     Jei $f(-1)=-1$, tai $x = \frac{1}{x}$ statome į $f(x)+f(-f(x))=-2x$ ir
     analogiškai gauname $f(x) = -x$.
+%noparse
 \end{enumerate} 
 \subsubsection*{Cauchy funkcinė lygtis}
 \begin{enumerate}
@@ -2189,7 +2189,7 @@
     galios panaši į tangentų sumos formulė, t.y. $\tanh(x+y)=\frac{\tanh
     (x)+\tanh (y)}{1+\tanh (x) \tanh (y)}$. Taigi keičiame lygtyje
     $x=\tanh(x)$, $y=\tanh(y)$. Gausime $g(\tanh(x+y))=g(\tanh(x))g(\tanh(y))$.
-    Įsiveskime keitinį $h(x)=g(\tanh(x))$. Gausime lygtį h(x+y)=h(x)h(y).
+    Įsiveskime keitinį $h(x)=g(\tanh(x))$. Gausime lygtį $h(x+y)=h(x)h(y)$.
     Galime nesunkiai įsitikinti, kad tolydumas niekur nedingo, tai viena
     iš Cauchy tipo lygčių, kurios sprendiniai bus $h(x)=a^{x}$, kur $a\geq
     0$. Tada $a^{x}=g(\tanh(x))\implies g(x)=a^{\arctanh(x)}$,
@@ -2436,4 +2436,4 @@ pakankami.
 
 Uždavinys gracingai neigia nusistovėjusias normas. Vienas begaliniame
 lauke - puikiausiais karys.
-\end{enumerate}
+\end{enumerate} 
