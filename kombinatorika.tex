@@ -5,7 +5,7 @@
 
 Šiame skyriuje nagrinėsime dviejų žaidėjų matematinius žaidimus.
 Dažniausiai pasitaikanti tokių uždavinių sprendimo strategija yra visų
-galimų žaidimo pozicijų padalinimas į dvi dalis, vadinamas laiminčiosiomis
+galimų žaidimo pozicijų aibės padalinimas į dvi dalis, vadinamas laiminčiosiomis
 pozicijomis ir pralaiminčiosiomis pozicijomis. Žaidėjas, būdamas
 laiminčiojoje pozicijoje visuomet gali paeiti taip, kad varžovas atsidurtų
 pralaiminčioje pozicijoje. Šis, savo ruožtu, yra pasmerktas po bet kurio
@@ -27,14 +27,14 @@ garantuoti, kad žaidėjas ėjimą padaryti visuomet galės.
 Nagrinėkime žaidimus su nedideliais $n$. Jei  $n<k+1$, tada laimės $A$. Jei $n =
 k+1$, tada laimi $B$. Dabar jau nesunku pastebėti, kad jeigu akmenukų skaičius
 nėra $k+1$ kartotinis, tada žaidėjas gali jį tokiu padaryti nuimdamas
-reikiamą kiekį akmenukų, o žaidėjas gavęs  $k+1$ kartotinį, negali nuimti
+reikiamą kiekį akmenukų, o žaidėjas, gavęs  $k+1$ kartotinį, negali nuimti
 tiek akmenukų, kad gautų kitą $k+1$ kartotinį. Jei $n$ nėra $k+1$
 kartotinis, tada $A$ visada galės po savo ėjimo palikti $k+1$ kartotinį
 skaičių akmenukų, o kadangi $0$ yra būtent toks, tai jis ir laimės žaidimą.
 Jei $n$ yra $k+1$ kartotinis, panašiai žaisdamas laimi $B$. 
 
 \begin{pastaba}Šiame pavyzdyje visi galimi akmenukų kiekiai padalinami į
-  dvi grupes. Pirmojoje grupėje yra $k+1$ kartotiniai (1), antrojoje - likę
+  dvi grupes. Pirmojoje grupėje yra $k+1$ kartotiniai (1), antrojoje – likę
   skaičiai (2). Iš (2) visada galima patekti į (1), o bet koks ėjimas iš
   (1) veda į (2). 
 \end{pastaba}
@@ -51,7 +51,7 @@ Kadangi $0$ yra dalus iš trijų, tai žaidimą laimės $A$. Jei $ n\equiv0\pmod
 $ žaidimą laimi $B$.
 
 \begin{pastaba}Šiame pavyzdyje visi galimi akmenukų kiekiai padalinami į
-  dvi grupes. Pirmojoje grupėje yra $3$ kartotiniai (1), antrojoje - likę
+  dvi grupes. Pirmojoje grupėje yra $3$ kartotiniai (1), antrojoje – likę
   skaičiai (2). Iš (2) visada galima patekti į (1), o bet koks ėjimas iš
   (1) veda į (2).
 \end{pastaba} 
@@ -74,7 +74,7 @@ antrasis žaidėjas.
 $6$ yra mažiausias skaičius, kuris nėra pirminio skaičiaus laipsnis. Jei $n$
 yra nedalus iš šešių, tada $A$ gali jį padaryti tokį ir taip užsitikrinti,
 kad pats negaus šešių kartotinio. $A$ laimės žaidimą. Jei $n$ yra šešių
-kartotinis panašiai žaisdamas laimi $B$\\
+kartotinis, panašiai žaisdamas laimi $B$.\\
 
 Jei žaidėjas $A$ VISADA gali atlikti tokį ėjimą, po kurio $B$ negali vienu
 ėjimu laimėti žaidimo, tai $B$ NIEKADA ir nelaimės. Jei žaidimas kada nors
@@ -97,7 +97,7 @@ kiekvieno priešininko ėjimo jis galės atlikti dar bent vieną ėjimą.
 \end{pavnr}
 
 Kai $n$ yra nelyginis, tai $A$ pirmu ėjimu spalvina du centrinius
-langelius. Šie langeliai lentos tampa simetrijos ašimi. Kiekvienas lentelės
+langelius. Šie langeliai tampa lentos simetrijos ašimi. Kiekvienas lentelės
 langelis turi sau simetrišką, jie yra suskirstyti į poras. Dabar po bet
 kurio $B$ ėjimo $A$ galės atlikti simetrišką ėjimą centrinių langelių
 atžvilgiu. $A$ žaidėjas niekada nepralaimės. Kadangi langelių skaičius
@@ -105,20 +105,20 @@ baigtinis ir kiekvienu ėjimu sumažėja, tad žaidimas yra baigtinis. Iš šių
 dviejų teiginių seka, kad pirmasis žaidėjas turi laiminčiąją strategiją. 
 
 Kai $n$ yra lyginis, tada, kad ir kokį ėjimą atliktų $A$, $B$ galės atlikti
-simetrišką ėjimą lentelės centro, atžvilgiu. Kadangi žaidimas baigtinis,
+simetrišką ėjimą lentelės centro atžvilgiu. Kadangi žaidimas baigtinis,
 $B$ turės laiminčiąją strategiją. 
 
 \begin{pavnr}
   Žaidimo erdvė yra apvalus stalas. Žaidėjai $A$ ir $B$ pakaitomis deda
   identiškas monetas ant stalo. Monetos negali persidengti. Pralaimi
-  žaidėjas,kuris nebegali atlikti ėjimo. Įrodykite, kad žaidimą laimės $A$. 
+  žaidėjas, kuris nebegali atlikti ėjimo. Įrodykite, kad žaidimą laimės $A$. 
 \end{pavnr}
 
 Pirmu ėjimu $A$ deda monetą taip, kad jos centras sutaptų su stalo centru, o
 vėliau deda monetas simetriškai $B$ padėtoms centrinės monetos atžvilgiu. 
 
 \begin{pavnr}
-  Apskritime pažymėta $n$ taškų iš eilės sunumeruotų skaičiais $1,2...,n$. Šis
+  Apskritime pažymėta $n$ taškų, iš eilės sunumeruotų skaičiais $1,2,\ldots,n$. Šis
   apskritimas yra žaidimo $A(n)$ erdvė. Du žaidėjai $P$ ir $L$ paeiliui brėžia po
   stygą, jungiančią du taškus, kurių numeriai yra vienodo lyginumo. Pradeda
   $P$. Leidžiama jungti tik taškus, kurie nėra sujungti su nė vienu kitu.
@@ -136,20 +136,20 @@ išdėlioti taisyklingojo $n$-kampio viršūnėse; tai žaidimo eigai ir baigči
 įtakos neturi.
 
 Nagrinėsime žaidimus $A(n)$, kai  $n=4k$. Parodysime, kad juos laimi $P$.
-Apskritimo taškai priklausantys vienam skersmesniui yra vadinami
+Apskritimo taškai, priklausantys vienam skersmeniui, yra vadinami
 diametraliai priešingais. Šiuo atveju visų diametraliai priešingų taškų
 lyginumas yra vienodas. Pirmo ėjimo metu P tereikia sujungti bet kuriuos
 diametraliai priešingus taškus. Nubrėžtas skersmuo tampa apskritimo
 simetrijos ašimi. Kiekvienas taškas turi sau simetrišką šio skersmens
-atžvilgiu, suskirstome simetriškus taškus į poras. Pastebime, kad L negali
+atžvilgiu. Suskirstę simetriškus taškus į poras pastebime, kad L negali
 brėžti stygos iš karto per du vienos poros taškus, kitaip ši kirstų
 simetrijos ašį. Į kiekvieną L nubrėžtą stygą P atsako simetriška šiai
-skersmens atžvilgiu, parodysim, kad jis visada galės tai padaryti. P
+skersmens atžvilgiu. Parodysime, kad jis visada galės tai padaryti. P
 taktika garantuoja, kad po kiekvieno jo ėjimo arba abu poros taškai yra
 laisvi arba per abu eina po stygą (1). Tarkime, kad L sujungia taškus A ir B, jiems
 simetriški atitnkamai yra C ir D (jie yra tikrai laisvi pagal (1)).
 Tarkime, kad P negali sujungti taškų C ir D, tada tarp jų yra taškas E ir
-styga CD kerta stygą EF. Bet jau yra nubrėžta styga simetriška CF (1), o ši
+styga CD kerta stygą EF. Bet jau yra nubrėžta styga, simetriška CF (1), o ši
 kerta AB. Gavome prieštarą. Žaidimą laimi P. 
 
 Kada $n=4k+2$, laimi L. Dabar diametraliai priešingų taškų lyginumas yra
@@ -191,12 +191,12 @@ $4\times 4$ po to, kai $A$ į centrinį $2\times 2$ įrašė antrąjį savo
 kad $A$ negali laimėti šio žaidimo, nesunkiai galime parodyti, kad $B$ visada
 laimės. Pabandykite tai padaryti patys.  
 
-\subsubsection{Netiesioginiai sprendimai (\emph{non-constructive})}
+\subsubsection{Netiesioginiai sprendimai (\emph{non-constructive solutions})}
 
 Nagrinėtuose uždaviniuose mes pateikėme strategijas, kuriomis
 vadovaudamasis $A$ arba $B$ visada galės laimėti žaidimą. Tačiau kartais tai
 daryti yra visai nebūtina. Jei klausiama, ar žaidėjas $A$ visada gali
-laimėti, mums nereikia nurodyti būdo, kaip $A$ tai gali padaryti. Užtenka
+laimėti, neprivalome nurodyti būdo, kaip $A$ tai gali padaryti. Užtenka
 parodyti, kad $A$ galiausiai pasieks pergalę. Tokie sprendimai, nesiūlantys
 algoritmo pergalei pasiekti, vadinami netiesioginiais sprendimais. 
 
@@ -234,7 +234,7 @@ $B$, dabar jau jis turi laiminčiąją strategiją. Gavome prieštarą. Vadinasi
 $A$ turi nepralaiminčiąją strategiją. 
 
 \begin{pastaba}
-  Atkreipkite dėmesį, kad šis žaidimas gali tęsti be galo ilgai.
+  Atkreipkite dėmesį, kad šis žaidimas gali tęstis be galo ilgai.
 \end{pastaba}
 
 \begin{pavnr}{(Žaidimas CHOMP)}
@@ -256,7 +256,7 @@ atsidurti laiminčioje pozicijoje. Prieštara. Vadinasi žaidimą visada laimės
 $A$. 
 
 \begin{pavnr}{(Tournament of Towns 2005)}
-  Matelotas ir Kauntelotas nori išsidalinti $25$ monetas, kurių vertės yra $1, 2, 3 \dots
+  Matelotas ir Kauntelotas nori išsidalinti $25$ monetas, kurių vertės yra $1, 2, 3, \dots
   , 25$ kapeikos. Kiekvienu ėjimu vienas žaidėjas pasirenka monetą, o kitas
   nusprendžia, kuriam iš jų jinai atiteks. Pirmasis monetą renkasi, žinoma,
   Matelotas, o kitus monetų pasirinkimus atlieka tas, kuris tuo momentu turi
@@ -273,12 +273,12 @@ tokio ėjimo Matelotas niekaip negali surinkti daugiau kapeikų. Kauntelotas lai
 \subsubsection{Žaidimas NIM}
 
 \begin{api}
-  Bešaliu (angl. impartial) žaidimu vadinsime tokį, kuriame aibės ėjimų, kuriuos
+  \emph{Bešaliu} (angl. \emph{impartial}) žaidimu vadinsime tokį, kuriame aibės ėjimų, kuriuos
   gali atlikti abu žaidėjai, yra identiškos.
 \end{api}
 
 \begin{api}
-  Dviejų žaidėjų žaidimas yra Normalus (angl. normal), jei jis yra bešalis ir laimi
+  Dviejų žaidėjų žaidimas yra \emph{normalus} (angl. \emph{normal}), jei jis yra bešalis ir laimi
   tas, kuris atliko paskutinį ėjimą.
 \end{api}
 
@@ -287,7 +287,7 @@ Klasikinis tokio žaidimo pavyzdys yra NIM:
 \begin{api}
   Žaidimo erdvė yra $n$ krūvelių su įvairiais akmenukų kiekiais jose. Du
   žaidėjai paeiliui atlieka ėjimus imdami akmenukus. Žaidėjas gali paimti
-  kiek nori akmenukų iš pasirinktosi krūvelės (turi paimti bent vieną
+  kiek nori akmenukų iš pasirinktos krūvelės (turi paimti bent vieną
   akmenuką). Pralaimi tas žaidėjas, kuris nebegali atlikti ėjimo.
 \end{api}
 
@@ -296,8 +296,8 @@ paprastesnius žaidimo atvejus:
 
 \begin{enumerate}
   \item Žaidimo erdvė yra dvi krūvelės, kuriose atitinkamai yra po $21$ ir
-    $20$ akmenukų. Žaidėjas pasirenka krūvelę ir suvalgo visus akmenukus
-    esančius joje. Likusią krūvelę padalina į dvi (nebūtinai netuščias)
+    $20$ akmenukų. Žaidėjas pasirenka krūvelę ir suvalgo joje esančius akmenukus.
+    Likusią krūvelę padalina į dvi (nebūtinai netuščias)
     krūveles. Laimi tas žaidėjas, kuris suvalgo paskutinį akmenuką. Kuris
     žaidėjas turi laiminčiąją strategiją? Su kokiais krūvelių dydžiais
     antrasis žaidėjas turi laiminčiąją strategiją? 
@@ -309,18 +309,18 @@ paprastesnius žaidimo atvejus:
     akmenukai.
 \end{enumerate} 
 
-NIM sprendimo pagrindas yra vadinamasis NIM sumavimas. Užsirašykime
+NIM sprendimo pagrindas yra vadinamasis NIM sumavimas. Užrašykime
 kiekvienos krūvelės akmenukų skaičių dvejetaine sistema. Atlikdami paprastą
-sumavimą stulpeliu  mes įsimename, kiek dešimčių turime pernešti į kitą
-eilę, o NIM sumavimas yra sumavimas be pernešimų, sudedame atskirai
-kiekvieną stulpelį. NIM sumavimas aprašomas naudojant simbolį $\otimes$.
+sumavimą stulpeliu įsimename, kiek dešimčių turime pernešti į kitą
+eilę, o NIM sumavimas yra sumavimas be pernešimų – sudedame atskirai
+kiekvieną stulpelį. NIM sumavimas žymimas simboliu $\otimes$.
 Panagrinėkime pavyzdį su  $21$, $17$, $15$ akmenukų. 
 
 $$10101$$$$10001$$$$01111$$$$---$$$$01011$$
 
 $21 \otimes 17 \otimes 15=11$. Matome, kad stulpelio vertė lygi nuliui, jei
 tame stulpelyje yra lyginis skaičius vienetų, ir lygi vienetui, jei vienetų
-skaičius yra nelyginis. NIM sumą sudarytą vien iš nulių vadinsime pozicija
+skaičius yra nelyginis. NIM sumą, sudarytą vien iš nulių, vadinsime pozicija
 $(*)$. 
 
 \begin{teig}
@@ -393,7 +393,7 @@ $(0)$, tai jis pralaimės. Kitu atveju $A$ laimi.
   $3$,$4$,$5$ ir $6$. $A$ ir $B$ atlieka ėjimus pakaitomis. Galima atlikti
   du ėjimus:
   \begin{enumerate}
-    \item Paimti vieną akmenuką iš krūvelės, jei joje lieka nemažiau negu $2$.
+    \item Paimti vieną akmenuką iš krūvelės, jei joje lieka ne mažiau negu $2$.
     \item Paimti visą krūvelę iš trijų arba dviejų akmenukų.
   \end{enumerate}
   Laimi tas, kuris atlieka paskutinį ėjimą. Kuris žaidėjas gali visada laimėti?
@@ -419,11 +419,11 @@ krūvelės. Taigi į kiekvieną $B$ ėjimą $A$ gali atsakyti dar bent vienu, o
 \begin{thm}[Zermelo]
 Baigtiniame pilnos informacijos dviejų žaidėjų žaidime, kuriame žaidėjai
 atlieka ėjimus pakaitomis ir nėra sėkmės faktoriaus, kuris nors žaidėjas
-privalo turėti laiminčiąją strategiją, jei negalimos lygiosios arba
-nepralaiminčią, jei jos galimos. 
+privalo turėti laiminčiąją strategiją, jei negalimos lygiosios, arba
+nepralaiminčiąją, jei jos galimos. 
 \end{thm}
 
-Kiekvieną baigtinio žaidimo partiją galime užrašyti kaip seriją ėjimų
+Kiekvieną baigtinio žaidimo partiją galime užrašyti kaip seriją ėjimų,
 atliekamų pakaitomis. Kiekvieną partiją laimi vienas arba kitas žaidėjas.
 Baigtinį žaidimą galime užrašyti kaip baigtinį skaičių galimų partijų
 (tai nebūtinai pavyks, jei kuris nors žaidėjas kokioje nors situcajoje
@@ -445,7 +445,7 @@ baigtinis (baigsis, kad ir kaip žaistų priešininkas). Kaip žaidėjui laimėt
 \begin{enumerate}
 
 \item Žaidėjai $A$ ir $B$ paeiliui laužia šokolado plytelę  $m\times n$ išilgai
-  linijų ir atsilaužtą dalį suvalgo. Apatinis kairys langelis yra
+  linijų ir atsilaužtą dalį suvalgo. Apatinis kairysis langelis yra
   užnuodytas, jį suvalgęs žaidėjas pralaimi. Su kokiomis $m$ ir $n$ reikšmėmis
   žaidėjas $B$ turi laiminčiąją strategiją? 
 
@@ -462,7 +462,7 @@ baigtinis (baigsis, kad ir kaip žaistų priešininkas). Kaip žaidėjui laimėt
 %Žaliaūsio užimtam lentos horizantaliosios (arba vertikaliosios) ašies
 %atžvilgiu. 
 
-\item Pradžioje $n=2$. $A$ ir $B$ pakaitomis prideda prie turimo skaičiaus $n$ bet kokį jo daliklį, kuris nėra lygus $n$, ir priešininkui pateikia naująjį $n$. Laimi tas, kuris parašo skaičių nemažesnį už $1990$. Kas laimės?
+\item Pradžioje $n=2$. $A$ ir $B$ pakaitomis prideda prie turimo skaičiaus $n$ bet kokį jo daliklį, kuris nėra lygus $n$, ir priešininkui pateikia naująjį $n$. Laimi tas, kuris parašo skaičių ne mažesnį už $1990$. Kas laimės?
 
 % Pirmu ėjimu $A$ prideda 1 ir gauna $n=3$. Dabar $A$ visada galės paeiti
 % taip, kad $B$ gautų nelyginį skaičių, o po šio ėjimo $A$ atitektų
@@ -474,7 +474,7 @@ baigtinis (baigsis, kad ir kaip žaistų priešininkas). Kaip žaidėjui laimėt
 \item  $n\times n$ šachmatų lentos kairiajame apatiniame kampe guli akmenukas. $A$ ir $B$ ėjimus atlieka pakaitomis, pradeda A. Žaidėjai gali pastumti akmenuką į gretimą langelį, kuris dar niekada nebuvo aplankytas. Laimi tas, kuris atlieka paskutinį ėjimą.\\
   1) Kas laimi su lyginiais $n$? \\
   2) Kas laimi su nelyginiais $n$? \\
-  3) Kas laimi, jei žaidimo pradžioje akmenukas yra gretimame kampiniui langelyje?
+  3) Kas laimi, jei žaidimo pradžioje akmenukas yra gretimame kampiniam langelyje?
 
 %1) Lentą galima padalinti į stačiakampius $2\times 1$. $A$ tereikia
 %pereiti į gretimą to pačio stačiakampio langelį. $B$ tada turės pereiti į
@@ -513,8 +513,8 @@ baigtinis (baigsis, kad ir kaip žaistų priešininkas). Kaip žaidėjui laimėt
   Taisyklės nurodytos netiesioginių sprendimų skyrelyje. Sugalvokite
   strategiją, kuri pelnytų pirmajam žaidėjui pergalę atvejais: \\
   1) $m=n$. \\
-  2) $m=2$, $n$ \\
-  3) $m$ ir $n$ bet kokie natūralieji.
+  2) $m=2$, $n$ \\ % n = ?
+  3) $m$ ir $n$ – bet kokie natūralieji skaičiai.
 
 %1) $A$ tereikia atlaužti kvadratą $ m-1\times m-1 $ ir tada laužti
 %simetriškai įstrižainei.\\
@@ -524,7 +524,7 @@ baigtinis (baigsis, kad ir kaip žaistų priešininkas). Kaip žaidėjui laimėt
 %peržvelkite savo sprendimą : ] 
 
 \item Duotas trikampis pyragas, kurio plotas yra vienetas. $A$ renkasi tašką
-  $X$ trikampio plokštumoje. $B$ pjauna tiese einančia per $X$. Kokį
+  $X$ trikampio plokštumoje. $B$ pjauna tiese, einančia per $X$. Kokį
   didžiausią plotą $B$ gali atsipjauti?
 
 %$A$ renkasi pusiaukraštinių susikirtimo tašką, o $B$ brėžia per jį tiesę,
@@ -544,7 +544,7 @@ baigtinis (baigsis, kad ir kaip žaistų priešininkas). Kaip žaidėjui laimėt
 \item \text{[All Russian Olympiad 1992]} Krūvelėje yra $N$ akmenukų.
   Žaidėjas gali paimti $k$ akmenukų, kur $k$ dalina akmenukų skaičių paimtą
   priešininko jo paskutinio ėjimo metu. Pirmu ėjimu pirmasis žaidėjas gali
-  paimti kiek nori akmenukų išskyrus $1$ ir $N$. Laimi tas, kuris paima
+  paimti kiek nori akmenukų, išskyrus $1$ ir $N$. Laimi tas, kuris paima
   paskutinį akmenuką. Su kokiu mažiausiu $N\geq 1992$ antrasis žaidėjas
   turi laiminčiąją strategiją?
 
@@ -616,8 +616,8 @@ baigtinis (baigsis, kad ir kaip žaistų priešininkas). Kaip žaidėjui laimėt
 
 \item \text{[All Russian Olymnpiad 1994]} Žaidėjai $A$, $B$ paeiliui atlieka ėjimus su
   žirgu  $1994\times 1994$ šachmatų lentoje. $A$ atlieka horizontalius (pereina
-  į gretimą eilutę) ėjimus, o $B$ - vertikalius. $A$ pasirenka žirgo poziciją
-  ir atlieką pirmą ėjimą. Žirgas negali atsidurti langelyje, kuriame jau
+  į gretimą eilutę) ėjimus, o $B$ – vertikalius. $A$ pasirenka žirgo poziciją
+  ir atlieka pirmą ėjimą. Žirgas negali atsidurti langelyje, kuriame jau
   yra buvęs. Pralaimi tas, kuris nebegali atlikti ėjimo. Įrodykite, kad $A$
   turi laiminčiąją strategiją.
 
@@ -642,7 +642,7 @@ baigtinis (baigsis, kad ir kaip žaistų priešininkas). Kaip žaidėjui laimėt
 %langelyje $(1,1)$. Tačiau šis langelis yra nepasiekiamas $B$, tad tai nedaro įtakos baigčiai.
 
 \item \text{[Tournament of Towns 2009]} Du žaidėjai paeiliui spalvina po
-  $N$ taškų ant apskritimo. Pirmojo spalva - raudona, antrojo - mėlyna.
+  $N$ taškų ant apskritimo. Pirmojo spalva raudona, antrojo – mėlyna.
   Spalvinti to paties taško negalima. Žaidimo pabaigoje gaunamas
   apskritimas padalintas į $2N$ lankų. Randamas ilgiausias lankas, kurio
   abu galai nuspalvinti ta pačia spalva. Žaidimą laimi šios spalvos
@@ -681,7 +681,7 @@ baigtinis (baigsis, kad ir kaip žaistų priešininkas). Kaip žaidėjui laimėt
 \item \text{[IMO shortlist 1991]} $A$ ir $B$ žaidžia žaidimą. Kiekvienas
   užrašo po sveiką teigiamą skaičių ir duoda jį teisėjui. Teisėjas lentoje
   užrašo du skaičius, vienas jų yra žaidėjų skaičių suma. Tada teisėjas
-  klausia $A$: „Ar žinai kokį skaičių užrašė $B$?", jei $A$ atsako
+  klausia $A$: „Ar žinai, kokį skaičių užrašė $B$?" Jei $A$ atsako
   neigiamai, tada teisėjas to paties klausia $B$ ir t.t. Tarkime, kad $A$
   ir $B$ yra baisiai protingi ir niekada nemeluoja. Įrodykite, kad šis
   žaidimas yra baigtinis.
@@ -723,8 +723,8 @@ baigtinis (baigsis, kad ir kaip žaistų priešininkas). Kaip žaidėjui laimėt
   ėjimu nuspalvina vieną tašką raudonai, o $B$ $k$ taškų mėlynai. $A$
   laimi, jei po jo ėjimo plokštumoje atsiranda kvadratas, kurio kraštinės
   lygiagrečios ašims ir visos jo viršūnės raudonos. Ėjimai atliekami
-  pakaitomis. Ar $A$ gali laimėti, kai $k=1$? $k=2$? $k$ jūsų
-  megstamiausias natūralusis skaičius? 
+  pakaitomis. Ar $A$ gali laimėti, kai $k=1$? $k=2$? $k$ – jūsų
+  mėgstamiausias natūralusis skaičius?
 
 %Kai $k=1$, žaidėjui $A$ tereikia nuspalvinti tris taškus esančius vienoje
 %tiesėjė lygiagrečioje ašims taip, kad vienas gulėtų lygiai per vidurį tarp
