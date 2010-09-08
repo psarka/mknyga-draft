@@ -12,6 +12,7 @@
 \usepackage{pdfpages}
 \usepackage{fancyhdr}
 \usepackage[Conny]{fncychap}
+\usepackage{asymptote}
 
 \opt{BW}{
 \addtolength{\oddsidemargin}{-.25in}
@@ -150,3 +151,59 @@
 \newcommand{\m}[1]{\ensuremath{\ (\text{mod } #1)}}
 
 
+%Asymptote komandos
+\begin{asydef}
+import olympiad;
+picture rightanglem(pair A, pair B, pair C, real s=8)
+{
+	picture pict;
+	pair P,Q,R; 
+	P=s*markscalefactor*unit(A-B)+B;
+	R=s*markscalefactor*unit(C-B)+B;
+	Q=P+R-B; 
+        draw(pict,P--Q--R,gray);
+        fill(pict,P--Q--R--B--cycle,palegray);
+	return pict;
+}
+
+picture anglem(pair A, pair B, pair C, real t=8, pen p=currentpen, int tick)
+{ 
+	picture pict;
+	pair M,N; 
+	pen dark, light;
+	M=t*markscalefactor*unit(A-B)+B;
+	N=t*markscalefactor*unit(C-B)+B;
+	if (p==blue)
+	{
+	dark=deepblue;
+	light=paleblue;
+	}
+	else if(p==green)
+	{
+	dark=deepgreen;
+	light=palegreen;
+	}
+	else if(p==red)
+	{
+	dark=deepred;
+	light=palered;
+	}
+	else if(p==yellow)
+	{
+	dark=olive;
+	light=paleyellow;
+	}
+	else
+	{
+	dark=p;
+	light=p;
+	}
+	draw(pict,arc(B,M,N),dark);
+	fill(pict,arc(B,M,N)--B--cycle,light);
+	if(tick!=0)
+	{
+		add(pict,pathticks(arc(B,M,N),tick,0.5,30,t/3,dark));
+	}
+	return pict;
+}
+\end{asydef}
