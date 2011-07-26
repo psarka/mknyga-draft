@@ -1,0 +1,95 @@
+\section{Knygos stiliaus pavyzdžio failas}
+
+Matematikos knygoje yra keturi skyriai \chapter - skaičių teorija, algebra,
+kombinatorika ir geometrija. Skyriai skirstomi į sekcijas \section, o
+pastarosios, jei reikia (pavyzdžiui nelygybės ar funkcinės lygtys), į
+subsekcijas \subsection. Šie trys struktūriniai vienetai yra vaizduojami
+turinyje. Sekcijos su tekstu arba, jei be teksto, jų subsekcijos yra
+pagrindiniai "teksto vienetai", vadinami skyreliais.
+
+Skyreliai yra galiausiai skirstomi į subsubsekcijas \subsubsection, kurios
+turinyje nevaizduojamos. Didelės sekcijos \section, t.y. tos, kurios turi
+subsekcijas \subsection, yra iškeliamos į atskirus failus, kurie nurodomi
+komanda \input (žr. pavyzdžiui failą algebra.tex).
+
+\subsubsection{aplinkos}
+
+Subsubsekcijos nėra vienintėlis struktūrinis elementas, padedantis organizuoti
+rašomą skyrelį. Taip pat yra naudojamos aplinkos teiginiams, teoremoms,
+išvadoms, pavyzdžiams, sprendimams ir įrodymams, bei jų numeruotiems
+atitikmenims. Jas visas galite rasti aprašytas faile knyga.sty, ir, jei ko
+trūksta, galite pridėti savo. Štai kaip jos atrodo tekste:
+
+\begin{thm}[Matematiko teorema]
+Labai įdomios teoremos vadinamos matematiko vardu formuluotė. Ši teorema bus
+nenumeruota. Numeruotos santrumpa yra thmnr.
+\end{thm}
+
+\begin{proof}[Įrodymas]
+Teoremos įrodymas. (Dėl babel sulietuvinimo klaidos tenka pridėti [Įrodymas],
+arba tą klaidą pataisyti. Tam, Ubuntu naudotojai gali faile
+/usr/share/texmf-texlive/tex/latex/lithuanian/lithuanian.ldf pridėti eilutę
+\def\proofname{\k{I}rodymas}.)
+\end{proof}
+
+\begin{pav}
+Pavyzdys. Numeruotų pavyzdžių santrumpa pavnr.
+\end{pav}
+
+\begin{sprendimas}
+Pavyzdžio sprendimas. Pavyzdžiai ir uždaviniai yra sprendžiami, o teoremos įrodinėjamos.
+\end{sprendimas}
+
+\begin{teig}
+Labai įdomus teiginys. Numeruoti teignr.
+\end{teig}
+
+\begin{isv}
+Kokio nors teiginio išvada. Numeruota išvada isvnr.
+\end{isv}
+
+\subsubsection{santrumpos}
+
+Faile knyga.sty taip pat yra aprašytos kai kurios šiek tiek gyvenimą
+palengvinančios santrumpos:
+
+\begin{itemize}
+\item Sveikųjų, natūraliųjų, kompleksinių ir t.t. aibės rašomos kaip \Z, \N, \C
+ir pan, užuot rinkus {\mathbb X}.
+\item Didžiausio bendro daliklio, mažiausio bendro kartotinio santrumpos
+rašomos \dbd ir \mbk. Taip pat yra santrumpa ir hiperboliniam arktangentui
+\arctanh, kuris kažkokiu būdu įsliūkino į knygą.
+\item Komanda \lez{a}{b} pagamins Ležandro simbolį.
+\item Komanda \m{p} parašys "(mod p)" (daug maž tą patį daro \pmod{p}).
+\end{itemize}
+
+\subsubsection{stilius}
+
+TODO
+
+\subsubsection{Uždaviniai}
+
+Paskutinė subsubsekcija kiekviename skyrelyje yra uždavinių. Ją visuomet reikia
+formatuoti taip, kaip čia, nes ją automatiškai apdoroja programa parse.py. Ji
+surenka po uždaviniais esančius sprendimus, sudeda į sprendimų failą ir padaro
+nuorodas, kurias galite matyti ir spaudyti spalvotoje versijoje. Taigi, po
+\subsubsection{Uždaviniai} visuomet eina:
+
+\begin{enumerate}
+\item Pirmo uždavinio sąlyga. Sąlyga labai trumpa, matyt uždavinys nesudėtingas.
+%Pirmo uždavinio sprendimas komentaruose. Iš ties buvo paprastas.
+\item Antras nepamatuotai sunkus uždavinys su labai ilga ir nuobodžia sąlyga.
+Antras nepamatuotai sunkus uždavinys su labai ilga ir nuobodžia sąlyga. Antras
+nepamatuotai sunkus uždavinys su labai ilga ir nuobodžia sąlyga. Antras
+nepamatuotai sunkus uždavinys su labai ilga ir nuobodžia sąlyga.
+%Jo sprendimas komentaruose. Labai jau techniškas techniškas techniškas
+%techniškas techniškas techniškas techniškas techniškas techniškas techniškas
+%techniškas techniškas techniškas techniškas techniškas techniškas techniškas
+\item Trečias uždavinys, kuris prieš tai buvo ketvirtas, bet kadangi nereikia
+rašyti uždavinių numerių, tai sukeisti buvo nesudėtinga. Taip pat nereikia
+ieškoti ir atitinkamame faile sukeisti sprendimų, nes juos perkėlėme kartu su
+sąlyga.
+%Sprendimas trečiojo uždavinio.
+\item Ketvirtas uždavinys, minėtas anksčiau.
+%Ir jo sprendimas.
+\end{enumerate}
