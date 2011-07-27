@@ -14,38 +14,40 @@ komanda \input (žr. pavyzdžiui failą algebra.tex).
 
 \subsubsection{aplinkos}
 
-Subsubsekcijos nėra vienintėlis struktūrinis elementas, padedantis organizuoti
-rašomą skyrelį. Taip pat yra naudojamos aplinkos teiginiams, teoremoms,
-išvadoms, pavyzdžiams, sprendimams ir įrodymams, bei jų numeruotiems
-atitikmenims. Jas visas galite rasti aprašytas faile knyga.sty, ir, jei ko
-trūksta, galite pridėti savo. Štai kaip jos atrodo tekste:
+Subsubsekcijos nėra vienintėlis struktūrinis elementas, padedantis
+organizuoti rašomą skyrelį. Taip pat yra naudojamos aplinkos teiginiams,
+teoremoms, išvadoms, pavyzdžiams, sprendimams ir įrodymams, bei jų
+numeruotiems atitikmenims. Jas visas galite rasti aprašytas faile
+knyga.sty, ir, jei ko trūksta, galite pridėti savo. Štai kaip jos atrodo
+tekste:
 
 \begin{thm}[Matematiko teorema]
-Labai įdomios teoremos vadinamos matematiko vardu formuluotė. Ši teorema bus
-nenumeruota. Numeruotos santrumpa yra thmnr.
+  Labai įdomios teoremos vadinamos matematiko vardu formuluotė. Ši teorema
+  bus nenumeruota. Numeruotos santrumpa yra thmnr.
 \end{thm}
 
 \begin{proof}[Įrodymas]
-Teoremos įrodymas. (Dėl babel sulietuvinimo klaidos tenka pridėti [Įrodymas],
-arba tą klaidą pataisyti. Tam, Ubuntu naudotojai gali faile
-/usr/share/texmf-texlive/tex/latex/lithuanian/lithuanian.ldf pridėti eilutę
-\def\proofname{\k{I}rodymas}.)
+  Teoremos įrodymas. (Dėl babel sulietuvinimo klaidos tenka pridėti
+  [Įrodymas], arba tą klaidą pataisyti. Tam, Ubuntu naudotojai gali faile
+  /usr/share/texmf-texlive/tex/latex/lithuanian/lithuanian.ldf pridėti
+  eilutę \def\proofname{\k{I}rodymas}.)
 \end{proof}
 
 \begin{pav}
-Pavyzdys. Numeruotų pavyzdžių santrumpa pavnr.
+  Pavyzdys. Numeruotų pavyzdžių santrumpa pavnr.
 \end{pav}
 
 \begin{sprendimas}
-Pavyzdžio sprendimas. Pavyzdžiai ir uždaviniai yra sprendžiami, o teoremos įrodinėjamos.
+  Pavyzdžio sprendimas. Pavyzdžiai ir uždaviniai yra sprendžiami, o
+  teoremos įrodinėjamos.
 \end{sprendimas}
 
 \begin{teig}
-Labai įdomus teiginys. Numeruoti teignr.
+  Labai įdomus teiginys. Numeruoti teignr.
 \end{teig}
 
 \begin{isv}
-Kokio nors teiginio išvada. Numeruota išvada isvnr.
+  Kokio nors teiginio išvada. Numeruota išvada isvnr.
 \end{isv}
 
 \subsubsection{santrumpos}
@@ -54,42 +56,72 @@ Faile knyga.sty taip pat yra aprašytos kai kurios šiek tiek gyvenimą
 palengvinančios santrumpos:
 
 \begin{itemize}
-\item Sveikųjų, natūraliųjų, kompleksinių ir t.t. aibės rašomos kaip \Z, \N, \C
-ir pan, užuot rinkus {\mathbb X}.
-\item Didžiausio bendro daliklio, mažiausio bendro kartotinio santrumpos
-rašomos \dbd ir \mbk. Taip pat yra santrumpa ir hiperboliniam arktangentui
-\arctanh, kuris kažkokiu būdu įsliūkino į knygą.
-\item Komanda \lez{a}{b} pagamins Ležandro simbolį.
-\item Komanda \m{p} parašys "(mod p)" (daug maž tą patį daro \pmod{p}).
+  \item Sveikųjų, natūraliųjų, kompleksinių ir t.t. aibės rašomos kaip \Z,
+    \N, \C ir pan, užuot rinkus {\mathbb X}.
+  \item Didžiausio bendro daliklio, mažiausio bendro kartotinio santrumpos
+    rašomos \dbd ir \mbk. Taip pat yra santrumpa ir hiperboliniam
+    arktangentui \arctanh, kuris kažkokiu būdu įsliūkino į knygą.
+  \item Komanda \lez{a}{b} pagamins Ležandro simbolį.
+  \item Komanda \m{p} parašys "(mod p)" (daug maž tą patį daro \pmod{p}).
 \end{itemize}
 
-\subsubsection{stilius}
+\subsubsection{kodo stilius}
 
-TODO
+Panaršę Mknygos kodą, pastebėsite, kad visi failai prie kurių kai kas
+prikiša nagus yra daugiau mažiau vieno (standartinio vim-latex įskiepio
+užduoto) stilius. Aplinkose esantis tekstas atitrauktas per du tarpus, \item
+esantis tekstas dar per du. Jūsų naudojamas teksto radaktorius greičiausiai
+nemokės automatiškai lygiuoti teksto tokiu būdu, tad rašydami naują tekstą
+per daug nevarkite ir rašykite kaip greičiau ir patogiau. Kita vertus,
+darydami smulkius pakeitimus jau egzistuojančiame sutvarkytame tekste,
+stenkitės lygiavimo nesugadinti.
+
+Kitas, kiek labiau komplikuotas aspektas, yra teksto eilutės. Jos rašomos
+neilgesnės nei 75 simboliai (ar 80, tai nelabai svarbu). Dėja, naudojantis
+daugeliu teksto redaktorių taip rašyti yra sudėtinga, nes pasiekus 80
+simbolių jie užuot automatiškai padarę naują eilutę (hard wrap), tęsia
+senąją, tik vaizduoja ekrane lyg būtų pradėję naują (soft wrap) ir tokiu
+būdu visas paragrafas tampa viena eilutė.  
+
+Įprastai būtų galima nekreipti dėmesio į šį niuansą, bet jis tampa labai
+svarbus naudojant versijų kontrolės sistemas, kurios pakeitimus kaip tik
+vaizduoja pagal eilutes. Jei jūs, pavyzdžiui, redaguodami tekstą įrašysite
+praleistą raidę, versijų sistema tai užfiksuos kaip senos eilutės (be
+raidės) pakeitimą nauja eilute (su raide). Jei eilutė buvo trumpa, šį
+pakeitimą pamatę lengvai suprasime, kad buvo įrašyta raidė. Jei eilutė buvo
+visas paragrafas, atsekti, kas buvo ištaisyta, bus sudėtinga.
+
+Texmaker ir TeXnicCenter naujų eilučių daryti (hard wrap), deja, nemoka.
+Galite susirasti redaktorių, kuris mokėtų, arba galite nekreipti dėmesio ir
+rašyti taip, kaip išeina. Tik turėkite omenyje, kad tą patį failą redaguoti
+dviem skirtingai eilutes ``wrapinančiais'' redaktoriais yra labai
+skausminga, tad pasirinkite vieną stilių ir jo laikykitės, o atlikdami
+smulkius pataisymus išlaikykite taisomo failo stilių.  
+
+(Jei įdomu:
+http://stackoverflow.com/questions/899114/when-you-write-tex-source-how-do-you-use-your-editors-word-wrap)
 
 \subsubsection{Uždaviniai}
 
-Paskutinė subsubsekcija kiekviename skyrelyje yra uždavinių. Ją visuomet reikia
-formatuoti taip, kaip čia, nes ją automatiškai apdoroja programa parse.py. Ji
-surenka po uždaviniais esančius sprendimus, sudeda į sprendimų failą ir padaro
-nuorodas, kurias galite matyti ir spaudyti spalvotoje versijoje. Taigi, po
-\subsubsection{Uždaviniai} visuomet eina:
+Paskutinė subsubsekcija kiekviename skyrelyje yra uždavinių. Ją visuomet
+reikia formatuoti taip, kaip čia, nes ją automatiškai apdoroja programa
+parse.py. Ji surenka po uždaviniais esančius sprendimus, sudeda į sprendimų
+failą ir padaro nuorodas, kurias galite matyti ir spaudyti spalvotoje
+versijoje. Taigi, po \subsubsection{Uždaviniai} visuomet eina:
 
 \begin{enumerate}
-\item Pirmo uždavinio sąlyga. Sąlyga labai trumpa, matyt uždavinys nesudėtingas.
-%Pirmo uždavinio sprendimas komentaruose. Iš ties buvo paprastas.
-\item Antras nepamatuotai sunkus uždavinys su labai ilga ir nuobodžia sąlyga.
-Antras nepamatuotai sunkus uždavinys su labai ilga ir nuobodžia sąlyga. Antras
-nepamatuotai sunkus uždavinys su labai ilga ir nuobodžia sąlyga. Antras
-nepamatuotai sunkus uždavinys su labai ilga ir nuobodžia sąlyga.
-%Jo sprendimas komentaruose. Labai jau techniškas techniškas techniškas
-%techniškas techniškas techniškas techniškas techniškas techniškas techniškas
-%techniškas techniškas techniškas techniškas techniškas techniškas techniškas
-\item Trečias uždavinys, kuris prieš tai buvo ketvirtas, bet kadangi nereikia
-rašyti uždavinių numerių, tai sukeisti buvo nesudėtinga. Taip pat nereikia
-ieškoti ir atitinkamame faile sukeisti sprendimų, nes juos perkėlėme kartu su
-sąlyga.
-%Sprendimas trečiojo uždavinio.
-\item Ketvirtas uždavinys, minėtas anksčiau.
-%Ir jo sprendimas.
+  \item Pirmo uždavinio sąlyga. Sąlyga labai trumpa, matyt uždavinys
+    nesudėtingas.
+    %Pirmo uždavinio sprendimas komentaruose. Iš ties buvo paprastas.
+  \item {[IMO 2012]} Antrasis uždavinys su žinoma kilme. Jei žinote iš
+    kurios olimpiados buvo uždavinys, visuomet nurodykite. Atkreipkite
+    dėmesį į riestinius skliaustus - jie būtini.
+    %Jo sprendimas komentaruose.
+  \item Trečias uždavinys, kuris prieš tai buvo ketvirtas, bet kadangi
+    nereikia rašyti uždavinių numerių, tai sukeisti buvo nesudėtinga. Taip
+    pat nereikia ieškoti ir atitinkamame faile sukeisti sprendimų, nes juos
+    perkėlėme kartu su sąlyga.
+    %Sprendimas trečiojo uždavinio.
+  \item Ketvirtas uždavinys, minėtas anksčiau.
+    %Ir jo sprendimas.
 \end{enumerate}
