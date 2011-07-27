@@ -574,7 +574,7 @@ todėl arba abu dalijasi iš trijų, arba abu nesidalija.
     %Vadinasi, lieka patikrinti tik $q$ reikšmes $2,3,5,7,11,13,17,19$. Tai
     %padaryti nesunku: nei viena iš jų, išskyrus jau rastą $13$, netinka.
   \item \text{[IMO 2002]} Tegu $n\geq 2$ natūralusis skaičius, kurio
-    dalikliai yra $1<d_1 < d_2 \dots < d_k =n$. Įrodykite, kad $d_1 d_2 +
+    dalikliai yra $1=d_1 < d_2 \dots < d_k =n$. Įrodykite, kad $d_1 d_2 +
     d_2 d_3 + \cdots + d_{k-1}d_{k}$ yra visuomet mažesnis už $n^2$, ir
     raskite, kada jis yra $n^2$ daliklis.
     %Pastebėkime, kad didžiausias $n$ daliklis neviršija $n$, antras pagal
@@ -962,7 +962,7 @@ jos ir pradėkime.
   (p-1)\m{p}\Rightarrow$$
   $$(p-1)!\equiv a^{p-1}(p-1)!\m{p}.$$
   Kadangi $\dbd((p-1)!,p)=1,$ tai galime padalinti:
-  $$a^p\equiv 1 \m{p}.$$
+  $$a^{p-1}\equiv 1 \m{p}.$$
 \end{proof}
 
 \begin{pastaba}
@@ -1132,7 +1132,7 @@ yra $13$.
     iš $17$, $9^{99}$ iš $19$. 
     %Taikykime mažąją Ferma teoremą. Pagal ją $3^{12}\equiv 1 \m{13}$,
     %$7^{16} \equiv 1\m{17}$ ir $9^{18} \equiv 1 \m{19}$. Skaičiuojame:
-    %$$3^{33} \equiv 3^{2\cdot 12}3^{9} \equiv 3^7 \equiv 27\cdot 27\cdot
+    %$$3^{33} \equiv 3^{2\cdot 12}3^{9} \equiv 3^9 \equiv 27\cdot 27\cdot
     %27	 \equiv 1 \m{13},$$
     %$$7^{77} \equiv 7^{4\cdot 16}7^{13} \equiv 7^{13} \equiv 49^6\cdot 7
     %\equiv (-2)^6 \cdot 7\equiv 6 \m{17},$$
@@ -1149,7 +1149,7 @@ yra $13$.
     %Prisiminkime, kad jei $a \equiv b \m {n}$, tai $\dbd(a,n) =
     %\dbd(b,n)$. Tuomet aišku, kad jei $\dbd(a,n) > 1$, tai $\dbd(a^n) >1$
     %ir $a^n \not \equiv 1\m{n}$, nes $\dbd(1,n)=1$.
- \item Tegu $p,q$ pirminiai. Įrodykite, kad $pq|n^{pq} - n^{p} -
+ \item Tegu $p,q$ skirtingi pirminiai. Įrodykite, kad $pq|n^{pq} - n^{p} -
     n^{q} + n$ su visais $n\in \N$.
     %Pagal mažąją Ferma teoremą $n^{pq} \equiv n^p \m{q}$ ir $n^q \equiv
     %n \m{q}$, todėl $n^{pq} - n^p - n^q + n \equiv 0 \m{q}$. Analogiškai
@@ -1440,9 +1440,9 @@ matome, kad toks $r$ egzistuos pagal Kinų liekanų teoremą.
     %$\alpha_i$ rasime ir $a$, tad natūralusis skaičius tenkinantis sąlygą
     %egzistuoja.
   \item \text{[USAMO 2008]} Įrodykite, kad kiekvienam $n\in \N$
-    egzistuoja tarpusavyje pirminiai skaičiai $k_1, k_2, \dots,
-    k_n$, kad $k_1 k_2 \cdots k_n-1$ išsiskaido kaip dviejų paeiliui
-    einančių natūraliųjų skaičių sandauga. 
+    egzistuoja tokie didesni už vienetą tarpusavyje pirminiai skaičiai
+    $k_1, k_2, \dots, k_n$, kad $k_1 k_2 \cdots k_n-1$ išsiskaido kaip
+    dviejų paeiliui einančių natūraliųjų skaičių sandauga. 
     %Pastebėkime, kad kiekvienam $n$ užteks rasti skaičių $r$, su kuriuo
     %$r(r+1)+1=r^2 + r + 1$ turėtų bent $n$ skirtingų pirminių daliklių. 
     %

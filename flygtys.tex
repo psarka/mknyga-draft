@@ -181,7 +181,7 @@ nekintančių reiškinių pažymėjimo idėja yra gana dažna, tad verta ją
     %tris lygtis, iš kurių paplušėję išsireiškiame $f(x)$. Gauname
     %$f(x)=\frac{x^3-3x^2+2x-1}{2x-2x^2}$.
   \item Raskite visas funkcijas $f:\R\to\R$, kurios su visais realiaisiais
-    $x$, $y$, $t$ tenkina $$(x+t)f(z) = f(xz) + f(tz).$$
+    $x$, $t$, $z$ tenkina $$(x+t)f(z) = f(xz) + f(tz).$$
     %Įsistatę $x=1$ ir $z=1$ gauname $f(t) = tf(1)$, t.y. funkcija gali
     %būti tiktai pavidalo $f(x)=ax, a\in \R$. Patikrinę matome, kad visos
     %tokios funkcijos tinka.
@@ -193,14 +193,14 @@ nekintančių reiškinių pažymėjimo idėja yra gana dažna, tad verta ją
     %funkcijos $f(x)=ax+b$ tinka su visais $a,b\in \R.$
   \item Raskite visas funkcijas $f:\R\to\R$, kurios su visais realiaisiais
     $x$, $t$ tenkina $$f(x)f(t) = f(x) + f(t) + xt -1.$$
-    %Įstatę vietoje t bet kokią reikšmę, su kuria $f(t)\neq 0$ gauname, kad
-    %$f(x)$ - tiesinė funkcija. Patikrinę gauname, kad tinka tik $f(x) = x
-    %+ 1$.
+    %Įstatę vietoje $t$ bet kokią reikšmę, su kuria $f(t)\neq 0$, gauname, kad
+    %$f(x)$ - tiesinė funkcija. Patikrinę gauname, kad tinka tik $f(x)
+    %= 1-x$ ir $f(x) = 1+x$.
   \item \text{[LitMo 1994]} Ar egzistuoja bent viena funkcija $f:\R \to \R$
     tenkinanti lygtį $$f(f(x))=x^3 \text{ ?}$$
-    %Taip: $$f(x) = \begin{cases}-x,& x<0, \\ x^3,& x\geq 0.\end{cases}$$
+    %Taip: $$f(x) = \begin{cases}-x,& x<0, \\ -x^3,& x\geq 0.\end{cases}$$
   \item Raskite visas funkcijas $f:\R\to\R$, kurios su visais realiaisiais
-    $x$, $y$ tenkina $$f(f(x-y)) = f(x) - f(y) - f(x)f(x) - xy.$$
+    $x$, $y$ tenkina $$f(f(x-y)) = f(x) - f(y) - f(x)f(y) - xy.$$
     %Įsistatę $x=y$ gauname $f(f(0)) = -x^2 - f(x)^2$. Įsistatę $x=y=0$
     %gauname $f(f(0)) = -f(0)^2$. Iš šių dviejų lygybių gauname $f(0)^2 -
     %x^2 = f(x)^2 \geq 0$, kas negalioja su visais $x \in \R$. Vadinasi
@@ -211,9 +211,10 @@ nekintančių reiškinių pažymėjimo idėja yra gana dažna, tad verta ją
     %$x+y=a$ ir $x-y=b$, tai lygtį galime užrašyti $b^2f(a)=a^2f(b)$. Jei
     %egzistuoja toks $b_0$, kad $f(b_0) \neq 0$, tai jį įstatę vietoje $b$
     %gauname $f(a)=ca^2$, kur $c$ - konstanta (jei neegzistuoja, tai
-    %$f(x)=0$). Įstatę gauname, kad $c$ tegali būti lygus $1$, vadinasi,
-    %sprendiniai yra $f(x)=x$ ir $f(x)=0$.
-    \item Raskite visas funkcijas $f:\R\to\R$, kurios su visais realiaisiais
+    %$f(x)=0$). Įsistatę gauname, kad tinka visos $c$ reikšmės, vadinasi,
+    %sprendiniai yra $f(x) = cx^2$.
+
+  \item Raskite visas funkcijas $f:\R\to\R$, kurios su visais realiaisiais
     $x$, $y$ tenkina $$f(x+f(y))=f(f(x))+y.$$
     %Įstatę $x=0$ ir įstatę $y=0$ gauname $f(f(x))=f(f(0)) +x$ ir
     %$f(x+f(0))=f(f(x))$, iš kur $f(x+f(0))=f(f(0))+x\implies
@@ -278,14 +279,14 @@ nekintančių reiškinių pažymėjimo idėja yra gana dažna, tad verta ją
   \item \text{[Brazil 1993]} Raskite bent vieną funkciją $f:\R\to\R$ su kiekvienu $x \in \R$
     tenkinančią $$f(0)=0 \text{ ir } f(2x+1)=3f(x)+5.$$
     %Atsikratykime penketo: įsistatykime $f(x) = g(x) -\frac{5}{2}$.
-    %Gausime, kad $g$ tenkina lygtį $g(2x+1)=g(x)$. Pabandę pirmas keletą
-    %reikšmių gausime, kad $$g(1)=g(0), g(3)=3g(0), g(7)=3^2g(0), g(15) =
+    %Gausime, kad $g$ tenkina lygtį $g(2x+1)=3g(x)$. Pabandę pirmas keletą
+    %reikšmių gausime, kad $$g(1)=3g(0), g(3)=3g(0), g(7)=3^2g(0), g(15) =
     %3^3g(0).$$ Įsižiūrėję pamatysime, kad taip tęsdami gausime
-    %$$g(2^n-1)=3^{n-1}g(0).$$ Pažymėję $2^n-1 = x$ gauname $n =
-    %\log_2(x+1)$ arba $g(x)=3^{\log_2\frac{x+1}{2}}\cdot g(0).$ Iš
+    %$$g(2^n-1)=3^n g(0).$$ Pažymėję $2^n-1 = x$ gauname $n =
+    %\log_2(x+1)$ arba $g(x)=3^{\log_2 x+1}\cdot g(0).$ Iš
     %$f(0)=0$ seka, kad $g(0)=\frac{5}{2}$ ir susitvarkę su neigiamų
     %skaičių keliamais nepatogumais gauname, kad  $$f(x) =
-    %3^{\log_2\frac{|x+1|}{2}}\cdot \frac{5}{2} - \frac{5}{2}$$ tenkina
+    %3^{\log_2 |x+1|}\cdot \frac{5}{2} - \frac{5}{2}$$ tenkina
     %lygtį.
   \item Raskite visas funkcijas $f:\R\to\R$, kurios su visais realiaisiais
     $x$, $y$ tenkina $$f(x^{3})-f(y^{3})=(x^{2}+xy+y^{2})(f(x)-f(y))$$
@@ -1262,7 +1263,7 @@ jos analogiškais keitiniais.
     %$h(x)=b^x$, kur $b>0$. Tada $f(x)=A^{-1}(b^x-1)$ ir $u(y)=b^y$ bus
     %sprendiniai. Viską apibendrinus, $u(x)=b^x$, kur $b>0$ (įskaitant ir
     %$b=1$), bus vienintelės sąlygas tenkinančios funkcijos.
-  \item Raskite visas funkcijas $f:(-1,1)\rightarrow\R$, kurios su visomis
+  \item Raskite visas funkcijas $f:(0,1)\rightarrow\R$, kurios su visomis
     realiųjų skaičių poromis $x$ ir $y$ tenkina
     $f(\frac{x+y}{1+xy})=\frac{f(x)f(y)}{|1+xy|}$ ir yra tolydžios.
     %Pirmiausiai darykime keitinį $f(x)=g(x)|1+x|$. Pradinė lygtis taps:
