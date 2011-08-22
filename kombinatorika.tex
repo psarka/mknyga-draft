@@ -328,7 +328,7 @@ $(*)$.
 \end{teig}
 
 Randame kairiausią stulpelį, kurio NIM sumos vertė yra lygi vienetui (toks
-stulpelis atsiras, nes nagrinėjama situacija nėra $(*)$). Imame didžiausią
+stulpelis atsiras, nes nagrinėjama pozicija nėra $(*)$). Imame didžiausią
 akmenukų kiekį $A$, kurio dvejetainėje išraiškoje šioje pozicijoje yra
 vienetas ir atliekame NIM sumavimą visiems akmenukų kiekiams išskyrus $A$.
 Gauname sumą $B$.  Nesunku suprasti, kad $A\geq B$, įsitikinkite tuo. Kadangi
@@ -358,81 +358,136 @@ skaičių, tai to tikrai negalėsim padaryti.
     žadėjas analogiškai turi laiminčiąją strategiją. 
 \end{enumerate}
 
+
+\subsubsection{NIM vertė}
+
 \begin{api}
-  Struktūriškai identiški žaidimai vadinami izomorfiškais. 
+NIM vertė tai yra sveikasis neneigiamas skaičius $(p)$ priskiriamas kuriai nors vienai bešalio žaidimo pozicijai $Q$, pagal tokią taisyklę: jis yra lygus mažiausiam neneigiamam sveikajam skaičiui nepriskirtam jokiai
+pozicijai, kuri yra pasiekiama iš $Q$ vieno ėjjimo metu. Žaidimo pabaigos
+pozicijos vertė lygi $0$, nes iš jos negalime pasiekti jokios kitos
+pozicijos. The Sprague-Grundy funkcija $F(Q)$ yra tokia funkcija, kuriai padavus žaidimo poziciją Q, ji išmeta tos pozicijos NIM vertę (p).  
 \end{api}
 
-\begin{thm}[Sprague-Grundy] 
-  Visi bešaliai žaidimai $G$ yra izomorfiški žaidimui NIM. (Teoremos
-  įrodymą galite rasti John Conway knygoje „On Numbers And Games")
-\end{thm}
-
-Taigi, visi bešaliai dviejų žaidėjų žaidimai veikia lygiai taip pat!
-Šachmatus, ir tuos, galima analizuoti kaip akmenukų krūveles. Kiekvienai
-žaidimo pozicijai $Q$ priskiriame NIM reikšmę (angl. NIM value), kuri yra
-lygi mažiausiam neneigiamam sveikajam skaičiui, nepriskirtam jokiai
-pozicijai, kuri yra pasiekiama iš $Q$ vieno ėjimo metu. Žaidimo pabaigos
-pozicijos reikšmė lygi $0$, nes iš jos negalime pasiekti jokios kitos
-pozicijos. 
+NIM vertė nėra kažkoks iš dangaus nuleistas įvertis, jis aiškiai pasako, ar nagrinėjama pozicija yra laiminti ar pralaiminti. Pagal apibrėžimą aišku, kad iš pozicijos (a) vieno ėjimo metu negalima pasiekti kitos pozicijos (a). Jei pozicija nėra (0), tai iš jos, vėlgi pagal apibrėžimą, galime patekti į poziciją (0), o iš šios varžovas jau toli nenueis. Taigi NIM vertės mus įgalina nuspręsti ar pozicija laiminti ar pralaiminti. Vienos krūvelės NIM vertė žaidime NIM visada lygi jos akmenukų skaičiui, nes iš jos galime nuimti bet kokį akmenukų skaičių. O kaip apskaičiuoti NIM vertę žaidimui su keliomis krūvelėmis? Tai ir išsiaiškinsime šiame skyrelyje. 
 
 \begin{pavnr}
   Ant stalo yra $n$ akmenukų. Žaidėjas gali nuimti bet kokį akmenukų
-  skaičių ne didesnį už $k$. Žaidėjai $A$ ir $B$ ėjimus atlieka pakaitomis,
+  skaičių nedidesnį už $k$. Žaidėjai $A$ ir $B$ ėjimus atlieka pakaitomis,
   pradeda $A$.  Laimi tas žaidėjas, kuris nuimą paskutinį akmenuką. Kuris
   žaidėjas laimėsi su atitinkamais $n$?
 \end{pavnr}
 
-Jei akmenukų yra $n$, kur $k \geq n$, tai $n$ priskiriame $(n)$, nes iš
+Jei akmenukų yra $n$, kur $k \geq n$, tai $n$ priskiriame NIM vertę $(n)$, nes iš
 šios pozicijos galime patekti į bet kurią kitą. Iš $n=k+1$ negalime patekti
-į $0$, tai priskiriame jai $(0)$ ir t.t. Jei pradinė situacija yra $(z)$, tai iš
+į poziciją, kurios NIM vertė $0$ (negalime nuimti visų akmenukų), tai priskiriame jai $(0)$ (mažiausias neneigiamas sveikasis skaičius, kuris nėra NIM vertė jokios pozicijos, kurią galima pasiekti iš turimos vieno ėjimo metu) ir t.t. Jei pradinė pozicija yra $(z)$, tai iš
 jos vienu ėjimu neįmanoma patekti į $(z)$, pagal apibrėžimą. Jei $A$ pradeda
 $(0)$, tai jis pralaimės. Kitu atveju $A$ laimi.
 
-\begin{pavnr}(Putnam 1995)
-  Žaidimas pradedamas su keturiomis akmenukų krūvelėmis, kurių dydžiai
+
+\begin{pavnr}
+Ant stalo yra n akmenukų. Žaidejas gali nuimti 1, 3 arba 8 akmenukus. Matemagikas ir B ėjimus atlieka pakaitomis, pradeda Matemagikas. Laimi tas žaidejas,
+kuris nuima paskutinį akmenuką. Kuris žaidejas laimės su atitinkamais n?
+\end{pavnr}
+
+
+Akmenukų skaičiams 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 atitinkamai priskiriame NIM vertes lygias 0, 1, 0 , 1,
+0, 1, 0, 1, 2, 3, 2 (Įsitikinkite!). Atlikdami šią procedūra didesniems skaiciams pastebime, kad
+NIM vertės kinta periodiškai, periodo ilgis 11 (Įsitikinkite! Galite įrodyti indukciškai). Nulines vertes turi visi akmenukų
+skaičiai, kurių forma yra $11n$, $11n+2$, $11n+4$ arba $11n+6$, kur n sveikasis neneigiamas.
+Jei Matemagikas pradeda pozicijoje, kurios vertė nėra $(0)$, tai jis visada
+gali pereiti i poziciją $(0)$, o priešininkas negalės pereiti iš $(0)$ į $(0)$. Matemagikas
+laimės. Jei jis pradeda pozicijoje $(0)$, analogiškai žaisdamas laimi B.
+
+\begin{pavnr} NIM žaidimas su trimis krūvelėmis, kuriose yra 3, 5 ir 7 akmenukai. Kuris žaidėjas turi laiminčiąją strategiją?
+\end{pavnr}
+
+Pirmiausia, pralaiminti pozicija yra $(x, x, 0)$ nes tada, kad ir kiek imtų žaidėjas, priešininkas gali paimti tiek pat iš kitos krūvelės. Tada laiminčios pozicijos yra $(x, x, y)$ ir $(0, x, x+y)$ nes iš jų galime padaryti pralaiminčią poziciją $(x, x, 0)$. Toliau pralaiminti pozicija yra $(1, 2, 3)$ nes kad ir ką darytume, iš jos gauname tik laiminčią poziciją $(0, 2, 3);  (1, 1, 3);  (1, 0, 3);$
+$ (1, 2, 2);  (1, 2, 1);  (1, 2, 0)$. Iš čia mes gauname, kad laiminčios pozicijos yra $(1, 2, 3+x); (1, 2+x, 3);  (1+x, 2, 3)$, nes iš jų galima padaryti $(1, 2, 3)$. Sekanti pralaiminti pozicija yra $(1, 4, 5)$, nes iš jos gauname  $(0, 4, 5);  (1, 3, 5);  (1, 2, 5);$
+$ (1, 1, 5);  (1, 0, 5);  (1, 4, 4);$
+$ (1, 4, 3);  (1, 4, 2);  (1, 4, 1);  (1, 4, 0)$. Iš šios pozicijos taip pat galime išvesti laiminčiąsias $(1, 4, 5+x);  (1, 4+x, 5);  (1+x, 4, 5)$. Toliau pralaiminti pozicija yra $(2, 4, 6)$, iš jos gauname $(1, 4, 6);  (0, 4, 6);  (2, 3, 6); $
+$ (2, 2, 6);  (2, 1, 6);  (2, 0, 6); $
+$ (2, 4, 5);  (2, 4, 4);  (2, 4, 3);$
+$ (2, 4, 2);  (2, 4, 1);  (2, 4, 0)$. 
+Iš jos analogiškai išvedame laiminčiąsias pozicijas: $(2, 4, 6+x);  (2, 4+x, 6); $
+$ (2+x, 4, 6)$. Kita pralaiminti pozicija yra $(3, 5, 6)$, iš jos -> 
+$(2, 5, 6);  (1, 5, 6);$
+$(0, 5, 6);  (3, 4, 6);$
+$(3, 3, 6);  (3, 2, 6); $
+$(3, 1, 6);$ 
+$(3, 0, 6);  (3, 5, 5); $
+$(3, 5, 4);  (3, 5, 3); $
+$(3, 5, 2);$ 
+$(3, 5, 1); ( 3, 5, 0)$. Iš jos irgi gauname laiminčias pozicijas: $((3, 5, 6+x);  (3, 5+x, 6);  (3+x, 5, 6)$.
+
+Taigi $(3, 5, 7)$ irgi yra laiminti pozicija $(3, 5, 6+x)$.
+Pirmas turi laiminčiąją strategiją. 
+(Rugilės Bendinskaitės sprendimas)
+
+Kas čia vyksta? Žmogui nebuvo leista naudotis bendru NIM sprendimu, ji išsisuko nagrinėdama laiminčias ir pralaiminčias pozicijas, tačiau tai daryti yra gana keblu. Kaip galėtume supaprastinti šį žaidimą? 
+
+\begin{pavnr} NIM žaidimas su trimis krūvelėmis, kuriose yra 3, 5 ir 7 akmenukai. Kuris žaidėjas turi laiminčiąją strategiją?
+\end{pavnr}
+
+Rasime pozicijos $(3,5,7)$ NIM vertę. Kad galėtume tai padaryti, turime žinoti visų pozicijų, pasiekiamų iš šios per vieną ėjimą NIM vertes (šita žodžių raizgalynė ir turi skambėti taip painiai, bet vos tik pajausit, kaip ta NIM vertė suveikiama, viskas pasidarys daug aiškiau). Tad pradėkime nuo pradžių. $(0,0,0)$ yra žaidimo pabaigos pozicija, jos NIM vertė yra (0), nes per vieną ėjimą jau nieko iš jos nepasieksi, tad $F(0,0,0)=0$. $F(0,0,1)=1$, $F(0,0,2)=2$ $\ldots$ $F(0,0,n)=n$, nuo tos krūvelės gali nuimti ką tik nori, tad ir NIM vertės atitinkamos. $F(0,1,1)=0$, nes galime pasiekti tik (0,0,1). $F(0,2,1)=3$, nes galime pasiekti $(0,1,1)$, $(0,0,1)$ ir $(0,0,2)$. $F(0,3,1)=2$. $F(1,1,1)=1$ (galime pasiekti tik $(0,1,1)$) ir t.t. Turėtų būti aišku, kad NIM vertes galime apskaičiuoti bet kokiai pozicijai, tereikia žinoti visų ankstesnių pozicijų NIM vertes. Bet man čia jau pabosta jas perrinkinėti. Pasižiūrėkime, ką gali pastebėti atidi akis. Tarkime turime NIM žaidimo poziciją $Q$. $P(Q)$ žymėsime šios pozicijos NIM sumą. 
+
+$$F(0,0,0)=0=P(0,0,0)$$
+$$F(1,1,1)=1=P(1,1,1)$$ 
+$$F(0,2,1)=3=P(0,2,1)$$
+$$F(0,3,1)=2=P(0,3,1)$$
+
+Pasiutimas. Mums ir viena, ir kita funkcija gali parodyti ar žaidimo pozicija yra pralaiminti, ar laiminti, tai gal tos funkcijos su visomis žaidimo pozicijomis duoda tą patį rezultatą, jos tapačios? Jums jau turėtų kilti klausimas, ką mes čia darome. NIM sumą mes apibrėžėme tik NIM žaidimui, o NIM vertė yra dydis kurį galime apskaičiuoti bet kokiai bešalio žaidimo pozicijai. Pasinaudodami šiomis sąvokomis mes pabandysime parodyti, kad visus žaidimus galime žaisti kaip NIM, kad jie nelabai kuo skiriasi vienas nuo kito, kad šitame skyrelyje nelabai yra ką rašyti. Visuose iki šiol nagrinėtuose pratimuose mums svarbi būdavo tik NIM vertė (0), nes tai žaidimo pabaigos pozicija, tad kam vargintis su visais kitais skaičiais? Tai pasidaro svarbu, kada žaidžiame keletą žaidimų vienu metu. Pavyzdžiui žaidi žaidimus iš 14 ir 15 pavyzdžio vienu metu. T.y. savo ėjimo metu pasirenki, kuriame žaidime atliksi ėjimą ir atlieki jį, tada priešininkas daro tą  patį ir t.t. 
+
+O dabar griebsime jautį už ragų. Laikykitės. 
+
+\begin{pavnr} Įrodykite, kad bet kurios NIM žaidimo pozicijos NIM suma yra lygi tos pozicijos NIM vertei.
+\end{pavnr} 
+
+Ši užduotis yra viso skyrelio kertinis akmuo, tad skaitykit įdmėmiai. Jau pamatėt, kad jei turime NIM krūveles su kiek tais akmenukų (tai vadinu NIM pozicija) ir staiga velniažin kodėl atliekame joms NIM sumavimą , tai gauname tokį NIM žaidimo įvertį (pozicijos NIM sumą), kuris leidžia nustatyti ar tai laiminti, ar pralaiminti pozicija. Jei jis lygus (0), tai iš turimos pozicijos negalima vieno ėjimo metu pasiekti tokios, kurios NIM suma lygi (0), o jei nelygus (0), tai vieno ėjimo metu galime pasiekti (0). Bet juk tai primena pozicijos NIM vertę. Jei mums pavyktų parodyti, kad iš pozicijos su NIM suma A, vieno ėjimo metu galime patekti į pozicijas, kurių NIM sumos būtų visi mažesni už A sveikieji neneigiami skaičiai, bet negalime patekti į poziciją, kurios NIM suma lygi A, tai parodytume, kad NIM suma tenkina NIM vertės apibrėžimą, kad jos tapačios. 
+
+Taigi, jei pozicijos NIM suma lygi A, tai aiškiai negalime patekti į kitą poziciją su NIM suma lygia A, nes kiekvieno stulpelio vienetukų skaičių turėtume pakeisti lyginiu skaičiumi, o galime keisti tik vieną eilutę (viena krūvelę), tad toks pakeitimas negalimas (įsitikinkite!) 
+
+NIM sprendime parodėme, kad jei A nelygu 0, tai iš turimos pozicijos galime patekti į poziciją, kurios NIM suma lygi 0. Telieka parodyti, kad galime patekti į pozicijas, kurių NIM sumos būtų visi mažesni už A sveikieji neneigiami skaičiai. Užsirašome A dvejetaine išraiška. Joje yra kažkiek vienetų, nes A nelygu 0. Tarkime, kad norime gauti poziciją, kurios NIM suma būtų B. Atsiras bent vienas toks stulpelis, kuriame skaičiuje A yra vienetukas, o skaičiuje B jau nuliukas, nes A daugiau už B (įsitikinkite!). Išsirenkame kairiausią tokią stulpelį. Nesunku įsitikinti, kad visi A ir B skaitmenys kairiau šio stulpelio sutampa. (įsitikinkite!) Tada išsirenkame tokią krūvelę, kurios dvejetainėje išraiškoje šiame stulpelyje yra vienetukas. Šį vienetuką pakeičiame nuliuku, tada visus dešiniau esančius skaitmenis galime pakeisti kaip norime, vistiek gausime mažesnę krūvelę negu turėjome. Nesunku suprasti, kad juos galėsime pakeisti taip, kad gautume pozicijos NIM sumą lygią B (įsitikinkite!) 
+
+Kiekvienai NIM žaidimo pozicijai priskirkime jos NIM sumą. Įrodėme, kad iš turimos pozicijos negalėsime vienu ėjimu patekti į poziciją, kurios NIM suma būtų tokia pati ir galėsime patekti į pozicijas, kurių NIM sumos būtų visi mažesni svekieji neneigiami skaičiai, o tai ir yra NIM vertės apibrėžimas. Tad NIM žaidimo atveju, kiekvieno žaidimo NIM vertė lygi to žaidimo krūvelių NIM sumai.
+
+Tikiuosiu, kad jums jau aiškus ir natūralus NIM vertės apibrėžimas. Jei dabar sugalvotumėte imti ir spręsti NIM (ar kokį kitą žaidimą), tai skaičiuotumėte NIM vertes tol, kol pamatytumėte, kad daug paprasčiau aprašoma funkcija (NIM atveju NIM sumavimo) regis visada duoda tą patį rezultatą (neasakau, kad tą funkciją lengva pastebėti). Tada įsirodytumėte, kad tas rezultatas tikrai tas pats ir voila. NIM išspręstas. Bet čia tik pradžia.
+
+\begin{pavnr} Įrodykite, kad jei turime du bešalius normalius žaidimus A ir B, kurių NIM vertės atitinkamai lygios a ir b, tai jų suminio žaidimo (kai abu žaidimai žaidžiami vienu metu) NIM vertė lygi  $a\otimes b$ (čia NIM suma). T.y. įrodykite, kad  $a\otimes b$ atitinka NIM vertės tam žaidimui apibrėžimą. 
+\end{pavnr} 
+
+Trumpam užmirškite žaidimus A ir B ir patikėkite, kad žaidžiate NIM žaidimą su dviem krūvelėmis, kuriose yra atitinkamai a ir b akmenukų. Remiantis pirmuoju uždaviniu šio suminio NIM žaidimo NIM vertė lygi jo NIM sumai t.y.  $a\otimes b$. Tai reiškia, kad jei turėtume tas dvi krūveles, tai iš jų vieno ėjimo metu negalėtume pasiekti žaidimo, kurio NIM vertė lygi  $a\otimes b$ ir galėtume pasiekti žaidimus su visomis NIM vertėmis mažesnėmis už $a\otimes b$. 
+
+Grįžkime prie žaidimų A ir B. Tai nebūtinai yra NIM žaidimai, bet jie yra normalūs bešaliai, tad turi savo NIM vertes. Parodysime, kad jei žaidimus žaistume vienu metu, tai suminio žaidimo įvertis  $a\otimes b$ ir būtų šio žaidimo NIM vertė. Tarkime priešingai, kad tai nėra suminio žaidimo NIM vertė. Yra dvi galimybės:
+
+1) Iš suminio žaidimo su įverčiu $a\otimes b$ galime patekti į žaidimą su įverčiu $a\otimes b$. Nemažindami bendrumo tariame, kad tam pasiekti atliktume ėjimą žaidime A. Atlikę ėjimą patektume į poziciją žaidime A su NIM verte c ir $a\otimes b = c\otimes b$, tačiau iš to seka, kad $a=c$ (įsitikinkite!), tačiau a yra žaidimo A NIM vertė, tad pagal apibrėžimą vieno ėjimo metu negalime iš žaidimo su NIM verte a pereiti į žadimą su NIM verte $c=a$, tad gavome prieštarą. 
+
+2) Iš suminio žaidimo su įverčiu $a\otimes b$ negalime patekti į žaidimą su įverčiu $c$, kur c mažiau už a. Tačiau NIM žaidime su dviem krūvelėmis po a ir b akmenukų egzistuoja toks ėjimas kažkurioje krūvelėje, kad gautos pozicijos NIM vertė būtų c, pagal pirmą uždavinį. Nemažindami bendrumo galime teigti, kad tą ėjimą reikia atlikti su krūvele a nuimant d akmenukų. Pastebime, kad jei žaidime A pereitume iš pozicijos su NIM verte lygia a į poziciją su NIM verte lygia a-d, tai suminio žaidimo įvertis  $a-d\otimes b$ būtų lygus c, prieštara. 
+
+Vadinasi įvertis $a\otimes b$ ir yra suminio žaidimo NIM vertė. 
+
+Šis faktas leidžia mums išžarnoti žaidimus. Vieną žaidimą žaisti kiap daug atskirų arba suplakti daug žaidimų į vieną krūvą. Svarbi informacija mums tėra NIM vertė, tai viskas, kas apibūdina bešalį žaidimą. Tiesa yra vienas "bet". Dažnai jau ir išskaidytų žaidimų NIM verčių apskaičiavimas gali būti labai kebli problema arba išskaidyti žaidimo tiesiog nepavyksta. Tad čia aprašau įrankius, kurie teoriškai turi išspręsti kiekvieną bešalį žaidimą (NIM vertes visada galit apsiskaičiuoti, tereikia laiko ir atidumo), bet deja labai sudėtingiems žaidimamas išspręsti jums gali neužtekti saulės sistemos gyvavimo amžiaus, o tai gali sukelti nepatogumų.  
+
+\begin{pavnr}   Žaidimas pradedamas su keturiomis akmenukų krūvelėmis, kurių dydžiai
   $3$,$4$,$5$ ir $6$. $A$ ir $B$ atlieka ėjimus pakaitomis. Galima atlikti
   du ėjimus:
   \begin{enumerate}
     \item Paimti vieną akmenuką iš krūvelės, jei joje lieka ne mažiau negu $2$.
     \item Paimti visą krūvelę iš trijų arba dviejų akmenukų.
   \end{enumerate}
-  Laimi tas, kuris atlieka paskutinį ėjimą. Kuris žaidėjas gali visada laimėti?
+ Laimi tas, kuris atlieka paskutinį ėjimą. Kuris žaidėjas gali visada laimėti?
 \end{pavnr}
 
-Krūvelių dydžiai $0$,$2$,$3$,$4$,$5$ ir $6$ turi NIM vertes atitinkamai
-lygias $0$,$1$,$2$,$0$,$1$ ir $0$. Pradinės situacijos NIM suma yra
-$2\otimes 0 \otimes 1 \otimes 0=3$. Pirmojo ėjimo metu $A$ paima vieną akmenuką iš mažiausios krūvelės. Dabar
-NIM suma yra $1\otimes 0 \otimes 1 \otimes 0=0$; tokia yra ir žaidimo pabaigos NIM suma  $0\otimes 0 \otimes 0\otimes 0=0$ (*).  Šioje situacijoje $B$ negauna nė vienos krūvelės iš $3$ akmenukų. Jei jis pereis iš vertės $(0)$
-į $(2)$, tai $A$ pereis iš $(2)$ į $(0)$ ir $B$ vėl gaus (*). Jei
-$B$ pereis iš $(0)$ į $(1)$, tai $A$ pereis iš $(1)$ į $(0)$. Jei $B$
-pereis iš $(1)$ į $(0)$, tai $A$ galės pereiti iš $(1)$ į $(0)$, nes jo
-gautos situacijos NIM suma bus nelyginė. Po abiejų šių ėjimų NIM suma lieka (*). Išnagrinėjom visus galimus $B$
-veiksmus, kadangi po nė vieno $A$ ėjimo ant stalo neatsiranda vertės (2)
-krūvelės. Taigi į kiekvieną $B$ ėjimą $A$ gali atsakyti dar bent vienu, o
-žaidimas yra baigtinis. $A$ laimės šį žaidimą. 
+Krūvelių dydžiams 3, 4, 5 ir 6 atitnkamai priskiriame NIM vertes lygias 2, 0, 1 ir 0. Pozicijos NIM vertė pagal trečiąjį uždavinį lygi $2\otimes 0\otimes 1\otimes 0=3$, tad matome, kad pirmasis žaidėjas laimės pirmuoju ėjimu paėmęs vieną akmenuką iš krūvelės su 3 akmenukais. 
 
-\begin{pastaba}Daugiau apie uždavinį ir NIM vertes galite rasti knygoje „The William Lowell Putnam Mathematical Competition 1985–2000 Problems, Solutions, and Commentary". 
+\begin{pastaba}
+Mes remiamės faktu, kad NIM verčių NIM suma yra lyg suminio žaidimo NIM vertei, o tai leido suminį žaidimą išskaidyti į 4 atskirus juokingai lengvus žaidimus, išspręsti juos atskirai ir greitai viską sulipdyti atgal. Šis žaidimas yra iš Putnamo Varžybų ir buvo vertinamas kaip vienas sunkesnių, neblogai? Platesnę jo analizę galite rasti "The William Lowell Putnam Mathematical Competition 1985–2000 Problems, Solutions, and Commentary" Tai uždavinys B5, 1995.
 \end{pastaba}
 
-\subsubsection{Zermelo teorema}
+\subsubsection{Paskutiniai štrichai}
 
-\begin{thm}[Zermelo]
-Baigtiniame pilnos informacijos dviejų žaidėjų žaidime, kuriame žaidėjai
-atlieka ėjimus pakaitomis ir nėra sėkmės faktoriaus, kuris nors žaidėjas
-privalo turėti laiminčiąją strategiją, jei negalimos lygiosios, arba
-nepralaiminčiąją, jei jos galimos. 
-\end{thm}
-
-Kiekvieną baigtinio žaidimo partiją galime užrašyti kaip seriją ėjimų,
-atliekamų pakaitomis. Kiekvieną partiją laimi vienas arba kitas žaidėjas.
-Baigtinį žaidimą galime užrašyti kaip baigtinį skaičių galimų partijų
-(tai nebūtinai pavyks, jei kuris nors žaidėjas kokioje nors situcajoje
-galės rinktis iš  begalybės variantų, bet kiek jūs matėte tokių žaidimų?).
-Kadangi nė vienas žaidėjas negali  sukčiauti arba iškviesti baltojo drakono
-kortos, tai žaidėjai visada žino, kokiais ėjimais priešininkas galės
-atsakyti į vieną ar kitą veiksmą. Jei žaidėjui $A$ egzistuoja ėjimų seka su
-kuria, kad ir kaip žaistų $B$, $A$ visada laimi, tai jis turi laiminčiąją
-strategiją. Jei tokia seka neegzistuoja, visada laimi $B$. 
+\begin{pastaba}
+Jau anksčiau galėjome įsivaizuoduoti bešalį žaidimą kaip grandinę besikaitaliojančių laiminčių ir pralaiminčių pozicijų. Jei jau tu pralaimi, tai gudriais ėjimais gali tik pratęsti savo kančią. Dabar mes žaidimą sutraukėme į vieną skaičiuką, to žaidimo NIM vertę, kuri pasako, kuris žaidėjas laimės. Bet mes tuo neapsiribojome, o suradome būdą dar labiau supaprastinti šių uždavinių sprendimą. Jei tik mums pavyks įžvelgti atskirus žaidimus, iš kurių susideda pagrindinis, tai mes visus juo galėsime spręsti atskirai. 
+\end{pastaba}
 
 \begin{pastaba}
 Spręsdami uždavinius olimpiadose neužmirškite įrodyti, kad žaidimas tikrai
@@ -470,6 +525,27 @@ baigtinis (baigsis, kad ir kaip žaistų priešininkas). Kaip žaidėjui laimėt
 % skaičiaus, o $A$ visada galės pridėti bent pusę. Taigi $A$ ramiai stebi
 % priešininko agoniją tol, kol gauna $n\geq 1328$. Jis, pridėdamas pusę šio
 % skaičiaus, pasieks skaičių nemažesnį už $1990$
+
+\item Žaidimas pradedamas skaičiumi $1$. Žaidėjai pakaitomis skaičių daugina iš natūrinio skaičiaus didesnio už $1$, bet mažesnio už 10 ir taip gauna naują skaičių. Laimi tas, kuris primasis gauna skaičių didesnį už 1000. Ar kuris nors žaidėjas turi laiminčiąją strategiją? Jei taip, kokia ji?  
+
+%Pirmasis turi laiminčiąją strategiją. Jis daugina 1 iš 4. Tada antrasis gali padauginęs duoti skaičių nuo 8 iki 36. Tada pirmasis %daugina šį skaičių iš tokio skaičiaus, kad gautųsi skaičius, didesnis arba lygus 56 (tai visada įmanoma $(8*7=56, %36*2=72)$. Antrasis šį skaičių turi dauginti bent jau iš 2, tad mažiausiai sudaro skičių 112, o jį pirmasis daugina iš 9 ir %gauna 1008. Pirmasis laimėjo.
+
+\item Duotas nelyginis natūrinis $n>1$. Ant lentos užrašytas skaičius $k=2$ du žaidėjai pakaitomis gali pakeisti $k$ į $2k$ arba $k+1$. Pralaimi tas, kuris užrašo ant lentos skaičių didesnį už $n$. Su kuriais $n$ antrasis žaidėjas turi laiminčiąją strategiją? 
+
+%Jokiais. Pirmasis žaidėjas visada gali pateikti antrajam nelyginį skaičių, o antrasis į jį turės atsakyti lyginiu. Tad pirmajam %tereikia visada $k$ keisti į $k+1$. Taip jis tikrai neparašys skaičiaus didesnio už $n$, nes antrasis žaidėjas negali parašyti %jokio nelyginio skaičiaus, tuo tarpu ir $n$.
+
+\item  Du žaidėjai pakaitomis spalvina po vieną  $4\times 4$ lentelės langelį. Pralaimi tas, po kurio ėjimo lentelėje atsiranda pilnai nuspalvintas kvadratas  $2\times 2$. Kuris žaidėjas turi laiminčiąją strategiją?
+
+%Antrasis. Kiekvienu ėjimu jis spalvina langelį per du langelius aukščiau arba žemiau pirmojo nuspalvintam. Nesunku %pastebėti, kad tai veda į pergalį.
+
+\item Ant stalo guli 2002 kortos. Ant jų surašyti skaičiai nuo 1 iki 2002. Du žaidėjai paeiliui ima nuo stalo po kortą ir slepia ją kišenėje. Laimi tas žaidėjas, kurio visų kortų, esančių kišenėje, sumos paskutinis skaitmuo yra didesnis už priešininko. Ar kuris nors žaidėjas turi laiminčiąją strategiją? Jei taip, tai kokia ji? 
+
+%Laimi Pirmasis (P). Suporuojame kortas į poras $(k;1000+k)$, kur $k = 1, . . . , 1000$ ir $(2001;2002)$. Visų porų išskyrus 
+%paskutiniąją paskutinis skaitmuo abiejuose skaičiuose lygus. Pirmu ėjimu P renkasi 2002. Tada atsakinėja paimdamas kortą %iš tos poros, iš kurios paima antrasis. Kažakada A bus priverstas paimti 2001, jei ant stalo dar yra kortų, tai P ima bet kurią %ir elgiasi taip pat, kaip prieš tai. Žaidimo pabaigoje P turi sumą, kuri lygsta 2 moduliu 10, o A 1 moduliu 10.
+
+\item P ir L sugalvoja po natūrinį skaičių ir pateikia jį atsitiktiniam asmeniui A. A geba suskaičiuoti šių skaičių sandaugą bei sumą ir užrašo šiuos du skaičius ant atskirų kortelių. Vieną šių kortelių (P ir L nežino kurią) A parodo vaikinams, o kitą magiškai pradangina. Parodytoji kortelė paženklinta įsimintinu skaičiu 2002. P žvilgteli į šį skaičių ir prisipažįsta, kad nežino, kokį skaičių sugalvojo L. Tai žinodamas, L taip pat atsako, kad nenutuokia, koks yra P skaičius. Koks yra L pasirinktas skaičius? 
+
+%Tebūnie p ir l yra P ir L sugalvoti natūriniai skaičiai. $p|2002$, kitaip P žinotų l. Taip pat $l|2002$, kitaip L žinotų p. Be to %$(2002-l)|2002$, kitaip L žinotų P. Čia jau nesunku įsitikinti, kad 1001 yra vienintelis tinkamas 2002 daliklis tenkinantis šį %sąryšį. Tad $l=1001$ 
 
 \item  $n\times n$ šachmatų lentos kairiajame apatiniame kampe guli akmenukas. $A$ ir $B$ ėjimus atlieka pakaitomis, pradeda A. Žaidėjai gali pastumti akmenuką į gretimą langelį, kuris dar niekada nebuvo aplankytas. Laimi tas, kuris atlieka paskutinį ėjimą.\\
   1) Kas laimi su lyginiais $n$? \\
@@ -614,6 +690,48 @@ baigtinis (baigsis, kad ir kaip žaistų priešininkas). Kaip žaidėjui laimėt
 %vektorių projekcijos į $y$ ašį bus lygios (jų suma lygi nuliui) Taigi
 %pirmasis žaidėjas niekada nepralaimės.
 
+
+\item Įrodykite, kad jei turime n bešalių normalių žaidimų, tai jų sumos NIM vertė bus lygi jų NIM verčių NIM sumai. 
+
+%Įrodysime taikydami indukciją. Tai teisinga su $n=2$, pagal antrąjį uždavinį. Tarkime tai teisinga su n, įrodysime, kad tai %teisinga su n+1. Paimame bet kuriuos du žaidimus. Tarkim, kad jų NIM vertės atitinkamai lygios a ir b. Tada pagal antrąjį %uždavinį suminio žaidimo NIM vertė lygi $a\otimes b$ ir šį suminį žaidimą galim traktuoti kaip vieną žaidimą su atitinkama NIM %verte. Tad dabar turime n žaidimų, o tarėme, kad jiems galioja sąlyga. Įrodyta. 
+
+ \item Žaidimo erdvė yra n langelių ilgio juosta. Žaidėjai pakaitomis spalvina po du gretimus langelius. Žaidžia du žoidėjai, pralaimi tas, kuris nebegali atlikti ėjimo. Kuris žaidėjas turi laiminčiąją strategiją su $n=9$, $n=13$, $n=15$? (Tai Project Euler 306-tas uždavinys. Tai gana įdomus projektas tiems, kurie nėra super programuotojai. Galite pabandyti išspręsti ir visą uždavinį)
+%Tarkime, kad visiems ilgiams mažesniems už n jau priskyrėme NIM vertes. Pastebime, kad jei juostą kur nors nuspalviname %tai taip ją padaliname į du regionus. Jei juosta yra ilgio n, tai galime ją padalinti $[n/2]$ skirtingų būdų. Padalinę gauname %dviejų žaidimų sumą, kurių abiejų NIM vertes jau žinome, tad galime apskaičiuoti ir suminio žaidimo NIM vertę. Išnagrinėję %visus galimus padalinimus rasime visas NIM vertes, kurias galime pasiekti vieno ėjimo metu, tad žinosime ir n ilgio juostos%NIM vertę. Suprantant šį algoritmą visai nesudėtinga išsiaiškinti, kurios pozicijos laiminčios, o kurios pralaiminčios.   
+
+\item Yra dvi krūvelės, vienoj n, kitoj m akmenukų. Dar yra Julius su Gyčiu. Jie gali nuimti norimą skaičių akmenukų iš vienos krūvelės arba po lygų skaičių iš abiejų krūvelių. Aišku, kad pradeda Gytis. Laimi tas, kuris suvalgo paskutinį akmenuką. Raskite pirmas 10 pralaimčių pozicijų. Raskite rekursinį sąryšį tarp pralaiminčių pozicijų ir jų numerių (T.y. išreiškite n-ają pralaimičią poziciją, per ankstesnes). Gal pavyks išreikšti visas pralaiminčias pozicijas per jų numerius?
+
+%Tai yra plačiai žinomas ir magiškas Wythofo žaidimas (Wythoff's game). Jis gana nagrinėjamas Engel A. knygoje "Problem %solving strategies", bei žemiau paminėtame puslapyje. 
+
+%Tikrai nesunku rasti pirmąsias pralaiminčias pozicijas:
+
+%0. (0;0)   4. (6;10)   8. (12;20)   12. (19;31)
+
+%1. (1;2)   5. (8;13)   9. (14;23)
+
+%2. (3;5)   6. (9;15)  10. (16;26)
+
+%3. (4;7)   7. (11;18) 11. (17;28)
+
+%Žiūrim ką turim. Matome, kad kiekvienas skaičius (kogero!) pasirodo lentelėje tiksliai po vieną kartą ir kad skaičių poros %skirtumas n - ojoje pozicijoje (kogero!) lygus  n. Po šių pastebėjimų uždavinys jau beveik išspręstas. Keliame hipotezę, kad %pirmasis pralaiminčios poros skaičius yra mažiausias dar niekada nepasirodęs lentelėje $x_{n}$, o antrasis lygus %$x_{n}+n$.  Įrodysime, kad taip gauname visas pralaimičias pozicijas beigi tik pralaiminčias. Pralaiminčias pozicijas mes %vertinsime pagal mažiausiąjį poros elementą. Taip vertinant $(0;0) < (1;2) < (3;5)$ ir t.t. Nesunku suprasti, kad skaičius x %gali būti tik vienos poros mažiausias elementas (Nesunku?). 
+
+%Pirmoji pora $(0;0)$ yra tikrai pralaiminti ir nėra mažensių pralaiminčių pozicijų (Akivaizdu!). Tarkime, kad visos poros iki %$(x_{n};x_{n}+n)$ yra pralaiminčios ir tarp jų nėra mažesnių pralaiminčių pozicijų, kurios nėra įtrauktos pagal šią taisyklę. %Įrodysim, kad ir $(x_{n+1};x_{n+1}+n+1)$ yra pralaiminti, bei tarp jos ir $(x_{n};x_{n}+n)$ nėra pralaiminčių pozicijų. 
+
+%1) Jei tarp jų atsirastų pralaiminti pozicija $(a;b)$, tai jos mažiausias elementas $x_{n}<a<x_{n+1}$, tačiau pagal %$x_{k}$ apibrėžimą, jau yra pralaiminti pora $(c;a)$<$(x_{n};x_{n}+n)$, kuri turi didesnįjį elementą a.  $b>a>c$, tad iš %poros $(a;b)$ vienu ėjimu galime gauti porą $(c;a)$, tad $(a;b)$ nėra pralaiminti. Prieštara.
+
+%2) Tarkime, kad pora $(x_{n+1};x_{n+1}+n+1)$ yra laiminti. Iš jos vieno ėjimo metu turime galėti pasiekti pralaimičiąją %poziciją. Tikrai nėra pralaiminčios pozicijos su narių skirtumu n+1, tad mums teks nuimti akmenukus iš kurios nors vienos %krūvelės. Pagal apibrėžimą skaičiaus $x_{n+1}$ tikrai nėra nė vienoje pralaiminčioje poroje, gal ten yra skaičius %$x_{n+1}+n+1$? $x_{n+1}$ yra didesnis už visus kitus mažiausius pralaiminčių porų elementus, o n+1 daugiau už visus %pasitaikančius skirtumus tarp poros elementų, tad $x_{n+1}+n+1$ yra aiškiai didesnis už visus skaičius pasitaikančius %pralaiminčiose pozicijose. Tad nei nuėmę po lygų akmenukų skaičių iš abiejų krūvelių, nei pažaidę su viena krūvele mes %niekaip nepasieksime pralaiminčios pozicijos. Prieštara
+
+\begin{pastaba}
+Tikrai patariu pasiskaityti "Problem solving strategies", nes ten išvedama pralaiminčių pozicijų formulė išreiškiant jas per n, o ta formulė laisvai gali pretenduoti į pasaulio stebuklų sąrašą : ] 
+\end{pastaba}
+
+\item Turima šaškių lentą kuri tęsiasi į begalybę tiek į viršų, tiek į dešinę, bet turi fiksuotą apatinį kairį kampą. Kažkur lentoje lūkuriuoja Alisa. Žaidžia Vytautas ir Aleksas, pradeda pastarasis. Jie ėjimo metu liepia Alisai eiti į kairę, apačią arba įstrižaine į apačią ir kairę per norimą langelių skaičių. Laimi tas, kas nusiveda Alisą į apatinį kairį kampą. Nupaišykite lentelę $7\times 7$, kur kiekviename langelyje įrašyta to langelio NIM vertė. Gal pavyktų nustatyti rekursinį saryšį tarp pralaiminčių langelių ir jų eilės numerių? 
+
+%Žaidimas identiškas ankstesniajam, ar ne puiku? 
+
+\item Turime stačiakampį gretasienį  $a\times b\times c$, kurio apatiniame kairiame artimesniame žaidėjams kampe tupi šaškė. Žaidėjai gali ją stumtelti į viršų, dešinę arba tolyn nuo savęs (Ta trečia trajektorija). Laimi tas, kuris nutūpdo šaškę priešingame gretasienio kampe. (Viršutiniame dešiniame tolimajame). Du žaidėjai ėjimus atlieka pakaitomis. Kokį sąryšį turi tenkinti a, b, ir c, kad pirmasis žaidėjas turėtų laiminčiąją strategiją?
+
+%Žaidimas identiškas NIM žaidimui su trimis krūvelėmis, kurių dydžiai yra $a-1$, $b-1$ ir $c-1$ (jei tariame, kad kampinio %langelio kordinatės lygios (1;1;1) ir $a$, $b$ ir $c$, jei kampinio langelio kordinatės lygios (0;0;0).
+
 \item \text{[All Russian Olymnpiad 1994]} Žaidėjai $A$, $B$ paeiliui atlieka ėjimus su
   žirgu  $1994\times 1994$ šachmatų lentoje. $A$ atlieka horizontalius (pereina
   į gretimą eilutę) ėjimus, o $B$ – vertikalius. $A$ pasirenka žirgo poziciją
@@ -701,6 +819,10 @@ baigtinis (baigsis, kad ir kaip žaistų priešininkas). Kaip žaidėjui laimėt
 %$r_{n+1}=y-s_{n}$ ir $s_{n+1}=x-r_{n}$.  Pastebime, jog abiem atvejais
 %$s_{i+1}-r_{i+1}=s_{i}-r_{i}-(y-x)$. Kadangi $y-x>0$, tai egzistuoja $m$,
 %kuriam galioja $s_{m}-r_{m}<0$. Prieštara.
+
+\item \text{[IMO shortlist 2004]} Duotas natūrinis $n>1$. Ant lentos užrašytas skaičius $k=2$, o du žaidėjai pakaitomis gali pakeisti $k$ į $2k$ arba $k+1$. Pralaimi tas, kuris užrašo ant lentos skaičių didesnį už $n$. Su kuriais $n$ antrasis žaidėjas turi laiminčiąją strategiją?
+
+%$S_{n}$ vadinsime žaidimą, kuriame duotas skaičius yra n. $S_{2p+1}$ laimės pirmasis žaidėjas visada keisdamas $k$ į %$k+1$. Vadinasi $n$ yra lyginis. Pirmasis žmogus parašęs lyginį skaičių didesnį už $\frac{n}{2}$ laimės, bo niekas %nebenorės dauginti iš dviejų. Jei $n$ yra dalus iš keturių, tai pralaimi pirmasis žmogus parašęs didesnį skaičių už %$\frac{n}%{4}$, nes tas skaičius bus mažesnis už $\frac{n}{2}$, o priešininkas galės jį padauginti iš dviejų ir taip %garantuoti sau pergalę. Vadinasi žaidimą $S_{4n}$ laimės tas pats žaidėjas kaip ir $S_{n}$. Analogiškai jei $n$ nėra dalus %iš keturių tai žaidimų $S_{4n+2}$ ir $S_{n}$ laimėtojai sutaps. Taigi turimam lyginiam n mes tol atliekame šį algoritmą: jei %skaičius dalus iš keturių, tai padaliname, o jei ne, tai daliname iš dviejų, atimame vienetą ir dar kartelį padaliname iš dviejų. %Jei algoritmo eigoje gauname nelyginį skaičių (1 taip pat mums tinka, ar aišku kodėl?), tai antrasis žaidėjas yra pasmerktas, %o jei ne, tai algoritmas užlūta ties skaičiumi 2, o tai reiškia, kad žaidimą laimi antrasis žaidėjas. Taigi, jei skaičių $n$ galime %gauti startavę nuo $k=2$ ir jį vis keitę $4k$ arba $4k+2$ kažkokia tais tvarka, tai žaidimą laimės antrasis žaidėjas. Kaip tai %užrašyti tvarkingai? Jei jau dauginame skaičių iš keturių tai ketvirtainėje sistemoje prie jo uodegos prirašome $0$, jei %dauginame iš $4$ ir pridedame $2$, tai prie uodegos priduriame $2$. Startuojame su basu $2$, vadinasi antrasis žaidėjas %laimės tuos ir tik tuos žaidimus, kuriuose $n$ ketvirtainėje išraiškoje bus išreiškiamas vien tik $2$ ir $0$. Kaip atrodys $n$ %dvejetainė išraiška?
 
 \item $A$ ir $B$ pakaitomis keičia tritaškius $x^{10}+\dots x^9+\dots x^8+\dots
   x^7+\dots x^6+\dots x^5+\dots x^4+\dots x^3+\dots x^2+\dots x+1=0$ į
