@@ -536,7 +536,7 @@ nelygybių. Šiai naujajai nelygybei įvesime keletą apibrėžimų ir žymėjim
   skaičiai.
 \end{api}
 
-\begin{api} Seka $A=\{a_1,a_2,...,a_n\}$ mažoruoja (angl. \textit{majorize})
+\begin{api} Sakysime, kad seka $A=\{a_1,a_2,...,a_n\}$ mažoruoja (angl. \emph{majorize})
   seką $B=\{b_1,b_2,...,b_n\}$ (žymėsime $A \succ B$), jeigu tenkinamos trys
   sąlygos:
   \begin{itemize}
@@ -1952,10 +1952,10 @@ nepateiksime nei pavyzdžių, nei uždavinių, tik keletą taikymo komentarų ir
 leisime skaitytojui pasinerti į savą vaizduotę.
 
 \begin{thm}[H\"{o}lder]
-  Tegu $\{a_{11},\ldots,a_{n1}\}$, $\ldots$, $\{a_{1k},\ldots,a_{nk}\}$ bus k
+  Tegu $\{a_{11},\ldots,a_{n1}\}$, $\ldots$, $\{a_{1k},\ldots,a_{nk}\}$ bus $k$
   skaičius aibių, kur kiekviena jų turi po $n$ teigiamų elementų, o
   $\{p_1,\ldots,p_k\}$ bus teigiamų skaičių aibė, kurios visų elementų suma
-  lygi 1. Tuomet
+  lygi $1$. Tuomet
   $$(a_{11}+\ldots+a_{n1})^{p_1}\ldots(a_{1k}+\ldots+a_{nk})^{p_k}\geq
   a_{11}^{p_1}\ldots a_{1k}^{p_k}+\ldots+a_{n1}^{p_1}\ldots a_{nk}^{p_k},$$
   arba
@@ -1968,15 +1968,15 @@ jie yra skirtingi. Pastebėkime, kad kai $k=2$, o $p_1=p_2=\frac{1}{2}$,
 gauname Cauchy-Schwarz nelygybę, o ir visa H\"{o}lder nelygybės forma yra
 tarsi Cauchy-Schwarz nelygybės apibendrinimas.
 
-\begin{thm}[Chebyshev] Jei turime tokias aibes $a_1\leq a_2\leq\ldots\leq
+\begin{thm}[Chebyshev] Jei turime aibes $a_1\leq a_2\leq\ldots\leq
   a_n$ ir $b_1\leq b_2\leq\ldots\leq b_n$, tai \begin{center}
     $\frac{a_1b_1+a_2b_2+\ldots+a_nb_n}{n}\geq\frac{a_1+a_2+\ldots+a_n}{n}\cdot\frac{b_1+b_2+\ldots+b_n}{n}\geq\frac{a_1b_n+a_2b_{n-1}+\ldots+a_{n-1}b_2+a_nb_1}{n}.$
   \end{center}
 \end{thm}
 
 \begin{thm}[Minkowski]
-  Jei turime teigiamų skaičių sekas $\{a_1,a_2,\ldots,a_n\}$ ir
-  $\{b_1,b_2,\ldots,b_n\}$, o $p>0$, tai
+  Jei $\{a_1,a_2,\ldots,a_n\}$ ir $\{b_1,b_2,\ldots,b_n\}$ teigiamų skaičių
+  sekos ir $p\geq 1$, tai
   $$\left(\sum_{i=1}^{n}{(x_i+y_i)^p}\right)^{\frac{1}{p}}\leq\left(\sum_{i=1}^{n}{x_i^p}\right)^{\frac{1}{p}}+\left(\sum_{i=1}^{n}{y_i^p}\right)^{\frac{1}{p}}.$$
 \end{thm}
 

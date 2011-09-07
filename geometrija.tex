@@ -555,11 +555,16 @@ draw(A--N); draw(A--M);
 
 \begin{sprendimas}
   Pastebėkime, kad trikampiai $BCM$ ir $NCA$ yra lygiašoniai.
-  Tada $\angle MCN = (\angle BCN + \angle NCM) + (\angle NCM +
-  \angle MCA) - (\angle BCN + \angle NCM + \angle MCA) =
-  \angle BCM + \angle NCA - 90^\circ = \frac{180^\circ-\angle
-  CBM }{2} + \frac{ 180^\circ-\angle CAN }{2} -90^\circ =
-  45^\circ$, ko ir reikėjo.  
+  Tada 
+  \begin{align*}
+    \angle MCN & = (\angle BCN + \angle NCM) + (\angle NCM + \angle MCA) -
+    (\angle BCN + \angle NCM + \angle MCA) \\
+    & = \angle BCM + \angle NCA - 90^\circ \\
+    & = \frac{180^\circ-\angle CBM }{2} + \frac{ 180^\circ-\angle CAN }{2}
+    -90^\circ \\
+    & = 45^\circ,   
+  \end{align*}
+  ko ir reikėjo.
 \end{sprendimas}
 
 Mes šiame pavyzdyje pasinaudojome viena gerai žinoma lema ir įrodėme ją:
@@ -596,257 +601,194 @@ draw(D--O);
 \subsubsection{Uždaviniai}
 
 \begin{enumerate} 
-\item Įrodykite tapatybę viršuje.
-  %Tegu $\angle AOB = a, \angle BOC = b, \angle COD = c$.  Tada $\angle AOC
-  %+\angle BOD = (a+b)+(b+c)=(a+b+c)+b= \angle AOD + \angle BOC$.
-\item Ant trikampio $ABC$ kraštinių $AB, BC, CA$ atitinkamai paimti taškai
-  $C_1, A_1, B_1$. Ar atkarpų $AA_1, BB_1, CC_1$ vidurio taškai gali būti
-  vienoje tiesėje? 
-  %Ne, negali. Tarkime priešingai. $AA_1, BB_1, CC_1$ vidurio taškai yra
-  %ant trikampio $ABC$ vidurio linijų, lygiagrečių atitinkamai kraštinėms
-  %$BC, AC, AB$. Tačiau šios vidurio linijos sudaro trikampį, o 
-  %linija kerta  trikampį daugiausia dviejuose taškuose, o mums
-  %reikia trijų. Prieštara.
-\item  Ant lygiagretainio $ABCD$ kraštinės $AB$ (arba ant jos tęsinio)
-  paimtas taškas $M$ toks, kad $\angle MAD = \angle AMO$, kur $O$ -
-  lygiagretainio įstrižainių sankirtos taškas. Įrodyti, kad $MD=MC$. 
-  %Tegu $MO$ kerta CD taške $N$. Tada $MNDA$ arba $MDNA$ yra lygiašonė
-  %trapecija, priklausomai nuo to, ar $M$ yra ant $AB$, ar ant jos tęsinio.
-  %Tada ji yra tokia pati kaip ir trapecija $MBCN$ arba, kitu atveju,
-  %trapecija $BMCN$.  Tada šių trapecijų visos įstrižainės yra lygios, ir
-  %todėl $MD = MC$.
-\item Ant trikampio $ABC$ kraštinių $AB, BC, CA$ atitinkamai paimti taškai
-  $C', A', B'$. Žinoma, kad $\angle AC'B' = \angle B'A'C$, $\angle CB'A' =
-  \angle A'C'B$, $\angle BA'C' = \angle C'B'A$. Įrodyti, kad $A', B', C'$ -
-  kraštinių vidurio taškai.
-  %Tegu $\angle AC'B' = b$, $\angle CB'A' =a$, $\angle BA'C' = c$. Sudėję
-  %trikampių $AB'C'$, $A'BC'$, $A'B'C$ kampus, mes gauname $540^\circ=
-  %180^\circ+180^\circ +180^\circ = (\angle A +b+c) + (c+a+\angle B ) +
-  %(\angle C +a+b) = 2(a+b+c)+180^\circ$, todėl $a+b+c = 180^\circ$. Taigi
-  %$ \angle A = a ,\angle B = b, \angle C =c $. Todėl $AB\parallel{A'B'},
-  %BC\parallel{B'C'}, AC\parallel{A'C'}$.  Tada iš Talio teoremos
-  %$\frac{CA'}{A'B} = \frac{AC'}{C'B} = \frac{B'A}{B'C} = \frac{A'B}{CA'}$,
-  %taigi $A'$ yra $BC$ vidurio taškas.  Panašiai su $B'$ ir $C'$.
-\item Duotas trikampis, jo pusiaukampinių sankirtos taškas sujungtas su
-  viršūnėmis, ir taip gauti 3 mažesni trikampiai. Vienas jų panašus į
-  pradinį.  Rasti trikampio kampus.
-  %Tegu pradinio trikampio kampai būna lygūs $2a, 2b, 2c$, $a \geq b \geq
-  %c$. Pastebėkime, kad visi 3 gautieji trikampiai yra bukieji (įrodykite
-  %tai!), o 2 iš jų turi kampą, lygų $c$. Tačiau pradinio trikampio visi
-  %kampai didesni už $c$, taigi trikampis su kampais $a, b, 180^\circ-a-b$
-  %yra panašus į pradinį. Todėl $180^\circ-a-b = 2a $, $a = 2b$, $b = 2c$.
-  %Išsprendę gauname, kad trikampio kampai yra lygūs $\frac{180^\circ}{7},
-  %\frac{360^\circ}{7}, \frac{720^\circ}{7}$. 
-\item Duotas lygiagretainis $ABCD$, $M-DC$ vidurio taškas, $H$ - taško $B$
-  projekcija į $AM$. Įrodyti, kad $BCH$ yra lygiašonis.
-  %Tegu $AM$ kerta tiesę $CB$ taške $N$. Tada trikampiai $ADM$ ir $CMN$ yra
-  %vienodi, todėl $BC = AD = CN$. Tada $HC$ yra stačiojo trikampio $BHN$
-  %pusiaukraštinė iš stačiojo kampo, ir todėl $HC = CB$. 
-\item Trikampyje $ABC$ $BE$ ir $CF$ yra aukštinės, o $D$ yra $BC$ vidurio
-  taškas. Jei $DEF$ yra lygiakraštis, tai ar būtinai $ABC$ taip pat yra
-  lygiakraštis?
-  %Ne, $ABC$ nebūtinai yra lygiakraštis. Pavyzdžiui, jeigu $ABC$ yra
-  %smailusis $\angle A = 60^\circ$, tai tada pagal stačiojo trikampio
-  %pusiaukraštinės savybę $ED = \frac{CB}{2} = DF$, $\angle EDF = \angle
-  %EDB + \angle FDC - 180^\circ = 2(\angle C + \angle B) - 180^\circ =
-  %60^\circ$ iš priekampio savybės ir pirmojo uždavinio tapatybės. Todėl
-  %$ABC$ nebūtinai lygiakraštis. ($ABC$ nebūtinai turi būti smailusis.
-  %Galite papildomai įrodyti, kad jei $DEF$ yra lygiakraštis, tai visada 
-  %$\angle A = 60^\circ$).
-\item Duotas trikampis $ABC$ su $\angle A = 60^\circ$. $N$ yra $AC$ vidurio
-  statmens ir $AB$ sankirta, o $M$ yra $AB$ vidurio statmens ir $AC$
-  sankirta. Įrodyti, kad $MN = BC$.
-  %Pastebėkime, kad $ABM$ yra lygiašonis. Bet $\angle A = 60^\circ$, todėl
-  %$ABM$ lygiakraštis. Panašiai ir $ACN$ lygiakraštis. Todėl $CMBN$  yra
-  %lygiašonė trapecija ir todėl $MN = BC$.
-\item $M$ ir $N$ yra atitinkamai kvadrato $ABCD$ kraštinių $BC$ ir $AD$
-  vidurio taškai. $K$ yra bet koks taškas ant spindulio $CA$ už taško $A$.
-  $KM$ ir $AB$ kertasi taške $L$. Įrodyti, kad $\angle KNA = \angle LNA$.
-  %Tegu tiesės $AB$ ir $KN$ kertasi taške $E$, o $AC$ ir $NM$ taške $F$.
-  %Akivaizdžiai $NF=FM$, $LE \parallel{NM}$, todėl iš trikampių $KNM$ ir 
-  %$KEL$ panašumo $LA = AE$. Tada $AN$ yra
-  %$LE$ vidurio statmuo ir taigi $\angle KNA = \angle LNA$.
-\item Duotas trikampis $ABC$ toks, kad kampo $A$ pusiaukampinė, kraštinės
-  $AB$ vidurio statmuo ir aukštinė iš taško $B$ kertasi viename taške.
-  Įrodyti, kad kampo $A$ pusiaukampinė, kraštinės $AC$ vidurio statmuo ir
-  aukštinė iš taško $C$ kertasi viename taške.
-  %Tegu kampo $A$ pusiaukampinė ir kraštinės $AB$ vidurio statmuo kertasi
-  %taške $E$, o $BH$ ir $CF$ yra aukštinės.  Tada $AEB$ yra lygiašonis.
-  %Taigi $\angle ABE = \angle BAE = \angle EAC$, ir iš čia $\angle A =
-  %60^\circ$. Tegu kampo $A$ pusiaukampinė ir $CF$ kertasi taške $K$. Tada
-  %$\angle KAC = \angle KCA = 30^\circ$, taigi $AC$ vidurio statmuo eina
-  %per tašką $K$.
-\item Duotas iškilasis keturkampis $ABCD$ toks, kad  jo įstrižaines
-  statmenos ir kertasi taške $O$, $BC = AO$.  Taškas $F$ paimtas toks, kad
-  $CF \perp{CD}$ ir $CF = BO$.  Įrodyti, kad $ADF$ yra lygiašonis. 
-  %Iš Pitagoro teoremos $AD^2 = AO^2 + OD^2 = BC^2 + OD^2 = BO^2 + OC^2 +
-  %OD^2 = CF^2 + CD^2 = DF^2$, taigi $AD = DF$.
-\item Duotas trikampis $ABC$ su $\angle ACB = 70^\circ$, o jo viduje yra
-  taškas $M$ toks, kad $\angle BAM = \angle ABC$, $\angle AMB = 100^\circ$.
-  Įrodyti, kad $BM<AC$.
-  %Paimkime ant kraštinės $BC$ tašką $K$ tokį, kad $\angle AKC = 80^\circ$.
-  %Tada trikampiai $AMB$ ir $AKB$  yra vienodi pagal du kampus ir kraštinę.
-  %Taigi $BM = AK$, bet $AK < AC$ iš trikampio nelygybės pritaikytos
-  %trikampiui $AKC$, ko ir reikėjo. 
-\item Įrodyti, kad keturkampio kraštinių vidurio taškai yra lygiagretainio
-  viršūnės.
-  %Keturkampio, sudaryto iš keturių kito keturkampio kraštinių vidurio
-  %taškų, priešingos kraštinės lygiagrečios viena kitai iš trikampio
-  %vidurio linijos savybės. 
-\item Ant tiesės $a$ rasti tašką $G$ tokį, kad $AG+BG$ butų mažiausias, kur
-  $A$ ir $B$ yra taškai toje pačioje tiesės pusėje.
-  %Tegu taškas $B'$ yra simetriškas taškui $B$ tiesės $a$ atžvilgiu. Tegu
-  %$AB'$ kerta $a$ taške $G$. Šis taškas ir yra reikiamas taškas: jeigu $H$
-  %yra koks nors kitas taškas ant $a$, tai tada $AH + BH = AH + B'H \geq
-  %AB' = AG + GB' = AG + GB$ iš trikampio nelygybės.
-  %\begin{center}
-  %\begin{asy}
-  %import olympiad; size(200); pair A, B, BB, F, G, H;
-  %draw((0,0)--(100,0));
-  %label("$a$",(5,0),N,blue);
-  %A=(15,25); B=(90,10); H=(45,0);
-  %BB=conj(B);
-  %G=extension((0,0),(100,0),A,BB);
-  %F=extension((0,0),(100,0),B,BB);
-  %dot(A,blue);
-  %dot(B,blue);
-  %dot(BB,blue);
-  %dot(G,blue);
-  %dot(H,blue);
-  %dot(F,blue);
-  %label("$A$",A,NE,blue);
-  %label("$B$",B,NE,blue);
-  %label("$B'$",BB,NE,blue);
-  %label("$H$",H,N,blue);
-  %label("$G$",G,N,blue);
-  %label("$F$",F,NE,blue);
-  %draw(A--BB); 
-  %draw(A--H);
-  %draw(H--B);
-  %draw(H--BB);
-  %draw(G--B);
-  %draw(G--BB);
-  %draw(F--B);
-  %draw(F--BB);
-  %add(pathticks(H--B,2,0.5,30,100,red));
-  %add(pathticks(H--BB,2,0.5,30,100,red));
-  %add(pathticks(F--B,2,0.5,0,100,red));
-  %add(pathticks(F--BB,2,0.5,0,100,red));
-%\end{asy}
-  %\end{center}
-\item Duotas kvadratas $ABCD$, jo viduje taškas $M$.  Įrodykite, kad
-  trikampių $ABM$, $BCM$, $CDM$ ir $DAM$ pusiaukraštinių susikirtimo taškai
-  taip pat yra kvadrato viršūnes.
-  %Tegu kvadratas būna $ABCD$, o kraštinių vidurio taškai $E, F, G, H$, bei
-  %trikampių $ABM$, $BCM$, $CDM$, $DAM$ pusiaukraštinių susikirtimo taškai
-  %$P, O, N, L$ - taip, kaip parodyta paveikslėlyje žemiau. Tada $EFGH$ yra
-  %taip pat kvadratas. Iš pusiaukraštinių sankirtos taško savybės,
-  %$\frac{MP}{MH} = \frac{MO}{MG} = \frac{2}{3}$, todėl iš Talio teoremos
-  %arba panašiųjų trikampių, $PO \parallel{HG}$ ir $\frac{PO}{HG} =
-  %\frac{2}{3}$. Panašiai su kitomis kraštinėmis. Todėl $PONL$ turi
-  %gretimas kraštines statmenas, o taip pat visos kraštinės lygios. Taigi
-  %$PONL$ yra kvadratas. 
-  %\begin{center}
-  %\begin{asy}
-  %import olympiad;
-  %size(200);
-  %pair A, B, C, D, E, F, G, H, L, N, O, P, M;
-  %A=(0,100);
-  %B=(0,0);
-  %C=(100,0);
-  %D=(100,100);
-  %M=(45,65);
-  %E=(A+D)/2;
-  %F=(C+D)/2;
-  %G=(B+C)/2;
-  %H=(A+B)/2;
-  %P=M+(H-M)*2/3;
-  %L=M+(E-M)*2/3;
-  %N=M+(F-M)*2/3;
-  %O=M+(G-M)*2/3;
-  %dot(A,blue);
-  %dot(B,blue);
-  %dot(C,blue);
-  %dot(D,blue);
-  %dot(E,blue);
-  %dot(G,blue);
-  %dot(H,blue);
-  %dot(F,blue);
-  %dot(L,blue);
-  %dot(M,blue);
-  %dot(N,blue);
-  %dot(O,blue);
-  %dot(P,blue);
-  %label("$A$",A,NW,blue);
-  %label("$B$",B,SW,blue);
-  %label("$C$",C,SE,blue);
-  %label("$D$",D,NE,blue);
-  %label("$E$",E,NE,blue);
-  %label("$H$",H,W,blue);
-  %label("$G$",G,S,blue);
-  %label("$F$",F,NE,blue);
-  %label("$L$",L,NE,blue);
-  %label("$N$",N,NE,blue);
-  %label("$O$",O,SE,blue);
-  %label("$P$",P,NW,blue);
-  %draw(A--B--C--D--cycle);
-  %draw(L--N--O--P--cycle);
-  %draw(H--E--F--G--cycle);
-  %draw(H--M);
-  %draw(E--M);
-  %draw(F--M);
-  %draw(G--M);
-  %draw(A--M);
-  %draw(B--M);
-  %draw(C--M);
-  %draw(D--M);
-  %label("$M$",M,NE,blue);
-%\end{asy}
-  %\end{center}
-\item Duotas trikampis $ABC$. Per jo viršūnes $A$ ir $B$ išvestos dvi
-  tiesės, kurios padalina šitą trikampį į 4 figūras: 3 trikampius ir vieną
-  keturkampi. Žinoma, kad trijų iš šių figurų plotai vienodi. Įrodykite,
-  kad tarp tų trijų yra keturkampis.
-  %Tegu ta tiesė per tašką $A$ kerta $BC$ taške $A'$, tiesė per $B$ kerta
-  %$AC$ taške $B'$, o $AA'$ ir $BB'$ kertasi taške $M$. Tarkime, kad tarp
-  %trijų figūrų nėra keturkampio. Tada visų trijų trikampių plotai yra
-  %lygūs.  Tada trikampiai $ABM$ ir $AMB'$ turi bendrą aukštinę iš taško
-  %$A$ ir vienodą plotą. Todėl $MB$ = $MB'$. Panašiai ir $AM$ = $MA'$.
-  %Todėl $ABA'B'$ yra lygiagretainis. Tai neįmanoma, nes tada $AC
-  %\parallel{CB}$.
-\item Trikampyje dvi aukštinės yra ne trumpesnės nei kraštinės į kurias jos
-  remiasi. Rasti trikampio kampus. 
-  %Bet kokiame stačiajame trikampyje statinis trumpesnis už įžambinę. Jei
-  %mūsų trikampis yra $ABC$, su aukštinėmis $AA'$ ir $BB'$, bei $AA'
-  %\geq BC$ ir $BB' \geq AC$, tai tada $AA' \geq BC \geq BB' \geq AC \geq
-  %AA'$, su lygybėmis tada ir tik tada jei $ABC$ lygiašonis statusis.
-  %Todėl kampai yra lygūs $90^\circ ,45^\circ ,45^\circ$.
-\item Duotas trikampis $ABC$ su $\angle A = 60^\circ$, pusiaukraštinė $CM$
-  ir aukštinė $BN$ kertasi taške $K$, $CK=6$, $KM=1$. Rasti trikampio $ABC$
-  kampus.
-  %Tegu $P$ yra atkarpos $BN$ vidurio taškas. Tada $MP \parallel{AN}
-  %\parallel{NC}$, taigi $MPCN$ yra trapecija.  Todėl trikampiai $PKM$ ir
-  %$CKN$ yra panašūs.  Tada $6=\frac{CK}{KM}=\frac{NC}{PM}$, taigi
-  %$\frac{AC}{AB} = \frac{AN+NC}{AB} = \frac{AN}{AB} + \frac{NC}{AB} =
-  %\frac{1}{2} + \frac{NC}{MP}\frac{MP}{AN}\frac{AN}{AB} =\frac{1}{2} +
-  %6\cdot\frac{1}{2}\cdot\frac{1}{2} = 2$. Todėl trikampio $ABC$ kampai yra lygūs
-  % $30^\circ, 60^\circ, 90^\circ$. 
-\item Ant trikampio $ABC$ kraštinių $AB$ ir $BC$ atitinkamai paimti taškai
-  $D$ ir $E$ tokie, kad $\frac{AD}{DB} =\frac{BE}{EC}=2$ ir $\angle ACB
-  =2\angle DEB$. Įrodyti, kad $ABC$ lygiašonis.
-  %Tegu $AB$ ilgis būna $6x$, o $M$ kraštinės $AB$ vidurio taškas. Tada $BM
-  %= 3x$, $DB = 2x$, taigi $\frac{MB}{DB} = \frac{3}{2} = \frac{CB}{EB}$.
-  %Todėl trikampiai $CMB$ ir $EDB$ yra panašūs ir dėl to $\angle BCM =
-  %\angle BED = \frac{\angle ACB}{2}$, todėl $CM$ yra trikampio $ABC$
-  %pusiaukampinė ir pusiaukraštinė tuo pat metu, taigi $ABC$
-  %lygiašonis($AC$ = $CB$).
-\item Duotas trikampis $ABC$. $D$-kraštinės $AC$ vidurio taškas. Ant $BC$
-  paimtas taškas $E$ toks, kad $\angle BEA =\angle CED$. Rasti
-  $\frac{AE}{DE}$.
-  %Tegu tiesė, lygiagreti $DE$ eina per viršūnę $A$ ir kerta kraštinę $BC$
-  %taške $M$. Tada $ED$ yra trikampio $AMC$ vidurio linija bei $\angle AMC
-  %= \angle DEC = \angle AEB$, todėl $AME$ yra lygiašonis. Taigi
-  %$\frac{AE}{DE} = \frac{AM}{DE} = 2$.
+  \item Įrodyti, kad keturkampio kraštinių vidurio taškai yra lygiagretainio
+    viršūnės.
+    %Keturkampio, sudaryto iš keturių kito keturkampio kraštinių vidurio
+    %taškų, priešingos kraštinės lygiagrečios viena kitai iš trikampio
+    %vidurio linijos savybės. 
+  \item Trikampyje $ABC$ nubrėžė pusiaukraštinę $BD$ ir aukštinę $BE$.
+    Pasirodė, kad kampas $\angle B$ dabar padalintas į tris lygias dalis.
+    Rasti trikampio kampus.
+    %Tarkime, kad $E$ yra tarp $D$ ir $A$. Tada trikampyje $BAD$ aukštinė 
+    %sutampa su pusiaukampine, taigi $ED=AE$. Iš čia $ED=\frac{DC}{2}$.
+    %Tada iš pusiaukampinės savybės trikampiui $BEC$, $\frac{BE}{BC}=
+    %\frac{ED}{DC}=\frac{1}{2}$, taigi stačiajame trikampyje $BEC$ įžambinė
+    %dvigubai ilgesnė už statinį. Todėl $\angle BCE=30^\circ$, $\angle CBE= 60^\circ$.
+    %Nesunkiai randame, kad $\angle ABC=90^\circ$, $\angle BAC=60^\circ$.
+  \item Trikampyje $ABC$ nubrėžė pusiaukampines $AD$ ir $BE$. Pasirodė, 
+    kad $\angle BEA=\angle BAE=\angle ADC$. Rasti trikampio kampus.
+    %Tegu $\angle BAC=2x=\angle ADC=\angle BEA$. Suskaičiuojame, kad 
+    %$$\angle CBA=2\angle ABE=2(180^\circ-2x-2x)=360^\circ-8x.$$ Iš priekampio
+    %savybės -- $$2x=\angle CDA=\angle DAB+\angle DBA=360^\circ-7x.$$ Taigi $x=
+    %40^\circ$, ir iš čia trikampio kampai yra $\angle A=80^\circ$, $\angle B=
+    %40^\circ$, $\angle C=60^\circ$.
+  \item Trikampyje $ABC$ ant $BC$ yra taškas $D$ toks, kad $DC=AC=AB$ ir $AD=BD$.
+    Rasti trikampio kampus.
+    %Pažymėkime $\angle ACB=2x$. Kadangi $AC=DC$, tai $\angle ADC=90^\circ-x$.
+    %Kadangi $AC=AB$, tai $\angle ABD=\angle ACB=2x$. Kadangi $AD=BD$, tai
+    % $\angle ADB=180-4x$. Tada $180^\circ=\angle ADC+\angle ADB=270^\circ-5x$.
+    %Iš čia $x=18^\circ$, ir todėl $\angle A=108^\circ, \angle B=
+    %\angle C=36^\circ$.
+  \item Trikampyje $ABC$ $BE$ ir $CF$ yra aukštinės, o $D$ yra $BC$ vidurio
+    taškas. Jei $DEF$ yra lygiakraštis, įrodykite, kad $\angle A=60^\circ$
+    %Pagal stačiojo trikampio pusiaukraštinės savybę $ED = \frac{CB}{2} =
+    %DF$, tad trikampiai $EDC$ ir $BDF$ lygiašoniai. Tuomet $\angle CDE =
+    %180^\circ - 2\angle C$ ir $\angle BDF = 180^\circ - 2\angle B$.
+    %Kadangi $\angle EDF = 60^\circ$, tai $180^\circ - 2\angle C +
+    %180^\circ - 2\angle B = 120^\circ$ ir iš čia $\angle A = 180^\circ
+    %-\angle B -\angle C = 60^\circ$.
+  \item Ant lygiagretainio $ABCD$ kraštinės $AB$ (arba ant jos tęsinio)
+    paimtas taškas $M$ toks, kad $\angle MAD = \angle AMO$, kur $O$ -
+    lygiagretainio įstrižainių sankirtos taškas. Įrodyti, kad $MD=MC$. 
+    %Tegu $MO$ kerta $CD$ taške $N$. Įrodysime, kad trikampiai $MBC$ ir
+    %$MND$ yra lygūs. Iš ties $MB=ND$ (nes šios atkarpos simetriškos
+    %$O$ atžvilgiu), kraštinė $MN$ bendra abiems, o $\angle DNM = 180^\circ
+    %- \angle AMO = 180^\circ - \angle MAD = \angle MBC$.
+  \item Duotas iškilasis keturkampis $ABCD$ toks, kad  jo įstrižaines
+    statmenos ir kertasi taške $O$, $BC = AO$.  Taškas $F$ paimtas toks, kad
+    $CF \perp{CD}$ ir $CF = BO$.  Įrodyti, kad $ADF$ yra lygiašonis. 
+    %Iš Pitagoro teoremos $AD^2 = AO^2 + OD^2 = BC^2 + OD^2 = BO^2 + OC^2 +
+    %OD^2 = CF^2 + CD^2 = DF^2$, taigi $AD = DF$.
+  \item Duotas trikampis $ABC$ su $\angle A = 60^\circ$. $N$ yra $AC$ vidurio
+    statmens ir $AB$ sankirta, o $M$ yra $AB$ vidurio statmens ir $AC$
+    sankirta. Įrodyti, kad $MN = BC$.
+    %Pastebėkime, kad $ABM$ yra lygiašonis. Bet $\angle A = 60^\circ$, todėl
+    %$ABM$ lygiakraštis. Panašiai ir $ACN$ lygiakraštis. Todėl $CMBN$  yra
+    %lygiašonė trapecija ir todėl $MN = BC$.
+  \item Duotas trikampis $ABC$ toks, kad kampo $A$ pusiaukampinė, kraštinės
+    $AB$ vidurio statmuo ir aukštinė iš taško $B$ kertasi viename taške.
+    Įrodyti, kad kampo $A$ pusiaukampinė, kraštinės $AC$ vidurio statmuo ir
+    aukštinė iš taško $C$ kertasi viename taške.
+    %Tegu kampo $A$ pusiaukampinė ir kraštinės $AB$ vidurio statmuo kertasi
+    %taške $E$, o $BH$ ir $CF$ yra aukštinės.  Tada $AEB$ yra lygiašonis.
+    %Taigi $\angle ABE = \angle BAE = \angle EAC$, ir iš čia $\angle A =
+    %60^\circ$. Tegu kampo $A$ pusiaukampinė ir $CF$ kertasi taške $K$. Tada
+    %$\angle KAC = \angle KCA = 30^\circ$, taigi $AC$ vidurio statmuo eina
+    %per tašką $K$.
+  \item Ant trikampio $ABC$ kraštinių $AB, BC, CA$ atitinkamai paimti taškai
+    $C', A', B'$. Žinoma, kad $\angle AC'B' = \angle B'A'C$, $\angle CB'A' =
+    \angle A'C'B$, $\angle BA'C' = \angle C'B'A$. Įrodyti, kad $A', B', C'$ -
+    kraštinių vidurio taškai.
+    %Tegu $\angle AC'B' = b$, $\angle CB'A' =a$, $\angle BA'C' = c$. Sudėję
+    %trikampių $AB'C'$, $A'BC'$, $A'B'C$ kampus, mes gauname $540^\circ=
+    %180^\circ+180^\circ +180^\circ = (\angle A +b+c) + (c+a+\angle B ) +
+    %(\angle C +a+b) = 2(a+b+c)+180^\circ$, todėl $a+b+c = 180^\circ$. Taigi
+    %$ \angle A = a ,\angle B = b, \angle C =c $. Todėl $AB\parallel{A'B'},
+    %BC\parallel{B'C'}, AC\parallel{A'C'}$.  Tada iš Talio teoremos
+    %$\frac{CA'}{A'B} = \frac{AC'}{C'B} = \frac{B'A}{B'C} = \frac{A'B}{CA'}$,
+    %taigi $A'$ yra $BC$ vidurio taškas.  Panašiai su $B'$ ir $C'$.
+  \item Duotas trikampis, jo pusiaukampinių sankirtos taškas sujungtas su
+    viršūnėmis, ir taip gauti $3$ mažesni trikampiai. Vienas jų panašus į
+    pradinį.  Rasti trikampio kampus.
+    %Tegu pradinio trikampio kampai būna lygūs $2a, 2b, 2c$, $a \geq b \geq
+    %c$. Pastebėkime, kad visi 3 gautieji trikampiai yra bukieji (įrodykite
+    %tai!), o 2 iš jų turi kampą, lygų $c$. Tačiau pradinio trikampio visi
+    %kampai didesni už $c$, taigi trikampis su kampais $a, b, 180^\circ-a-b$
+    %yra panašus į pradinį. Todėl $180^\circ-a-b = 2a $, $a = 2b$, $b = 2c$.
+    %Išsprendę gauname, kad trikampio kampai yra lygūs $\frac{180^\circ}{7},
+    %\frac{360^\circ}{7}, \frac{720^\circ}{7}$. 
+  \item Ant trikampio $ABC$ kraštinių $AB, BC, CA$ atitinkamai paimti taškai
+    $C_1, A_1, B_1$. Ar atkarpų $AA_1, BB_1, CC_1$ vidurio taškai gali būti
+    vienoje tiesėje? 
+    %Ne, negali. $AA_1, BB_1, CC_1$ vidurio taškai yra ant trikampio $ABC$
+    %vidurio linijų, lygiagrečių atitinkamai kraštinėms $BC, AC, AB$. Šios
+    %vidurio linijos sudaro trikampį, o bet kuri linija kerta trikampį
+    %daugiausia dviejuose taškuose.
+  \item Duotas kvadratas $ABCD$, jo viduje taškas $M$.  Įrodykite, kad
+    trikampių $ABM$, $BCM$, $CDM$ ir $DAM$ pusiaukraštinių susikirtimo taškai
+    taip pat yra kvadrato viršūnes.
+    %Tegu kvadratas būna $ABCD$, o kraštinių vidurio taškai $E, F, G, H$, bei
+    %trikampių $ABM$, $BCM$, $CDM$, $DAM$ pusiaukraštinių susikirtimo taškai
+    %$P, O, N, L$ - taip, kaip parodyta paveikslėlyje žemiau. Tada $EFGH$ yra
+    %taip pat kvadratas. Iš pusiaukraštinių sankirtos taško savybės,
+    %$\frac{MP}{MH} = \frac{MO}{MG} = \frac{2}{3}$, todėl iš Talio teoremos
+    %arba panašiųjų trikampių, $PO \parallel{HG}$ ir $\frac{PO}{HG} =
+    %\frac{2}{3}$. Panašiai su kitomis kraštinėmis. Todėl $PONL$ turi
+    %gretimas kraštines statmenas, o taip pat visos kraštinės lygios. Taigi
+    %$PONL$ yra kvadratas. 
+    %\begin{center}
+    %\begin{asy}
+    %import olympiad;
+    %size(200);
+    %pair A, B, C, D, E, F, G, H, L, N, O, P, M;
+    %A=(0,100);
+    %B=(0,0);
+    %C=(100,0);
+    %D=(100,100);
+    %M=(45,65);
+    %E=(A+D)/2;
+    %F=(C+D)/2;
+    %G=(B+C)/2;
+    %H=(A+B)/2;
+    %P=M+(H-M)*2/3;
+    %L=M+(E-M)*2/3;
+    %N=M+(F-M)*2/3;
+    %O=M+(G-M)*2/3;
+    %dot(A,blue);
+    %dot(B,blue);
+    %dot(C,blue);
+    %dot(D,blue);
+    %dot(E,blue);
+    %dot(G,blue);
+    %dot(H,blue);
+    %dot(F,blue);
+    %dot(L,blue);
+    %dot(M,blue);
+    %dot(N,blue);
+    %dot(O,blue);
+    %dot(P,blue);
+    %label("$A$",A,NW,blue);
+    %label("$B$",B,SW,blue);
+    %label("$C$",C,SE,blue);
+    %label("$D$",D,NE,blue);
+    %label("$E$",E,NE,blue);
+    %label("$H$",H,W,blue);
+    %label("$G$",G,S,blue);
+    %label("$F$",F,NE,blue);
+    %label("$L$",L,NE,blue);
+    %label("$N$",N,NE,blue);
+    %label("$O$",O,SE,blue);
+    %label("$P$",P,NW,blue);
+    %draw(A--B--C--D--cycle);
+    %draw(L--N--O--P--cycle);
+    %draw(H--E--F--G--cycle);
+    %draw(H--M);
+    %draw(E--M);
+    %draw(F--M);
+    %draw(G--M);
+    %draw(A--M);
+    %draw(B--M);
+    %draw(C--M);
+    %draw(D--M);
+    %label("$M$",M,NE,blue);
+    %\end{asy}
+    %\end{center}
+  \item Trikampyje dvi aukštinės yra ne trumpesnės nei kraštinės į kurias jos
+    remiasi. Rasti trikampio kampus. 
+    %Bet kokiame stačiajame trikampyje statinis trumpesnis už įžambinę. Jei
+    %mūsų trikampis yra $ABC$, su aukštinėmis $AA'$ ir $BB'$, bei $AA'
+    %\geq BC$ ir $BB' \geq AC$, tai tada $AA' \geq BC \geq BB' \geq AC \geq
+    %AA'$, su lygybėmis tada ir tik tada jei $ABC$ lygiašonis statusis.
+    %Todėl kampai yra lygūs $90^\circ ,45^\circ ,45^\circ$.
+  \item Duotas trikampis $ABC$ su $\angle A = 60^\circ$, pusiaukraštinė $CM$
+    ir aukštinė $BN$ kertasi taške $K$, $CK=6$, $KM=1$. Rasti trikampio $ABC$
+    kampus.
+    %Tegu $P$ yra atkarpos $BN$ vidurio taškas. Tada $MP \parallel{AN}
+    %\parallel{NC}$, taigi $MPCN$ yra trapecija.  Todėl trikampiai $PKM$ ir
+    %$CKN$ yra panašūs.  Tada $6=\frac{CK}{KM}=\frac{NC}{PM}$, taigi
+    %$\frac{AC}{AB} = \frac{AN+NC}{AB} = \frac{AN}{AB} + \frac{NC}{AB} =
+    %\frac{1}{2} + \frac{NC}{MP}\frac{MP}{AN}\frac{AN}{AB} =\frac{1}{2} +
+    %6\cdot\frac{1}{2}\cdot\frac{1}{2} = 2$. Todėl trikampio $ABC$ kampai yra lygūs
+    % $30^\circ, 60^\circ, 90^\circ$. 
+  \item Ant trikampio $ABC$ kraštinių $AB$ ir $BC$ atitinkamai paimti taškai
+    $D$ ir $E$ tokie, kad $\frac{AD}{DB} =\frac{BE}{EC}=2$ ir $\angle ACB
+    =2\angle DEB$. Įrodyti, kad $ABC$ lygiašonis.
+    %Tegu $AB$ ilgis būna $6x$, o $M$ kraštinės $AB$ vidurio taškas. Tada $BM
+    %= 3x$, $DB = 2x$, taigi $\frac{MB}{DB} = \frac{3}{2} = \frac{CB}{EB}$.
+    %Todėl trikampiai $CMB$ ir $EDB$ yra panašūs ir dėl to $\angle BCM =
+    %\angle BED = \frac{\angle ACB}{2}$, todėl $CM$ yra trikampio $ABC$
+    %pusiaukampinė ir pusiaukraštinė tuo pat metu, taigi $ABC$
+    %lygiašonis($AC$ = $CB$).
 \end{enumerate}
 
 \newpage
@@ -986,8 +928,8 @@ add(pathticks(K--C,2,0.5,0,200,red));
 \end{sprendimas}
 \item Vienodus trikampius galime pribrėžti susiradę ne tik vienodus kampus, bet ir 
 vienodas atkarpas, t.y. jei trikampis $S$ turi kraštinę, lygią $a$, o brėžinyje
- yra kita kraštinė, lygi $a$, tai ją galima pabandyti panaudoti trikampio,
- tokiam pačiam kaip ir  $S$, pagrindui ( Galima sakyti, padarome trikampio kopiją).
+ yra kita kraštinė lygi $a$, tai ją galima pabandyti panaudoti trikampio,
+ tokio paties kaip ir $S$, pagrindui (galima sakyti, padarome trikampio kopiją).
   Dažnai uždavinio sąlyga sufleruoja, kur tai daryti. 
  \begin{pav}
   Kvadrate $ABCD$ ant kraštinių $BC$ ir $CD$ atitinkamai yra
@@ -995,18 +937,6 @@ vienodas atkarpas, t.y. jei trikampis $S$ turi kraštinę, lygią $a$, o brėži
   KAD$ pusiaukampinė. Įrodyti, kad $AK = DM + BK$.
 \end{pav}       
 
-\begin{proof}[Sprendimas]
-Geriausia būtų kaip nors panaudoti tai ko prašo, t.y $AK =
-DM + BK$. Trikampio $KAB$ kraštinė $AB$
-yra tokio pat ilgio, kaip ir kitos kvadrato kraštinės, tai
-prie vienos jų galima perkelti trikampį $KAB$. Mes
-pasirenkame kraštinę $AD$ - taigi pastatome trikampį, tokį
-patį, kaip ir $KAB$ prie kraštinės $AD$. Tada $DM + BK = DM +
-ED = EM$ - tai jau nemažas pasiekimas, nes radome atkarpą,
-kurios ilgis yra $DM + BK$. Taigi reikia įrodyti, kad $EM =
-AK$, arba, kad $EM = AE$. Tam tereikia įrodyti, kad $AEM$ yra
-lygiašonis, kas beveik akivaizdu: $\angle AMD = \angle MAB =
-\angle MAE$, ko ir reikėjo.
 %Trikampių perkėlimas kvadrate
 \begin{center}
 \begin{asy}
@@ -1051,6 +981,19 @@ add(pathticks(A--K,2,0.5,30,100,red));
 add(pathticks(A--E,2,0.5,30,100,red));
 \end{asy}
 \end{center}
+
+\begin{proof}[Sprendimas]
+Geriausia būtų kaip nors panaudoti tai ko prašo, t.y $AK =
+DM + BK$. Trikampio $KAB$ kraštinė $AB$
+yra tokio pat ilgio, kaip ir kitos kvadrato kraštinės, tai
+prie vienos jų galima perkelti trikampį $KAB$. Mes
+pasirenkame kraštinę $AD$ - taigi pastatome trikampį, tokį
+patį, kaip ir $KAB$ prie kraštinės $AD$. Tada $DM + BK = DM +
+ED = EM$ - tai jau nemažas pasiekimas, nes radome atkarpą,
+kurios ilgis yra $DM + BK$. Taigi reikia įrodyti, kad $EM =
+AK$, arba, kad $EM = AE$. Tam tereikia įrodyti, kad $AEM$ yra
+lygiašonis, kas beveik akivaizdu: $\angle AMD = \angle MAB =
+\angle MAE$, ko ir reikėjo.
 \end{proof}
 \end{itemize}
 Jeigu neturite jokių idėjų, ką reiktų pribrėžti, tai tada bandykite išvesti
@@ -1059,7 +1002,7 @@ grandinėles“, ieškoti panašių stačiųjų trikampių. Tokiu atveju sprendi
 užrašyti būna sunkiau ir jis būna ilgesnis, tačiau nereikia spėlioti, ką
 pribrėžinėti ir kaip. 
 
-\subsubsection{$X + Y = Z$} 
+\subsubsection{$\mathbf{X} + \mathbf{Y} = \mathbf{Z}$} 
 
 Kartais pasitaiko, kad uždavinio sąlygoje duota, kad kažkurių dviejų
 atkarpų ilgių, tarkime $a$ ir $b$, suma yra lygi kažkokios trečios atkarpos
@@ -1126,7 +1069,7 @@ add(pathticks(A--B,2,0.5,0,100,red));
 \end{sprendimas}  
 
 Panašiai galima elgtis ir su uždaviniais su sąlyga „$\angle A + \angle B =
-\angle C$. Pirmiausia reiktų išreikšti visus svarbiausius kampus brėžinyje
+\angle C$“. Pirmiausia reiktų išreikšti visus svarbiausius kampus brėžinyje
 per keletą kintamųjų, ir tada bandyti geometriškai interpretuoti tą sąlygą.
 
 \subsubsection{Nuo kurio taško pradėti?}
@@ -1194,6 +1137,11 @@ nors mes pakeitėme tik taškų brėžimo tvarką.
   %\frac{DA}{AE} = \frac{FB}{BC} = \frac{DQ}{QC}$, taigi $P = Q$.
   %($\frac{DA}{AE} = \frac{FB}{BC}$, nes $\frac{DA}{FB} = \frac{AK}{BK} =
   %\frac{EA}{BC}$).  
+  \item Duotas lygiagretainis $ABCD$, $M-DC$ vidurio taškas, $H$ - taško $B$
+  projekcija į $AM$. Įrodyti, kad $BCH$ yra lygiašonis.
+  %Tegu $AM$ kerta tiesę $CB$ taške $N$. Tada trikampiai $ADM$ ir $CMN$ yra
+  %vienodi, todėl $BC = AD = CN$. Tada $HC$ yra stačiojo trikampio $BHN$
+  %pusiaukraštinė iš stačiojo kampo, ir todėl $HC = CB$. 
 \item Duotas trikampis $ABC$, $M$ - $AC$ vidurio taskas.  Taškas $D$ ant
   kraštinės $BC$ toks, kad $\angle BMA = \angle DMC$. Jei $CD + DM = BM$,
   įrodyti, kad $\angle ACB +\angle ABM=\angle BAC$.
@@ -1234,7 +1182,14 @@ nors mes pakeitėme tik taškų brėžimo tvarką.
   %Tegu keturkampio įstrižainės kertasi taške $E$. Tada trikampiai $ADE$ ir
   %$ADC$ yra panašūs pagal du kampus.  Taigi $\angle ADC = \angle AED$. Bet
   %trikampiai $CEB$ ir $CAB$ taip pat panašūs pagal du kampus, taigi
-  %$\angle AED = \angle CEB = \angle ABC$. 
+  %$\angle AED = \angle CEB = \angle ABC$.
+   \item $M$ ir $N$ yra atitinkamai kvadrato $ABCD$ kraštinių $BC$ ir $AD$
+  vidurio taškai. $K$ yra bet koks taškas ant spindulio $CA$ už taško $A$.
+  $KM$ ir $AB$ kertasi taške $L$. Įrodyti, kad $\angle KNA = \angle LNA$.
+  %Tegu tiesės $AB$ ir $KN$ kertasi taške $E$, o $AC$ ir $NM$ taške $F$.
+  %Akivaizdžiai $NF=FM$, $LE \parallel{NM}$, todėl iš trikampių $KNM$ ir 
+  %$KEL$ panašumo $LA = AE$. Tada $AN$ yra
+  %$LE$ vidurio statmuo ir taigi $\angle KNA = \angle LNA$.
 \item Duotas trikampis $ABC$. $A_1, B_1, C_1$ yra atitinkamai $BC, CA, AC$
   vidurio taškai. Tada ant $C_1 B_1$ pratęsimo į $B_1$ pusę paimtas taškas
   $K$ toks, kad $B_1 K = \frac{BC}{4}$. Duota, kad  $AA_1 = BC$. Įrodyti,
@@ -1244,6 +1199,13 @@ nors mes pakeitėme tik taškų brėžimo tvarką.
   %\frac{BC}{2} = CA_1$, taigi $CKEA_1$ yra lygiagretainis ir tada $CK =
   %A_1E = BA_1$. Bet $\angle AA_1B = \angle KCB$, taigi trikampiai $KCB$ ir
   %$AA_1B$ yra vienodi pagal 2 kraštines ir kampą.  Tad $AB = BK$.
+  \item Duotas trikampis $ABC$. $D$-kraštinės $AC$ vidurio taškas. Ant $BC$
+  paimtas taškas $E$ toks, kad $\angle BEA =\angle CED$. Rasti
+  $\frac{AE}{DE}$.
+  %Tegu tiesė, lygiagreti $DE$ eina per viršūnę $A$ ir kerta kraštinę $BC$
+  %taške $M$. Tada $ED$ yra trikampio $AMC$ vidurio linija bei $\angle AMC
+  %= \angle DEC = \angle AEB$, todėl $AME$ yra lygiašonis. Taigi
+  %$\frac{AE}{DE} = \frac{AM}{DE} = 2$.
 \item Duotas kvadratas $ABCD$, ant $BC$ ir $CD$ atitinkamai paimti taškai 
   $E$ ir $F$ taip, kad $\angle EAF=45^\circ$. $BD$ kerta $AE$ taške $G$, o
   $FA$ taške $H$. Įrodyti, kad $GH^2=HD^2+BG^2$.
@@ -1403,15 +1365,13 @@ dot(H,blue);
 \end{center}
 
 \begin{teig}
-  Jeigu iškilasis keturkampis $ABCD$ yra įbrėžtinis ir F yra įstrižainių
+  Jeigu iškilasis keturkampis $ABCD$ yra įbrėžtinis ir $F$ yra įstrižainių
   sankirtos taškas, o $E$ yra $AB$ ir $CD$ sankirtos taškas, tai tada
   trikampiai $ABF$ ir $CDF$ yra panašūs. Be to, trikampiai $AFD$ ir $CFB$
   taip pat yra panašūs. Ir galiausiai trikampiai $ADE$ ir $CBE$ taip pat
-  yra panašūs. Visos šios savybės yra akivaizdžios iš įbrėžtinių kampų ir
-  trikampių panašumo pagal 2 kampus savybių. Tuomet, iš panašiųjų trikampių
-  kraštinių santykio savybių mes gauname $BF\cdot FD = AF\cdot CF$ bei
-  $EA\cdot EB = ED\cdot EC$. Šias savybes reikia mokėti kaip penkis
-  pirštus, nes jų labai dažnai reikia.
+  yra panašūs. Tuomet, iš panašiųjų trikampių kraštinių santykio savybių
+  mes gauname 
+  $$BF\cdot FD = AF\cdot CF \text{ bei } EA\cdot EB = ED\cdot EC.$$ 
 \end{teig}
 
 %Susikertančių stygų savybė
@@ -1460,10 +1420,10 @@ dot(O,blue);
 \end{asy}
 \end{center}
 
-\begin{teig}
-Kampo tarp stygos ir liestinės savybė: kampas tarp apskritimo stygos ir
-liestinės, išvestos apskritimui viename iš stygos galų, yra lygus
-įbrėžtiniam kampui, besiremenčiam į tą stygą iš kitos jos pusės. 
+\begin{teig}[Kampo tarp stygos ir liestinės savybė] 
+  Kampas tarp apskritimo stygos ir liestinės, išvestos apskritimui viename
+  iš stygos galų, yra lygus įbrėžtiniam kampui, besiremenčiam į tą stygą iš
+  kitos jos pusės. 
 \end{teig}
 
 %Kampo tarp stygos ir liestinės savybė
@@ -1528,13 +1488,13 @@ dot(E,blue);
 \end{center} 
 
 \begin{teig}
-  Panašiai kaip ir dviejuose prieš tai buvusiuose teiginiuose, jeigu iš
+  Jeigu iš
   taško $A$ išvesime apskritimui dvi liestines, tai tada tos liestinės bus
   vienodo ilgio. Be to, jei tiesė per $A$ kerta apskritimą taškuose $C$ ir
   $D$, tai trikampiai $ABD$ ir $ABC$ bus panašūs (kaip ir trikampiai $ADE$
-  ir $ACE$). Iš jų panašumo gauname, kad $AC \cdot AD = AE^2 = AB^2$.
+  ir $ACE$). Iš jų panašumo gauname 
+  $$AC \cdot AD = AE^2 = AB^2.$$
 \end{teig}
-
 
 %Liestinės ilgio kvadratas lygus ..
 \begin{center}
@@ -1574,63 +1534,6 @@ dot(O,blue);
 \end{asy}
 \end{center}
 
-\begin{pav}
-  Plokštumoje yra du apskritimai taip, kad vienas nėra 
-  kito viduje. Jiems nubrėžtos dvi bendros išorinės liestinės:
-  pirmoji liečia pirmą apskritimą taške $A$, o antrąjį 
-  taške $B$. Antroji liečia pirmą apskritimą taške $C$,
-  o antrą taške $D$. $AD$ kerta pirmą apskritimą taške
-  $E$, o antrą taške $F$. Įrodyti, kad $AE=FD$.
-\end{pav}
-
-\begin{sprendimas}
-  $AF\cdot AD=AB^2=CD^2=DE\cdot DA$, taigi $AF=DE$.
-  Iš čia $AE=FD$.
-  %Nelygiašonis trikampis
-\begin{center}
-\begin{asy}
-import olympiad;
-size(200);
-pair A, B, C, D, E, X, Y, Z, Q, S, T;
-path a2, a1;
-pair[] V, P;
-A=(0,0);
-C=(80,0);
-B=(25,40);
-D=incenter(A,B,C);
-X=bisectorpoint(B,A,-C);
-Y=bisectorpoint(B+B-C,B,A);
-Z=foot(D,A,C);
-Q=foot(D,B,C);
-E=extension(A,X,B,Y);
-S=foot(E,-C,C);
-T=foot(E,B+B-C,B);
-a1=circle(E,arclength(E--foot(E,B,A)));
-a2=incircle(A,B,C);
-V=intersectionpoints(a1,(T--Z),-1);
-P=intersectionpoints(a2,(T--Z),-1);
-dot(D,blue);
-dot(E,blue);
-dot(T,blue);
-dot(S,blue);
-dot(Q,blue);
-dot(Z,blue);
-dot(V[0],blue);
-dot(P[0],blue);
-draw (a1);
-draw (incircle(A,B,C));
-draw(S--Z);
-draw(T--Q);
-draw(T--Z);
-label("$A$",Z,down,blue);
-label("$C$",Q,up,blue);
-label("$B$",S,down,blue);
-label("$D$",T,up,blue);
-label("$F$",V[0],left,blue);
-label("$E$",P[0],right,blue);
-\end{asy}
-\end{center}
-\end{sprendimas}
 \begin{teig}
   Lygūs kampai apskritime remiasi į lygius lankus. Dėl to, pavyzdžiui,
   trikampio pusiaukampinė dalija apie tą trikampį apibrėžto apskritimo lanką,
@@ -1676,47 +1579,47 @@ add(pathticks(D--E,2,0.5,0,125,red));
 Pavyzdžiui, paveikslėlyje viršuje lankai $CE$ ir $ED$ yra vienodi, taigi
 $CE = ED$ ir todėl  $CED$ yra lygiašonis.
 
-\begin{teig}
-  Įbrėžtinio keturkampio kampo tarp įstrižainių savybė: jeigu iškilojo
-  įbrėžtinio keturkampio $ABCD$ įstrižainės kertasi taške $E$, tai kampas
-  $\angle AED$ yra lygus sumai kampų, besiremenčių į lankus $AD$ ir $BC$, t.y
-  $\angle AED = \angle ABD +\angle BAC$.
-\end{teig}
-
-%Įbrėžtinio keturkampio kampas tarp įstrižainių
-\begin{center}
-\begin{asy}
-import olympiad;
-size(200);
-pair O, B, C, D, A, E;
-path a1;
-O=origin;
-a1=circle(O,40);
-draw(a1);
-C=waypoint(a1,0.26);
-B=waypoint(a1,0.44);
-A=waypoint(a1,0.84);
-D=waypoint(a1,0.12);
-E=extension(A,C,B,D);
-add(anglem(A,B,E,200,green,0));
-add(anglem(E,A,B,200,green,0));
-add(anglem(A,E,D,200,red,0));
-label("$B$",B,left,blue);
-label("$C$",C,up,blue);
-label("$D$",D,NE,blue);
-label("$A$",A,SE,blue);
-label("$E$",E,NE,blue);
-draw(A--B--C--D--cycle);
-draw(A--C);
-draw(B--D);
-dot(B,blue);
-dot(C,blue);
-dot(D,blue);
-dot(E,blue);
-dot(A,blue);
-\end{asy}
-\end{center}
-Tai akivaizdu iš paveikslėlio  viršuje ir priekampio savybės. 
+%\begin{teig}
+%  Įbrėžtinio keturkampio kampo tarp įstrižainių savybė: jeigu iškilojo
+%  įbrėžtinio keturkampio $ABCD$ įstrižainės kertasi taške $E$, tai kampas
+%  $\angle AED$ yra lygus sumai kampų, besiremenčių į lankus $AD$ ir $BC$, t.y
+%  $\angle AED = \angle ABD +\angle BAC$.
+%\end{teig}
+%
+%%Įbrėžtinio keturkampio kampas tarp įstrižainių
+%\begin{center}
+%\begin{asy}
+%import olympiad;
+%size(200);
+%pair O, B, C, D, A, E;
+%path a1;
+%O=origin;
+%a1=circle(O,40);
+%draw(a1);
+%C=waypoint(a1,0.26);
+%B=waypoint(a1,0.44);
+%A=waypoint(a1,0.84);
+%D=waypoint(a1,0.12);
+%E=extension(A,C,B,D);
+%add(anglem(A,B,E,200,green,0));
+%add(anglem(E,A,B,200,green,0));
+%add(anglem(A,E,D,200,red,0));
+%label("$B$",B,left,blue);
+%label("$C$",C,up,blue);
+%label("$D$",D,NE,blue);
+%label("$A$",A,SE,blue);
+%label("$E$",E,NE,blue);
+%draw(A--B--C--D--cycle);
+%draw(A--C);
+%draw(B--D);
+%dot(B,blue);
+%dot(C,blue);
+%dot(D,blue);
+%dot(E,blue);
+%dot(A,blue);
+%\end{asy}
+%\end{center}
+%Tai akivaizdu iš paveikslėlio  viršuje ir priekampio savybės. 
 
 \begin{teig}
   Jeigu du trikampiai turi tokio pat dydžio kampą ir tokio
@@ -1734,7 +1637,7 @@ Tai akivaizdu iš paveikslėlio  viršuje ir priekampio savybės.
 
 \subsubsection{Kaip įrodyti, kad keturkampis yra įbrėžtinis}
 
-Dažnas uždavinys olimpiadose yra įrodyti,
+Labai dažnai tenka įrodyti,
 kad keturkampis yra įbrėžtinis (arba keturi taškai guli ant
 vieno apskritimo). Tarkime, kad tos keturkampio viršūnės yra
 $A,B,C,D$. Tada pagrindiniai būdai tai padaryti yra šie:
@@ -1850,6 +1753,64 @@ sunkesniuose uždaviniuse; artimiausiuose skyriuose pilnai
 pakaks ir šių. 
 
 \subsubsection{Pavyzdžiai}
+
+\begin{pav}
+  Plokštumoje nubrėžti du apskritimai taip, kad vienas nėra kito viduje.
+  Jiems nubrėžtos dvi bendros išorinės liestinės: pirmoji liečia pirmą
+  apskritimą taške $A$, o antrąjį taške $B$. Antroji liečia pirmą
+  apskritimą taške $C$, o antrą taške $D$. $AD$ kerta pirmą apskritimą
+  taške $E$, o antrą taške $F$. Įrodyti, kad $AE=FD$.
+\end{pav}
+
+\begin{sprendimas}
+  $AF\cdot AD=AB^2=CD^2=DE\cdot DA$, taigi $AF=DE$.
+  Iš čia $AE=FD$.
+  %Du apskritimai su bendra styga
+\begin{center}
+\begin{asy}
+import olympiad;
+size(200);
+pair A, B, C, D, E, X, Y, Z, Q, S, T;
+path a2, a1;
+pair[] V, P;
+A=(0,0);
+C=(80,0);
+B=(25,40);
+D=incenter(A,B,C);
+X=bisectorpoint(B,A,-C);
+Y=bisectorpoint(B+B-C,B,A);
+Z=foot(D,A,C);
+Q=foot(D,B,C);
+E=extension(A,X,B,Y);
+S=foot(E,-C,C);
+T=foot(E,B+B-C,B);
+a1=circle(E,arclength(E--foot(E,B,A)));
+a2=incircle(A,B,C);
+V=intersectionpoints(a1,(T--Z),-1);
+P=intersectionpoints(a2,(T--Z),-1);
+dot(D,blue);
+dot(E,blue);
+dot(T,blue);
+dot(S,blue);
+dot(Q,blue);
+dot(Z,blue);
+dot(V[0],blue);
+dot(P[0],blue);
+draw (a1);
+draw (incircle(A,B,C));
+draw(S--Z);
+draw(T--Q);
+draw(T--Z);
+label("$A$",Z,down,blue);
+label("$C$",Q,up,blue);
+label("$B$",S,down,blue);
+label("$D$",T,up,blue);
+label("$F$",V[0],left,blue);
+label("$E$",P[0],right,blue);
+\end{asy}
+\end{center}
+\end{sprendimas}
+
 \begin{pav}[2006 Lietuvos atranka į Baltijos kelio olimpiadą]
   Duotas trikampis $ABC$, $F,D,E$ yra atitinkamai kraštinių 
   $AB,BC,CA$ vidurio taškai. Įrodyti, kad $\angle DAC=\angle 
@@ -1857,16 +1818,16 @@ pakaks ir šių.
 \end{pav}
 
 \begin{sprendimas}
-  Tegu $M$ yra  pusiaukraštinių susikirtimo taškas. Tada 
+  Tegu $M$ yra pusiaukraštinių susikirtimo taškas. Tada 
  $\angle DAC=\angle ABE \Leftrightarrow \angle MDF=\angle FBM
  \Leftrightarrow FBDM$ įbrėžtinis $\Leftrightarrow 
  \angle BDA=\angle AFC $.
 \end{sprendimas}
 
-\begin{pav}[„Gerai žinoma lema“] Duotas iškilasis
-  keturkampis $ABCD$ toks, kad $\angle DAC = \angle CAB$ ir
-  $DC = CB$.  Įrodyti, kad tas keturkampis arba yra
-  deltoidas, arba įbrėžtinis.
+\begin{pav}[„Gerai žinoma lema“] 
+  Duotas iškilasis keturkampis $ABCD$ toks, kad $DC = CB$ ir $\angle DAC =
+  \angle CAB$.  Įrodyti, kad tas keturkampis yra arba deltoidas, arba
+  įbrėžtinis.
 \end{pav}
 
 \begin{sprendimas}
@@ -1971,9 +1932,8 @@ add(pathticks(C--DD,2,0.5,0,125,red));
    Paimsime tašką 
   $P'$ kuris tenkina tas savybes, kurias reikia įrodyti taškui $P$, 
   tada įrodysime, kad jis tenkina tas pačias savybes, kaip ir taškas 
-  $P$, ir galiausiai parodysime, kad jie sutampa (Naudojamės schema 
-  „Įrodome ne kad (jei X tiesa, tai ir Y tiesa), o (jei Y tiesa, tai
-  X irgi tiesa )“). Taigi tegu $P'$ yra $AMC$ apibrėžtinio apskritimo
+  $P$, ir galiausiai parodysime, kad jie sutampa.
+  Taigi tegu $P'$ yra $AMC$ apibrėžtinio apskritimo
   ir kampo $C$ pusiaukampinės sankirta. Tada $AP'=P'M$. Trikampiai 
   $AP'D$ ir $MP'B$ vienodi pagal dvi kraštines ir kampą. Taigi $BP'
   =P'D$. Iš lemos $BCDP'$ yra arba įbrėžtinis, arba $BC=CD$. Antras
@@ -2028,677 +1988,676 @@ add(pathticks(V--M,2,0.5,30,150,red));
 \subsubsection{Uždaviniai}
 
 \begin{enumerate}
-\item $ABC$ yra trikampis. Ant $AB$, $BC$, $CA$ atitinkamai
-  paimti taškai $K,L,M$ taip, kad $\angle BLK=\angle
-  CLM=\angle BAC$. $BM$ ir $CK$ kertasi taške $P$. Įrodyti,
-  kad keturkampis $AKPM$ yra įbrėžtinis.
-  %Kadangi $\angle BAC + \angle KLC = \angle BLK + \angle
-  %KLC = 180^\circ$, tai keturkampis $AKLC$ yra įbrėžtinis.
-  %Panašiai ir $AMLB$ yra įbrėžtinis. Tada iš įbrėžtinių
-  %kampų savybės, $\angle AMP + \angle AKP = \angle AMB +
-  %\angle AKC = \angle ALB + \angle ALC = 180^\circ$, taigi
-  %$AKPM$ yra įbrėžtinis.   
-\item Duotas trikampis $ABC$, $M$-$BC$ vidurio taškas,
-  $AA',BB',CC'$ yra aukštinės, $AB$ ir $A'B'$ kertasi taške
-  $X$, o $MC'$ ir $AC$ taške $Y$. Įrodyti, kad
-  $XY\parallel{BC}$.
-  %Tegu $H$ būna trikampio aukštinių susiskirtimo taškas.
-  %Pastebėkime, kad trikampis $MBC'$ yra lygiašonis, o
-  %keturkampiai $CBC'B'$, $ABA'B'$ ir $AB'HC'$ yra
-  %įbrėžtiniai (nes $\angle AA'B = \angle AB'B = \angle CC'B
-  %= \angle CB'B$).  Taigi, $\angle XC'Y = \angle MC'B =
-  %\angle MBC' = \angle CB'A' = \angle XB'Y$, todėl
-  %$XB'C'Y$ yra įbrėžtinis. Tada $\angle XYC =180^\circ-\angle XC'B'
-  %= \angle BCA$, todėl $XY\parallel{BC}$.
-\item Duotas statusis trikampis $ABC$ su stačiu kampu $A$.
-  $M$ yra $BC$ vidurio taškas, o $AH$ yra aukštinė. Linija
-  per $M$, statmena $AC$, kerta apie $AMC$ apibrėžtą
-  apskritimą taške $P$. Įrodyti, kad $BP$ dalija $AH$
-  pusiau.
-  %Tegu $G$ yra $CP$ ir $AB$ sankirtos taškas. Kadangi $AMC$
-  %yra lygiašonis, tai $PM$ yra ne tik $AMC$ aukštinė, bet
-  %ir pusiaukampinė. Tada $APCM$ yra įbrėžtinis deltoidas,
-  %taigi $\angle PAM = \angle PCM = 90^\circ$. Be to, $P$
-  %yra $GC$ vidurio taškas, nes $P$ yra stataus trikampio
-  %$ACG$ įžambinės ir statinio $AC$ vidurio statmens
-  %susikirtimo taškas. Taigi $PB$ dalija $GC$ pusiau. Bet
-  %trikampiai $BGC$ ir $BAH$ yra panašūs, taigi $BP$ taip
-  %pat dalina $AH$ pusiau. 
-\item Ant stačiojo trikampio $ABC$ įžambinės $AB$ išorėje
-  nubrėžtas kvadratas $ABDE$. Stataus kampo $C$
-  pusiaukampinė kerta $DE$ taške $F$. Rasti $\frac{EF}{FD}$,
-  jeigu žinoma, kad $AC=1$ ir $BC=3$. 
-  %Tegu $H$ būna kvadrato $ABDE$ centras, o $CF$ kerta $AB$
-  %taške $K$. Tada $\angle AHB = \angle ACB = 90^\circ$,
-  %taigi $CBHA$ yra įbrėžtinis. Be to, $HA = HB$, todėl
-  %$\angle ACH = \angle HCB$, t.y kampo $C$ pusiaukampinė
-  %eina per tašką $H$. Tada iš simetrijos $BK = EF$ ir todėl
-  %$\frac{EF}{FD} = \frac{BK}{KA} = \frac{BC}{CA} = 3$.
-\item Į kampą įbrėžti du apskritimai su centrais $A$ ir $B$
-  taip, kad jie liečia kampo kraštines ir vienas kitą.
-  Įrodyti, kad apskritimas, kurio skersmuo yra $AB$, taip
-  pat liečia kampo kraštines.
-  %Tegu apskritimai liečia kampo kraštines taškuose $D$ ir
-  %$I$, o patys liečiasi taške $G$. Tegu bendra vidinė
-  %abiejų apskritimų liestinė kerta kampo kraštinę taške
-  %$H$. Tada $DHGA$ ir $HIBG$ yra deltoidai, ir be to,
-  %$\angle DHA = \frac{\angle DHG}{2} =
-  %\frac{180^\circ-\angle IHG}{2} = 90^\circ - \angle BHG =
-  %\angle HBG$ bei $\angle AHB = \angle AHG + \angle GHB =
-  %\frac{\angle DHG}{2} + \frac{\angle GHI}{2} =
-  %\frac{180^\circ}{2} = 90^\circ$. Taigi apie $AHB$
-  %apibrėžtas apskritimas turi skersmenį $AB$ ($ABH$ status)
-  %bei liečia $CH$ (iš vienos minėtųjų savybių).
-  %\begin{center}
-  %\begin{asy}
-  %import olympiad;
-  %size(200);
-  %pair A, B, C, D, E, F, G, H, I;
-  %path a1, a2;
-  %real r;
-  %r=15;
-  %C=(0,0); A=(50,0); 
-  %a1=circle(A,r);
-  %D=tangent(C,A,r,2);
-  %G=A+(r,0);
-  %H=extension(C,D,G,G+(G-A)*(0,1));
-  %I=rotate(180-degrees((G-H)/(D-H)),H)*G;
-  %B=extension(C,A,H,(I+G)/2);
-  %a2=circle(B,arclength(B--I));
-  %add(anglem(H,B,G,300,blue,0));
-  %add(anglem(D,H,A,300,blue,0));
-  %add(anglem(G,H,B,300,red,0));
-  %add(anglem(G,A,H,300,red,0));
-  %add(rightanglem(A,D,H,150));
-  %add(rightanglem(H,G,A,150));
-  %add(rightanglem(H,I,B,150));
-  %draw(a1);
-  %draw(a2);
-  %drawline(C,D);
-  %drawline(C,A);
-  %drawline(C,tangent(C,A,r,1));
-  %drawline(G,H);
-  %draw(B--I);
-  %draw(B--H);
-  %draw(A--D);
-  %draw(A--H);
-  %draw((-10,-40)--(120,40),invisible);
-  %label("$A$",A,SW,blue);
-  %label("$B$",B,SW,blue);
-  %label("$C$",C,up,blue);
-  %label("$D$",D,up,blue);
-  %label("$I$",I,up,blue);
-  %label("$G$",G,SW,blue);
-  %label("$H$",H,up,blue);
-%\end{asy}
-  %\end{center}
-\item Trikampyje $ABC$ $AB=BC$. $BH$-aukštinė, $M$ yra $AB$ 
-  vidurio taškas, $K$ yra $BH$ ir apie $MBC$ apibrėžto apskritimo
-  sankirtos taškas. Įrodyti, kad $BK=\frac{3R}{2}$, kur $R$ yra 
-  apie $ABC$ apibrėžto apskritimo spindulys.
-  % Tegu $X$ yra $BC$ vidurio taškas. Tada iš simetrijos ir lygių
-  %įbrėžtinių kampų $KC=KM=KX$. Tegu $O$ yra apie $ABC$ apibrėžto
-  %apskritimo centras, o $Q$ yra $XC$ vidurio taškas.
-  % Tada $OX\parallel KQ$ (abi linijos statmenos $BC$), ir iš 
-  %Talio teoremos $\frac{BK}{BO}=\frac{BQ}{BX}=\frac{3}{2}$.
-\item Per apskritimo $e$ centrą nubrėžtas apskritimas $f$.
-  $A$ ir $B$ - šių apskritimų sankirtos taškai. Liestinė
-  apskritimui $f$ taške $B$  kerta apskritimą $e$ taške $C$.
-  Įrodyti, kad $AB=BC$.   
-  %Tegu apskritimo $e$ centras yra taškas $O$. Tada iš
-  %kampo tarp stygos ir liestinės savybės, $\angle OBA =
-  %\angle OAB = \angle OBC$, taigi $A$ ir $C$ yra simetriški
-  %$OB$ atžvilgiu, taigi $BA = BC$. 
-\item Du apskritimai kertasi taškuose $A$ ir $B$. Taške $A$
-  abiems apskritimams išvestos liestinės, kertančios
-  apskritimus taškuose $M$ ir $N$. Tiesės $BM$ ir $BN$
-  atitinkamai dar syki kerta apskritimus taškuose $P$ ir
-  $Q$. Irodyti, kad $MP$ = $NQ$.  
-  %Vėl iš kampo tarp stygos ir liestinės savybės, $\angle
-  %NAB = \angle AMB$ bei $\angle MAB = \angle ANB$. Tada iš
-  %paveikslėlio žemiau matyti, kad $\angle MQA = \angle MQB
-  %+ \angle BQA = \angle APB + \angle BPN = \angle APN$ bei
-  %$\angle QAM = \angle NAP$. Todėl $ANP$ ir $QMA$ yra
-  %panašūs, taigi $\angle AQM = \angle ABP = \angle ANP =
-  %\angle QMA$, taigi $QA = MA$. Panašiai $AN=AP$. Tada trikampiai $AQN$ ir
-  %$AMP$ yra vienodi pagal kraštinę ir 2 kampus, todėl $MP =
-  %NQ$.  
-  %\begin{center}
-  %\begin{asy}
-  %import olympiad;
-  %size(200);
-  %pair A, B, M, N, P, Q;
-  %path a1, a2;
-  %a1=circle((0,0),50);
-  %a2=circle((70,0),30);
-  %A=intersectionpoints(a1,a2)[0];
-  %B=intersectionpoints(a1,a2)[1];
-  %M=intersectionpoints(a1,A--A+((70,0)-A)*(0,-10))[1];
-  %N=intersectionpoints(a2,A--A+((0,0)-A)*(0,10))[0];
-  %Q=intersectionpoints(a1,N--B+(B-N)*10)[0];
-  %P=intersectionpoints(a2,M--B+(B-M)*10)[0];
-  %add(anglem(B,Q,A,300,blue,0));
-  %add(anglem(B,M,A,300,blue,0));
-  %add(anglem(B,A,N,300,blue,0));
-  %add(anglem(B,P,N,300,blue,0));
-  %add(anglem(Q,B,M,300,red,0));
-  %add(anglem(Q,A,M,300,red,0));
-  %add(anglem(N,B,P,300,red,0));
-  %add(anglem(N,A,P,300,red,0));
-  %add(anglem(M,Q,B,300,yellow,0));
-  %add(anglem(M,A,B,300,yellow,0));
-  %add(anglem(A,N,B,300,yellow,0));
-  %add(anglem(A,P,B,300,yellow,0));
-  %draw(a1);
-  %draw(a2);
-  %dot(A,blue);
-  %dot(B,blue);
-  %dot(M,blue);
-  %dot(N,blue);
-  %dot(P,blue);
-  %dot(Q,blue);
-  %draw(Q--A--B--M--cycle);
-  %draw(P--N--B--A--cycle);
-  %draw(Q--B);
-  %draw(M--A);
-  %draw(N--A);
-  %draw(P--B);
-  %label("$A$",A,1.4*up,blue);
-  %label("$B$",B,1.4*down,blue);
-  %label("$M$",M,SW,blue);
-  %label("$N$",N,SE,blue);
-  %label("$P$",P,right,blue);
-  %label("$Q$",Q,left,blue);
-%\end{asy}
-  %\end{center}
-\item Kokiu kampu is stačiojo trikampio stataus kampo matoma
-  į tą trikampį įbrėžto apskritimo projekcija į įžambinę?
-  %Tegu tas statusis trikampis būna $ACH$ su stačiu kampu
-  %$A$. Įbrėžto apskritimo centras tebūnie $D$. Visi likę
-  %taškai pažymėti paveikslėlyje. Reikia rasti kampą $\angle
-  %KAL$. Pastebėkime, kad $AFDE$, $DPKG$, $DJLG$ yra visi
-  %vienodi kvadratai. Todėl $DK = DL = DA$, t.y $D$ yra apie
-  %$AKL$ apibrėžto apskritimo centras. Tačiau $\angle KDL =
-  %90^\circ$, taigi $\angle KAL = \frac{\angle KDL}{2} =
-  %45^\circ$.
-  %\begin{center}
-  %\begin{asy}
-  %import olympiad;
-  %size(200);
-  %pair A, H, C, K, G, L, J, D, P, F, E;
-  %path a1;
-  %H=(0,0); A=(30,50);
-  %C=extension(A,A+(H-A)*(0,1),H, (100,0));
-  %D=incenter(A,C,H);
-  %a1=incircle(A,C,H);
-  %E=foot(D,A,C);
-  %G=foot(D,H,C);
-  %F=foot(D,A,H);
-  %P=shift(-inradius(A,C,H),0)*D;
-  %J=2*D-P;
-  %L=J+G-D;
-  %K=P+G-D;
-  %draw(a1);
-  %dot(A,blue);
-  %dot(H,blue);
-  %dot(C,blue);
-  %dot(K,blue);
-  %dot(G,blue);
-  %dot(L,blue);
-  %dot(J,blue);
-  %dot(D,blue);
-  %dot(P,blue);
-  %dot(F,blue);
-  %dot(E,blue);
-  %draw(A--H--C--cycle);
-  %draw(A--K);
-  %draw(A--L);
-  %draw(A--D);
-  %draw(P--D);
-  %draw(J--D);
-  %draw(G--D);
-  %draw(E--D);
-  %draw(F--D);
-  %draw(K--D);
-  %draw(L--D);
-  %draw(J--L);
-  %draw(P--K);
-  %label("$A$",A,up,blue);
-  %label("$H$",H,SW,blue);
-  %label("$C$",C,SE,blue);
-  %label("$E$",E,NE,blue);
-  %label("$F$",F,NW,blue);
-  %label("$J$",J,right,blue);
-  %label("$P$",P,left,blue);
-  %label("$D$",D,NE,blue);
-  %label("$K$",K,down,blue);
-  %label("$G$",G,down,blue);
-  %label("$L$",L,down,blue);
-  %add(pathticks(F--D,2,0.5,0,100,red));
-  %add(pathticks(E--D,2,0.5,0,100,red));
-  %add(pathticks(J--D,2,0.5,0,100,red));
-  %add(pathticks(G--D,2,0.5,0,100,red));
-  %add(pathticks(P--D,2,0.5,0,100,red));
-  %add(pathticks(F--D,2,0.5,0,100,red));
-  %add(pathticks(A--D,2,0.5,30,100,red));
-  %add(pathticks(K--D,2,0.5,30,100,red));
-  %add(pathticks(L--D,2,0.5,30,100,red));
-  %add(rightanglem(P,K,G,180));
-  %add(rightanglem(H,A,C,180));
-  %add(rightanglem(L,G,D,180));
-  %add(rightanglem(C,L,J,180));
-%\end{asy}
-  %\end{center}
-\item $AK$ - smailiojo trikampio $ABC$ pusiaukampinė, $P$ ir
-  $Q$ - taškai ant pusiaukampinių (ar jų tęsinių) $BB'$ ir
-  $CC'$ tokie, kad $PA=PK$, $QA=QK$. Įrodykite, kad $\angle
-  PAQ= 90^\circ-\frac{\angle BAC}{2}$. 
-  %Pritaikę vieną iš minėtųjų savybių, gauname, kad
-  %keturkampiai $CAPK$ ir $QABK$ yra arba įbrėžtiniai, arba
-  %deltoidai. Tačiau deltoidais nė vienas jų būti negali,
-  %nes kitaip kažkurios dvi trikampio kraštinės bus
-  %lygiagrečios.  Todėl jie abu yra įbrėžtiniai, ir todėl
-  %$\angle PAQ = \angle PAK + \angle KAQ = \angle PBK +
-  %\angle QCK = \frac{\angle BCA}{2} + \frac{\angle ABC}{2}
-  %= 90^\circ-\frac{\angle BAC}{2}$. 
-\item Du apskritimai kertasi taškuose $A$ ir $B$. Nubrėžta
-  jiems bendra išorinė liestinė liečia pirmą apskritimą
-  taške $C$, o antrą  taške $D$. Tarkime, kad taškas $B$ yra
-  arčiau $CD$ negu taškas $A$. $CB$ kerta antrąjį apskritimą
-  antrą kartą taške $E$. Įrodyti, kad $AD$ yra kampo $\angle
-  CAE$ pusiaukampinė.  
-  %Pasinaudoję kampo tarp stygos ir liestinės savybe bei
-  %priekampio savybe, mes gauname, kad $\angle EAD = \angle
-  %EBD = \angle BDC + \angle BCD = \angle BAD + \angle BAC =
-  %\angle DAC$, ko ir reikėjo.
-  
-\item Duotas įbrėžtinis keturkampis $ABCD$ kurio įstrižainės 
-  statmenos, o apibrėžtinio apskritimo centras yra $O$. 
-  Įrodyti, kad statmens iš $O$ į $AD$ ilgis dvigubai trumpesnis
-  nei kraštinė $BC$.
-  %Tegu $H$ ir $G$ yra pagrindai statmenų, nuleistų iš $O$ į
-  % atitinkamai $BC$ ir $AD$. Tada $\angle GOA=\frac{\angle 
-  % DOA}{2}=\angle DBA=90^\circ-\angle BAC=90^\circ-\angle BOH=
-  %\angle OBH$. Taigi trikampiai $BOH$ ir $AOG$ vienodi pagal
-  %kraštinę ir tris kampus. Tad $OG=\frac{BC}{2}$. 
-\item Ant apskritimo $K$ su centru taške $O$ stygos $AB$
-  paimtas taškas $C$. Apie $AOC$ apibrėžtas apskritimas kerta 
-  $K$ taške  $D$. Įrodyti, kad $CD=CB$.
-  %Kadangi $AO=DO$, tai $\angle OCD=\angle OAD=\angle ADO=\angle 
-  % OCB$. Taigi taškai $D$ ir $B$ yra simetriški $OC$ atžvilgiu,
-  %ko ir reikėjo.
-\item Lygiagretainio $ABCD$ įstrižainės kertasi taške $O$.
-  Įrodykite, kad jei apie $ABO$ apibrėžtas apskritimas
-  liečia $BC$, tai apie $BCO$ apibrėžtas apskritimas liečia
-  $CD$.
-  %Iš kampo tarp stygos ir liestinės mes turime $\angle ACD
-  %= \angle CAB = \angle OBC$, ir pritaikę vieną iš minėtų
-  %naudingų faktų turime, kad apie $BCO$ apibrėžtas
-  %apskritimas liečia $CD$.
-\item Duotas trikampis $ABC$, apie jį nubrėžtas apskritimas.
-  Dvi tiesės eina per tašką $A$ ir kerta atkarpą $BC$
-  taškuose $K$ ir $M$, o lanką $BC$ (tą, kuris neturi taško
-  $A$) tiesės $AK$ ir $AM$  kerta atitinkamai taškuose $L$
-  ir $N$. Jei $KLMN$ yra įbrėžtinis, tai įrodykite, kad
-  $ABC$ lygiašonis.
-  %$\angle AKB = \angle CKL = \angle 180^\circ - \angle ANL
-  %= \angle ABL$. Tada iš
-  %aukščiau minėtų naudingų faktų, $AB^2 = AK \cdot AL$.
-  %Panašiai ir $AC^2 = AM \cdot AN$. Bet iš tų pačių faktų,
-  %$AM \cdot AN = AK \cdot AL$. Taigi $AC^2 = AB^2$, ko ir
-  %reikėjo. 
-\item Duotas apskritimas su centru $O$, jį atkarpa $AB$
-  liečia taške $A$. $AB$ yra pasukta aplink $O$ ir taip
-  gauta $A'B'$. Įrodyti, kad $AA'$ eina per atkarpos $BB'$
-  vidurio tašką.
-\begin{center}
-\begin{asy}
-import olympiad;
-size(200);
-pair O, A, AA, B, BB;
-path a1;
-O=origin;
-a1=circle(O,40);
-A=waypoint(a1,0.29);
-B=A+(O-A)*(0,2);
-AA=rotate(-40)*A;
-BB=rotate(-40)*B;
-draw(a1);
-dot(A,blue);
-dot(AA,blue);
-dot(B,blue);
-dot(BB,blue);
-dot(O,blue);
-draw(A--B--BB--AA--O--cycle);
-drawline(A,AA);
-label("$A$",A,up,deepred);
-label("$A'$",AA,up,deepred);
-label("$B$",B,NE,deepgreen);
-label("$B'$",BB,NE,deepgreen);
-label("$O$",O,right,blue);
-add(pathticks(A--B,2,0.5,0,100,red));
-add(pathticks(AA--BB,2,0.5,0,100,red));
-\end{asy}
-\end{center}
-  %Tegu $M$ yra $BB'$ vidurio taškas. Trikampiai $OAB$ ir
-  %$OA'B'$ yra vienodi, todėl $OB = OB'$, ir todėl $\angle
-  %OMB' = 90^\circ = \angle OAB = \angle OA'B'$. Gavome, kad
-  %keturkampiai $MOAB$ ir $MOA'B'$ yra įbrėžtiniai, ir iš
-  %čia $\angle AMO = \angle ABO = \angle A'B'O = \angle
-  %A'MO$. Todėl taškai $M, A, A'$ yra vienoje tiesėje.
-\item Duotas įbrėžtinis keturkampis $ABCD$. $K, L, M, N$ yra
-  atitinkamai kraštinių $AB$, $BC$, $CD$, $DA$ vidurio
-  taškai. $P$ yra įstrižainių susikirtimo taškas. Įrodyti,
-  kad apie trikampius $PKL$, $PLM$, $PMN$, $PNK$ apibrėžtų
-  apskritimų spinduliai yra vienodi.
-  %Pastebėkime, kad trikampiai $PAB$ ir $PCD$ yra panašūs, o
-  %$PK$ ir $PM$ yra jų abiejų pusiaukraštinės iš atitinkamo
-  %kampo. Tada iš vieno anksčiau minėtų naudingų faktų
-  %(„Uždavinių apšilimui“ skyrius), $\angle KPB = \angle
-  %CPM$. Taigi, $\angle NMP = \angle MPC = \angle KPB =
-  %\angle PKN$. Apie trikampius $PNM$ ir $PNK$
-  %apibrėžtų apskritimų spinduliai vienodi, nes juose prieš
-  %lygius kampus yra lygios kraštinės ( tie apskritimai simetriški
-  % $NP$ atžvilgiu). Panašiai ir su
-  %kitomis trikampių poromis.
-\item Apskritimas $S_1$ su centru $O_1$ eina per kito
-  apskritimo $S_2$ centrą $O_2$. Ant $S_1$ taip pat paimtas
-  bet koks taškas $C$, ir iš to taško $C$ išvestos liestinės
-  apskritimui $S_2$ kerta apskritimą $S_1$ taškuose $A$ ir
-  $B$. Įrodyti, kad $AB\perp{O_1 O_2}$. 
-  %Apskritimas $S_2$ liečia kampo $\angle ACB$ kraštines,
-  %taigi $CO_2$ yra kampo $\angle ACB$ pusiaukampinė.
-  %Pritaikę vieną iš šio skyriaus naudingų faktų, turime,
-  %kad $AO_2 = BO_2$, t.y $O_1AO_2B$ yra deltoidas. Taigi
-  %$AB\perp{O_1 O_2}$.
-\item Duotas rombas $ABCD$ su $A=120^\circ$. $M$ ir $N$ yra
-  taškai atitinkamai ant kraštinių $BC$ ir $CD$ tokie, kad
-  $\angle NAM=60^\circ$. Įrodyti, kad apie trikampį $NAM$
-  apibrėžto apskritimo centras guli ant rombo įstrižainės.
-  %$\angle NAM + \angle NCM = 60^\circ + 120^\circ =
-  %180^\circ$, taigi apie $NAM$ apibrėžtas apskritimas eina
-  %per tašką $C$. Taigi jo centras guli $AC$ vidurio
-  %statmens, t.y ant įstrižainės $BD$.
-\item Duotas trikampis $ABC$. Ant kraštinių $AB$ ir $BC$
-  atitinkamai paimti taškai $X$ ir $Y$. $AY$ ir $CX$ kertasi
-  taške $Z$. Pasirodė, kad $AY = YC$ ir $AB = ZC$.
-  Įrodyti, kad $B, Z, X, Y$ guli ant vieno apskritimo.
-  %Paimkime tašką $D$ ant $CY$ tokį, kad $YZ = YD$. Tada iš
-  %simetrijos $AD = CZ = AB$. Taigi, $\angle XBY = \angle
-  %ABD = \angle ADY = \angle CZY = 180^\circ - \angle XZY$,
-  %taigi $XBYZ$ yra įbrėžtinis.
-\item Duotas rombas $ABCD$. Ant linijos $CD$ paimtas taškas
-  $K$ kuris nesutampa $C$ ar $D$ taip, kad $AD = BK$. $P$
-  yra tiesės $BD$ ir atkarpos $BC$ vidurio statmens
-  sankirtos taškas. Įrodyti, kad taškai $A$, $P$, $K$ guli
-  ant vienos tieses.
-  %Kadangi yra įmanomos kelios skirtingos konfigūracijos ir
-  %uždavinys labai lengvas, tai pateiksime tik nepilną
-  %sprendimą: abiem atvejais keturkampiai $BKCP$ ir $DKAB$
-  %yra įbrėžtiniai; vienu atveju tada nesunkiai įrodome, kad
-  %$\angle PKB + \angle AKB = 180^\circ$, kitu atveju
-  %$\angle APC + \angle KPC = 180^\circ$, iš ko ir seka
-  %rezultatas.
-\item Trikampyje $ABC$ nubrėžtos aukštinės $BE$ ir $AD$
-  kertasi taške $H$. $X$ ir $Y$ - atitinkamai $CH$ ir $AB$
-  vidurio taškai. Įrodyti, kad $XY\perp{DE}$.
-  %Keturkampis $CEHD$ yra įbrėžtinis, nes $\angle HEC +
-  %\angle HDC = 180^\circ$. Be to, $X$ yra apie šį
-  %keturkampį apibrėžto apskritimo centras. Panašiai ir
-  %$BDEA$ yra įbrėžtinis, o apie jį apibrėžto apskritimo
-  %centras yra $Y$. Šie du apskritimai kertasi taškuose $D$
-  %ir $E$, taigi $DXEY$ yra deltoidas, ir todėl
-  %$XY\perp{DE}$.
-\item Duotas trikampis $ABC$ ir taškas $P$ jo viduje toks,
-  kad $\angle ABP = \angle ACP$ ir $\angle CBP = \angle
-  CAP$.  Įrodyti, kad $P$ yra trikampio $ABC$ aukštinių
-  susikirtimo taškas.
-  %Tegu $AP, BP, CP$ kerta trikampio kraštines taškuose $A',
-  %B', C'$. Tada keturkampiai $ABA'B'$ ir $BCB'C'$ yra
-  %įbrėžtiniai, nes $\angle ABP = \angle ACP$ ir $\angle CBP
-  %= \angle CAP$. Bet tada $\angle B'C'C = \angle B'BC =
-  %\angle A'AC$, todėl keturkampis $AB'PC'$ yra įbrėžtinis.
-  %Taigi, $\angle AB'P = \angle BC'P = \angle BB'C =
-  %180^\circ - \angle AB'P$, taigi $\angle AB'P = 90^\circ =
-  %\angle AC'P$, t.y $CC'$ yra aukštinė. Panašiai ir $AA'$
-  %yra aukštinė, todėl $H$ yra aukštinių sankirtos taškas.
-\item Duotas įbrėžtinis keturkampis $ABCD$, ant spindulio
-  $AD$ už taško $D$ paimtas taškas $E$ taip, kad $AC=CE$,
-  $\angle BDC=\angle DEC$. Įrodyti, kad $AB=DE$. 
-  %Trikampis $ACE$ yra lygiašonis, taigi $\angle EAC =
-  %\angle DAC = \angle DEC = \angle BDC = \angle BAC$, taigi
-  %$BC = CD$. Be to, $\angle DEC = \angle BAC$ ir $\angle
-  %EDC = \angle ABC$, taigi trikampiai $ABC$ ir $EDC$ yra
-  %vienodi pagal kraštinę ir 2 kampus. Todėl $AB = DE$.
-\item Duotas lygiašonis trikampis $ABC$ su $AB = BC$. Ant
-  $AB, BC, CA$ atitinkamai paimti taškai $C_1, A_1, B_1$
-  tokie, kad $\angle BC_1A_1 = \angle CA_1B_1 = \angle A$,
-  $P$ - atkarpų $BB_1$ ir $CC_1$ sankirtos taškas. Įrodyti,
-  kad keturkampis $AB_1PC_1$ yra įbrėžtinis.
-  %Iš duotų kampų mes turime $C_1A_1\parallel{AC}$, taigi
-  %$CAC_1A_1$ yra lygiašonė trapecija. Be to, keturkampis
-  %$ABA_1B_1$ yra įbrėžtinis, taigi $\angle AB_1B = \angle
-  %AA_1B = \angle CC_1B = 180^\circ - \angle AC_1C$, taigi
-  %keturkampis $AB_1PC_1$ yra įbrėžtinis.
-\item Duotas statusis trikampis su stačiu kampu $B$. Per
-  tašką $B$ išvesta pusiaukraštinė $BM$. Į trikampį $ABM$
-  įbrėžtas apskritimas liečia $AM$ ir $AB$ taškuose $K$ ir
-  $L$. Jei $LK\parallel{BM}$, raskite kampą $\angle ACB$.
-  %Jei $LK\parallel{BM}$, tai trikampiai $ALK$ ir $ABM$ yra
-  %panašūs. Tačiau $ALK$ yra lygiašonis su $AL = AK$, o
-  %$ABM$ lygiašonis su $MB = MA$, taigi $AB = AM = MA$.
-  %Todėl $ABM$ yra lygiakraštis, ir iš čia $\angle BCA =
-  %30^\circ$.
-\item Duotas trikampis $ABC$ su aukštinėmis $AA_1$, $BB_1$.
-  Kampo $C$ pusiaukampinė kerta $AA_1$ ir $BB_1$ atitinkamai
-  taškuose $F$ ir $L$. Įrodyti, kad atkarpos $FL$ vidurio
-  taškas vienodai nutolęs nuo taškų $B_1$ ir $A_1$.
-  %Tegu $H$ yra aukštinių susikirtimo taškas, o $M$ yra $FL$
-  %vidurio taškas. Tada trikampiai $CA_1F$ ir $CB_1L$ yra
-  %panašūs pagal du kampus, todėl $\angle CFA_1 = \angle
-  %CLB_1$, todėl $HFL$ yra lygiašonis pagal du kampus. Tada
-  %$\angle HMC = 90^\circ = \angle HA_1C = \angle HB_1C$,
-  %tad penkiakampis $CA_1HMB_1$ yra įbrėžtinis. Kadangi $CM$ 
-  %yra kampo $\angle A_1HC_1$ pusiaukampinė, mes turime $MB_1
-  % = MA_1$.  
-\item Duotas deltoidas $ABCD$, $AB=BC$, $AD=DC$. Ant
-  įstrižainės $AC$ paimtas toks taškas $K$, kad $BK = KA$.
-  Jei keturkampis $CDKB$ yra  įbrėžtinis, tai įrodykite, kad
-  $CD = BD$.
-  %Pastebėkime, kad trikampiai $AKB$ ir $ABC$ yra panašūs.
-  %Tada iš įbrėžtinių kampų ir priekampio savybės
-  %$180^\circ - \angle DBC - \angle BCD = \angle BDC =
-  %\angle BKC = \angle BAK + \angle ABK = 2 \cdot \angle BCA
-  %= 2 \cdot (90^\circ - \angle DBC) = 180^\circ - \angle
-  %DBC - \angle DBC$, todėl $\angle DBC = \angle BCD$, tad
-  %$BD = DC$. 
-\item Duotas kvadratas $ABCD$. Ant $AB$ paimtas taškas $K$,
-  ant $CD$ - $L$, o ant $KL$ - $M$. Įrodykite, kad apie
-  $AKM$ ir $MLC$ apibrėžtų apskritimų sankirtos taškas
-  (kitas negu $M$) yra ant įstrižainės $AC$.
-  %Tegu apie trikampį $MLC$ apibrėžtas apskritimas kerta
-  %$AC$ taške $F$. Tada $\angle MFC = \angle MLC = \angle
-  %AKM$, todėl keturkampis $AKMF$ yra įbrėžtinis, ko ir
-  %reikėjo.
-  %\begin{center}
-  %\begin{asy}
-  %import olympiad;
-  %size(200);
-  %pair A, B, C, D, K, L, M, F;
-  %path a1;
-  %D=(0,0);C=(100,0);A=(0,100);B=(100,100);
-  %K=waypoint(A--B,0.8);
-  %L=waypoint(D--C,0.5);
-  %M=waypoint(L--K,0.8);
-  %a1=circumcircle(L,C,M);
-  %F=intersectionpoints(A--C,a1)[0];
-  %add(anglem(C,L,M,300,red,0));
-  %add(anglem(A,K,M,300,red,0));
-  %add(anglem(C,F,M,300,red,0));
-  %draw(a1);
-  %dot(A,blue);
-  %dot(B,blue);
-  %dot(C,blue);
-  %dot(D,blue);
-  %dot(K,blue);
-  %dot(L,blue);
-  %dot(M,blue);
-  %dot(F,blue);
-  %draw(A--B--C--D--cycle);
-  %draw(A--C);
-  %draw(K--L);
-  %draw(M--F);
-  %label("$A$",A,NW,blue);
-  %label("$B$",B,NE,blue);
-  %label("$C$",C,SE,blue);
-  %label("$D$",D,SW,blue);
-  %label("$K$",K,up,blue);
-  %label("$L$",L,down,blue);
-  %label("$M$",M,NE,blue);
-  %label("$F$",F,left,blue);
-%\end{asy}
-  %\end{center}
-\item Duotas trikampis $ABC$, jame išvestos aukštinė $AH$ ir
-  pusiaukampinė $BE$. Žinoma, kad $\angle BEA = 45^\circ$.
-  Įrodyti, kad $\angle EHC = 45^\circ$.
-  %Tegu taškas $Q$ yra simetriškas taškui $A$ atkarpos $BE$
-  %atžvilgiu. Šis taškas yra ant atkarpos $BC$ bei $\angle
-  %QEA = 90^\circ = \angle QHA$ todėl keturkampis $AHQE$ yra
-  %įbrėžtinis. Tad $\angle EHC = \angle EHQ = \angle EAQ =
-  %45^\circ$ (nes $AQE$ yra status lygiašonis).
-\item Duotas trikampis $ABC$ su pusiaukampinėmis $AL$ ir
-  $BM$. Jei trikampių $ACL$ ir $BCM$ apibrėžtiniai
-  apskritimai kertasi ant atkarpos $AB$, tai įrodykite, kad
-  $\angle ACB=60^\circ$.
-  %Tegu trikampių $ACL$ ir $BCM$ apibrėžtiniai apskritimai
-  %kertasi ant atkarpos $AB$, taške $X$. Tada $\angle BCA =
-  %\angle BCX + \angle ACX = \angle LCX + \angle MCX =
-  %\angle LAX + \angle MBX = \frac{\angle BAC}{2} +
-  %\frac{\angle CBA}{2} = \frac{\angle BAC+\angle CBA}{2} =
-  %\frac{180^\circ-\angle BCA}{2} = 90^\circ - \frac{\angle
-  %BCA}{2}$, taigi $\angle BCA = 60^\circ$.
-\item Trikampio $ABC$ pusiaukampinės $BD$ ir $CE$ kertasi
-  taške $O$. Įrodykite, kad jeigu $OD = OE$, tai arba
-  trikampis $ABC$ lygiašonis, arba kampas $\angle
-  A=60^\circ$.
-  %Pritaikome vieną iš minėtųjų naudingų faktų keturkampiui
-  %$ADOE$, ir gauname, kad $ADOE$ yra arba įbrėžtinis, arba
-  %deltoidas. Jeigu jis deltoidas, tai iš simetrijos $ABC$
-  %yra lygiašonis. Jeigu jis įbrėžtinis, tai tada paimkime
-  %tašką $H$ ant $BC$ tokį, kad $\angle ODA = \angle OHC =
-  %\angle OEB$.  Tada keturkampiai $ABHD$ ir $AEHC$ yra
-  %įbrėžtiniai ir toliau mes galime tęsti kaip prieš tai
-  %buvusiame uždavinyje.
-\item Duotas trikampis $ABC$ su $\angle ABC = 60^\circ$.
-  $I$ - įbrėžto apskritimo centas, $CL$ - pusiaukampinė.
-  Apskritimas, apibrėžtas apie trikampį $ALI$, kerta $AC$
-  antrą kartą taške $D$. Įrodyti, kad $BCDL$ - įbrėžtinis.
-  %Iš duotos sąlygos $\frac{\angle A+\angle C}{2} =
-  %60^\circ$.  Tada iš priekampio savybės $\angle LDA =
-  %\angle LIA = \frac{A}{2} + \frac{\angle C}{2} = 60^\circ
-  %= \angle LBC$, taigi keturkampis $BCDL$ įbrėžtinis.
-\item Duotas iškilasis šešiakampis $ABCDEF$. Žinoma, kad $AD
-  = BE = CF$. $AD$ ir $CF$ sankirtos taškas yra $P$, $BE$ ir
-  $CF$ sankirtos taškas yra $R$, o $AD$ ir $BE$ - taškas
-  $Q$.  Jeigu $AP = PF$, $BR = CR$, $DQ = EQ$ tai įrodyti,
-  kad šešiakampis yra įbrėžtinis.
-  %Iš duotų sąlygų keturkampiai $CDFA$, $DEAB$ ir $EFBC$ yra
-  %lygiašonės trapecijos. Tada kraštinių $CD$ ir $AF$ vidurio
-  %statmenys sutampa, ir jie taip pat sutampa su kampo $\angle
-  %QPR$ pusiaukampine. Panašiai ir su kitomis kraštinėmis ir
-  %jų vidurio statmenimis. Tada visų kraštinių $AB$, $BC$,
-  %$CD$, $DE$, $EF$, $FA$ vidurio statmenys kertasi viename
-  %taške, nes trikampio $PQR$ pusiaukampinės kertasi viename
-  %taške. Todėl visos šešiakampio viršūnės vienodai
-  %nuotolusios nuo šio taško, tad šešiakampis yra įbrėžtinis. 
-\item $AC$ ir $BD$ yra du statmeni kažkokio apskritimo
-  skersmenys. Taškas $K$ ant apskritimo nesutampa su taškais
-  $A, B, C, D$. $AK$ ir $BD$ kertasi taške $M$, o $DK$ ir
-  $CB$ - taške $N$. Įrodyti, kad $AC\parallel{MN}$.
-  %Tarkime, kad taškas $K$ yra ant mažesniojo lanko $AB$
-  %(Kiti atvejai sprendžiami panašiai). Tada $\angle KNB =
-  %180^\circ - \angle NKB - \angle NBK = 180^\circ -
-  %90^\circ - \angle KAC = \angle AMD = \angle KMB$, taigi
-  %$KNMB$ įbrėžtinis. Tada $\angle ACN = \angle BKM = \angle
-  %BNM$, taigi $AC\parallel{NM}$. 
-\item Duotas smailusis trikampis $ABC$. Jame nubrėžtos
-  aukštinės $AA_1, BB_1, CC_1$. Įrodyti, kad $C_1$
-  projekcijos į tieses $AC$, $BC$, $BB_1$, $CC_1$ yra
-  vienoje tieseje.
-  %Tegu visi taškai yra tokie, kokie pažymėti brėžinyje
-  %apačioje. Tada keturkampiai $KPC_1B$ ir $ FPC_1L$ yra
-  %įbrėžtiniai. Taigi, $\angle KPB = \angle KC_1B =
-  %180^\circ - 90^\circ - \angle B = \angle BCC_1 = \angle
-  %CC_1L = \angle FPL$, taigi $KP\parallel{PL}$ ir todėl
-  %taškai $K, P, L$ yra vienoje tiesėje. Panašiai ir taškai
-  %$P, L, H$ guli vienoje tiesėje. Todėl taškai $K, P, L, H$
-  %guli vienoje tiesėje.
-  %\begin{center}
-  %\begin{asy}
-  %import olympiad;
-  %size(200);
-  %pair A, B, C, AA, BB, CC, K, P, L, H, F;
-  %C=(35,60); A=(80,0); B=(0,0); 
-  %AA=foot(A,B,C);
-  %BB=foot(B,A,C);
-  %CC=foot(C,B,A);
-  %K=foot(CC,B,C);
-  %P=foot(CC,B,BB);
-  %L=foot(CC,A,AA);
-  %H=foot(CC,A,C);
-  %F=extension(A,AA,B,BB);
-  %add(anglem(K,P,B,200,red,0));
-  %add(anglem(K,CC,B,200,red,0));
-  %draw(A--B--C--cycle);
-  %draw(A--AA);
-  %draw(B--BB);
-  %draw(C--CC);
-  %draw(CC--K);
-  %draw(CC--P);
-  %draw(CC--L);
-  %draw(CC--H);
-  %draw(K--H);
-  %dot(A,blue);
-  %dot(B,blue);
-  %dot(C,blue);
-  %dot(AA,blue);
-  %dot(BB,blue);
-  %dot(CC,blue);
-  %dot(F,blue);
-  %dot(K,blue);
-  %dot(P,blue);
-  %dot(L,blue);
-  %dot(H,blue);
-  %label("$A$",A,SE,blue);
-  %label("$B$",B,SW,blue);
-  %label("$C$",C,up,blue);
-  %label("$F$",F,(0.8,1.5),blue);
-  %label("$A_1$",AA,NW,blue);
-  %label("$B_1$",BB,NE,blue);
-  %label("$C_1$",CC,down,blue);
-  %label("$L$",L,up,blue);
-  %label("$K$",K,NW,blue);
-  %label("$P$",P,up,blue);
-  %label("$H$",H,NE,blue);
-  %add(rightanglem(A,AA,B,120));
-  %add(rightanglem(B,BB,A,120));
-  %add(rightanglem(CC,K,B,120));
-  %add(rightanglem(CC,P,B,120));
-  %add(rightanglem(CC,L,A,120));
-  %add(rightanglem(CC,H,A,120));
-  %add(rightanglem(A,CC,C,120));
-%\end{asy}
-  %\end{center} 
+  \item $ABC$ yra trikampis. Ant $AB$, $BC$, $CA$ atitinkamai
+    paimti taškai $K,L,M$ taip, kad $\angle BLK=\angle
+    CLM=\angle BAC$. $BM$ ir $CK$ kertasi taške $P$. Įrodyti,
+    kad keturkampis $AKPM$ yra įbrėžtinis.
+    %Kadangi $\angle BAC + \angle KLC = \angle BLK + \angle
+    %KLC = 180^\circ$, tai keturkampis $AKLC$ yra įbrėžtinis.
+    %Panašiai ir $AMLB$ yra įbrėžtinis. Tada iš įbrėžtinių
+    %kampų savybės, $\angle AMP + \angle AKP = \angle AMB +
+    %\angle AKC = \angle ALB + \angle ALC = 180^\circ$, taigi
+    %$AKPM$ yra įbrėžtinis.   
+  \item Duotas trikampis $ABC$, $M$-$BC$ vidurio taškas,
+    $AA',BB',CC'$ yra aukštinės, $AB$ ir $A'B'$ kertasi taške
+    $X$, o $MC'$ ir $AC$ taške $Y$. Įrodyti, kad
+    $XY\parallel{BC}$.
+    %Tegu $H$ būna trikampio aukštinių susiskirtimo taškas.
+    %Pastebėkime, kad trikampis $MBC'$ yra lygiašonis, o
+    %keturkampiai $CBC'B'$, $ABA'B'$ ir $AB'HC'$ yra
+    %įbrėžtiniai (nes $\angle AA'B = \angle AB'B = \angle CC'B
+    %= \angle CB'B$).  Taigi, $\angle XC'Y = \angle MC'B =
+    %\angle MBC' = \angle CB'A' = \angle XB'Y$, todėl
+    %$XB'C'Y$ yra įbrėžtinis. Tada $\angle XYC =180^\circ-\angle XC'B'
+    %= \angle BCA$, todėl $XY\parallel{BC}$.
+  \item Duotas statusis trikampis $ABC$ su stačiu kampu $A$.
+    $M$ yra $BC$ vidurio taškas, o $AH$ yra aukštinė. Linija
+    per $M$, statmena $AC$, kerta apie $AMC$ apibrėžtą
+    apskritimą taške $P$. Įrodyti, kad $BP$ dalija $AH$
+    pusiau.
+    %Tegu $G$ yra $CP$ ir $AB$ sankirtos taškas. Kadangi $AMC$
+    %yra lygiašonis, tai $PM$ yra ne tik $AMC$ aukštinė, bet
+    %ir pusiaukampinė. Tada $APCM$ yra įbrėžtinis deltoidas,
+    %taigi $\angle PAM = \angle PCM = 90^\circ$. Be to, $P$
+    %yra $GC$ vidurio taškas, nes $P$ yra stataus trikampio
+    %$ACG$ įžambinės ir statinio $AC$ vidurio statmens
+    %susikirtimo taškas. Taigi $PB$ dalija $GC$ pusiau. Bet
+    %trikampiai $BGC$ ir $BAH$ yra panašūs, taigi $BP$ taip
+    %pat dalina $AH$ pusiau. 
+  \item Ant stačiojo trikampio $ABC$ įžambinės $AB$ išorėje
+    nubrėžtas kvadratas $ABDE$. Stataus kampo $C$
+    pusiaukampinė kerta $DE$ taške $F$. Rasti $\frac{EF}{FD}$,
+    jeigu žinoma, kad $AC=1$ ir $BC=3$. 
+    %Tegu $H$ būna kvadrato $ABDE$ centras, o $CF$ kerta $AB$
+    %taške $K$. Tada $\angle AHB = \angle ACB = 90^\circ$,
+    %taigi $CBHA$ yra įbrėžtinis. Be to, $HA = HB$, todėl
+    %$\angle ACH = \angle HCB$, t.y kampo $C$ pusiaukampinė
+    %eina per tašką $H$. Tada iš simetrijos $BK = EF$ ir todėl
+    %$\frac{EF}{FD} = \frac{BK}{KA} = \frac{BC}{CA} = 3$.
+  \item Į kampą įbrėžti du apskritimai su centrais $A$ ir $B$
+    taip, kad jie liečia kampo kraštines ir vienas kitą.
+    Įrodyti, kad apskritimas, kurio skersmuo yra $AB$, taip
+    pat liečia kampo kraštines.
+    %Tegu apskritimai liečia kampo kraštines taškuose $D$ ir
+    %$I$, o patys liečiasi taške $G$. Tegu bendra vidinė
+    %abiejų apskritimų liestinė kerta kampo kraštinę taške
+    %$H$. Tada $DHGA$ ir $HIBG$ yra deltoidai, ir be to,
+    %$\angle DHA = \frac{\angle DHG}{2} =
+    %\frac{180^\circ-\angle IHG}{2} = 90^\circ - \angle BHG =
+    %\angle HBG$ bei $\angle AHB = \angle AHG + \angle GHB =
+    %\frac{\angle DHG}{2} + \frac{\angle GHI}{2} =
+    %\frac{180^\circ}{2} = 90^\circ$. Taigi apie $AHB$
+    %apibrėžtas apskritimas turi skersmenį $AB$ ($ABH$ status)
+    %bei liečia $CH$ (iš vienos minėtųjų savybių).
+    %\begin{center}
+    %\begin{asy}
+    %import olympiad;
+    %size(200);
+    %pair A, B, C, D, E, F, G, H, I;
+    %path a1, a2;
+    %real r;
+    %r=15;
+    %C=(0,0); A=(50,0); 
+    %a1=circle(A,r);
+    %D=tangent(C,A,r,2);
+    %G=A+(r,0);
+    %H=extension(C,D,G,G+(G-A)*(0,1));
+    %I=rotate(180-degrees((G-H)/(D-H)),H)*G;
+    %B=extension(C,A,H,(I+G)/2);
+    %a2=circle(B,arclength(B--I));
+    %add(anglem(H,B,G,300,blue,0));
+    %add(anglem(D,H,A,300,blue,0));
+    %add(anglem(G,H,B,300,red,0));
+    %add(anglem(G,A,H,300,red,0));
+    %add(rightanglem(A,D,H,150));
+    %add(rightanglem(H,G,A,150));
+    %add(rightanglem(H,I,B,150));
+    %draw(a1);
+    %draw(a2);
+    %drawline(C,D);
+    %drawline(C,A);
+    %drawline(C,tangent(C,A,r,1));
+    %drawline(G,H);
+    %draw(B--I);
+    %draw(B--H);
+    %draw(A--D);
+    %draw(A--H);
+    %draw((-10,-40)--(120,40),invisible);
+    %label("$A$",A,SW,blue);
+    %label("$B$",B,SW,blue);
+    %label("$C$",C,up,blue);
+    %label("$D$",D,up,blue);
+    %label("$I$",I,up,blue);
+    %label("$G$",G,SW,blue);
+    %label("$H$",H,up,blue);
+    %\end{asy}
+    %\end{center}
+  \item Trikampyje $ABC$ $AB=BC$. $BH$-aukštinė, $M$ yra $AB$ 
+    vidurio taškas, $K$ yra $BH$ ir apie $MBC$ apibrėžto apskritimo
+    sankirtos taškas. Įrodyti, kad $BK=\frac{3R}{2}$, kur $R$ yra 
+    apie $ABC$ apibrėžto apskritimo spindulys.
+    % Tegu $X$ yra $BC$ vidurio taškas. Tada iš simetrijos ir lygių
+    %įbrėžtinių kampų $KC=KM=KX$. Tegu $O$ yra apie $ABC$ apibrėžto
+    %apskritimo centras, o $Q$ yra $XC$ vidurio taškas.
+    % Tada $OX\parallel KQ$ (abi linijos statmenos $BC$), ir iš 
+    %Talio teoremos $\frac{BK}{BO}=\frac{BQ}{BX}=\frac{3}{2}$.
+  \item Per apskritimo $e$ centrą nubrėžtas apskritimas $f$.
+    $A$ ir $B$ - šių apskritimų sankirtos taškai. Liestinė
+    apskritimui $f$ taške $B$  kerta apskritimą $e$ taške $C$.
+    Įrodyti, kad $AB=BC$.   
+    %Tegu apskritimo $e$ centras yra taškas $O$. Tada iš
+    %kampo tarp stygos ir liestinės savybės, $\angle OBA =
+    %\angle OAB = \angle OBC$, taigi $A$ ir $C$ yra simetriški
+    %$OB$ atžvilgiu, taigi $BA = BC$. 
+  \item Du apskritimai kertasi taškuose $A$ ir $B$. Taške $A$
+    abiems apskritimams išvestos liestinės, kertančios
+    apskritimus taškuose $M$ ir $N$. Tiesės $BM$ ir $BN$
+    atitinkamai dar syki kerta apskritimus taškuose $P$ ir
+    $Q$. Irodyti, kad $MP$ = $NQ$.  
+    %Vėl iš kampo tarp stygos ir liestinės savybės, $\angle
+    %NAB = \angle AMB$ bei $\angle MAB = \angle ANB$. Tada iš
+    %paveikslėlio žemiau matyti, kad $\angle MQA = \angle MQB
+    %+ \angle BQA = \angle APB + \angle BPN = \angle APN$ bei
+    %$\angle QAM = \angle NAP$. Todėl $ANP$ ir $QMA$ yra
+    %panašūs, taigi $\angle AQM = \angle ABP = \angle ANP =
+    %\angle QMA$, taigi $QA = MA$. Panašiai $AN=AP$. Tada trikampiai $AQN$ ir
+    %$AMP$ yra vienodi pagal kraštinę ir 2 kampus, todėl $MP =
+    %NQ$.  
+    %\begin{center}
+    %\begin{asy}
+    %import olympiad;
+    %size(200);
+    %pair A, B, M, N, P, Q;
+    %path a1, a2;
+    %a1=circle((0,0),50);
+    %a2=circle((70,0),30);
+    %A=intersectionpoints(a1,a2)[0];
+    %B=intersectionpoints(a1,a2)[1];
+    %M=intersectionpoints(a1,A--A+((70,0)-A)*(0,-10))[1];
+    %N=intersectionpoints(a2,A--A+((0,0)-A)*(0,10))[0];
+    %Q=intersectionpoints(a1,N--B+(B-N)*10)[0];
+    %P=intersectionpoints(a2,M--B+(B-M)*10)[0];
+    %add(anglem(B,Q,A,300,blue,0));
+    %add(anglem(B,M,A,300,blue,0));
+    %add(anglem(B,A,N,300,blue,0));
+    %add(anglem(B,P,N,300,blue,0));
+    %add(anglem(Q,B,M,300,red,0));
+    %add(anglem(Q,A,M,300,red,0));
+    %add(anglem(N,B,P,300,red,0));
+    %add(anglem(N,A,P,300,red,0));
+    %add(anglem(M,Q,B,300,yellow,0));
+    %add(anglem(M,A,B,300,yellow,0));
+    %add(anglem(A,N,B,300,yellow,0));
+    %add(anglem(A,P,B,300,yellow,0));
+    %draw(a1);
+    %draw(a2);
+    %dot(A,blue);
+    %dot(B,blue);
+    %dot(M,blue);
+    %dot(N,blue);
+    %dot(P,blue);
+    %dot(Q,blue);
+    %draw(Q--A--B--M--cycle);
+    %draw(P--N--B--A--cycle);
+    %draw(Q--B);
+    %draw(M--A);
+    %draw(N--A);
+    %draw(P--B);
+    %label("$A$",A,1.4*up,blue);
+    %label("$B$",B,1.4*down,blue);
+    %label("$M$",M,SW,blue);
+    %label("$N$",N,SE,blue);
+    %label("$P$",P,right,blue);
+    %label("$Q$",Q,left,blue);
+    %\end{asy}
+    %\end{center}
+  \item Kokiu kampu is stačiojo trikampio stataus kampo matoma
+    į tą trikampį įbrėžto apskritimo projekcija į įžambinę?
+    %Tegu tas statusis trikampis būna $ACH$ su stačiu kampu
+    %$A$. Įbrėžto apskritimo centras tebūnie $D$. Visi likę
+    %taškai pažymėti paveikslėlyje. Reikia rasti kampą $\angle
+    %KAL$. Pastebėkime, kad $AFDE$, $DPKG$, $DJLG$ yra visi
+    %vienodi kvadratai. Todėl $DK = DL = DA$, t.y $D$ yra apie
+    %$AKL$ apibrėžto apskritimo centras. Tačiau $\angle KDL =
+    %90^\circ$, taigi $\angle KAL = \frac{\angle KDL}{2} =
+    %45^\circ$.
+    %\begin{center}
+    %\begin{asy}
+    %import olympiad;
+    %size(200);
+    %pair A, H, C, K, G, L, J, D, P, F, E;
+    %path a1;
+    %H=(0,0); A=(30,50);
+    %C=extension(A,A+(H-A)*(0,1),H, (100,0));
+    %D=incenter(A,C,H);
+    %a1=incircle(A,C,H);
+    %E=foot(D,A,C);
+    %G=foot(D,H,C);
+    %F=foot(D,A,H);
+    %P=shift(-inradius(A,C,H),0)*D;
+    %J=2*D-P;
+    %L=J+G-D;
+    %K=P+G-D;
+    %draw(a1);
+    %dot(A,blue);
+    %dot(H,blue);
+    %dot(C,blue);
+    %dot(K,blue);
+    %dot(G,blue);
+    %dot(L,blue);
+    %dot(J,blue);
+    %dot(D,blue);
+    %dot(P,blue);
+    %dot(F,blue);
+    %dot(E,blue);
+    %draw(A--H--C--cycle);
+    %draw(A--K);
+    %draw(A--L);
+    %draw(A--D);
+    %draw(P--D);
+    %draw(J--D);
+    %draw(G--D);
+    %draw(E--D);
+    %draw(F--D);
+    %draw(K--D);
+    %draw(L--D);
+    %draw(J--L);
+    %draw(P--K);
+    %label("$A$",A,up,blue);
+    %label("$H$",H,SW,blue);
+    %label("$C$",C,SE,blue);
+    %label("$E$",E,NE,blue);
+    %label("$F$",F,NW,blue);
+    %label("$J$",J,right,blue);
+    %label("$P$",P,left,blue);
+    %label("$D$",D,NE,blue);
+    %label("$K$",K,down,blue);
+    %label("$G$",G,down,blue);
+    %label("$L$",L,down,blue);
+    %add(pathticks(F--D,2,0.5,0,100,red));
+    %add(pathticks(E--D,2,0.5,0,100,red));
+    %add(pathticks(J--D,2,0.5,0,100,red));
+    %add(pathticks(G--D,2,0.5,0,100,red));
+    %add(pathticks(P--D,2,0.5,0,100,red));
+    %add(pathticks(F--D,2,0.5,0,100,red));
+    %add(pathticks(A--D,2,0.5,30,100,red));
+    %add(pathticks(K--D,2,0.5,30,100,red));
+    %add(pathticks(L--D,2,0.5,30,100,red));
+    %add(rightanglem(P,K,G,180));
+    %add(rightanglem(H,A,C,180));
+    %add(rightanglem(L,G,D,180));
+    %add(rightanglem(C,L,J,180));
+    %\end{asy}
+    %\end{center}
+  \item $AK$ - smailiojo trikampio $ABC$ pusiaukampinė, $P$ ir
+    $Q$ - taškai ant pusiaukampinių (ar jų tęsinių) $BB'$ ir
+    $CC'$ tokie, kad $PA=PK$, $QA=QK$. Įrodykite, kad $\angle
+    PAQ= 90^\circ-\frac{\angle BAC}{2}$. 
+    %Pritaikę vieną iš minėtųjų savybių, gauname, kad
+    %keturkampiai $CAPK$ ir $QABK$ yra arba įbrėžtiniai, arba
+    %deltoidai. Tačiau deltoidais nė vienas jų būti negali,
+    %nes kitaip kažkurios dvi trikampio kraštinės bus
+    %lygiagrečios.  Todėl jie abu yra įbrėžtiniai, ir todėl
+    %$\angle PAQ = \angle PAK + \angle KAQ = \angle PBK +
+    %\angle QCK = \frac{\angle BCA}{2} + \frac{\angle ABC}{2}
+    %= 90^\circ-\frac{\angle BAC}{2}$. 
+  \item Du apskritimai kertasi taškuose $A$ ir $B$. Nubrėžta
+    jiems bendra išorinė liestinė liečia pirmą apskritimą
+    taške $C$, o antrą  taške $D$. Tarkime, kad taškas $B$ yra
+    arčiau $CD$ negu taškas $A$. $CB$ kerta antrąjį apskritimą
+    antrą kartą taške $E$. Įrodyti, kad $AD$ yra kampo $\angle
+    CAE$ pusiaukampinė.  
+    %Pasinaudoję kampo tarp stygos ir liestinės savybe bei
+    %priekampio savybe, mes gauname, kad $\angle EAD = \angle
+    %EBD = \angle BDC + \angle BCD = \angle BAD + \angle BAC =
+    %\angle DAC$, ko ir reikėjo.
+  \item Duotas įbrėžtinis keturkampis $ABCD$ kurio įstrižainės 
+    statmenos, o apibrėžtinio apskritimo centras yra $O$. 
+    Įrodyti, kad statmens iš $O$ į $AD$ ilgis dvigubai trumpesnis
+    nei kraštinė $BC$.
+    %Tegu $H$ ir $G$ yra pagrindai statmenų, nuleistų iš $O$ į
+    % atitinkamai $BC$ ir $AD$. Tada $\angle GOA=\frac{\angle 
+    % DOA}{2}=\angle DBA=90^\circ-\angle BAC=90^\circ-\angle BOH=
+    %\angle OBH$. Taigi trikampiai $BOH$ ir $AOG$ vienodi pagal
+    %kraštinę ir tris kampus. Tad $OG=\frac{BC}{2}$. 
+  \item Ant apskritimo $K$ su centru taške $O$ stygos $AB$
+    paimtas taškas $C$. Apie $AOC$ apibrėžtas apskritimas kerta 
+    $K$ taške  $D$. Įrodyti, kad $CD=CB$.
+    %Kadangi $AO=DO$, tai $\angle OCD=\angle OAD=\angle ADO=\angle 
+    % OCB$. Taigi taškai $D$ ir $B$ yra simetriški $OC$ atžvilgiu,
+    %ko ir reikėjo.
+  \item Lygiagretainio $ABCD$ įstrižainės kertasi taške $O$.
+    Įrodykite, kad jei apie $ABO$ apibrėžtas apskritimas
+    liečia $BC$, tai apie $BCO$ apibrėžtas apskritimas liečia
+    $CD$.
+    %Iš kampo tarp stygos ir liestinės mes turime $\angle ACD
+    %= \angle CAB = \angle OBC$, ir pritaikę vieną iš minėtų
+    %naudingų faktų turime, kad apie $BCO$ apibrėžtas
+    %apskritimas liečia $CD$.
+  \item Duotas trikampis $ABC$, apie jį nubrėžtas apskritimas.
+    Dvi tiesės eina per tašką $A$ ir kerta atkarpą $BC$
+    taškuose $K$ ir $M$, o lanką $BC$ (tą, kuris neturi taško
+    $A$) tiesės $AK$ ir $AM$  kerta atitinkamai taškuose $L$
+    ir $N$. Jei $KLMN$ yra įbrėžtinis, tai įrodykite, kad
+    $ABC$ lygiašonis.
+    %$\angle AKB = \angle CKL = \angle 180^\circ - \angle ANL
+    %= \angle ABL$. Tada iš
+    %aukščiau minėtų naudingų faktų, $AB^2 = AK \cdot AL$.
+    %Panašiai ir $AC^2 = AM \cdot AN$. Bet iš tų pačių faktų,
+    %$AM \cdot AN = AK \cdot AL$. Taigi $AC^2 = AB^2$, ko ir
+    %reikėjo. 
+  \item Duotas apskritimas su centru $O$, jį atkarpa $AB$
+    liečia taške $A$. $AB$ yra pasukta aplink $O$ ir taip
+    gauta $A'B'$. Įrodyti, kad $AA'$ eina per atkarpos $BB'$
+    vidurio tašką.
+    \begin{center}
+      \begin{asy}
+	import olympiad;
+	size(200);
+	pair O, A, AA, B, BB;
+	path a1;
+	O=origin;
+	a1=circle(O,40);
+	A=waypoint(a1,0.29);
+	B=A+(O-A)*(0,2);
+	AA=rotate(-40)*A;
+	BB=rotate(-40)*B;
+	draw(a1);
+	dot(A,blue);
+	dot(AA,blue);
+	dot(B,blue);
+	dot(BB,blue);
+	dot(O,blue);
+	draw(A--B--BB--AA--O--cycle);
+	drawline(A,AA);
+	label("$A$",A,up,deepred);
+	label("$A'$",AA,up,deepred);
+	label("$B$",B,NE,deepgreen);
+	label("$B'$",BB,NE,deepgreen);
+	label("$O$",O,right,blue);
+	add(pathticks(A--B,2,0.5,0,100,red));
+	add(pathticks(AA--BB,2,0.5,0,100,red));
+      \end{asy}
+    \end{center}
+    %Tegu $M$ yra $BB'$ vidurio taškas. Trikampiai $OAB$ ir
+    %$OA'B'$ yra vienodi, todėl $OB = OB'$, ir todėl $\angle
+    %OMB' = 90^\circ = \angle OAB = \angle OA'B'$. Gavome, kad
+    %keturkampiai $MOAB$ ir $MOA'B'$ yra įbrėžtiniai, ir iš
+    %čia $\angle AMO = \angle ABO = \angle A'B'O = \angle
+    %A'MO$. Todėl taškai $M, A, A'$ yra vienoje tiesėje.
+  \item Duotas įbrėžtinis keturkampis $ABCD$. $K, L, M, N$ yra
+    atitinkamai kraštinių $AB$, $BC$, $CD$, $DA$ vidurio
+    taškai. $P$ yra įstrižainių susikirtimo taškas. Įrodyti,
+    kad apie trikampius $PKL$, $PLM$, $PMN$, $PNK$ apibrėžtų
+    apskritimų spinduliai yra vienodi.
+    %Pastebėkime, kad trikampiai $PAB$ ir $PCD$ yra panašūs, o
+    %$PK$ ir $PM$ yra jų abiejų pusiaukraštinės iš atitinkamo
+    %kampo. Tada iš vieno anksčiau minėtų naudingų faktų
+    %(„Uždavinių apšilimui“ skyrius), $\angle KPB = \angle
+    %CPM$. Taigi, $\angle NMP = \angle MPC = \angle KPB =
+    %\angle PKN$. Apie trikampius $PNM$ ir $PNK$
+    %apibrėžtų apskritimų spinduliai vienodi, nes juose prieš
+    %lygius kampus yra lygios kraštinės ( tie apskritimai simetriški
+    % $NP$ atžvilgiu). Panašiai ir su
+    %kitomis trikampių poromis.
+  \item Apskritimas $S_1$ su centru $O_1$ eina per kito
+    apskritimo $S_2$ centrą $O_2$. Ant $S_1$ taip pat paimtas
+    bet koks taškas $C$, ir iš to taško $C$ išvestos liestinės
+    apskritimui $S_2$ kerta apskritimą $S_1$ taškuose $A$ ir
+    $B$. Įrodyti, kad $AB\perp{O_1 O_2}$. 
+    %Apskritimas $S_2$ liečia kampo $\angle ACB$ kraštines,
+    %taigi $CO_2$ yra kampo $\angle ACB$ pusiaukampinė.
+    %Pritaikę vieną iš šio skyriaus naudingų faktų, turime,
+    %kad $AO_2 = BO_2$, t.y $O_1AO_2B$ yra deltoidas. Taigi
+    %$AB\perp{O_1 O_2}$.
+  \item Duotas rombas $ABCD$ su $A=120^\circ$. $M$ ir $N$ yra
+    taškai atitinkamai ant kraštinių $BC$ ir $CD$ tokie, kad
+    $\angle NAM=60^\circ$. Įrodyti, kad apie trikampį $NAM$
+    apibrėžto apskritimo centras guli ant rombo įstrižainės.
+    %$\angle NAM + \angle NCM = 60^\circ + 120^\circ =
+    %180^\circ$, taigi apie $NAM$ apibrėžtas apskritimas eina
+    %per tašką $C$. Taigi jo centras guli $AC$ vidurio
+    %statmens, t.y ant įstrižainės $BD$.
+  \item Duotas trikampis $ABC$. Ant kraštinių $AB$ ir $BC$
+    atitinkamai paimti taškai $X$ ir $Y$. $AY$ ir $CX$ kertasi
+    taške $Z$. Pasirodė, kad $AY = YC$ ir $AB = ZC$.
+    Įrodyti, kad $B, Z, X, Y$ guli ant vieno apskritimo.
+    %Paimkime tašką $D$ ant $CY$ tokį, kad $YZ = YD$. Tada iš
+    %simetrijos $AD = CZ = AB$. Taigi, $\angle XBY = \angle
+    %ABD = \angle ADY = \angle CZY = 180^\circ - \angle XZY$,
+    %taigi $XBYZ$ yra įbrėžtinis.
+  \item Duotas rombas $ABCD$. Ant linijos $CD$ paimtas taškas
+    $K$ kuris nesutampa $C$ ar $D$ taip, kad $AD = BK$. $P$
+    yra tiesės $BD$ ir atkarpos $BC$ vidurio statmens
+    sankirtos taškas. Įrodyti, kad taškai $A$, $P$, $K$ guli
+    ant vienos tieses.
+    %Kadangi yra įmanomos kelios skirtingos konfigūracijos ir
+    %uždavinys labai lengvas, tai pateiksime tik nepilną
+    %sprendimą: abiem atvejais keturkampiai $BKCP$ ir $DKAB$
+    %yra įbrėžtiniai; vienu atveju tada nesunkiai įrodome, kad
+    %$\angle PKB + \angle AKB = 180^\circ$, kitu atveju
+    %$\angle APC + \angle KPC = 180^\circ$, iš ko ir seka
+    %rezultatas.
+  \item Trikampyje $ABC$ nubrėžtos aukštinės $BE$ ir $AD$
+    kertasi taške $H$. $X$ ir $Y$ - atitinkamai $CH$ ir $AB$
+    vidurio taškai. Įrodyti, kad $XY\perp{DE}$.
+    %Keturkampis $CEHD$ yra įbrėžtinis, nes $\angle HEC +
+    %\angle HDC = 180^\circ$. Be to, $X$ yra apie šį
+    %keturkampį apibrėžto apskritimo centras. Panašiai ir
+    %$BDEA$ yra įbrėžtinis, o apie jį apibrėžto apskritimo
+    %centras yra $Y$. Šie du apskritimai kertasi taškuose $D$
+    %ir $E$, taigi $DXEY$ yra deltoidas, ir todėl
+    %$XY\perp{DE}$.
+  \item Duotas trikampis $ABC$ ir taškas $P$ jo viduje toks,
+    kad $\angle ABP = \angle ACP$ ir $\angle CBP = \angle
+    CAP$.  Įrodyti, kad $P$ yra trikampio $ABC$ aukštinių
+    susikirtimo taškas.
+    %Tegu $AP, BP, CP$ kerta trikampio kraštines taškuose $A',
+    %B', C'$. Tada keturkampiai $ABA'B'$ ir $BCB'C'$ yra
+    %įbrėžtiniai, nes $\angle ABP = \angle ACP$ ir $\angle CBP
+    %= \angle CAP$. Bet tada $\angle B'C'C = \angle B'BC =
+    %\angle A'AC$, todėl keturkampis $AB'PC'$ yra įbrėžtinis.
+    %Taigi, $\angle AB'P = \angle BC'P = \angle BB'C =
+    %180^\circ - \angle AB'P$, taigi $\angle AB'P = 90^\circ =
+    %\angle AC'P$, t.y $CC'$ yra aukštinė. Panašiai ir $AA'$
+    %yra aukštinė, todėl $H$ yra aukštinių sankirtos taškas.
+  \item Duotas įbrėžtinis keturkampis $ABCD$, ant spindulio
+    $AD$ už taško $D$ paimtas taškas $E$ taip, kad $AC=CE$,
+    $\angle BDC=\angle DEC$. Įrodyti, kad $AB=DE$. 
+    %Trikampis $ACE$ yra lygiašonis, taigi $\angle EAC =
+    %\angle DAC = \angle DEC = \angle BDC = \angle BAC$, taigi
+    %$BC = CD$. Be to, $\angle DEC = \angle BAC$ ir $\angle
+    %EDC = \angle ABC$, taigi trikampiai $ABC$ ir $EDC$ yra
+    %vienodi pagal kraštinę ir 2 kampus. Todėl $AB = DE$.
+  \item Duotas lygiašonis trikampis $ABC$ su $AB = BC$. Ant
+    $AB, BC, CA$ atitinkamai paimti taškai $C_1, A_1, B_1$
+    tokie, kad $\angle BC_1A_1 = \angle CA_1B_1 = \angle A$,
+    $P$ - atkarpų $BB_1$ ir $CC_1$ sankirtos taškas. Įrodyti,
+    kad keturkampis $AB_1PC_1$ yra įbrėžtinis.
+    %Iš duotų kampų mes turime $C_1A_1\parallel{AC}$, taigi
+    %$CAC_1A_1$ yra lygiašonė trapecija. Be to, keturkampis
+    %$ABA_1B_1$ yra įbrėžtinis, taigi $\angle AB_1B = \angle
+    %AA_1B = \angle CC_1B = 180^\circ - \angle AC_1C$, taigi
+    %keturkampis $AB_1PC_1$ yra įbrėžtinis.
+  \item Duotas statusis trikampis su stačiu kampu $B$. Per
+    tašką $B$ išvesta pusiaukraštinė $BM$. Į trikampį $ABM$
+    įbrėžtas apskritimas liečia $AM$ ir $AB$ taškuose $K$ ir
+    $L$. Jei $LK\parallel{BM}$, raskite kampą $\angle ACB$.
+    %Jei $LK\parallel{BM}$, tai trikampiai $ALK$ ir $ABM$ yra
+    %panašūs. Tačiau $ALK$ yra lygiašonis su $AL = AK$, o
+    %$ABM$ lygiašonis su $MB = MA$, taigi $AB = AM = MA$.
+    %Todėl $ABM$ yra lygiakraštis, ir iš čia $\angle BCA =
+    %30^\circ$.
+  \item Duotas trikampis $ABC$ su aukštinėmis $AA_1$, $BB_1$.
+    Kampo $C$ pusiaukampinė kerta $AA_1$ ir $BB_1$ atitinkamai
+    taškuose $F$ ir $L$. Įrodyti, kad atkarpos $FL$ vidurio
+    taškas vienodai nutolęs nuo taškų $B_1$ ir $A_1$.
+    %Tegu $H$ yra aukštinių susikirtimo taškas, o $M$ yra $FL$
+    %vidurio taškas. Tada trikampiai $CA_1F$ ir $CB_1L$ yra
+    %panašūs pagal du kampus, todėl $\angle CFA_1 = \angle
+    %CLB_1$, todėl $HFL$ yra lygiašonis pagal du kampus. Tada
+    %$\angle HMC = 90^\circ = \angle HA_1C = \angle HB_1C$,
+    %tad penkiakampis $CA_1HMB_1$ yra įbrėžtinis. Kadangi $CM$ 
+    %yra kampo $\angle A_1HC_1$ pusiaukampinė, mes turime $MB_1
+    % = MA_1$.  
+  \item Duotas deltoidas $ABCD$, $AB=BC$, $AD=DC$. Ant
+    įstrižainės $AC$ paimtas toks taškas $K$, kad $BK = KA$.
+    Jei keturkampis $CDKB$ yra  įbrėžtinis, tai įrodykite, kad
+    $CD = BD$.
+    %Pastebėkime, kad trikampiai $AKB$ ir $ABC$ yra panašūs.
+    %Tada iš įbrėžtinių kampų ir priekampio savybės
+    %$180^\circ - \angle DBC - \angle BCD = \angle BDC =
+    %\angle BKC = \angle BAK + \angle ABK = 2 \cdot \angle BCA
+    %= 2 \cdot (90^\circ - \angle DBC) = 180^\circ - \angle
+    %DBC - \angle DBC$, todėl $\angle DBC = \angle BCD$, tad
+    %$BD = DC$. 
+  \item Duotas kvadratas $ABCD$. Ant $AB$ paimtas taškas $K$,
+    ant $CD$ - $L$, o ant $KL$ - $M$. Įrodykite, kad apie
+    $AKM$ ir $MLC$ apibrėžtų apskritimų sankirtos taškas
+    (kitas negu $M$) yra ant įstrižainės $AC$.
+    %Tegu apie trikampį $MLC$ apibrėžtas apskritimas kerta
+    %$AC$ taške $F$. Tada $\angle MFC = \angle MLC = \angle
+    %AKM$, todėl keturkampis $AKMF$ yra įbrėžtinis, ko ir
+    %reikėjo.
+    %\begin{center}
+    %\begin{asy}
+    %import olympiad;
+    %size(200);
+    %pair A, B, C, D, K, L, M, F;
+    %path a1;
+    %D=(0,0);C=(100,0);A=(0,100);B=(100,100);
+    %K=waypoint(A--B,0.8);
+    %L=waypoint(D--C,0.5);
+    %M=waypoint(L--K,0.8);
+    %a1=circumcircle(L,C,M);
+    %F=intersectionpoints(A--C,a1)[0];
+    %add(anglem(C,L,M,300,red,0));
+    %add(anglem(A,K,M,300,red,0));
+    %add(anglem(C,F,M,300,red,0));
+    %draw(a1);
+    %dot(A,blue);
+    %dot(B,blue);
+    %dot(C,blue);
+    %dot(D,blue);
+    %dot(K,blue);
+    %dot(L,blue);
+    %dot(M,blue);
+    %dot(F,blue);
+    %draw(A--B--C--D--cycle);
+    %draw(A--C);
+    %draw(K--L);
+    %draw(M--F);
+    %label("$A$",A,NW,blue);
+    %label("$B$",B,NE,blue);
+    %label("$C$",C,SE,blue);
+    %label("$D$",D,SW,blue);
+    %label("$K$",K,up,blue);
+    %label("$L$",L,down,blue);
+    %label("$M$",M,NE,blue);
+    %label("$F$",F,left,blue);
+    %\end{asy}
+    %\end{center}
+  \item Duotas trikampis $ABC$, jame išvestos aukštinė $AH$ ir
+    pusiaukampinė $BE$. Žinoma, kad $\angle BEA = 45^\circ$.
+    Įrodyti, kad $\angle EHC = 45^\circ$.
+    %Tegu taškas $Q$ yra simetriškas taškui $A$ atkarpos $BE$
+    %atžvilgiu. Šis taškas yra ant atkarpos $BC$ bei $\angle
+    %QEA = 90^\circ = \angle QHA$ todėl keturkampis $AHQE$ yra
+    %įbrėžtinis. Tad $\angle EHC = \angle EHQ = \angle EAQ =
+    %45^\circ$ (nes $AQE$ yra status lygiašonis).
+  \item Duotas trikampis $ABC$ su pusiaukampinėmis $AL$ ir
+    $BM$. Jei trikampių $ACL$ ir $BCM$ apibrėžtiniai
+    apskritimai kertasi ant atkarpos $AB$, tai įrodykite, kad
+    $\angle ACB=60^\circ$.
+    %Tegu trikampių $ACL$ ir $BCM$ apibrėžtiniai apskritimai
+    %kertasi ant atkarpos $AB$, taške $X$. Tada $\angle BCA =
+    %\angle BCX + \angle ACX = \angle LCX + \angle MCX =
+    %\angle LAX + \angle MBX = \frac{\angle BAC}{2} +
+    %\frac{\angle CBA}{2} = \frac{\angle BAC+\angle CBA}{2} =
+    %\frac{180^\circ-\angle BCA}{2} = 90^\circ - \frac{\angle
+    %BCA}{2}$, taigi $\angle BCA = 60^\circ$.
+  \item Trikampio $ABC$ pusiaukampinės $BD$ ir $CE$ kertasi
+    taške $O$. Įrodykite, kad jeigu $OD = OE$, tai arba
+    trikampis $ABC$ lygiašonis, arba kampas $\angle
+    A=60^\circ$.
+    %Pritaikome vieną iš minėtųjų naudingų faktų keturkampiui
+    %$ADOE$, ir gauname, kad $ADOE$ yra arba įbrėžtinis, arba
+    %deltoidas. Jeigu jis deltoidas, tai iš simetrijos $ABC$
+    %yra lygiašonis. Jeigu jis įbrėžtinis, tai tada paimkime
+    %tašką $H$ ant $BC$ tokį, kad $\angle ODA = \angle OHC =
+    %\angle OEB$.  Tada keturkampiai $ABHD$ ir $AEHC$ yra
+    %įbrėžtiniai ir toliau mes galime tęsti kaip prieš tai
+    %buvusiame uždavinyje.
+  \item Duotas trikampis $ABC$ su $\angle ABC = 60^\circ$.
+    $I$ - įbrėžto apskritimo centas, $CL$ - pusiaukampinė.
+    Apskritimas, apibrėžtas apie trikampį $ALI$, kerta $AC$
+    antrą kartą taške $D$. Įrodyti, kad $BCDL$ - įbrėžtinis.
+    %Iš duotos sąlygos $\frac{\angle A+\angle C}{2} =
+    %60^\circ$.  Tada iš priekampio savybės $\angle LDA =
+    %\angle LIA = \frac{A}{2} + \frac{\angle C}{2} = 60^\circ
+    %= \angle LBC$, taigi keturkampis $BCDL$ įbrėžtinis.
+  \item Duotas iškilasis šešiakampis $ABCDEF$. Žinoma, kad $AD
+    = BE = CF$. $AD$ ir $CF$ sankirtos taškas yra $P$, $BE$ ir
+    $CF$ sankirtos taškas yra $R$, o $AD$ ir $BE$ - taškas
+    $Q$.  Jeigu $AP = PF$, $BR = CR$, $DQ = EQ$ tai įrodyti,
+    kad šešiakampis yra įbrėžtinis.
+    %Iš duotų sąlygų keturkampiai $CDFA$, $DEAB$ ir $EFBC$ yra
+    %lygiašonės trapecijos. Tada kraštinių $CD$ ir $AF$ vidurio
+    %statmenys sutampa, ir jie taip pat sutampa su kampo $\angle
+    %QPR$ pusiaukampine. Panašiai ir su kitomis kraštinėmis ir
+    %jų vidurio statmenimis. Tada visų kraštinių $AB$, $BC$,
+    %$CD$, $DE$, $EF$, $FA$ vidurio statmenys kertasi viename
+    %taške, nes trikampio $PQR$ pusiaukampinės kertasi viename
+    %taške. Todėl visos šešiakampio viršūnės vienodai
+    %nuotolusios nuo šio taško, tad šešiakampis yra įbrėžtinis. 
+  \item $AC$ ir $BD$ yra du statmeni kažkokio apskritimo
+    skersmenys. Taškas $K$ ant apskritimo nesutampa su taškais
+    $A, B, C, D$. $AK$ ir $BD$ kertasi taške $M$, o $DK$ ir
+    $CB$ - taške $N$. Įrodyti, kad $AC\parallel{MN}$.
+    %Tarkime, kad taškas $K$ yra ant mažesniojo lanko $AB$
+    %(Kiti atvejai sprendžiami panašiai). Tada $\angle KNB =
+    %180^\circ - \angle NKB - \angle NBK = 180^\circ -
+    %90^\circ - \angle KAC = \angle AMD = \angle KMB$, taigi
+    %$KNMB$ įbrėžtinis. Tada $\angle ACN = \angle BKM = \angle
+    %BNM$, taigi $AC\parallel{NM}$. 
+  \item Duotas smailusis trikampis $ABC$. Jame nubrėžtos
+    aukštinės $AA_1, BB_1, CC_1$. Įrodyti, kad $C_1$
+    projekcijos į tieses $AC$, $BC$, $BB_1$, $CC_1$ yra
+    vienoje tieseje.
+    %Tegu visi taškai yra tokie, kokie pažymėti brėžinyje
+    %apačioje. Tada keturkampiai $KPC_1B$ ir $ FPC_1L$ yra
+    %įbrėžtiniai. Taigi, $\angle KPB = \angle KC_1B =
+    %180^\circ - 90^\circ - \angle B = \angle BCC_1 = \angle
+    %CC_1L = \angle FPL$, taigi $KP\parallel{PL}$ ir todėl
+    %taškai $K, P, L$ yra vienoje tiesėje. Panašiai ir taškai
+    %$P, L, H$ guli vienoje tiesėje. Todėl taškai $K, P, L, H$
+    %guli vienoje tiesėje.
+    %\begin{center}
+    %\begin{asy}
+    %import olympiad;
+    %size(200);
+    %pair A, B, C, AA, BB, CC, K, P, L, H, F;
+    %C=(35,60); A=(80,0); B=(0,0); 
+    %AA=foot(A,B,C);
+    %BB=foot(B,A,C);
+    %CC=foot(C,B,A);
+    %K=foot(CC,B,C);
+    %P=foot(CC,B,BB);
+    %L=foot(CC,A,AA);
+    %H=foot(CC,A,C);
+    %F=extension(A,AA,B,BB);
+    %add(anglem(K,P,B,200,red,0));
+    %add(anglem(K,CC,B,200,red,0));
+    %draw(A--B--C--cycle);
+    %draw(A--AA);
+    %draw(B--BB);
+    %draw(C--CC);
+    %draw(CC--K);
+    %draw(CC--P);
+    %draw(CC--L);
+    %draw(CC--H);
+    %draw(K--H);
+    %dot(A,blue);
+    %dot(B,blue);
+    %dot(C,blue);
+    %dot(AA,blue);
+    %dot(BB,blue);
+    %dot(CC,blue);
+    %dot(F,blue);
+    %dot(K,blue);
+    %dot(P,blue);
+    %dot(L,blue);
+    %dot(H,blue);
+    %label("$A$",A,SE,blue);
+    %label("$B$",B,SW,blue);
+    %label("$C$",C,up,blue);
+    %label("$F$",F,(0.8,1.5),blue);
+    %label("$A_1$",AA,NW,blue);
+    %label("$B_1$",BB,NE,blue);
+    %label("$C_1$",CC,down,blue);
+    %label("$L$",L,up,blue);
+    %label("$K$",K,NW,blue);
+    %label("$P$",P,up,blue);
+    %label("$H$",H,NE,blue);
+    %add(rightanglem(A,AA,B,120));
+    %add(rightanglem(B,BB,A,120));
+    %add(rightanglem(CC,K,B,120));
+    %add(rightanglem(CC,P,B,120));
+    %add(rightanglem(CC,L,A,120));
+    %add(rightanglem(CC,H,A,120));
+    %add(rightanglem(A,CC,C,120));
+    %\end{asy}
+    %\end{center} 
   \item Smailajame trikampyje $ABC$ nubrėžti statmenys $BD$ ir $CE$.
-Apskritimas su skersmeniu $AC$ kerta spindulį $DB$ taške $F$, o 
-apskritimas su skersmeniu $AB$ kerta spindulį $EC$ taške $G$ ir
-spindulį $CE$ taške $H\neq G$. sĮrodyti, kad $\angle FHG+\angle
- FGA=90^\circ$.
- % Kadangi $\angle ADF=\angle AFC$, tai $AF^2=AD\cdot AC$.
- %Panašiai ir $AG^2=AE\cdot AB$. Bet $BEDC$ įbrėžtinis, taigi
- %$AE\cdot AB=AD\cdot AF$. Taigi $AG=AF$. Panašiai gauname, kad 
- %$CF^2=CD\cdot CA=CG\cdot CH$. Tada $\angle FHG+\angle FGA=
- %\angle CFG+\angle AFG=90^\circ$
+    Apskritimas su skersmeniu $AC$ kerta spindulį $DB$ taške $F$, o 
+    apskritimas su skersmeniu $AB$ kerta spindulį $EC$ taške $G$ ir
+    spindulį $CE$ taške $H\neq G$. Įrodyti, kad $\angle FHG+\angle
+    FGA=90^\circ$.
+    % Kadangi $\angle ADF=\angle AFC$, tai $AF^2=AD\cdot AC$.
+    %Panašiai ir $AG^2=AE\cdot AB$. Bet $BEDC$ įbrėžtinis, taigi
+    %$AE\cdot AB=AD\cdot AF$. Taigi $AG=AF$. Panašiai gauname, kad 
+    %$CF^2=CD\cdot CA=CG\cdot CH$. Tada $\angle FHG+\angle FGA=
+    %\angle CFG+\angle AFG=90^\circ$
 \end{enumerate}
 
 
@@ -2718,14 +2677,12 @@ panašiai. Šio skyrelio tema yra plotų uždaviniai.
 \subsubsection{Tai, kas svarbiausia}
 
 \begin{teig}
-Trikampio plotas yra lygus trikampio kraštinei, padaugintai
-iš aukštinės, nuleistos į  tą kraštinę ir padalinus iš
-dviejų. Bene svarbiausia išvada iš to yra ta, kad
-trikampiai, turintys tą pačią ar tokią pačią kraštinę, ir
-aukštinę, nuleistą į tą kraštinę, turi vienodus plotus, pvz
-paveikslėlyje apačioje visi trikampiai su kraštine  $AB$
-turi vienodus plotus tada ir tik tada, jei tiesė $b$ yra
- lygiagreti tiesei $AB$:
+Trikampio plotas yra lygus pusei trikampio kraštinės ilgio, padauginto iš
+aukštinės, nuleistos į  tą kraštinę, ilgio. Bene svarbiausia išvada iš to
+yra ta, kad trikampiai, turintys tą pačią ar tokio pat ilgio kraštinę, ir
+aukštinę, nuleistą į tą kraštinę, turi vienodus plotus. Pavyzdžui
+paveikslėlyje apačioje visi trikampiai su kraštine  $AB$ turi vienodus
+plotus tada ir tik tada, jei tiesė $b$ yra lygiagreti tiesei $AB$:
 %Vienodi plotai
 \begin{center}
 \begin{asy}
@@ -2844,10 +2801,11 @@ Keturkampis įstrižainėmis padalintas į keturis trikampius.
 \end{pav}
 
 \begin{sprendimas}
-Tegu įstrižainės dalija viena kitą į keturias atkarpas, kurių
-ilgiai yra $a,b,c,d$, o kampas tarp įstrižainių yra $\alpha$.
-Tada ieškomos plotų sandaugos bus lygios $abcd (\sin \alpha)^2 = 
-abcd(\sin (180^\circ-\alpha))^2 $
+  Tegu įstrižainės dalija viena kitą į keturias atkarpas, kurių
+  ilgiai yra $a,b,c,d$, o kampas tarp įstrižainių yra $\alpha$.
+  Tada ieškomos plotų sandaugos bus lygios $abcd (\sin \alpha)^2$,
+  $abcd(\sin (180^\circ-\alpha))^2$, o bet tai yra tas pats, nes $\sin \alpha
+  = sin (180^\circ - \alpha)$.
 \end{sprendimas}
 
 Dar vienas naudingas triukas sprendžiant įvairius uždavinius
@@ -2909,7 +2867,18 @@ label("$F$",F,left,blue);
   %b\cdot\sin \alpha}{2} \leq \frac{2R \cdot 2R \cdot 1}{2}
   %= 2R^2$, kas yra kvadrato, įbrėžto į apskritimą su
   %spinduliu $R$, plotas.
-
+  
+\item Duotas trikampis $ABC$. Per jo viršūnes $A$ ir $B$ išvestos dvi
+  tiesės, kurios padalina šitą trikampį į 4 figūras: 3 trikampius ir vieną
+  keturkampį. Žinoma, kad trijų iš šių figurų plotai vienodi. Įrodykite,
+  kad tarp tų trijų yra keturkampis.
+  %Tegu tiesė per tašką $A$ kerta $BC$ taške $A'$, tiesė per $B$ kerta
+  %$AC$ taške $B'$, o $AA'$ ir $BB'$ kertasi taške $M$. Tarkime, kad tarp
+  %trijų figūrų nėra keturkampio. Tada visų trijų trikampių plotai yra
+  %lygūs.  Tada trikampiai $ABM$ ir $AMB'$ turi bendrą aukštinę iš taško
+  %$A$ ir vienodą plotą. Todėl $MB$ = $MB'$. Panašiai ir $AM$ = $MA'$.
+  %Todėl $ABA'B'$ yra lygiagretainis. Tai neįmanoma, nes tada $AC
+  %\parallel{CB}$.
 \item Duotas įbrėžtas keturkampis $ABCD$, kurio įstrižainės
   yra statmenos. Įrodyti, kad laužtė $AOC$ dalija keturkampį
   į dvi lygiaplotes dalis.
@@ -3334,555 +3303,556 @@ Iš čia seka tokia išvada:
 \subsubsection{Uždaviniai}
 
 \begin{enumerate}
-\item \emph{Čia svarbus uždavinys - įsiminkite šiuos
-  rezultatus.} Tegu į trikampį $ABC$ įbrėžtas apskritimas su
-  centru $I$ liečia kraštines $AB,BC,CA$ atitinkamai
-  taškuose $E,F,G$, o pribrėžtinis apskritimas prieš viršūnę
-  $A$ liečia tas pačias kraštines taškuose $L,M,N$ (kaip
-  paveikslėlyje viršuje). Jei $AB=c$, $AC=b$ ir $BC=a$ , tai
-  tada 
-  %%noparse
-  \begin{itemize} 
-    \item Įrodykite, kad $AL=AN=s$ kur
-      $s=\frac{a+b+c}{2}$ - pusperimetris.  
-    \item Įrodykite,
-      kad $GC=BM=s-c$. Panašiai įrodykite, kad $NC=BE=s-b$
-      ir $AE=AG=s-a$.  
-    \item Įrodykite, kad $AI\cdot
-      AI_A=AB\cdot AC$.  
-    \item Įrodykite, kad
-      $S=r_A\cdot(s-a)$, kur $S$ yra $ABC$ plotas 
-    \item
-      Įrodykite Herono formulę: $S=\sqrt{s(s-a)(s-b)(s-c)}$ 
-  \end{itemize} 
-%Pribrėžtinio apskritimo savybės
-\begin{center}
-\begin{asy}
-import olympiad;
-size(300);
-pair A, B, C, E, F, G, L, M, N, I, Ia, CC;
-path a1;
-C=(0,0);
-A=(60,20);
-B=(-33,50);
-CC=bisectorpoint(B,C,-A);
-I=incenter(A,B,C);
-Ia=extension(C, CC, A, I);
-a1=circle(Ia, arclength(Ia--foot(Ia,C,B)) );
-E=tangent(A, I, inradius(A,B,C),1);
-G=tangent(A, I, inradius(A,B,C),2);
-F=tangent(C, I, inradius(A,B,C),2);
-L=tangent(B, Ia, arclength(Ia--foot(Ia,C,B)) ,1);
-M=tangent(B, Ia, arclength(Ia--foot(Ia,C,B)) ,2);
-N=tangent(C, Ia, arclength(Ia--foot(Ia,C,B)) ,2);
-add(anglem(B,A,I,300,red,0));
-add(anglem(I,A,C,300,red,0));
-add(anglem(B,C,Ia,300,blue,1));
-add(anglem(Ia,C,N,300,blue,1));
-add(anglem(L,B,Ia,300,green,2));
-add(anglem(Ia,B,C,300,green,2));
-dot(A,blue);
-dot(B,blue);
-dot(C,blue);
-dot(E,blue);
-dot(F,blue);
-dot(G,blue);
-dot(L,blue);
-dot(M,blue);
-dot(N,blue);
-dot(I,blue);
-dot(Ia,blue);
-draw(a1);
-draw(incircle(A,B,C));
-draw(A--B--C--cycle);
-draw(Ia--C);
-draw(Ia--B);
-draw(C--N);
-draw(B--L);
-drawline(A,I);
-draw((-100,0)--(70,0),invisible);
-label("$A$",A,down,blue);
-label("$B$",B,NE,blue);
-label("$C$",C,down,blue);
-label("$E$",E,NE,blue);
-label("$F$",F,right,blue);
-label("$G$",G,down,blue);
-label("$L$",L,NE,blue);
-label("$M$",M,right,blue);
-label("$N$",N,down,blue);
-label("$I$",I,up,blue);
-label("$Ia$",Ia,up,blue);
-\end{asy}
-\end{center}
-  %%parse
-  %Tegu $IG=r$. $AL=AN$ iš liestinių savybių. Tada $AL =
-  %\frac{AL+AN}{2} = \frac{LB+BA+AC+CN}{2} =
-  %\frac{BM+BA+AC+CM}{2} = \frac{a+b+c}{2} = s$.  $GC =
-  %\frac{FC+GC}{2} = \frac{FC+GC+BF-BE+AG-AE}{2} =
-  %\frac{CB+AC-AB}{2} = \frac{a+b-c}{2} = \frac{a+b+c}{2} -
-  %c = s - c$.  $BM = BL = AL - AB = s - c$, taigi $GC =
-  %BM$. Panašiai gauname ir kad $NC = BE = s - b$ ir $AE = s
-  %- a$. Trečiajai daliai pastebėkime, kad $\angle I_ACN =
-  %\frac{\angle BCN}{2} = \frac{\angle CAB + \angle CBA}{2}
-  %= \frac{\angle CBA}{2} + \frac{\angle CAB}{2} = \angle
-  %BII_A$, taigi $\angle BIA = \angle I_ACA$ ir todėl
-  %trikampiai $I_ACA$ ir $BIA$ yra panašūs pagal 2 kampus.
-  %Tada $\frac{AB}{AI} = \frac{AI_A}{AC}$, iš kur gauname
-  %$AI \cdot AI_A = AB \cdot AC$. Ketvirtajai daliai
-  %pastebėkime, kad $AI_AN$ ir $AIG$ yra panašūs ir iš čia $S
-  %= s*r = AN \cdot IG = AG \cdot I_AN = (s - a) \cdot r_A$.
-  %Penktajai daliai reikia įrodyti, kad $S^2 = (s - c)(s -
-  %a)(s - b)s$. Bet mes žinome, kad $S = (s - a)r_A$ ir $S =
-  %rs$, taigi $S^2 = sr(s - a)r_A$. Užtenka įrodyti, kad
-  %$I_AM \cdot IG = rr_A = (s - b)(s - c) = MC\cdot CG$,
-  %arba kad $\frac{IA_M}{MC} = \frac{CG}{IG}$. Tai akivaizdu
-  %iš trikampių $I_AMC$ ir $IGC$ panašumo: jie abu statūs ir
-  %$\angle MI_AC = 90^\circ - \angle MCI_A = 90^\circ -
-  %\frac{\angle BAC + \angle CBA}{2} = \frac{\angle BCA}{2}
-  %= \angle ICG$.
-\item Trikampio $ABC$ pribrėžtinių apskritimų spinduliai yra
-  $I_A, I_B, I_C$, o įbrėžtinio apskritimo centras yra $I$.
-  Įrodykite, kad trikampio $I_AI_BI_C$ aukštinių susikirtimo
-  taškas yra $I$.
-  %Mes žinome iš minėtųjų faktų, kad $I,A,I_A$ yra vienoje
-  %tiesėje ir $IA\perp I_BI_C$ (nes $I_CI_B$ yra išorinė
-  %kampo $\angle A$ pusiaukampinė). Taigi $I_AA$ yra
-  %trikampio $I_AI_BI_C$ aukštinė. Panašiai su $BI_B$ ir
-  %$CI_C$. Kadangi $CI_C, BI_B, AI_A$ kertasi taške $I$, tai
-  %tas taškas ir yra trikampio $I_AI_BI_C$ aukštinių
-  %susikirtimo taškas.
+  \item \emph{Čia svarbus uždavinys - įsiminkite šiuos rezultatus.} Tegu į
+    trikampį $ABC$ įbrėžtas apskritimas su centru $I$ liečia kraštines
+    $AB$, $BC$, $CA$ atitinkamai taškuose $E,F,G$, o pribrėžtinis
+    apskritimas prieš viršūnę $A$ liečia tas pačias kraštines taškuose $L$,
+    $M$, $N$ (kaip paveikslėlyje). Jei $AB=c$, $AC=b$ ir $BC=a$ , tai tada 
+    %%noparse
+    \begin{itemize} 
+      \item Įrodykite, kad $AL=AN=s$ kur $s=\frac{a+b+c}{2}$ --
+	pusperimetris.  
+      \item Įrodykite, kad $GC=BM=s-c$. Panašiai įrodykite, kad $NC=BE=s-b$
+	ir $AE=AG=s-a$.  
+      \item Įrodykite, kad $AI\cdot AI_A=AB\cdot AC$.  
+      \item Įrodykite, kad $S=r_A\cdot(s-a)$, kur $S$ yra $ABC$ plotas 
+      \item Įrodykite Herono formulę: $S=\sqrt{s(s-a)(s-b)(s-c)}$ 
+    \end{itemize} 
+    %Pribrėžtinio apskritimo savybės
+    \begin{center}
+      \begin{asy}
+	import olympiad;
+	size(300);
+	pair A, B, C, E, F, G, L, M, N, I, Ia, CC;
+	path a1;
+	C=(0,0);
+	A=(60,20);
+	B=(-33,50);
+	CC=bisectorpoint(B,C,-A);
+	I=incenter(A,B,C);
+	Ia=extension(C, CC, A, I);
+	a1=circle(Ia, arclength(Ia--foot(Ia,C,B)) );
+	E=tangent(A, I, inradius(A,B,C),1);
+	G=tangent(A, I, inradius(A,B,C),2);
+	F=tangent(C, I, inradius(A,B,C),2);
+	L=tangent(B, Ia, arclength(Ia--foot(Ia,C,B)) ,1);
+	M=tangent(B, Ia, arclength(Ia--foot(Ia,C,B)) ,2);
+	N=tangent(C, Ia, arclength(Ia--foot(Ia,C,B)) ,2);
+	add(anglem(B,A,I,300,red,0));
+	add(anglem(I,A,C,300,red,0));
+	add(anglem(B,C,Ia,300,blue,1));
+	add(anglem(Ia,C,N,300,blue,1));
+	add(anglem(L,B,Ia,300,green,2));
+	add(anglem(Ia,B,C,300,green,2));
+	dot(A,blue);
+	dot(B,blue);
+	dot(C,blue);
+	dot(E,blue);
+	dot(F,blue);
+	dot(G,blue);
+	dot(L,blue);
+	dot(M,blue);
+	dot(N,blue);
+	dot(I,blue);
+	dot(Ia,blue);
+	draw(a1);
+	draw(incircle(A,B,C));
+	draw(A--B--C--cycle);
+	draw(Ia--C);
+	draw(Ia--B);
+	draw(C--N);
+	draw(B--L);
+	drawline(A,I);
+	draw((-100,0)--(70,0),invisible);
+	label("$A$",A,down,blue);
+	label("$B$",B,NE,blue);
+	label("$C$",C,down,blue);
+	label("$E$",E,NE,blue);
+	label("$F$",F,right,blue);
+	label("$G$",G,down,blue);
+	label("$L$",L,NE,blue);
+	label("$M$",M,right,blue);
+	label("$N$",N,down,blue);
+	label("$I$",I,up,blue);
+	label("$Ia$",Ia,up,blue);
+      \end{asy}
+    \end{center}
+    %%parse
+    %\begin{itemize}
+    %  \item Iš liestinių savybių $AL=AN$. Tada 
+    %	\begin{align*}
+    %	  AL &= \frac{AL+AN}{2} = \frac{LB+BA+AC+CN}{2} \\
+    %	     &= \frac{BM+BA+AC+CM}{2} = \frac{a+b+c}{2} = s.
+    %	\end{align*}
+    %  \item Skaičiuojame: 
+    %	\begin{align*}
+    %	  GC &= \frac{FC+GC}{2} = \frac{FC+GC+BF-BE+AG-AE}{2} =\\
+    %	     &= \frac{CB+AC-AB}{2} = \frac{a+b-c}{2} = \frac{a+b+c}{2} - c\\
+    %	     &= s - c.  
+    %	\end{align*}
+    %	Taip pat $BM = BL = AL - AB = s - c$, taigi $GC = BM$. Panašiai
+    %	gauname ir kad $NC = BE = s - b$ ir $AE = AG = s - a$.
+    %  \item Pastebėkime, kad 
+    %	$$\angle I_ACN = \frac{\angle BCN}{2} = \frac{\angle CAB + \angle
+    %	CBA}{2} = \frac{\angle CBA}{2} + \frac{\angle CAB}{2} = \angle
+    %	BII_A,$$ 
+    %	taigi $\angle BIA = \angle I_ACA$ ir todėl trikampiai $I_ACA$ ir
+    %	$BIA$ yra panašūs pagal $2$ kampus.  Tada $\frac{AB}{AI} =
+    %	\frac{AI_A}{AC}$, iš kur gauname $AI \cdot AI_A = AB \cdot AC$. 
+    %  \item Pažymėkime $IG=r$ ir pastebėkime, kad $AI_AN$ ir $AIG$ yra
+    %	panašūs. Iš čia 
+    %	$$S = s*r = AN \cdot IG = AG \cdot I_AN = (s - a) \cdot r_A.$$
+    %  \item Reikia įrodyti, kad $S^2 = (s - c)(s - a)(s - b)s$, bet mes
+    %	žinome, kad $S = (s - a)r_A$ ir $S = rs$, taigi $S^2 = sr(s -
+    %	a)r_A$. Užtenka įrodyti, kad $I_AM \cdot IG = rr_A = (s - b)(s - c)
+    %	= MC\cdot CG$, arba kad $\frac{IA_M}{MC} = \frac{CG}{IG}$. Tai
+    %	akivaizdu iš trikampių $I_AMC$ ir $IGC$ panašumo: jie abu statūs ir
+    %	$$\angle MI_AC = 90^\circ - \angle MCI_A = 90^\circ - \frac{\angle
+    %	BAC + \angle CBA}{2} = \frac{\angle BCA}{2} = \angle ICG.$$
+    %\end{itemize}
+  \item Trikampio $ABC$ pribrėžtinių apskritimų spinduliai yra
+    $I_A, I_B, I_C$, o įbrėžtinio apskritimo centras yra $I$.
+    Įrodykite, kad trikampio $I_AI_BI_C$ aukštinių susikirtimo
+    taškas yra $I$.
+    %Mes žinome iš minėtųjų faktų, kad $I,A,I_A$ yra vienoje
+    %tiesėje ir $IA\perp I_BI_C$ (nes $I_CI_B$ yra išorinė
+    %kampo $\angle A$ pusiaukampinė). Taigi $I_AA$ yra
+    %trikampio $I_AI_BI_C$ aukštinė. Panašiai su $BI_B$ ir
+    %$CI_C$. Kadangi $CI_C, BI_B, AI_A$ kertasi taške $I$, tai
+    %tas taškas ir yra trikampio $I_AI_BI_C$ aukštinių
+    %susikirtimo taškas.
   \item Iškilojo keturkampio priešingų kraštinių sumos lygios.
-   Įrodyti, kad trikampių, gautų nubrėžus vieną įstrižainę, 
-   įbrėžtiniai apskritimai liečiasi.
-   %Tarkime, kad keturkampis yra $ABCD$, nubrėžta įstrižainė 
-   %$AC$, į $ABC$ įbrėžtas apskritimas liečia $AC$ taške $K$,
-   %o į $ADC$ įbrėžtas apskritimas liečia $AC$ taške $L$.
-   %Pastebėkime, kad iš sąlygos $AB-BC=AD-DC$. Tada $KC=
-   %\frac{AC+BC-AB}{2}=\frac{AC+DC-AD}{2}=CL$, ir iš čia $K=L$.
-\item $ABCD$ yra apibrėžtinis keturkampis, kurio priešingų
-  kraštinių sandaugos lygios. Kampas tarp vienos iš
-  kraštinių ir įstrižainės yra $25^\circ$. Rasti kampą tarp
-  tos kraštinės ir kitos įstrižainės.
-  %Kadangi keturkampis apibrėžtinis, tai jo priešingų
-  %kraštinių sumos lygios. Bet šiuo atveju sandaugos taip
-  %pat lygios. Iš paprastos algebros, keturkampis yra
-  %deltoidas (įrodykite tai). Tada nesunkiai ieškomas
-  %kampas yra lygus $65^\circ$.
-\item Duotas kvadratas $ABCD$. Ant kraštinės $BC$ yra taškas
-  $M$, o ant kraštinės $DC$ - taškas $K$ taip, kad trikampio
-  $CMK$ perimetras yra dvigubai ilgesnis už kvadrato
-  kraštinę. Rasti kampą $\angle MAK$.
-  %Tegu trikampio $MCK$ pribrėžtinis apskritimas prieš kampą
-  %$\angle C$ liečia spindulį $CM$ taške $B'$. Iš pirmojo
-  %uždavinio, $AB' = \frac{CM+MK+KC}{2} = AB$, taigi $B' =
-  %B$.  Todėl tas pribrėžtinis apskritimas eina per $B$ ir
-  %$D$, o jo centras yra taškas $A$. Tada $\angle MAK =
-  %180^\circ - \angle KMA - \angle MKA = 180^\circ -
-  %\frac{\angle KMB}{2} - \frac{\angle MKD}{2} =
-  %\frac{360^\circ-(180^\circ-\angle MKC)-(180^\circ-\angle
-  %KMC)}{2} = 45^\circ$. 
-\item Duotas apibrėžtinis keturkampis $ABCD$. Kraštinės $AB,
-  BC, CD, DA$ liečia tą apskritimą atitinkamai taškuose $K,
-  L, M, N$. $KM$ ir $LN$ kertasi taške $S$. Jeigu $SKBL$ yra
-  įbrėžtinis, tai įrodykite, kad $SNDM$ taip pat įbrėžtinis.
-  %Iš kampo tarp stygos ir liestinės savybės, $\angle KSB =
-  %\angle KLB = \angle KML$ ir todėl $ML\parallel{BS}$.
-  %Panašiai ir $NK\parallel{BS}$. Taigi $KLMN$ yra lygiašonė
-  %trapecija, ir todėl iš simetrijos $NSDM$ yra įbrėžtinis.
-\item Duotas trikampis $ABC$. Išvestos tiesės, simetriškos
-  tiesei $AC$ tiesių $BC$ ir $BA$ atžvilgiu, ir jos kertasi
-  taške $K$. Įrodyti, kad apie trikampį $ABC$ apibrėžto
-  apskritimo centras guli ant tieses $BK$.
-  %Tarkime, kad taškai $K$ ir $B$ yra skirtingose $AC$
-  %pusėse (atvejis, kai jie vienoje pusėje sprendžiamas
-  %labai panašiai). Tiesės $BA$ ir $BC$ yra išorinės
-  %trikampio $ACK$ pusiaukampinės, taigi $B$ yra trikampio
-  %$ACK$ pribrėžtinio apskritimo centras. Todėl $B$ yra ant
-  %kampo $\angle AKC$ pusiaukampinės. Tegu $I$ yra trikampio
-  %$ACK$ įbrėžto apskritimo centras. Tada $BA\perp AI$ ir
-  %$BC\perp CI$, ir todėl $BAIC$ yra įbrėžtinis su centru
-  %ant tiesės $IB$, kuri sutampa su tiese $BK$.  
-\item Trikampyje $ABC$ nubrėžtos pusiaukampinės $AD, BE$ ir
-  $CF$. Jei $\angle BAC=120^\circ$, tai įrodykite, kad
-  $ED\perp FD$.
-  %Kadangi $\angle DAC = 60^\circ = \frac{180^\circ - \angle
-  %BAD}{2}$, tai $AC$ yra išorinė kampo $\angle BAD$
-  %pusiaukampinė. Tada $E$ yra trikampio $BAD$ pribrėžto
-  %apskritimo centras (nes jis yra sankirta pusiaukampinės
-  %ir išorinės pusiaukampinės), ir todėl $DE$ yra kampo
-  %$\angle ADC$ pusiaukampinė. Panašiai ir $FD$ yra kampo
-  %$\angle BDA$ pusiaukampinė. Tada $\angle FDE = \angle
-  %FDA + \angle ADE = \frac{\angle BDA}{2} + \frac{\angle
-  %CDA}{2} = 90^\circ$. 
-\item Per smailiojo trikampio $ABC$ ($AC>AB$) viršūnę $A$
-  nubrėžė pusiaukampinę $AM$ ir išorinę pusiaukampinę $AN$
-  bei liestinę $AK$ apskritimui, apibrėžtam apie $ABC$
-  (taškai $M,K,N$ yra ant spindulio $CB$). Įrodykite, kad
-  $MK=KN$. 
-  %$\angle AMK = \angle ACM + \angle CAM = \angle KAB +
-  %\angle MAB = \angle MAK$. Taigi $AMK$ lygiašonis. Bet
-  %$\angle NAM$ yra status, ir todėl $K$ yra $MN$ ir $AM$
-  %vidurio statmens sankirta. Todėl $MK = KN$.
-\item Į trapeciją galima įbrėžti apskritimą. Įrodyti, kad
-  apskritimai, kurių skersmenys yra trapecijos šoninės
-  kraštinės, liečia vienas kitą.
-  %Tegu trapecija būna $ABCD$, $AD\parallel{CB}$. Du
-  %apskritimai liečia vienas kitą jeigu atstumas tarp jų
-  %centrų yra lygus jų spindulių sumai. Tegu $K$ yra $AB$, o
-  %$L$ yra $CD$ vidurio taškai. Tada $KL = \frac{AD+BC}{2} =
-  %\frac{AB+CD}{2} = KA + LD$, ko ir reikėjo. 
-\item Taškas $O$ yra pribrėžtinio apskritimo, liečiančio
-  trikampio $ABC$ kraštinę $AC$ ir kraštinių $BA$ ir $BC$
-  tęsinius, centras. $D$ - apskritimo, einančio per taškus
-  $B, A, O$, centras. Įrodykite, kad taškai $A, B, C$ ir $D$
-  yra ant vieno apskritimo. 
-  %$\angle DOB = \frac{180^\circ-\angle BDO}{2} =
-  %\frac{180^\circ-(2(180^\circ-\angle BAO))}{2} = \angle
-  %BAO - 90^\circ = \angle BAC + \frac{\angle CBA+\angle
-  %BCA}{2} - 90^\circ = \frac{\angle BAC}{2} = \angle COB$
-  %(žr. 1 uždavinį). Taigi $C, O, D$ yra vienoje tiesėje.
-  %Tada $\angle BDC + \angle BAC = \angle BDO + \angle BAC =
-  %2(180^\circ - \angle BAO) + \angle BAC = (180^\circ -
-  %\angle BAC) + \angle BAC = 180^\circ$. Taigi $B, A, C, D$
-  %yra ant vieno apskritimo.
-\item Penkiakampis $ABCDE$ apibrėžtas aplink apskritimą $S$.
-  $AB=BC=CD$, $BC$ liečia $S$ taške $K$. Įrodyti, kad
-  $EK\perp BC$.
-  %Tegu kraštinės $AB, BC, CD, DE, EA$ liečia $S$
-  %atitinkamai taškuose $H, K, L, M, N$. Tada $KC = BC - BK
-  %= AB - BH = AH = AN$ ir $BK = BC - KC = CD - CL = LD =
-  %MD$. Taigi $KLMH$ ir $HKLN$ yra lygiašonės trapecijos, ir
-  %todėl $KN = HL = KM$. Tada $KMEN$ yra deltoidas ir todėl
-  %$KE$ eina per apskritimo centrą.  Taigi $EK \perp BC$
-\item Trikampyje $ABC$ nubrėžė pusiaukampines $AD$ ir $BE$.
-  Jei $DE$ yra kampo $\angle ADC$ pusiaukampinė, tai raskite
-  kampą $\angle BAC$. 
-  %Atsakymas yra $120^\circ$. Sprendimas beveik toks pats
-  %kaip ir 8 uždavinio.
-\item Duotas trikampis $ABC$, ant spindulio $CB$ už taško
-  $B$ paimtas taškas $D$ toks, kad $BD=AB$. Kampų $\angle A$
-  ir $\angle B$ išorinės pusiaukampinės kertasi taške $M$.
-  Įrodyti, kad taškai $M,A,C,D$ guli ant vieno apskritimo.
-  %$BM$ yra kampo $\angle DBA$ pusiaukampinė, taigi taip pat
-  %yra $DA$ vidurio statmuo. Todėl $\angle DMB = \angle BMA$.
-  %Tada $\angle DMA + \angle DCA = 2\angle BMA + \angle BCA
-  %= 2(180^\circ - \angle MBA - \angle MAB) + \angle BCA =
-  %360^\circ -\angle DBA - (180^\circ - \angle BAC) + \angle
-  %BCA = 180^\circ -(\angle DBA - \angle BCA - \angle BAC) =
-  %\angle 180^\circ$, taigi $MDCA$ įbrėžtinis.
-\item Apibrėžtiniame penkiakampyje $ABCDE$ įstrižainės $AD$
-  ir $CE$ kertasi taške $O$, kuris yra įbrėžto apskritimo
-  centras. Įrodyti, kad $BO \perp{DE}$.
-  %Tegu kraštinės $AB, BC, CD, DE, EA$ liečia apskritimą
-  %atitinkamai taškuose $H$, $K$, $L$, $M$, $N$. Kadangi $AD$ eina
-  %per apskritimo centrą, tai $HN \perp AD$. Panašiai ir $LM
-  %\perp AD$. Taigi $LM \parallel{HN}$ ir todėl $HNML$ yra
-  %lygiašonė trapecija. Panašiai ir $KLMN$ yra lygiašonė
-  %trapecija. Galime užbaigti kaip ir 12 uždavinyje.
-\item Duotas smailusis  trikampis $KEL$, į jį įbrėžtas
-  apskritimas su spinduliu $R$. Šiam apskritimui išvestos 3
-  liestinės taip, kad $KEL$ yra padalintas į 3 stačius
-  trikampius ir viena šešiakampį, kurio perimetras yra $Q$.
-  Rasti į tris stačiuosius trikampius įbrėžtų apskritimų
-  spindulių sumą. 
-  %Tegu visi taškai būna tokie, kokie yra paveiklėlyje
-  %apačioje. Tada $GZOA_1$ yra kvadratas, nes jo visi kampai
-  %statūs ir $GZ = GA_1$. Lygiai taip pat kvadratai yra
-  %$TMB_1N$, $UWPV$, $AFOC$, $ACIP$, $ABNH$. Be to, didysis
-  %apskritimas yra trikampių $EQO$, $RLP$, $KNS$
-  %pribrėžtinis apskritimas. Tada iš pirmo uždavinio $ZO =
-  %QF$, $NB_1 = HS$, $RI = WP$. Tada $GZ + UW + MT = ZO +
-  %NB_1 + WP = QF + HS + RI = \frac{QF+QB+HS+DS+DR+RI}{2} =
-  %\frac{Q-6R}{2}$.  
-  %\begin{center}
-  %\begin{asy}
-  %import olympiad;
-  %size(200);
-  %pair K, T, M, N, B1, H, S, D, R, I, W, P, U, V, L, C, A,
-  % B, Q, F, Z, O, G, A1, E;
-  %path a1;
-  %real r;
-  %E=(0,0);
-  %L=(100,0);
-  %K=(45,70);
-  %A=incenter(K,L,E);
-  %a1=incircle(K,L,E);
-  %r=inradius(K,L,E);
-  %B=foot(A,K,E);
-  %C=foot(A,L,E);
-  %D=foot(A,K,L);
-  %I=A+dir(E--L)*r;
-  %F=A+dir(L--E)*r;
-  %H=A+dir(E--K)*r;
-  %P=I+dir(A--C)*r;
-  %O=F+dir(A--C)*r;
-  %N=H+dir(A--B)*r;
-  %Q=extension(O,F,E,K);
-  %R=extension(P,I,L,K);
-  %S=extension(N,H,L,K);
-  %U=incenter(R,P,L);
-  %G=incenter(E,Q,O);
-  %M=incenter(S,N,K);
-  %Z=foot(G,F,O);
-  %A1=foot(G,E,O);
-  %W=foot(U,I,P);
-  %V=foot(U,P,L);
-  %T=foot(M,N,K);
-  %B1=foot(M,N,H);
-  %dot(A,blue);
-  %dot(B,blue);
-  %dot(C,blue);
-  %dot(D,blue);
-  %dot(E,blue);
-  %dot(F,blue);
-  %dot(G,blue);
-  %dot(H,blue);
-  %dot(I,blue);
-  %dot(K,blue);
-  %dot(L,blue);
-  %dot(M,blue);
-  %dot(N,blue);
-  %dot(O,blue);
-  %dot(P,blue);
-  %dot(Q,blue);
-  %dot(R,blue);
-  %dot(S,blue);
-  %dot(T,blue);
-  %dot(U,blue);
-  %dot(V,blue);
-  %dot(W,blue);
-  %dot(Z,blue);
-  %dot(A1,blue);
-  %dot(B1,blue);
-  %draw(a1);
-  %draw(incircle(E,Q,O));
-  %draw(incircle(R,L,P));
-  %draw(incircle(S,N,K));
-  %draw(E--K--L--cycle);
-  %draw(A--C);
-  %draw(A--F);
-  %draw(A--B);
-  %draw(A--H);
-  %draw(A--D);
-  %draw(A--I);
-  %draw(G--Z);
-  %draw(G--A1);
-  %draw(Q--O);
-  %draw(R--P);
-  %draw(S--N);
-  %label("$A$",A,SW,blue);
-  %label("$B$",B,NW,blue);
-  %label("$C$",C,down,blue);
-  %label("$D$",D,NE,blue);
-  %label("$E$",E,SW,blue);
-  %label("$F$",F,SW,blue);
-  %label("$G$",G,SW,blue);
-  %label("$H$",H,left+down/2,blue);
-  %label("$I$",I,SW,blue);
-  %label("$K$",K,up,blue);
-  %label("$L$",L,SE,blue);
-  %label("$M$",M,down/5,blue);
-  %label("$N$",N,left,blue);
-  %label("$O$",O,SE,blue);
-  %label("$P$",P,SW,blue);
-  %label("$R$",R,NE,blue);
-  %label("$S$",S,NE,blue);
-  %label("$T$",T,left,blue);
-  %label("$U$",U,SE,blue);
-  %label("$V$",V,SE,blue);
-  %label("$W$",W,SW,blue);
-  %label("$Z$",Z,SE,blue);
-  %label("$Q$",Q,NW,blue);
-  %label("$A_1$",A1,SW,blue);
-  %label("$B_1$",B1,down,blue);
-  %add(rightanglem(B,N,S,140));
-  %add(rightanglem(C,O,F,140));
-  %add(rightanglem(R,P,C,140));
-%\end{asy}
-  %\end{center}
-\item Duotas apibrėžtinis keturkampis $ABCD$. Į jį įbrėžtas
-  apskritimas liečia kraštines $AB,BC,CD,DA$ atitinkamai
-  taškuose $E,F,G,H$. Įrodykite, kad linija, jungianti
-  trikampių $HAE$ ir $FCG$ įbrėžtinių apskritimų centrus yra
-  statmena linijai, jungiančiai į trikampius $EBF$ ir $GDH$
-  įbrėžtų apskritimų centrus.
-  %Tegu $I_A$ yra apskritimo, įbrėžto į $AEH$, centras (o
-  %kiti centrai yra $I_B, I_C, I_D$). Kadangi $AEH$
-  %lygiašonis, tai tada $\angle HI_AE = 180^\circ - \angle
-  %I_AEH - \angle I_AHE = 180^\circ - \angle AEH = 180^\circ
-  %- \angle HFE$, todėl $I_A$ yra ant $ABCD$ įbrėžto
-  %apskritimo.  Panašiai visi kitų trikampių įbrėžtinių
-  %apskritimų cenrai irgi yra ant to paties apskritimo.
-  %Pastebėkime, kad $I_A, I_B, I_C, I_D$ atitinkamai dalina
-  %lankus $HE, EF, FG, GH$ pusiau. Tada kampas tarp $I_AI_C$
-  %ir $I_BI_D$ yra lygus $\angle I_AI_CI_B + \angle
-  %I_CI_BI_D = \frac{\angle HGF}{2} + \frac{\angle HEF}{2} =
-  %90^\circ$, ko ir reikėjo.
-\item Į kampą įbrėžtas apskritimas su centru $O$. Per tašką
-  $A$, simetrišką taškui $O$ vienos iš kampo kraštinių
-  atžvilgiu, nubrėžė apskritimui dvi liestinės, kurios kerta
-  labiau nuo taško $A$ nutolusią kampo kraštinę taškuose $B$
-  ir $C$. Įrodyti, kad apie $ABC$ apibrėžto apskritimo
-  centras yra ant duotojo kampo pusiaukampinės.
-  %Tegu į kampą įbrėžtas apskritimas liečia $AB$ ir $AC$
-  %atitinkamai taškuose $P$ ir $J$, ir liečia kampo
-  %kraštines taškuose $E$ ir $D$ ($D$ yra $AO$ vidurio
-  %taškas), taip kaip paveikslėlyje apačioje. Tada $\angle
-  %OAJ = 30^\circ$, nes stačiajame trikampyje $AOJ$ įžambinė
-  %lygi pusei statinio. Tegu taškas $F$ yra simetriškas
-  %taškui $O$ taško $E$ atžvilgiu. Tada $\angle BFC = \angle
-  %BOC = 180^\circ - \angle OBC - \angle OCB = 180^\circ -
-  %\frac{\angle ABC + \angle ACB}{2} = 180^\circ -
-  %\frac{120^\circ}{2} = 120^\circ = 180^\circ - \angle
-  %BAC$, taigi $F$ yra ant apie $ABC$ apibrėžto apskritimo.
-  %Tada $AF$ vidurio statmuo sutampa su $DE$ vidurio
-  %statmeniu, kuris yra $\angle DQE$ pusiaukampinė (nes
-  %$QDOE$ yra deltoidas). Bet $AF$ vidurio statmuo eina ir
-  %per apie $ABC$ apibrėžto apskritimo centrą, ko ir
-  %reikėjo.
-  %\begin{center}
-  %\begin{asy}
-  %import olympiad;
-  %size(200);
-  %pair A, B, C, D, E, F, J, K, L, Q, O, P; 
-  %path a1, a2;
-  %Q=(0,0);
-  %O=(50,5);
-  %a1=circle(O,10);
-  %D=tangent(Q,O,10,2);
-  %E=tangent(Q,O,10,1);
-  %A=2*D-O;
-  %F=2*E-O;
-  %P=tangent(A,O,10,1);
-  %J=tangent(A,O,10,2);
-  %B=extension(A,P,Q,E);
-  %C=extension(A,J,Q,E);
-  %a2=circumcircle(A,B,C);
-  %K=intersectionpoint(Q--D,a2);
-  %L=intersectionpoint(D--2*D,a2);
-  %dot(A,blue);
-  %dot(B,blue);
-  %dot(C,blue);
-  %dot(D,blue);
-  %dot(E,blue);
-  %dot(F,blue);
-  %dot(J,blue);
-  %dot(K,blue);
-  %dot(L,blue);
-  %dot(O,blue);
-  %dot(Q,blue);
-  %dot(P,blue);
-  %draw(a1);
-  %draw(a2);
-  %draw(A--B--C--cycle);
-  %draw(Q--L);
-  %draw(Q--C);
-  %draw(O--A);
-  %draw(O--B);
-  %draw(O--C);
-  %draw(O--J);
-  %draw(O--F);
-  %label("$A$",A,NW,blue);
-  %label("$B$",B,SW,blue);
-  %label("$C$",C,SE,blue);
-  %label("$D$",D,NE+W/2,blue);
-  %label("$E$",E,SW,blue);
-  %label("$F$",F,SW,blue);
-  %label("$J$",J,NE,blue);
-  %label("$K$",K,NW,blue);
-  %label("$L$",L,NE,blue);
-  %label("$O$",O,left,blue);
-  %label("$P$",P,left,blue);
-  %label("$Q$",Q,NW,blue);
-  %add(rightanglem(Q,D,O,100));
-  %add(rightanglem(O,E,B,100));
-  %add(rightanglem(O,J,C,100));
-  %add(pathticks(A--D,2,0.5,0,80,red));
-  %add(pathticks(D--O,2,0.5,0,80,red));
-  %add(pathticks(O--J,2,0.5,0,80,red));
-  %add(pathticks(O--E,2,0.5,0,80,red));
-  %add(pathticks(E--F,2,0.5,0,80,red));
-%\end{asy}
-  %\end{center}
-\item Ant trikampio $ABC$ kraštinės $BC$ paimtas taškas $D$.
-  Į trikampius $ABD$ ir $ACD$ įbrėžti apskritimai, ir
-  nubrėžta bendra jiems liestinė (kita nei $BC$), kertanti
-  $AD$ taške $K$. Įrodykite, kad atkarpos $AK$ ilgis
-  nepriklauso nuo taško $D$ pasirinkimo.
-  %Tegu taškai būna tokie, kokie pažymėti paveikslėlyje.
-  %Tegu $KI$ ir $DC$ kertasi taške $U$ . Tada apskritimas su
-  %centru $F$ yra trikampio $KDU$ įbrėžtinis apskritimas, o
-  %apskritimas su centru $E $- pribrėžtinis. Tada iš pirmojo
-  %uždavinio rezultatų, $KL = MD = DG$ ir $KM = LD = DH$.
-  %Taip pat iš pirmojo uždavinio rezultatų, $MD =
-  %\frac{AD+BD-AB}{2}$ ir $MK = DH = \frac{DC+DA-CA}{2}$.
-  %Taigi, $AK = AD - DM - MK = AD - \frac{AD+BD-AB}{2} -
-  %\frac{DC+DA-CA}{2} = \frac{AB+CA-BC}{2}$, kas tikrai
-  %nepriklauso nuo $D$. 
-  %\begin{center}
-  %\begin{asy}
-  %import olympiad;
-  %size(200);
-  %pair A, B, C, D, E, F, G, H, I, K, L, M, N, O, P, U;
-  %path a1, a2;
-  %A=(68,60);
-  %B=(0,0);
-  %C=(100,0);
-  %D=waypoint(B--C,0.72);
-  %a1=incircle(A,B,D);
-  %a2=incircle(A,D,C);
-  %E=incenter(A,B,D);
-  %F=incenter(A,D,C);
-  %G=foot(E,C,B);
-  %N=foot(E,A,B);
-  %M=foot(E,A,D);
-  %H=foot(F,C,B);
-  %O=foot(F,C,A);
-  %L=foot(F,A,D);
-  %P=G+2*(foot(G,E,F)-G);
-  %I=H+2*(foot(H,E,F)-H);
-  %U=extension(P,I,B,C);
-  %K=extension(A,D,P,I);
-  %dot(A,blue);
-  %dot(B,blue);
-  %dot(C,blue);
-  %dot(D,blue);
-  %dot(E,blue);
-  %dot(F,blue);
-  %dot(G,blue);
-  %dot(H,blue);
-  %dot(I,blue);
-  %dot(K,blue);
-  %dot(L,blue);
-  %dot(M,blue);
-  %dot(N,blue);
-  %dot(O,blue);
-  %dot(P,blue);
-  %dot(U,blue);
-  %draw(A--B--C--cycle);
-  %drawline(P,I);
-  %draw(A--D);
-  %draw(C--U);
-  %draw(a1);
-  %draw(a2);
-  %label("$A$",A,up,blue);
-  %label("$B$",B,SW,blue);
-  %label("$C$",C,SE,blue);
-  %label("$D$",D,down,blue);
-  %label("$E$",E,right,blue);
-  %label("$F$",F,right,blue);
-  %label("$G$",G,down,blue);
-  %label("$H$",H,down,blue);
-  %label("$I$",I,right+up/2,blue);
-  %label("$L$",L,right,blue);
-  %label("$K$",K,right+up/2,blue);
-  %label("$M$",M,right+up/2,blue);
-  %label("$N$",N,up,blue);
-  %label("$P$",P,NE,blue);
-  %label("$O$",O,right/1.5+up/2,blue);
-  %label("$U$",U,1.1*down,blue);
-%\end{asy}
-%\end{center}
+    Įrodyti, kad trikampių, gautų nubrėžus vieną įstrižainę, 
+    įbrėžtiniai apskritimai liečiasi.
+    %Tarkime, kad keturkampis yra $ABCD$, nubrėžta įstrižainė 
+    %$AC$, į $ABC$ įbrėžtas apskritimas liečia $AC$ taške $K$,
+    %o į $ADC$ įbrėžtas apskritimas liečia $AC$ taške $L$.
+    %Pastebėkime, kad iš sąlygos $AB-BC=AD-DC$. Tada $KC=
+    %\frac{AC+BC-AB}{2}=\frac{AC+DC-AD}{2}=CL$, ir iš čia $K=L$.
+  \item $ABCD$ yra apibrėžtinis keturkampis, kurio priešingų
+    kraštinių sandaugos lygios. Kampas tarp vienos iš
+    kraštinių ir įstrižainės yra $25^\circ$. Rasti kampą tarp
+    tos kraštinės ir kitos įstrižainės.
+    %Kadangi keturkampis apibrėžtinis, tai jo priešingų
+    %kraštinių sumos lygios. Bet šiuo atveju sandaugos taip
+    %pat lygios. Iš paprastos algebros, keturkampis yra
+    %deltoidas (įrodykite tai). Tada nesunkiai ieškomas
+    %kampas yra lygus $65^\circ$.
+  \item Duotas kvadratas $ABCD$. Ant kraštinės $BC$ yra taškas
+    $M$, o ant kraštinės $DC$ - taškas $K$ taip, kad trikampio
+    $CMK$ perimetras yra dvigubai ilgesnis už kvadrato
+    kraštinę. Rasti kampą $\angle MAK$.
+    %Tegu trikampio $MCK$ pribrėžtinis apskritimas prieš kampą
+    %$\angle C$ liečia spindulį $CM$ taške $B'$. Iš pirmojo
+    %uždavinio, $AB' = \frac{CM+MK+KC}{2} = AB$, taigi $B' =
+    %B$.  Todėl tas pribrėžtinis apskritimas eina per $B$ ir
+    %$D$, o jo centras yra taškas $A$. Tada $\angle MAK =
+    %180^\circ - \angle KMA - \angle MKA = 180^\circ -
+    %\frac{\angle KMB}{2} - \frac{\angle MKD}{2} =
+    %\frac{360^\circ-(180^\circ-\angle MKC)-(180^\circ-\angle
+    %KMC)}{2} = 45^\circ$. 
+  \item Duotas apibrėžtinis keturkampis $ABCD$. Kraštinės $AB,
+    BC, CD, DA$ liečia tą apskritimą atitinkamai taškuose $K,
+    L, M, N$. $KM$ ir $LN$ kertasi taške $S$. Jeigu $SKBL$ yra
+    įbrėžtinis, tai įrodykite, kad $SNDM$ taip pat įbrėžtinis.
+    %Iš kampo tarp stygos ir liestinės savybės, $\angle KSB =
+    %\angle KLB = \angle KML$ ir todėl $ML\parallel{BS}$.
+    %Panašiai ir $NK\parallel{BS}$. Taigi $KLMN$ yra lygiašonė
+    %trapecija, ir todėl iš simetrijos $NSDM$ yra įbrėžtinis.
+  \item Duotas trikampis $ABC$. Išvestos tiesės, simetriškos
+    tiesei $AC$ tiesių $BC$ ir $BA$ atžvilgiu, ir jos kertasi
+    taške $K$. Įrodyti, kad apie trikampį $ABC$ apibrėžto
+    apskritimo centras guli ant tieses $BK$.
+    %Tarkime, kad taškai $K$ ir $B$ yra skirtingose $AC$
+    %pusėse (atvejis, kai jie vienoje pusėje sprendžiamas
+    %labai panašiai). Tiesės $BA$ ir $BC$ yra išorinės
+    %trikampio $ACK$ pusiaukampinės, taigi $B$ yra trikampio
+    %$ACK$ pribrėžtinio apskritimo centras. Todėl $B$ yra ant
+    %kampo $\angle AKC$ pusiaukampinės. Tegu $I$ yra trikampio
+    %$ACK$ įbrėžto apskritimo centras. Tada $BA\perp AI$ ir
+    %$BC\perp CI$, ir todėl $BAIC$ yra įbrėžtinis su centru
+    %ant tiesės $IB$, kuri sutampa su tiese $BK$.  
+  \item Trikampyje $ABC$ nubrėžtos pusiaukampinės $AD, BE$ ir
+    $CF$. Jei $\angle BAC=120^\circ$, tai įrodykite, kad
+    $ED\perp FD$.
+    %Kadangi $\angle DAC = 60^\circ = \frac{180^\circ - \angle
+    %BAD}{2}$, tai $AC$ yra išorinė kampo $\angle BAD$
+    %pusiaukampinė. Tada $E$ yra trikampio $BAD$ pribrėžto
+    %apskritimo centras (nes jis yra sankirta pusiaukampinės
+    %ir išorinės pusiaukampinės), ir todėl $DE$ yra kampo
+    %$\angle ADC$ pusiaukampinė. Panašiai ir $FD$ yra kampo
+    %$\angle BDA$ pusiaukampinė. Tada $\angle FDE = \angle
+    %FDA + \angle ADE = \frac{\angle BDA}{2} + \frac{\angle
+    %CDA}{2} = 90^\circ$. 
+  \item Per smailiojo trikampio $ABC$ ($AC>AB$) viršūnę $A$
+    nubrėžė pusiaukampinę $AM$ ir išorinę pusiaukampinę $AN$
+    bei liestinę $AK$ apskritimui, apibrėžtam apie $ABC$
+    (taškai $M,K,N$ yra ant spindulio $CB$). Įrodykite, kad
+    $MK=KN$. 
+    %$\angle AMK = \angle ACM + \angle CAM = \angle KAB +
+    %\angle MAB = \angle MAK$. Taigi $AMK$ lygiašonis. Bet
+    %$\angle NAM$ yra status, ir todėl $K$ yra $MN$ ir $AM$
+    %vidurio statmens sankirta. Todėl $MK = KN$.
+  \item Į trapeciją galima įbrėžti apskritimą. Įrodyti, kad
+    apskritimai, kurių skersmenys yra trapecijos šoninės
+    kraštinės, liečia vienas kitą.
+    %Tegu trapecija būna $ABCD$, $AD\parallel{CB}$. Du
+    %apskritimai liečia vienas kitą jeigu atstumas tarp jų
+    %centrų yra lygus jų spindulių sumai. Tegu $K$ yra $AB$, o
+    %$L$ yra $CD$ vidurio taškai. Tada $KL = \frac{AD+BC}{2} =
+    %\frac{AB+CD}{2} = KA + LD$, ko ir reikėjo. 
+  \item Taškas $O$ yra pribrėžtinio apskritimo, liečiančio
+    trikampio $ABC$ kraštinę $AC$ ir kraštinių $BA$ ir $BC$
+    tęsinius, centras. $D$ - apskritimo, einančio per taškus
+    $B, A, O$, centras. Įrodykite, kad taškai $A, B, C$ ir $D$
+    yra ant vieno apskritimo. 
+    %$\angle DOB = \frac{180^\circ-\angle BDO}{2} =
+    %\frac{180^\circ-(2(180^\circ-\angle BAO))}{2} = \angle
+    %BAO - 90^\circ = \angle BAC + \frac{\angle CBA+\angle
+    %BCA}{2} - 90^\circ = \frac{\angle BAC}{2} = \angle COB$
+    %(žr. 1 uždavinį). Taigi $C, O, D$ yra vienoje tiesėje.
+    %Tada $\angle BDC + \angle BAC = \angle BDO + \angle BAC =
+    %2(180^\circ - \angle BAO) + \angle BAC = (180^\circ -
+    %\angle BAC) + \angle BAC = 180^\circ$. Taigi $B, A, C, D$
+    %yra ant vieno apskritimo.
+  \item Penkiakampis $ABCDE$ apibrėžtas aplink apskritimą $S$.
+    $AB=BC=CD$, $BC$ liečia $S$ taške $K$. Įrodyti, kad
+    $EK\perp BC$.
+    %Tegu kraštinės $AB$, $BC$, $CD$, $DE$, $EA$ liečia $S$
+    %atitinkamai taškuose $H$, $K$, $L$, $M$, $N$. Tada $KC = BC - BK
+    %= AB - BH = AH = AN$ ir $BK = BC - KC = CD - CL = LD =
+    %MD$. Taigi $KLMH$ ir $HKLN$ yra lygiašonės trapecijos, ir
+    %todėl $KN = HL = KM$. Tada $KMEN$ yra deltoidas ir todėl
+    %$KE$ eina per apskritimo centrą.  Taigi $EK \perp BC$.
+  \item Trikampyje $ABC$ nubrėžė pusiaukampines $AD$ ir $BE$.
+    Jei $DE$ yra kampo $\angle ADC$ pusiaukampinė, tai raskite
+    kampą $\angle BAC$. 
+    %Atsakymas yra $120^\circ$. Sprendimas beveik toks pats
+    %kaip ir 8 uždavinio.
+  \item Duotas trikampis $ABC$, ant spindulio $CB$ už taško
+    $B$ paimtas taškas $D$ toks, kad $BD=AB$. Kampų $\angle A$
+    ir $\angle B$ išorinės pusiaukampinės kertasi taške $M$.
+    Įrodyti, kad taškai $M,A,C,D$ guli ant vieno apskritimo.
+    %$BM$ yra kampo $\angle DBA$ pusiaukampinė, taigi taip pat
+    %yra $DA$ vidurio statmuo. Todėl $\angle DMB = \angle BMA$.
+    %Tada $\angle DMA + \angle DCA = 2\angle BMA + \angle BCA
+    %= 2(180^\circ - \angle MBA - \angle MAB) + \angle BCA =
+    %360^\circ -\angle DBA - (180^\circ - \angle BAC) + \angle
+    %BCA = 180^\circ -(\angle DBA - \angle BCA - \angle BAC) =
+    %\angle 180^\circ$, taigi $MDCA$ įbrėžtinis.
+  \item Apibrėžtiniame penkiakampyje $ABCDE$ įstrižainės $AD$
+    ir $CE$ kertasi taške $O$, kuris yra įbrėžto apskritimo
+    centras. Įrodyti, kad $BO \perp{DE}$.
+    %Tegu kraštinės $AB, BC, CD, DE, EA$ liečia apskritimą
+    %atitinkamai taškuose $H$, $K$, $L$, $M$, $N$. Kadangi $AD$ eina
+    %per apskritimo centrą, tai $HN \perp AD$. Panašiai ir $LM
+    %\perp AD$. Taigi $LM \parallel{HN}$ ir todėl $HNML$ yra
+    %lygiašonė trapecija. Panašiai ir $KLMN$ yra lygiašonė
+    %trapecija. Galime užbaigti kaip ir 12 uždavinyje.
+  \item Duotas smailusis  trikampis $KEL$, į jį įbrėžtas
+    apskritimas su spinduliu $R$. Šiam apskritimui išvestos 3
+    liestinės taip, kad $KEL$ yra padalintas į 3 stačius
+    trikampius ir viena šešiakampį, kurio perimetras yra $Q$.
+    Rasti į tris stačiuosius trikampius įbrėžtų apskritimų
+    spindulių sumą. 
+    %Tegu visi taškai būna tokie, kokie yra paveiklėlyje
+    %apačioje. Tada $GZOA_1$ yra kvadratas, nes jo visi kampai
+    %statūs ir $GZ = GA_1$. Lygiai taip pat kvadratai yra
+    %$TMB_1N$, $UWPV$, $AFOC$, $ACIP$, $ABNH$. Be to, didysis
+    %apskritimas yra trikampių $EQO$, $RLP$, $KNS$
+    %pribrėžtinis apskritimas. Tada iš pirmo uždavinio $ZO =
+    %QF$, $NB_1 = HS$, $RI = WP$. Tada $GZ + UW + MT = ZO +
+    %NB_1 + WP = QF + HS + RI = \frac{QF+QB+HS+DS+DR+RI}{2} =
+    %\frac{Q-6R}{2}$.  
+    %\begin{center}
+    %\begin{asy}
+    %import olympiad;
+    %size(200);
+    %pair K, T, M, N, B1, H, S, D, R, I, W, P, U, V, L, C, A,
+    % B, Q, F, Z, O, G, A1, E;
+    %path a1;
+    %real r;
+    %E=(0,0);
+    %L=(100,0);
+    %K=(45,70);
+    %A=incenter(K,L,E);
+    %a1=incircle(K,L,E);
+    %r=inradius(K,L,E);
+    %B=foot(A,K,E);
+    %C=foot(A,L,E);
+    %D=foot(A,K,L);
+    %I=A+dir(E--L)*r;
+    %F=A+dir(L--E)*r;
+    %H=A+dir(E--K)*r;
+    %P=I+dir(A--C)*r;
+    %O=F+dir(A--C)*r;
+    %N=H+dir(A--B)*r;
+    %Q=extension(O,F,E,K);
+    %R=extension(P,I,L,K);
+    %S=extension(N,H,L,K);
+    %U=incenter(R,P,L);
+    %G=incenter(E,Q,O);
+    %M=incenter(S,N,K);
+    %Z=foot(G,F,O);
+    %A1=foot(G,E,O);
+    %W=foot(U,I,P);
+    %V=foot(U,P,L);
+    %T=foot(M,N,K);
+    %B1=foot(M,N,H);
+    %dot(A,blue);
+    %dot(B,blue);
+    %dot(C,blue);
+    %dot(D,blue);
+    %dot(E,blue);
+    %dot(F,blue);
+    %dot(G,blue);
+    %dot(H,blue);
+    %dot(I,blue);
+    %dot(K,blue);
+    %dot(L,blue);
+    %dot(M,blue);
+    %dot(N,blue);
+    %dot(O,blue);
+    %dot(P,blue);
+    %dot(Q,blue);
+    %dot(R,blue);
+    %dot(S,blue);
+    %dot(T,blue);
+    %dot(U,blue);
+    %dot(V,blue);
+    %dot(W,blue);
+    %dot(Z,blue);
+    %dot(A1,blue);
+    %dot(B1,blue);
+    %draw(a1);
+    %draw(incircle(E,Q,O));
+    %draw(incircle(R,L,P));
+    %draw(incircle(S,N,K));
+    %draw(E--K--L--cycle);
+    %draw(A--C);
+    %draw(A--F);
+    %draw(A--B);
+    %draw(A--H);
+    %draw(A--D);
+    %draw(A--I);
+    %draw(G--Z);
+    %draw(G--A1);
+    %draw(Q--O);
+    %draw(R--P);
+    %draw(S--N);
+    %label("$A$",A,SW,blue);
+    %label("$B$",B,NW,blue);
+    %label("$C$",C,down,blue);
+    %label("$D$",D,NE,blue);
+    %label("$E$",E,SW,blue);
+    %label("$F$",F,SW,blue);
+    %label("$G$",G,SW,blue);
+    %label("$H$",H,left+down/2,blue);
+    %label("$I$",I,SW,blue);
+    %label("$K$",K,up,blue);
+    %label("$L$",L,SE,blue);
+    %label("$M$",M,down/5,blue);
+    %label("$N$",N,left,blue);
+    %label("$O$",O,SE,blue);
+    %label("$P$",P,SW,blue);
+    %label("$R$",R,NE,blue);
+    %label("$S$",S,NE,blue);
+    %label("$T$",T,left,blue);
+    %label("$U$",U,SE,blue);
+    %label("$V$",V,SE,blue);
+    %label("$W$",W,SW,blue);
+    %label("$Z$",Z,SE,blue);
+    %label("$Q$",Q,NW,blue);
+    %label("$A_1$",A1,SW,blue);
+    %label("$B_1$",B1,down,blue);
+    %add(rightanglem(B,N,S,140));
+    %add(rightanglem(C,O,F,140));
+    %add(rightanglem(R,P,C,140));
+    %\end{asy}
+    %\end{center}
+  \item Duotas apibrėžtinis keturkampis $ABCD$. Į jį įbrėžtas
+    apskritimas liečia kraštines $AB,BC,CD,DA$ atitinkamai
+    taškuose $E,F,G,H$. Įrodykite, kad linija, jungianti
+    trikampių $HAE$ ir $FCG$ įbrėžtinių apskritimų centrus yra
+    statmena linijai, jungiančiai į trikampius $EBF$ ir $GDH$
+    įbrėžtų apskritimų centrus.
+    %Tegu $I_A$ yra apskritimo, įbrėžto į $AEH$, centras (o
+    %kiti centrai yra $I_B, I_C, I_D$). Kadangi $AEH$
+    %lygiašonis, tai tada $\angle HI_AE = 180^\circ - \angle
+    %I_AEH - \angle I_AHE = 180^\circ - \angle AEH = 180^\circ
+    %- \angle HFE$, todėl $I_A$ yra ant $ABCD$ įbrėžto
+    %apskritimo.  Panašiai visi kitų trikampių įbrėžtinių
+    %apskritimų cenrai irgi yra ant to paties apskritimo.
+    %Pastebėkime, kad $I_A, I_B, I_C, I_D$ atitinkamai dalina
+    %lankus $HE, EF, FG, GH$ pusiau. Tada kampas tarp $I_AI_C$
+    %ir $I_BI_D$ yra lygus $\angle I_AI_CI_B + \angle
+    %I_CI_BI_D = \frac{\angle HGF}{2} + \frac{\angle HEF}{2} =
+    %90^\circ$, ko ir reikėjo.
+  \item Į kampą įbrėžtas apskritimas su centru $O$. Per tašką
+    $A$, simetrišką taškui $O$ vienos iš kampo kraštinių
+    atžvilgiu, nubrėžė apskritimui dvi liestinės, kurios kerta
+    labiau nuo taško $A$ nutolusią kampo kraštinę taškuose $B$
+    ir $C$. Įrodyti, kad apie $ABC$ apibrėžto apskritimo
+    centras yra ant duotojo kampo pusiaukampinės.
+    %Tegu į kampą įbrėžtas apskritimas liečia $AB$ ir $AC$
+    %atitinkamai taškuose $P$ ir $J$, ir liečia kampo
+    %kraštines taškuose $E$ ir $D$ ($D$ yra $AO$ vidurio
+    %taškas), taip kaip paveikslėlyje apačioje. Tada $\angle
+    %OAJ = 30^\circ$, nes stačiajame trikampyje $AOJ$ įžambinė
+    %lygi pusei statinio. Tegu taškas $F$ yra simetriškas
+    %taškui $O$ taško $E$ atžvilgiu. Tada $\angle BFC = \angle
+    %BOC = 180^\circ - \angle OBC - \angle OCB = 180^\circ -
+    %\frac{\angle ABC + \angle ACB}{2} = 180^\circ -
+    %\frac{120^\circ}{2} = 120^\circ = 180^\circ - \angle
+    %BAC$, taigi $F$ yra ant apie $ABC$ apibrėžto apskritimo.
+    %Tada $AF$ vidurio statmuo sutampa su $DE$ vidurio
+    %statmeniu, kuris yra $\angle DQE$ pusiaukampinė (nes
+    %$QDOE$ yra deltoidas). Bet $AF$ vidurio statmuo eina ir
+    %per apie $ABC$ apibrėžto apskritimo centrą, ko ir
+    %reikėjo.
+    %\begin{center}
+    %\begin{asy}
+    %import olympiad;
+    %size(200);
+    %pair A, B, C, D, E, F, J, K, L, Q, O, P; 
+    %path a1, a2;
+    %Q=(0,0);
+    %O=(50,5);
+    %a1=circle(O,10);
+    %D=tangent(Q,O,10,2);
+    %E=tangent(Q,O,10,1);
+    %A=2*D-O;
+    %F=2*E-O;
+    %P=tangent(A,O,10,1);
+    %J=tangent(A,O,10,2);
+    %B=extension(A,P,Q,E);
+    %C=extension(A,J,Q,E);
+    %a2=circumcircle(A,B,C);
+    %K=intersectionpoint(Q--D,a2);
+    %L=intersectionpoint(D--2*D,a2);
+    %dot(A,blue);
+    %dot(B,blue);
+    %dot(C,blue);
+    %dot(D,blue);
+    %dot(E,blue);
+    %dot(F,blue);
+    %dot(J,blue);
+    %dot(K,blue);
+    %dot(L,blue);
+    %dot(O,blue);
+    %dot(Q,blue);
+    %dot(P,blue);
+    %draw(a1);
+    %draw(a2);
+    %draw(A--B--C--cycle);
+    %draw(Q--L);
+    %draw(Q--C);
+    %draw(O--A);
+    %draw(O--B);
+    %draw(O--C);
+    %draw(O--J);
+    %draw(O--F);
+    %label("$A$",A,NW,blue);
+    %label("$B$",B,SW,blue);
+    %label("$C$",C,SE,blue);
+    %label("$D$",D,NE+W/2,blue);
+    %label("$E$",E,SW,blue);
+    %label("$F$",F,SW,blue);
+    %label("$J$",J,NE,blue);
+    %label("$K$",K,NW,blue);
+    %label("$L$",L,NE,blue);
+    %label("$O$",O,left,blue);
+    %label("$P$",P,left,blue);
+    %label("$Q$",Q,NW,blue);
+    %add(rightanglem(Q,D,O,100));
+    %add(rightanglem(O,E,B,100));
+    %add(rightanglem(O,J,C,100));
+    %add(pathticks(A--D,2,0.5,0,80,red));
+    %add(pathticks(D--O,2,0.5,0,80,red));
+    %add(pathticks(O--J,2,0.5,0,80,red));
+    %add(pathticks(O--E,2,0.5,0,80,red));
+    %add(pathticks(E--F,2,0.5,0,80,red));
+    %\end{asy}
+    %\end{center}
+  \item Ant trikampio $ABC$ kraštinės $BC$ paimtas taškas $D$.
+    Į trikampius $ABD$ ir $ACD$ įbrėžti apskritimai, ir
+    nubrėžta bendra jiems liestinė (kita nei $BC$), kertanti
+    $AD$ taške $K$. Įrodykite, kad atkarpos $AK$ ilgis
+    nepriklauso nuo taško $D$ pasirinkimo.
+    %Tegu taškai būna tokie, kokie pažymėti paveikslėlyje.
+    %Tegu $KI$ ir $DC$ kertasi taške $U$ . Tada apskritimas su
+    %centru $F$ yra trikampio $KDU$ įbrėžtinis apskritimas, o
+    %apskritimas su centru $E $- pribrėžtinis. Tada iš pirmojo
+    %uždavinio rezultatų, $KL = MD = DG$ ir $KM = LD = DH$.
+    %Taip pat iš pirmojo uždavinio rezultatų, $MD =
+    %\frac{AD+BD-AB}{2}$ ir $MK = DH = \frac{DC+DA-CA}{2}$.
+    %Taigi, $AK = AD - DM - MK = AD - \frac{AD+BD-AB}{2} -
+    %\frac{DC+DA-CA}{2} = \frac{AB+CA-BC}{2}$, kas tikrai
+    %nepriklauso nuo $D$. 
+    %\begin{center}
+    %\begin{asy}
+    %import olympiad;
+    %size(200);
+    %pair A, B, C, D, E, F, G, H, I, K, L, M, N, O, P, U;
+    %path a1, a2;
+    %A=(68,60);
+    %B=(0,0);
+    %C=(100,0);
+    %D=waypoint(B--C,0.72);
+    %a1=incircle(A,B,D);
+    %a2=incircle(A,D,C);
+    %E=incenter(A,B,D);
+    %F=incenter(A,D,C);
+    %G=foot(E,C,B);
+    %N=foot(E,A,B);
+    %M=foot(E,A,D);
+    %H=foot(F,C,B);
+    %O=foot(F,C,A);
+    %L=foot(F,A,D);
+    %P=G+2*(foot(G,E,F)-G);
+    %I=H+2*(foot(H,E,F)-H);
+    %U=extension(P,I,B,C);
+    %K=extension(A,D,P,I);
+    %dot(A,blue);
+    %dot(B,blue);
+    %dot(C,blue);
+    %dot(D,blue);
+    %dot(E,blue);
+    %dot(F,blue);
+    %dot(G,blue);
+    %dot(H,blue);
+    %dot(I,blue);
+    %dot(K,blue);
+    %dot(L,blue);
+    %dot(M,blue);
+    %dot(N,blue);
+    %dot(O,blue);
+    %dot(P,blue);
+    %dot(U,blue);
+    %draw(A--B--C--cycle);
+    %drawline(P,I);
+    %draw(A--D);
+    %draw(C--U);
+    %draw(a1);
+    %draw(a2);
+    %label("$A$",A,up,blue);
+    %label("$B$",B,SW,blue);
+    %label("$C$",C,SE,blue);
+    %label("$D$",D,down,blue);
+    %label("$E$",E,right,blue);
+    %label("$F$",F,right,blue);
+    %label("$G$",G,down,blue);
+    %label("$H$",H,down,blue);
+    %label("$I$",I,right+up/2,blue);
+    %label("$L$",L,right,blue);
+    %label("$K$",K,right+up/2,blue);
+    %label("$M$",M,right+up/2,blue);
+    %label("$N$",N,up,blue);
+    %label("$P$",P,NE,blue);
+    %label("$O$",O,right/1.5+up/2,blue);
+    %label("$U$",U,1.1*down,blue);
+    %\end{asy}
+    %\end{center}
 \end{enumerate}
 
 \newpage
@@ -4022,9 +3992,9 @@ label("$135^\circ$",C,4*S,blue);
 \end{center}
 \end{sprendimas}
 \begin{pav}[Turkijos TST 1995]
-Iškilajame keturkampyje $ABCD, \angle{CAB}= 40^{\circ},
-\angle{CAD}= 30^{\circ},\angle{DBA}= 75^{\circ},\angle DBC=25^\circ$.
-Rasti $\angle BDC$.
+Iškilajame keturkampyje $ABCD$ duoti kampai $\angle{CAB}= 40^{\circ}$,
+$\angle{CAD}= 30^{\circ}$, $\angle{DBA}= 75^{\circ}$, $\angle
+DBC=25^\circ$. Raskite $\angle BDC$.
 \end{pav}
 
 \begin{sprendimas}
@@ -4636,11 +4606,12 @@ ir $\angle BAC=20^\circ,\angle DAC=10^\circ, \angle BCA=50^\circ$.
 Rasti $\angle BDC$.
   %(Pirmas būdas) Trigonometrinis būdas: Nubrėžiame kuo tikslesnį
   % brėžinį ir spėjame, kad atsakymas yra $60^\circ$. Tegu įstrižainės 
-  %kertasi taške $O$. Tada $\tan \angle BDC= \frac{CE}{DE}=
-  %\frac{CE \cdot BE \cdot AE}{BE\cdot AE \cdot DE}=\tan 20^\circ
-  %\tan 40^\circ \tan 80^\circ$. Belieka parodyti, kad $\tan 20^\circ
-  %\tan 40^\circ \tan 80^\circ=\tan 60^\circ$, kas yra vidutinio
-  %sunkumo trigonometrijos uždavinys, paliekamas skaitytojui.
+  %kertasi taške $O$. Tada 
+  %$$\tan \angle BDC= \frac{CE}{DE}= \frac{CE \cdot BE \cdot AE}{BE\cdot AE
+  %\cdot DE}=\tan 20^\circ \tan 40^\circ \tan 80^\circ.$$ 
+  %Belieka parodyti, kad $\tan 20^\circ \tan 40^\circ \tan 80^\circ=\tan
+  %60^\circ$, kas yra vidutinio sunkumo trigonometrijos uždavinys,
+  %paliekamas skaitytojui.
   %
   %(Antras būdas) Geometrinis būdas: Tegu įstrižainės vėl kertasi taške 
   %$O$. Imame tašką $H$ ant $OC$ tokį, kad $\angle DHA=40^\circ$ ( 11 uždavinio idėja).
@@ -4902,6 +4873,47 @@ ir ciklinės perstatos. Išprastinę vardiklius gauname $(b-a)(b-c)<
 \subsubsection{Uždaviniai}
 
 \begin{enumerate}
+  \item Ant tiesės $a$ rasti tašką $G$ tokį, kad $AG+BG$ butų mažiausias, kur
+    $A$ ir $B$ yra taškai toje pačioje tiesės pusėje.
+    %Tegu taškas $B'$ yra simetriškas taškui $B$ tiesės $a$ atžvilgiu. Tegu
+    %$AB'$ kerta $a$ taške $G$. Šis taškas ir yra reikiamas taškas: jeigu $H$
+    %yra koks nors kitas taškas ant $a$, tai tada $AH + BH = AH + B'H \geq
+    %AB' = AG + GB' = AG + GB$ iš trikampio nelygybės.
+    %\begin{center}
+    %\begin{asy}
+    %import olympiad; size(200); pair A, B, BB, F, G, H;
+    %draw((0,0)--(100,0));
+    %label("$a$",(5,0),N,blue);
+    %A=(15,25); B=(90,10); H=(45,0);
+    %BB=conj(B);
+    %G=extension((0,0),(100,0),A,BB);
+    %F=extension((0,0),(100,0),B,BB);
+    %dot(A,blue);
+    %dot(B,blue);
+    %dot(BB,blue);
+    %dot(G,blue);
+    %dot(H,blue);
+    %dot(F,blue);
+    %label("$A$",A,NE,blue);
+    %label("$B$",B,NE,blue);
+    %label("$B'$",BB,NE,blue);
+    %label("$H$",H,N,blue);
+    %label("$G$",G,N,blue);
+    %label("$F$",F,NE,blue);
+    %draw(A--BB); 
+    %draw(A--H);
+    %draw(H--B);
+    %draw(H--BB);
+    %draw(G--B);
+    %draw(G--BB);
+    %draw(F--B);
+    %draw(F--BB);
+    %add(pathticks(H--B,2,0.5,30,100,red));
+    %add(pathticks(H--BB,2,0.5,30,100,red));
+    %add(pathticks(F--B,2,0.5,0,100,red));
+    %add(pathticks(F--BB,2,0.5,0,100,red));
+    %\end{asy}
+    %\end{center}
 \item Duotas trikampis $ABC$, taškas $O$ jo viduje.
   Įrodykite, kad $AB+BC+CA>AO+BO+CO> \frac{AB+BC+CA}{2}$.
   %Tegu tiesė, lygiagreti $BC$ ir einanti per $O$, kerta
@@ -4925,6 +4937,13 @@ ir ciklinės perstatos. Išprastinę vardiklius gauname $(b-a)(b-c)<
   %nelygybes. Kitai daliai galime pritaikyti 2 uždavinio
   %nelygybę pusiaukraštinių susikirtimo taškui ir padauginti
   %rezultatą iš $\frac{3}{2}$.
+  \item Duotas trikampis $ABC$ su $\angle ACB = 70^\circ$, o jo viduje yra
+  taškas $M$ toks, kad $\angle BAM = \angle ABC$, $\angle AMB = 100^\circ$.
+  Įrodyti, kad $BM<AC$.
+  %Paimkime ant kraštinės $BC$ tašką $K$ tokį, kad $\angle AKC = 80^\circ$.
+  %Tada trikampiai $AMB$ ir $AKB$  yra vienodi pagal du kampus ir kraštinę.
+  %Taigi $BM = AK$, bet $AK < AC$ iš trikampio nelygybės pritaikytos
+  %trikampiui $AKC$, ko ir reikėjo. 
 \item Duotas trikampis, o į jį įbrėžtas kvadratas taip, kad 
   jo dvi viršūnės yra ant vienos kraštinės, o ant kitų kraštinių
   po vieną viršūnę. Tegu $a$ yra kvadrato kraštinės ilgis, o
