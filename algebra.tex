@@ -1,1 +1,245 @@
+\section{Kompleksiniai skaičiai}
+
+Absoliučiai visose moksleivių matematikos olimpiadose, kuriose dalyvauja lietuviai, iki šiol nėra buvę uždavinio, kurio sąlygoje būtų pasitaiiusi sąvoka ,,kompleksinis'' ar bet kuri kita, tiesiogiai susijusi su kompleksiniais skaičiais. Kitaip tariant, bet kuris uždavinys galėjo būti išspręstas nenaudojant šių mistinių skaičių. Nepaisant to, kai kurie uždaviniai su kompleksiniais skaičiais galėjo būti išsprendžiami daug lengviau ir greičiau. Šiame skyrelyje ir susipažinsime su visų iki šiol žinomų realiųjų skaičių ,,vaiduokliškaisiais giminaičiais'', kurie, būdami išties nerealūs, yra itin galingas ginklas.  
+
+Apie kompleksinių skaičių surrealumą: jei, pavyzdžiui, $\sqrt{2}$ galima įsivaizduoti kaip vienetinio kvadrato įstižainę, tai kompleksinių skaičių negalima pamatyti. Siaurąja prasme, jų tiesiog nėra. Kitavertus, kompleksiniai skaičiai tėra protingas realiųjų skaičių išplėtimas, kuris yra ne kas kitas, kaip visų įmanomų kvadratinių lygčių su realiaisiais koeficentais sprendinių visuma. Iliustruokime pavyzdžiu: Akivaizdu, kad nėra tokio realaus skaičiaus $x$, kad $x^2+1=0$. Tačiau, jei įsivaizduosime, kad yra toks skaičius $i$ (nebūtinai realusis ir nebūtinai skaičius), kad $i^2=-1$, tai $i$ ir bus lygties sprendinys. Panašiai samprotaudami ir naudodami tą patį žymėjimą $i$, gauname, kad lygties $x^2-8x+17=0$ sprendiniai yra $4+i$ ir $4-i$. Tai - didelė egzotika jauniesiems matematikams, kuri parodo, kad egzistuoja kažkur visatos pasąmonėje įsivaizduojami realiųjų skaičių draugai, kurie daro pasaulį gražesnį.
+
+\subsection{Tiesiog kompleksiniai skaičiai}
+
+\subsubsection{Algebrinė forma}
+
+Jau beveik ir išsiaiškinome, kaip gimė kompleksiniai skaičiai. Anskčiau mes įsivaizdavome, kad kvadratinės šaknies iš neigiamo skaičiaus traukti negalima, tačiau pasirodė, kad, jei egzistuoja kažkas, ko kvadratas yra neigiamas skaičius, tai atsiveria neįtikėtinos galimybės. Kadangi sunku įsivaizduoti kas yra $\sqrt{-1}$ arba kas toks $x$, kad $x^2=-1$, matematikai šį skaičių pažymėjo $i$ ir pavadino menamuoju vienetu. Kompleksiniai skaičiai - tai skaičiai, formos $z=a+bi$, kur $a,b\in\R$. Čia $a$ vadinama skaičiaus $z$ realiąja dalimi, žymime $\re(z)$, o $b$ - menamąja dalimi, žymime $\im(z)$. Susitarta kompleksinių skaičių aibę žymėti $\C$. Forma $a+bi$ yra vadinama algebrine kompleksinio skaičiaus forma. 
+
+Kyla daug nujų ir natūralių klausimų. Viena jų: kaip palyginti kompleksinius skaičius? Atsakymas: negalima. Galime tik pasakyti, ar du kompleksiniai skaičiai yra lygūs. Taip bus tada ir tik tada, jei tų skaičių atitinkamai realiosios ir menamosios dalys bus lygios. Kitas klausimas: ar galima sudėti/sudauginti kompleksinius skaičius? Jei taip, tai kaip? Atsakymas yra džiuginantis: taip, lygiai kaip ir realiuosius skaičius. Tokios akivaizdžios realiųjų skaičių savybės, apie kurias net nesusimąstome (asociatyvumas, komutatyvumas, distributyvumas) čia taip pat galios ir yra ,,paveldėtos'' iš realiųjų. Aš tik priminsiu jas, o skaitytojas gali pats įsitinkinti, kad jos tikrai galioja kompleksiniams skaičiams: 
+
+\begin{itemize}
+\item Asociatyvumas: $(a+b)+c=a+(b+c)$ ir $(ab)c=a(bc)$; 
+\item Komutatyvumas: $a+b=b+a$ ir $ab=ba$;
+\item Distributyvumas: $ab+ac=a(b+c)$ ir $ba+ca=(b+c)a$.
+\end{itemize} 
+
+Padauginę kompleksinį skaičių iš -1 ir sudėje su kitu skaičiumi gauname atimties veiksmą. Kad galėtume sėkmingai dalinti, reikia susipažinti su dar viena sąvoka: Skaičiaus $z=a+bi$ jungtiniu vadinsime skaičių $a-bi$ ir žymėsime $\overline{z}$. Labai svarbios jungtinio savybės: tiek skaičius $z+\overline{z}$, tiek $z\overline{z}$ bus realieji. Skaičius $z$ yra realusis tada ir tik tada, jei $z=\overline{z}$. Be to: $\overline{(a+b)}=\overline{a}+\overline{b}$ ir $\overline{ab}=\overline{a}\overline{b}$. Dar daugiau: skaičius $z\overline{z}$ yra visada neneigiamas, o skaičius $\sqrt{z\overline{z}}$ yra vadinamas skaičiaus $z$ norma ir žymimas $|z|$. 
+
+Naudodami kompleksinio skaičiaus $z$ jungtinį galime nesunkiai surasti tiek $\im(z)$, tiek $\re(z)$:
+
+$$\im(z)=\frac{z-\overline{z}}{2i}\text{ ir }\re(z)=\frac{z+\overline{z}}{2}.$$
+
+Taigi, dalyba: tarkime, turime skaičius $z=a+bi$ ir $y=c+di$, tada, nepamiršdami, kad $i^2=-1$, gauname: $$\frac{z}{y}=\frac{z\overline{y}}{y\overline{y}}=\frac{(a+bi)(c-di)}{(c+di)(c-di)}=\frac{ac+bd+(bc-ad)i}{c^2+d^2}=\frac{ac+bd}{c^2+d^2}+\frac{bc-ad}{c^2+d^2}\cdot i.$$ Kaip matome, dalyba yra, nors labai svarbus, tačiau gana griozdiškas veiksmas.
+
+\subsubsection{Geometrinė interpretacija}
+
+Dar didesnė staigmena yra ta, kad kompleksinius skaičius yra beveik patogiau interpretuoti geometrine prasme. Žinoma, brėžiniai čia labai praverstų, tad raginu pagriebti popieriaus lapą ir nepatingėti pasibraižyti.
+Kiekvieną kompleksinį skaičių $a+bi$ galime įsivaizduoti kaip skaičių porą $(a,b)$. Akivaizdu, kad tai bus vienas su vienu atitikimas. Koordinačių plokštumoje kiekvienas taškas M$(a,b)$ atitiks lygiai vieną skaičių porą $(a,b)$. Belieka nusibraižyti koordinačių plokštumą, kurios horizontali ašis - realieji, žymima Re, o vertikalioji - menamoji ašis, žymima Im, arba, visi $ai$, kur $a$ - realus,  o $i^2=-1$. Gauname, kad kiekvienas plokštumos taškas atitinka kompleksinį skaičių. 
+
+Kompleksinį skaičių $z$ įsivaizduojame kaip rodyklę (vektorių) iš koordinačių pradžios taško į atitinkamą savo tašką. Šiek tiek pagalvojus, nesunku suprasti, kad skaičių (vektorių-rodyklę) galime vienareikšmiškai nusakyti žinodami tos rodyklės ir horizontaliosios Re ašies sudaromą kampą $\phi$, kur $\phi\in [ 0,2\pi )$, ir rodyklės ilgį $n$, vadinamą norma (taip, tai yra ta pati jau anksčiau minėta norma. Kodėl? Tuoj sužinosime). Kampas $\phi$ yra vadinamas skaičiaus $z$ argumentu ir žymime $\arg{z}$. Svarbu paminėti, kad rodyklei apsukus pilną ratą aplink koordinačių pradžią, skaičius nepasikeis. Vadinasi, argumentas irgi nepasikeis. Visgi, kažkas pasikeitė. Privalu tai aprašyti matematiškai. Tam sukuriame išplėstinę argumentų aibę $\Arg z=\{\arg z+2\pi k, k\in\Z\}$. Išplėstiniu argumentu arba dažnai tiesiog argumentu vadinsime bet kokį kampą $\phi=\arg z+2\pi k, k\in\Z$, tuo tarpu, kai $\arg z$ atpažįstamas kaip redukuotas argumentas, bet dažnai irgi vadinamas tiesiog argumentu. 
+
+Žinodami skaičiaus $z$ normą $r$ ir argumentą $\phi$, rasime jo algebrinę formą. Tam reikia rasti, kiek mūsų kompleksinis skaičius-taškas yra nutolęs nuo Re ir Im ašių. Tam įsivaizduojame statųjį trikampį, kurio įžambinė ilgio $n$ - skaičius-rodyklė, vienas statinis ilgio $b$ - atstumas nuo $z$ iki Re (statmuo), o kitas $a$ - atstumas nuo koordinačių pradžios taško iki anskčiau minėto statmens pagrindo. Gera idėja yra nusipiešti tai, kas čia parašyta. Pasitelkdami trigonometriją, galime suskaičiuoti statinių ilgius: $b=r \sin \phi$ ir $a=r\cos\phi$. Pastebime, kad taškas $z$ iki Im ašies yra nutolęs per $a$. Tai bus skaičiaus $z$ realioji dalis, tuomet $b$ - menamoji dalis. Taigi: $z=r\cos\phi+ri\sin\phi=r(\cos\phi+i\sin\phi)$. Paskutinis reiškinys yra vadinamas skaičiaus $z$ poliarine išraiška.
+
+Plačiai yra naudojamas pažymėjimas $z=r(\cos\phi+i\sin\phi)=r \cdot e^{i\phi}$, vadinamas skaičiaus $z$ poliarine forma. Naudojant šį sąryšį kaip apibrėžimą, nesunkiai galima įrodyti įprastų eksponentinės fukcijos savybių analogijas: \begin{itemize} 
+\item $e^{i\alpha}\cdot e^{i\beta}=e^{i(\alpha+\beta)}$;
+\item $k\in\N, \Big(e^{i\alpha}\Big)^k=e^{ik\alpha}$;
+\item $e^{i(\alpha+\beta)}+e^{i(\alpha+\gamma)}=e^{i\alpha}\big(e^{i\beta}+e^{i\gamma}\big).$
+\end{itemize}
+Šiek tiek susipažinus su kompleksinio kintamojo analize galima suprasti, kad toks pažymėjimas yra ne iš piršto laužtas ir tai iš tikrųjų atitinka skaičiaus $e$ kėlimą kompleksiniu laipsniu, tačiau šios įdomybės čia daugiau nebeplėtosime. $e^{i\phi}$ bus tik pažymėjimas, kuriam galios aukščiau užrašytos savybės.
+
+Jei norime iš skaičiaus algebrinės formos $z=a+bi$ išpešti jo normą ir argumentą, elgiamės ne mažiau išradingai. Kaip žinome, norma yra randama pagal $n=\sqrt{z\overline{z}}=\sqrt{a^2+b^2}$. Skaičių-rodyklę atitinka skaičių pora $(a,b)$, kur vienas skaičius yra koordinatė ant horizontalios ašies, o kita - ant vertikaliosios. Norėdami rasti rodyklės ilgį, naudojamės Pitagoro teorema ir gauname, kad ilgis yra lygiai tas pats kaip ir norma. Kad rastume argumentą, pasitelkiame atvirkštines trigonometrines funkcijas. Įsivaizduodami tą patį statųjį trikampį, rasime, kad $\phi=\arctan(\frac{b}{a})$, arba $\phi=\arcsin(\frac{b}{\sqrt{a^2+b^2}})$, arba $\phi=\arccos(\frac{a}{\sqrt{a^2+b^2}})$. 
+
+Kai įsitikinome, kad kompleksinio skaičiaus norma yra atstumas nuo tą skaičių atitinkančio taško iki koordinačių pradžios, galime pastebėti, kad visi skaičiai, kurių normos yra lygios $n$, sudaro apskritimą, kurio centras - koordinačių pradžia, o spindulys lygus $n$. 
+ 
+Kaip geometrine prasme galima sudėti du skaičius $z$ ir $y$? Čia pravers žinios apie vektorius. Jei skaitytojas dar nėra susipažinęs su vektoriais, raginu tą skubiai padaryti. Sudėdami atidedame bet kurį iš skaičių kaip rodyklę nuo taško $(0,0)$, tada kitą atidedame nuo anos rodyklės smaigalio. Tas taškas, į kurį nueiname per šias dvi rodykles ir bus suma. Skaičius $-z$ atitiks rodyklę, simetrišką rodyklei $z$ koordinačių pradžios, taško $(0,0)$, atžvilgiu. Skaičius $\overline{z}$ atitiks rodyklę, simetrišką $z$ rodyklei Re ašies atžvilgiu. 
+ 
+Itin įdomiai elgiasi skaičių normos ir argumentai, juos dauginant. Tarkime, turime du skaičius $z$ ir $y$ su jų poliarinėm išraiškom (taip bus lengviausia matyti kas vyksta): $z=n(\cos\phi+i\sin\phi)$ ir $y=m(\cos\gamma +i\sin\gamma)$. Sudauginame ir pasinaudojame trigonometinėmis formulėmis:
+
+\begin{eqnarray*}
+yz&=&mn(\cos\phi\cos\gamma+i\cos\phi\sin\gamma+i\sin\phi\cos\gamma-\sin\phi\cos\gamma)\\
+&=&mn(\cos(\phi+\gamma)+i\sin(\phi+\gamma)).
+\end{eqnarray*}
+
+Išpešę iš šios išraiškos sandaugos $yz$ normą ir argumentą gauname, kad: $$|yz|=|y||z|\text{ ir } \Arg yz=\{ \arg y+\arg z+2\pi k, k\in\Z\}.$$ Taigi, normos susidaugino, ko ir buvo galima tikėtis, o argumentai (o, stebukle!) susisumavo.  
+
+\subsubsection{Trikampio nelygybė}
+
+Kompleksiniams skaičiams, analogiškai kaip ir realiesiems, galioja trikampio nelygybė.
+\begin{thm} Jei $z_1,z_2\in\C$, tai
+$$||z_1|-|z_2||\leq |z_1+z_2|\leq |z_1|+|z_2|.$$
+\end{thm}
+
+Nelygybę galime nesunkiai įrodyti pažymėję $z_1=a+bi$ ir $z_2=c+di$, skaičiuodami normas, keldami kvadratu, prastindami ir pan. Raginu skaitytojus tą padaryti patiems. Čia pateikiame įrodymą, naudojantį kompleksinių skaičių savitumus kaip primityvias gudrybes.
+
+\begin{teig}
+Jei $z\in\C$, tai $\re(z)\leq |z|$.
+\end{teig}
+
+\begin{proof}[Įrodymas]
+Jei $z=a+bi$, tai $\re(z)=a\leq \sqrt{a^2}\leq \sqrt{a^2+b^2}=|z|$.
+\end{proof}
+
+\begin{teig}
+Jei $z\in\C$, tai $|z|=|\overline{z}|$.
+\end{teig}
+
+\begin{proof}[Įrodymas]
+Reikia tik pastebėti, kad, jei $z=a+bi$, tai $\overline{z}=a-bi$, ir tuomet $|z|=\sqrt{a^2+b^2}=|\overline{z}|$.
+\end{proof}
+
+\begin{proof}[Trikampio nelygybės įrodymas]
+\begin{eqnarray*}
+|z_1+z_2|^2&=&(z_1+z_2)(\overline{z_1}+\overline{z_2})=z_1\overline{z_1}+z_1\overline{z_2}+\overline{z_1}z_2+z_2\overline{z_2} \\
+&=& |z_1|^2+2\re(z_1\overline{z_2})+|z_2|^2\\
+&\leq & |z_1|^2+2|z_1\overline{z_2}|+|z_2|^2\\
+&=& |z_1|^2+2|z_1||\overline{z_2}|+|z_2|^2 = |z_1|^2+2|z_1||z_2|+|z_2|^2 \\
+&=& (|z_1|+|z_2|)^2.
+\end{eqnarray*}
+
+Kadangi tiek $|z_1+z_2|$, tiek $|z_1|+|z_2|$ yra neneigiami, tai $$|z_1+z_2|\leq |z_1|+|z_2|.$$
+
+Kad įrodytume kitą nelygybę, naudojamės jau įrodytąja:
+
+$$|z_1|=|(z_1+z_2)+(-z_2)|\leq |z_1+z_2|+|-z_2|=|z_1+z_2|+|z_2|.$$ Taigi: $$|z_1|-|z_2|\leq |z_1+z_2|.$$ Sukeitę $z_1$ ir $z_2$ vietomis, gaunam: $$|z_2|-|z_1|\leq |z_1+z_2|.$$
+
+Iš teiginių $x\leq y$ ir $-x\leq y$ galime daryti išvadą, kad $|x|\leq y$. Vadinasi: $$||z_1|-|z_2||\leq |z_1+z_2|.$$
+
+\end{proof}
+
+\subsubsection{Ryšys su daugianariais}
+
+Žinome, kad kiekviena kvadratinė lygtis turi lygiai dvi (nebūtinai skirtingas) kompleksinias šaknis. Analogiškas, intuityvus, labai naudingas, bet gana sunkiai įrodomas faktas: 
+
+\begin{thm}[Fundamentalioji algebros teorema] Kiekvienas $n$-tojo laipsnio daugianaris $f(x)$ su kompleksiniais koeficientais turi lygiai $n$ kompleksinių šaknų įskaitant ir kartotines šaknis. Dar daugiau: 
+$$f(x)=c(x-c_1)(x-c_2)...(x-c_n),\text{ kur }c,c_1,c_2,...,c_n\in\C.$$\end{thm}
+
+\subsubsection{Pavyzdžiai}
+
+\begin{pavnr}
+$r_1,r_2,r_3\in\C$. ir $$|r_1|=|r_2|=|r_3|=r>0$$ ir $r_1+r_2+r_3\neq 0$. Įrodykite, kad $$\Bigg\vert\frac{r_1r_2+r_2r_3+r_1r_3}{r_1+r_2+r_3}\Bigg\vert=r.$$  
+\end{pavnr}
+
+\begin{sprendimas}
+Turime $r_1\overline{r_1}=r_2\overline{r_2}=r_3\overline{r_3}=r^2.$ Tuomet: \begin{eqnarray*} 
+\Bigg\vert\frac{r_1r_2+r_2r_3+r_1r_3}{r_1+r_2+r_3}\Bigg\vert ^2&=&\frac{r_1r_2+r_2r_3+r_1r_3}{r_1+r_2+r_3}\cdot\frac{\overline{r_1r_2}+\overline{r_2r_3}+\overline{r_1r_3}}{\overline{r_1}+\overline{r_2}+\overline{r_3}}\\
+&=&\frac{r_1r_2+r_2r_3+r_1r_3}{r_1+r_2+r_3}\cdot \frac{\frac{r^2}{r_1}\cdot\frac{r^2}{r_2}+\frac{r^2}{r_2}\cdot\frac{r^2}{r_3}+\frac{r^2}{r_1}\cdot\frac{r^2}{r_3}}{\frac{r^2}{r_1}+\frac{r^2}{r_2}+\frac{r^2}{r_3}}\\
+&=&r^2,\end{eqnarray*} ką ir norėjome pasiekti.
+\end{sprendimas}
+
+\begin{pavnr}
+Turime $c_1,c_2\in\C$ ir $$|c_1|=|c_2|=n>0.$$ Įrodykite, kad $\frac{c_1+c_2}{n^2+c_1+c_2}, \frac{c_1-c_2}{n^2-c_1c_2}\in \R$ ir kad galioja nelygybė $$\Bigg(\frac{c_1+c_2}{n^2+c_1c_2}\Bigg)^2+\Bigg(\frac{c_1-c_2}{n^2-c_1c_2}\Bigg)^2\geq\frac{1}{r^2}.$$ 
+\end{pavnr}
+
+\begin{sprendimas}
+Įrodinėjama nelygybė yra ekvivalenti $$\Bigg(\frac{r(c_1+c_2)}{n^2+c_1c_2}\Bigg)^2+\Bigg(\frac{r(c_1-c_2)}{n^2-c_1c_2}\Bigg)^2\geq 1.$$ Pakeičiame $c_1=\cos 2x+i\sin 2x$ ir $c_2=\cos 2y+i\sin 2y$. Žinodami, kad kompleksinsius skaičius dauginant jų normos susidaugina, o argumentai susideda, ir naudodami trigonometrines tapatybes, gauname: \begin{eqnarray*}
+\frac{n(c_1+c_2)}{n^2+c_1c_2}&=&\frac{n^2(\cos 2x+i\sin 2x+\cos 2y+i\sin 2y)}{n^2(1+\cos(2x+2y)+i\sin(2x+2y))}\\
+&=&\frac{2\cos(x+y)\cos(x-y)+2i\sin(x+y)\cos(x-y)}{2\cos ^2(x+y)+2i\sin(x+y)\cos(x+y)}=\\
+&=&\frac{\cos(x-y)\left(2\cos(x+y)+2i\sin(x+y)\right)}{\cos(x+y)\left(2\cos(x+y)+2i\sin(x+y)\right)}\\
+&=&\frac{\cos (x-y)}{\cos(x+y)}.
+\end{eqnarray*}
+Panašiai gausime, kad $$\frac{n(c_1-c_2)}{n^2-c_1c_2}=\frac{\sin(y-x)}{\sin(x+y)}.$$ Tuomet: \begin{eqnarray*}
+\Bigg(\frac{n(c_1+c_2)}{n^2+c_1c_2}\Bigg)^2+\Bigg(\frac{n(c_1-c_2)}{n^2-c_1c_2}\Bigg)^2&=&\frac{\cos ^2(x-y)}{\cos ^2(x+y)}+\frac{\sin ^2(x-y)}{\sin ^2 (x+y)}\\
+&\geq & \cos ^2(x-y)+\sin ^2(x-y)=1
+\end{eqnarray*}
+\end{sprendimas}
+
+\begin{pavnr}
+Tegu $z_1,z_2$ bus tokie kompleksiniai skaičiai, kur $$|z_1|=|z_2|=1.$$ Įrodykite nelygybę $$|z_1+1|+|z_2+1|+|z_1z_2+1|\geq 2.$$
+\end{pavnr}
+
+\begin{sprendimas}
+\begin{eqnarray*}
+|z_1+1|+|z_2+1|+|z_1z_2+1|&\geq &|z_1+1|+|z_1z_2+1-z_2-1|\\
+&=&|z_1+1|+|z_2||z_1-1|=|z_1+1|+|z_1-1|\\
+& \geq &|z_1+1+z_1-1|=2|z_1|=2.
+\end{eqnarray*}
+\end{sprendimas}
+
+\begin{pavnr}
+Rasime skaičiaus $1+e^{i\phi}$ poliarinę formą.
+\end{pavnr}
+
+\begin{sprendimas}
+$$1+e^{i\phi}=e^{i\frac{\phi}{2}}\big(e^{i\frac{-\phi}{2}}+e^{i\frac{\phi}{2}}\big)=\cos\Big(\frac{\phi}{2}\Big)e^{i\frac{\phi}{2}}.$$ Paskutinį pertvarkymą paliekame išsiaiškinti pačiam skaitytojui naudojantis apibrėžimais. Tai, ką gavome, nėra skaičiaus poliarinė forma, nes $\cos\Big(\frac{\phi}{2}\Big)$ gali būti neigiamas, todėl nėra skaičiaus norma. Skaičiaus norma yra vertė $|\cos\Big(\frac{\phi}{2}\Big)|$. Kai kosinusas neigiamas, reikia ,,kompensuoti'' ženklo pasikeitimą padidinant argumentą $\pi$, nes $e^{i\pi}=-1$ Vadinasi, galiausiai gauname:$$1+e^{i\phi}=\begin{cases}
+\cos\Big(\frac{\phi}{2}\Big)\cdot e^{i\frac{\phi}{2}}, \text{ kai }-\pi+4\pi k\leq \phi \leq \pi+4\pi k, k\in\Z;\\
+|\cos\Big(\frac{\phi}{2}\Big)|\cdot e^{i\big(\frac{\phi}{2}+\pi\big)}, \text{ kai }\pi+4\pi k<\phi<3\pi+4\pi k, k\in\Z.
+\end{cases}$$
+\end{sprendimas}
+
+\subsubsection{Uždaviniai}
+\begin{enumerate}
+\item Apskaičiuokite $i^{1707}-i^{1966}+i^{1616}+i^{1777}$.
+%Žinome, kad $i^4=1$. Dar daugiau: \begin{eqnarray*} i^{4k}=1;\\ i^{4k+1}=i; \\ i^{4k+2}=-1; \\ i^{4k+3}=-i. \end{eqnarray*} Taigi, duotasis reiškinys lygus $-i-(-1)+1+i=2$. 
+\item Išspręskite lygtis kompleksiniais skaičiais:
+%%noparse
+	\begin{enumerate}
+	\item $x^4-x^2-12=0$;
+	\item $5 x^4+2 x^3+6 x^2+2 x+1= 0$;
+	\item $x^4+1=0$;
+	\item $x^3=-\overline{x}$;
+	\end{enumerate}
+%%parse
+% \begin{enumerate} \item Tenka spėlioti šaknis. Mums sekasi: 2 ir -2 tinka. Vadinasi, daugianaris kairėje pusėje dalinasi iš $x^2-4$. Padalinę gauname $x^4-x^2-12=(x^2-4)(x^2+3)$. Lieka spręsti $x^2+3=0$. Šios lygties sprendiniai yra $i\sqrt{3}$ ir $-i\sqrt{3}$. \item Nesunku patikrinti, kad skaičiai $i$ ir $-i$ yra lygties šaknys. Vadinasi, daugianaris kairėje dalinasi iš $x^2+1$. Padalinę gauname $5 x^4+2 x^3+6 x^2+2 x+1=(x^2+1)(5x^2+2x+1)$. Lieka išspręsti $5x^2+2x+1=0$, ką galima lengvai padaryti iškeliant pilną kvadratą, skaičiuojant diskriminantą ar pan. Sprendiniai yra $-\frac{1}{5} - \frac{2i}{5}$ ir $-\frac{1}{5} + \frac{2i}{5}$. \item Pastebime, kad lygties $x^2=i$ sprendiniai tenkins pagr. lygtį. Skaičiaus $i$ norma yra 1, o argumentas $\frac{\pi}{2}$. Taigi, $x$ norma bus 1, o argumentas $\frac{\pi}{4}$ arba $\frac{5\pi}{4}$. Kiti du sprendiniai tenkins $x^2=-i$. Skaičiaus $-i$ norma bus $1$, o argumentas - $\frac{3\pi}{2}$. Taigi $x$ norma bus irgi 1, o argumentas $\frac{3\pi}{4}$ arba $\frac{7\pi}{4}$. \item $x$ norma gali bū ti tik 1 arba 0. Akivaizdu, kad 0 yra lygties sprendinys. $x$ argumentą pažymėkime $\phi$. Tuomet $\arg \overline{x}=2\pi - \phi$. $-\overline{x}$ argumentas bus $-\phi +\pi+2\pi k$, kur $k\in\Z$. $x^3$ argumentas bus $3\phi$. Taigi: \begin{eqnarray*} &&3\phi=-\phi +\pi+2\pi k \\ &\Rightarrow & 4\phi =\pi+ 2\pi k \\ &\Rightarrow & \phi=\frac{\pi}{4}+\frac{\pi k}{2} \end{eqnarray*} Kai $k\in\{0,1,2,3\}$, tai $\phi_k\in[0,2\pi)$ ir šaknys skirtingos. Radome 5 pagrindinės lygties sprendinius.  \end{enumerate}
+\item Įrodykite, kad, jei $|z_1|=|z_2|=1$ ir $z_1z_2\neq -1$, tai $\frac{z_1+z_2}{1+z_1z_2}$ yra realusis skaičius.  
+\item Tegu $x,y,z\in\C$ tenkina $x+y+z=0$ ir $|x|=|y|=|z|=1$. Įrodykite, kad $$x^2+z^2+y^2=0.$$
+\item Įrodykite, kad bet kokiems $x,y,z\in\C$ galioja nelygybė $$|x|+|y|+|z|\leq |x+y-z|+|x-y+z|+|-x+y+z|.$$
+\item Tegu skaičiai $x_1,x_2\in\C$ bus lygties $x^2-x+1=0$ šaknys. Kokias reikšmes gali įgyti $x_1^n+x_2^n$, kai $n\in\N$?
+\item Tegu $\omega\in\C$ ir $$\frac{1+\omega+\omega^2}{1-\omega+\omega^2}\in\R.$$ Įrodykite, kad arba $\omega $ realusis arba $|\omega|=1.$
+\item Tegu $z$ bus toks kompleksinis skaičius, kad $|z|=1$. Įrodykite: $$n|1+z|+|1+z^2|+|1+z^3|+...+|1+z^{2n}|+|1+z^{2n+1}|\geq 2n.$$
+\item Tegu $a,b,c$ - skirtingi kompleksiniai skaičiai, kur $|a|=|b|=|c|\neq 0$. Įrodykite, kad, jei lygtys $$ax^2+bx+c=0 \text{ ir } bx^2+cx+a=0$$ turi bent po šaknį, kurios norma 1, tai $$|a-b|=|b-c|=|c-a|.$$
+\end{enumerate}    
+
+\subsection{Vieneto šaknys}
+
+\subsubsection{Kas tas yr}
+
+Kompleksinės vieneto šaknys - bene dažniausiai opimpiadiniuose uždaviniuose panaudojama koncepcija. Turime lygtį $x^3=1$. Akivaizdu, kad lygties šaknis yra 1. Tačiau, pagrindinė algebros teorema teigia, kad yra lygiai trys šaknys. Kad jas rastume, pertvarkome lygtį, gauname: $(x-1)(x^2+x+1)=0$. Belieka spręsti lygtį $x^2+x+1$. Ji realiųjų šaknų neturi, tačiau turi dvi kompleksines. Jas randame lygiai taip, kaip spręstume bet kokią kitą kvadratinę lygtį: ieškome diskriminanto, statome skaičiukus į formulę ir t.t., arba bet kokiu kitu būdu. Visa esmė yra nepamiršti ir pažymėti $\sqrt{-1}=i$. Taigi, šios lygties sprendiniai bus $\frac{-1+i\sqrt{3}}{2}$, $\frac{-1-i\sqrt{3}}{2}$. Kartu su 1, šie trys skaičiai yra 3-iojo laipsnio kompleksinės vieneto šaknys. Analogiškai, egzistuoja bet kokio, $n$-ojo laipsnio šaknys, tačiau absoliučioje daugumoje atvejų su jomis sunku dirbti algebrinėje formoje, tad reikia pasukti galvą kaip kitaip jas apčiuopti. 
+
+Surasime 7-ojo laipnio šaknis. Rasti visus 7 lygties $x^7=1$ sprendinius ,,plikom rankom'' gana kėblu. Tenka mąstyti kitaip. Reikia rasti skaičius, kuriuos su dauginus su savim 7 kartus, gautume 1. Prisimename, kaip kinta skaičių normos ir argumentai juos dauginant. Tarkime, ne realusis lygties sprendinys bus $z$. Jo norma $|z|$ turi tenkinti $|z|^7=1$, tačiau $|z|$ - realusis, todėl privalo būti $|z|=1$. 
+
+Panašiai, skaičiaus $z$ (išpėstinis) argumentas $\phi$ turi tenkinti $7\phi=2\pi k$, kur $k$ - sveikasis skaičius. Kiekvienam $k\in\Z$ gauname $\phi _k=\frac{2\pi k}{7}$. Norime rasti visus tokius skirtingus $\phi _k$, kad $0\leq \phi _k < 2\pi$. Pastebime, kad $0=\phi _0<\phi _1<\phi _2<...<\phi _6<2 \pi $. Taigi, visi $\phi _k$, kur $k\in\{0,1,2,3,4,5,6\}$ ir bus ieškomi (redukuoti) argumentai. Radome lygiai septynias šaknis. Reikia įsitikinti, kad jokie kiti $k$ naujų šaknų neduos. Tarkime, kažkoks $k\in\Z$ duoda liekaną $r\in\{0,1,2,3,4,5,6\}$ dalinant iš 7. Tuomet, $k=r+7q$, kur $q\in\Z$. Tuomet: $\phi _k=\frac{2\pi k}{7}=\frac{2\pi r+2\pi 7q}{7}=\frac{2\pi r}{7}+2\pi q=\phi _r+2\pi q$. Akivaizdu, kad šis argumentas atitiks kažkurią anksčiau rastą šaknį. 
+
+Vadinasi, septinto laipsnio vieneto šaknys bus formos $\cos{\frac{2\pi k}{7}}+i\sin{\frac{2\pi k}{7}}$, kur $k=\{ 0,1,2,3,4,5,6\} $. Bendru atveju, $n$-ojo laipsnio šaknys užrašomos $\cos{\frac{2\pi k}{n}}+ i\sin{\frac{2\pi k}{n}}$, kur $k\in\Z$ ir $0\leq k\leq n-1$.
+
+Geometriškai vieneto šaknis įsivaizduojame kaip taisyklingojo daugiakampio viršūnes, kurios išdėstytos ant vienetinio apskritimo, o viena jų sutampa su tašku $(1,0)$. Šis teiginys gana paprastas suvokti: visš šaknų normos lygios 1, tad jos visos vienodai nutolosios nuo koordinačių pradžios taško. 1 visada yra šaknis. Pažymėsime šaknis $Z_0, Z_1,...,Z_{n-1}$, kur $Z_i=\cos{\frac{2\pi i}{n}}+ i\sin{\frac{2\pi i}{n}}$. Skaičiuojame lanką tarp dviejų gretimų tokių skaičių, kuris yra lygus:
+
+$$\arg Z_i-\arg Z_{i-1}=\frac{2\pi i-2\pi (i-1)}{n}=\frac{2\pi}{n}.$$ Matome, kad nepriklausomai nuo $i$ pasirinkimo lankas yra lygus $\frac{1}{n}$ viso apskritimo. Kadangi šaknų yra $n$, taigi, ir tarpų, vadinasi šaknys sudaro taisyklingą daugiakampį. 
+
+Beje, jei natūraliųjų skaičių $p$ ir $q$ didžiausias bendras daliklis lygus $d$, tai $p$-ojo ir $q$-ojo laipsnių šaknų rinkiniai turės lygiai $d$ bendrų šaknų. Atskiras atvejis: jei $p|q$, tai visos $p$ laipsnio šaknys bus ir $q$ laipnio šaknys.
+
+\begin{teig}
+Pažymėkime visas $n$-tojo laipsnio šaknis $\zeta_1, \zeta_2, \zeta_3, ..., \zeta_n$. Tada, $$\zeta_1+\zeta_2+\zeta_3+...+\zeta_n=0.$$
+\end{teig}
+
+\begin{proof}[Įrodymas]
+Žinome, kad skaičiai yra lygties $x^n-1=0$ sprendiniai. Iš Vieto teoremos, visų sprendinių suma lygi koeficientui prie antro didžiausio laipnio, padaugintam iš -1. Šiuo atveju, keoficientas prie $x^{n-1}$ lygus 0, vadinasi visų šaknų suma lygi 0. 
+\end{proof}
+
+\subsubsection{Primityviosios šaknys}
+
+Dar vienas labai naudingas pastebėjimas: $n$-ojo laipsnio vieneto šaknų rinkinys turi vieną, arba kelias šaknis, kurios, keliamos laisniais, sugeneruoja visas likusias rinkinio šaknis. Tokios šaknys vadinamos primityviosiomis. Pavyzdžiui, šaknis $\zeta_1=\cos{\frac{2\pi}{n}}+i\sin{\frac{2\pi}{n}}$ yra primityvioji su visais $n$, nes keliant laipsniu $k=1,2,3,...,n$, gauname vis naują šaknį $\zeta_k=\zeta_1^k=\cos{\frac{2\pi k}{n}}+i\sin{\frac{2\pi k}{n}}$ iki galiausiai pereisime visas šaknis ir pabaigoje gausime 1. 
+
+Kaip žinoti, kurios šaknys yra primityviosios? Jas susikuriame taip: imame šaknį $\zeta_1$ ir keliame laipsniais, mažesniais ir tarpusavy pirminiais su $n$. Įsitikiname, kad tokia šaknis $\zeta_1^q$ bus primityvioji: kad pakėlus kažkokiu laipsniu, gausime pasirinktą šaknį $\zeta_1^m$. Kadangi $q$ ir $n$ yra tarpusavy pirminiai, tai egzistuos tokie $a,b\in\Z$, kad $aq+bn=1$, todėl $aqm+bnm=m$, be to, $\zeta_1^{bnm}=1$. 
+
+$$(\zeta_1^q)^am=\zeta_1^{aqm}\cdot 1=\zeta_1^{aqm}\cdot\zeta_1^{bnm}=\zeta_1^{aqm+bnm}=\zeta_1^{m}.$$ 
+
+Beliko įsitikinti, kad, kai $\dbd{q,m}=d>1$, tai kažkuri(os) šaknys nebus gaunamos. Tuomet $\frac{n}{d}<n$ ir $(\zeta_1^{d})^{\frac{n}{d}}=1$. Matome, kad šaknis, keliama laipsniais, duos vienetą greičiau nei bus gauta n skirtingų liekanų, vadinasi garantuotai kažkurios šaknys bud praleistos. 
+
+Taigi, minėtu metodu gausime lygiai visas primityviąsias šaknis ir jų bus lygiai $\phi(n)$, kur $\phi$ - jau žinoma Euler'io funkcija. 
+\subsubsection{Pavyzdžiai}
+\begin{pavnr}
+Tegu $P(x)=x^4+x^3+x^2+x+1$. Kokią liekaną duoda dalinant $P(x^5)$ iš $P(x)$?
+\end{pavnr}
+
+\begin{sprendimas}
+Padalinus, egzistuos du tokie daugiariai $R(x)$ ir $Q(x)$, kad $P(x^5)=P(x)Q(x)+R(x)$. Liekana bus daugianaris $R(x)$, ir jo laipsnis bus mažesnis nei 4. Daugianario $P(x)$ šaknys yra kompleksinės 5-ojo laipsnio šaknys iš 1: $w_1, w_2, w_3,w_4$ ir $P(w_1^5)=P(w_2^5)=P(w_3^5)=P(w_4^5)=P(1)=5$. Įstatę šias reikšmes į lygtį $P(x^5)=P(x)Q(x)+R(x)$ vietoj $x$, gauname, kad $R(x)$ įgyja reikšmę 5 keturis kartus. Kadangi jo laipsnis negali būti didesnis už 4, tai $R(x)$ yra konstanta 5. 
+\end{sprendimas}
+
+\begin{pavnr}
+Koks yra didžiausias bendras daugianarių $f(x)=x^{2011}-1$ ir $g(x)=(x-1)^{2012}-1$ daliklis? 
+\end{pavnr}
+
+\begin{sprendimas}
+Daugianario $f(x)$ šaknys yra išsidėstę ant vienetinio apskritimo, kurio centras - 0. Daugianario $g(x)$ šaknys yra ant apskritimo, kurio centras yra 1. Apskritimai kertasi taškuose, kurie yra šeštojo laipsnio šaknys iš 1. Tačiau tie taškai nėra $f(x)$ šaknys. Vadinasi, daugianariai $f(x)$ ir $g(x)$ bendrų šaknų neturi, taigi neturi ir netrivialaus daugianario, kuris juos abu dalintų. Taigi, didžiausias bendras daliklis yra 1. 
+\end{sprendimas}
+
+\subsubsection{Uždaviniai}
+\begin{enumerate}
+\item Tegu $\epsilon$ bus primityvioji $n$-tojo laipsnio šaknis iš 1. $z$ bus toks kompleksinis skaičius, kad $|z-\epsilon^k|\leq 1$ su visais $k\in{1,2,3,...,n}$. Įrodykite, kad $z=0$.
+\end{enumerate}
 
