@@ -22,6 +22,8 @@ nesidalija iš daugianario $x^3$. Dalindami gausime $x^4 - 3x^2 + 2 =
 x^3\cdot x - 3x^2 + 2.$ Matome, kad liekanos - $3x^2 + 2$ laipsnis iš ties
 mažesnis už daliklio $x^3$ laipsnį.      
 
+\subsubsection{Daugianario šaknys}
+
 Lygties $P(x) = 0$ sprendinius vadinsime daugianario $P(x)$
 \emph{šaknimis}. Ši sąvoka yra esminė, tad daugianario šaknims skirsime
 visą likusią užduotį. Pradėkime nuo labai svarbios teoremos.
@@ -30,7 +32,7 @@ visą likusią užduotį. Pradėkime nuo labai svarbios teoremos.
 $n$-tojo laipsnio daugianaris turi ne daugiau nei $n$ šaknų.
 \end{thm}
 
-Prieš įrodydami teoremą panagrinėkime pavyzdžiui daugianarį $x^3 - x$.
+Prieš įrodydami teoremą panagrinėkime, pavyzdžiui, daugianarį $x^3 - x$.
 Kadangi daugianaris kubinis (trečio laipsnio), tai jis turi turėti ne
 daugiau kaip tris šaknis. Kaip tuo įsitikinti? Išskaidykime jį
 dauginamaisiais: $x^3-x =x(x-1)(x+1).$ Spręsdami lygtį $x(x-1)(x+1) = 0$
@@ -143,26 +145,27 @@ Daugianariams skaidyti dažnai naudojamos lygybės, kurias privalu mokėti
 mintinai. Visiems $n$:
 $$a^n - b^n = (a-b)(a^{n-1} + a^{n-2}b + a^{n-3}b^2 + \cdots +
 a^2b^{n-3}+ab^{n-2} + b^{n-1} ),$$
-nelyginiams n:
-$$a^n + b^n = (a+b)(a^{n-1} - a^{n-2}b + a^{n-3}b^2 - \cdots -
-a^2b^{n-3}+ab^{n-2} - b^{n-1} ).$$
+nelyginiams $n$:
+$$a^n + b^n = (a+b)(a^{n-1} - a^{n-2}b + a^{n-3}b^2 - \cdots +
+a^2b^{n-3} - ab^{n-2} + b^{n-1} ).$$
 
 Atskirais atvejais jos pavirsta į labai dažnai sutinkamas
 $$a^2 - b^2 = (a+b)(a-b) \text{ ir } a^3+b^3 = (a+b)(a^2-ab+b^2).$$  
 
 Pavyzdžiui išskaidykime daugianarį $x^4 - x^2 - 2x - 1$ dauginamaisiais.
 Užtenka pastebėti pilną kvadratą: $$x^4 - x^2 - 2x - 1 = x^4 - (x+1)^2 =
-(x^2- x -1)(x^2+ x+ 1) = (x - \frac{-1 + \sqrt{5}}{2})(x - \frac{-1 -
-\sqrt{5}}{2})(x^2+ x+ 1).$$
+(x^2 - x - 1)(x^2 + x + 1) = (x - \frac{-1 + \sqrt{5}}{2})(x - \frac{-1 -
+\sqrt{5}}{2})(x^2 + x + 1).$$
 
 Atkreipkime dėmesį į tai, kad pradinio daugianario koeficientai buvo
 sveikieji skaičiai, o dviejų gautų daugiklių nebe. Toks skaidymas kartais
 gali neturėti prasmės (pavyzdžiui sprendžiant skaičių teorijos uždavinį),
 todėl prasminga yra suvokti kokių koeficientų mes skaidydami tikimės -
-sveikųjų ar realiųjų (ar kompleksinių). Tai ir nusako terminai skaidymas
-\emph{virš realiųjų skaičių} ir \emph{virš sveikųjų skaičių}. Skaidymas
-virš racionaliųjų gerokai skiriasi nuo skaidymo virš realiųjų. Pavyzdžiui
-pastarajam galioja tokia teorema:
+sveikųjų, racionaliųjų ar realiųjų (ar kompleksinių). Tai ir nusako
+terminai skaidymas \emph{virš realiųjų skaičių} ir \emph{virš sveikųjų
+skaičių}. Kaip pamatysime vėliau, skaidymas virš racionaliųjų praktiškai
+nesiskiria nuo skaidymo virš sveikųjų, tačiau gerokai skiriasi nuo skaidymo
+virš realiųjų. Pastarajam, pavyzdžiui, galioja tokia teorema:
 
 \begin{thm}
 Kiekvieną daugianarį su realiaisiais koeficientais galima virš realiųjų
@@ -176,10 +179,10 @@ dauginamuosius. Deja, tos šaknies taip lengvai nerasime (įdomumo dėlei ji
 lygi $-\frac{(108+12\sqrt{93})^{1/3}}{6}+
 \frac{2}{(108+12\sqrt{93})^{1/3}}$.)
 
-Skaidymui virš racionaliųjų, kita vertus, galime naudoti neapibrėžtų
-koeficientų metodą. Išskaidykime pavyzdžiui daugianarį $x^4 + x^2 + 1$.
-Sveikųjų šaknų jis neturi, todėl nario $x-a$ atskelti nepavyks. Vadinasi,
-jei ir išskaidysime virš racionaliųjų, tai į dviejų kvadratinių daugianarių
+Skaidymui virš sveikųjų, kita vertus, galime naudoti neapibrėžtų
+koeficientų metodą. Išskaidykime, pavyzdžiui, daugianarį $x^4 + x^2 + 1$.
+Sveikųjų šaknų jis neturi, todėl dauginamojo $x-a$ atskelti nepavyks. Vadinasi,
+jei ir išskaidysime virš sveikųjų, tai nebent į dviejų kvadratinių daugianarių
 sandaugą: $$x^4 + x^2 + 1 = (A_1x^2 + B_1x + C_1)(A_2x^2 + B_2x + C_2).$$
 Aišku, kad $A_1$ ir $A_2$ turi abu būti lygūs $1$ arba $-1$. Jei abu lygūs
 $-1$, tai padauginę abu daugianarius iš $-1$ gausime skaidinį, kuriame abu
@@ -187,10 +190,15 @@ lygūs $1$. $C_1$ ir $C_2$ irgi gali būti lygūs $-1$ arba $1$. Pabandykime
 pastarąjį variantą. Tuomet gauname: 
 $$x^4 + x^2 + 1 = (x^2 + B_1x + 1)(x^2 + B_2x + 1).$$
 Atskliaudę ir sulyginę koeficientus prie $x^3$, $x^2$ ir $x$ gausime
-$B_1+B_2 = 0$, $2+B_1B_2 = 1$, $B_1+B_2=0.$ Išsprendę lengvai randame $B_1
-= 1$, $B_2 = -1$. Vadinasi $$x^4 + x^2 + 1 = (x^2 + x + 1)(x^2 - x + 1).$$
-Jei išbandę visus variantus gauname sistemas, kurios racionaliųjų
-sprendinių neturi, tai vadinasi daugianaris virš racionaliųjų nesiskaido.
+\begin{align*}
+B_1 + B_2 &= 0 //
+2 + B_1B_2 &= 1 //
+B_1 + B_2 &= 0 
+\end{align*}
+Išsprendę lengvai randame $B_1 = 1$, $B_2 = -1$. Vadinasi $$x^4 + x^2 + 1 =
+(x^2 + x + 1)(x^2 - x + 1).$$ Jei išbandę visus variantus gauname sistemas,
+kurios sveikųjų sprendinių neturi, tai vadinasi daugianaris virš
+sveikųjų nesiskaido.
 
 \subsection{Vijeto teorema}
 
