@@ -1,0 +1,552 @@
+\section{Daugianariai}
+
+Daugianariu vadinsime funkciją $P:\R \rightarrow \R$, turinčią pavidalą
+$$P(x) = a_nx^n + a_{n-1}x^{n-1} + \cdots +a_1x + a_0, \text{ kur } a_i\in
+\R \text{ ir } a_n \neq 0.$$
+Natūralusis skaičius $n$ yra vadinamas daugianario \emph{laipsniu},
+realieji skaičiai $a_i$ - \emph{koeficientais}, koeficientas $a_n$ -
+\emph{vyriausiuoju koeficientu}, o $a_0$ - \emph{laisvuoju nariu}. 
+
+Sakysime, kad daugianaris $P(x)$ dalijasi iš daugianario $S(x)$, jei
+egzistuoja toks daugianaris $Q(x)$, kad $$P(x)=S(x)Q(x).$$ Jei daugianaris
+$P(x)$ nesidalija iš daugianario $S(x)$, tai kaip ir su sveikaisiais
+skaičiais vis vien galime dalinti ir gauti liekaną, t.y. egzistuos tokie
+daugianariai $S(x)$ ir $R(x)$, kad $$P(x) = S(x)Q(x) + R(x).$$ Dalindami
+sveikuosius skaičius gauname, kad liekana yra mažesnė už daliklį,
+analogiškai, dalindami daugianarius gauname, kad liekanos $R(x)$ laipsnis
+yra mažesnis už daliklio $S(x)$ laipsnį. Pavyzdžiui:
+
+Daugianaris $x^4 - 3x^2 + 2$ dalijasi iš daugianario $x^2 - 1$, nes $x^4 -
+3x^2 + 2 = (x^2 - 1)(x^2 - 2)$. Tačiau daugianaris $x^4 - 3x^2 + 2$
+nesidalija iš daugianario $x^3$. Dalindami gausime $x^4 - 3x^2 + 2 =
+x^3\cdot x - 3x^2 + 2.$ Matome, kad liekanos - $3x^2 + 2$ laipsnis iš ties
+mažesnis už daliklio $x^3$ laipsnį.      
+
+Lygties $P(x) = 0$ sprendinius vadinsime daugianario $P(x)$
+\emph{šaknimis}. Ši sąvoka yra esminė, tad daugianario šaknims skirsime
+visą likusią užduotį. Pradėkime nuo labai svarbios teoremos.
+
+\begin{thm}
+$n$-tojo laipsnio daugianaris turi ne daugiau nei $n$ šaknų.
+\end{thm}
+
+Prieš įrodydami teoremą panagrinėkime pavyzdžiui daugianarį $x^3 - x$.
+Kadangi daugianaris kubinis (trečio laipsnio), tai jis turi turėti ne
+daugiau kaip tris šaknis. Kaip tuo įsitikinti? Išskaidykime jį
+dauginamaisiais: $x^3-x =x(x-1)(x+1).$ Spręsdami lygtį $x(x-1)(x+1) = 0$
+samprotaujame, kad sandauga lygi nuliui tik tada, kai bent vienas iš
+dauginamųjų lygus nuliui. Tad lengvai gauname, kad šiuo atveju šaknys kaip
+tik yra trys, ir ne daugiau. Remdamiesi šia skaidymo idėja įrodysime ir
+teoremą. Tam mums reiks pagalbinio teiginio:
+
+\begin{teig}
+Jei daugianaris $P(x)$ turi šaknį $s$, tai jis dalijasi iš $x-s$. 
+\end{teig}
+
+\emph{Įrodymas} Tarkime, kad $s$ yra $P(x)$ šaknis, bet $P(x)$ nesidalija
+iš $x-s$. Tuomet dalindami gausime liekaną, kurios laipsnis mažesnis už $1$
+- t.y. realųjį skaičių: $$P(x) = (x-s)Q(x) + b.$$ Ši lygybė teisinga
+visiems $x$, tad įstatykime $x=s$. Gausime $$0=P(s) = 0\cdot R(x) + b =
+b,$$ t.y. $b=0$. Vadinasi liekana lygi nuliui, ir $P(x)$ iš ties dalijasi
+iš $x-s$.
+
+Šis teiginys yra labai svarbus, todėl pateiksime ir antrą įrodymą:
+
+Užrašykime $$P(x) = a_nx^n + \cdots + a_1x +a_0.$$ Kadangi $s$ yra $P(x)$
+šaknis, tai $$a_ns^n + \cdots + a_1s +a_0 = 0$$ ir tuomet $$P(x) = a_nx^n +
+\cdots + a_1x +a_0 - 0 = a_nx^n + \cdots + a_1x +a_0 - a_ns^n - \cdots -
+a_1s -a_0 = a_n(x^n -s^n) + \cdots + a_1(x-s).$$ Kiekviename dėmenyje
+galime iškelti $(x-s)$ prieš skliaustus, todėl $P(x)$ tikrai dalijasi iš
+$x-s$. $\square$
+
+
+\emph{Teoremos įrodymas}
+
+Tegu daugianaris $P(x)$ turi šaknį $s_1$. Tuomet jis dalijasi iš $a-s_1$ ir
+galime užrašyti $P(x)=(x-s_1)Q_1(x)$, kur $Q_1$ - $n-1$-ojo laipsnio
+daugianaris. Jei $P(x)$ turi dar vieną šaknį $s_2$, tai ir ją galime
+atskelti: $P(x) = (x-s_1)(x-s_2)Q_2(x)$, kur $Q_2$ - $n-2$-ojo laipsnio
+daugianaris. Kadangi su kiekviena $P(x)$ šaknimi $s_i$ gauname vis naują
+dauginamąjį $(x-s_i)$, tai šaknų tikrai negali būti daugiau nei $n$.
+
+
+Pastebėkime, kad šį teiginį galime griežčiau įrodyti naudodami matematinę
+indukciją. Pirmo laipsnio daugianariai iš ties turi ne daugiau nei vieną
+šaknį. Tarkime, kad $n-1$ laipsnio daugianariai turi ne daugiau kaip $n-1$
+šaknį. Nagrinėkime $n$-tojo laipsnio daugianarį $P(x)$. Jei jis neturi
+šaknų, tai jo šaknų skaičius neviršija $n$. Jei turi bent vieną, pažymėkime
+$s$, tai $P(x)=(x-s)Q(x)$, kur $Q(x)$ - $n-1$-ojo laipsnio daugianaris.
+Pagal indukcinę prielaidą jis turi ne daugiau kaip $n-1$ šaknį, todėl
+$P(x)$ turi ne daugiau nei $n$ šaknų.
+ 
+$\square$
+\bigskip
+
+\subsection{Šaknų paieška} 
+
+Žinome, kad kvadratinis daugianaris $ax^2 + bx + c$ turi dvi realiąsias
+šaknis $$\frac{-b \pm \sqrt{b^2 - 4ac}}{2a},$$ kai $b^2-4ac\geq 0$. 
+Naudodamiesi teiginiu, kad jei daugianaris $P(x)$ turi šaknį $s$, tai jis
+dalijasi iš $x-s$, kartais galime rasti didelio laipsnio daugianarių
+šaknis. Tam reikia atspėti pradinio daugianario $P(x)$ šaknį $s$, padalinti
+iš $x-s$ ir liks mažesnio laipsnio daugianaris. Taip spėliojame ir
+daliname, kol lieka kvadratinis daugianaris, kurio šaknis rasti mokame. 
+
+
+Pabandykime šiuo būdu rasti daugianario $x^4 + x^3 - x - 1$ šaknis. Labai
+greitai galime pamatyti, kad $x=1$ yra viena iš šaknų. Padalinkime: $x^4 +
+x^3 - x - 1 = (x-1)(x^3 + 2x^2 + 2x + 1)$. Paspėlioję randame ir
+daugianario $x^3 + 2x^2 + 2x + 1$ šaknį - $x=-1$. Vėl dalijame: $x^3 + 2x^2
++ 2x + 1 = (x+1)(x^2+x+1)$. Likęs daugianaris realiųjų šaknų neturi, tad
+daugianario $x^4 + x^3 - x - 1$ realiosios šaknys yra $\pm 1$. Nors
+daugianarį $x^3 + 2x^2 + 2x + 1$ padalinti iš (x+1) galima ir mintinai, bet
+kartais daug paprasčiau yra naudoti daugianarių dalybą kampu. Ji labai
+panaši į sveikųjų skaičių dalybą, bet jos išdėstymas užima labai daug
+vietos, tad paklauskite savo matematikos mokytojo(-os) - tikrai žinos ir
+jums paaiškins. 
+
+\bigskip
+
+Kartais šaknis atspėti gali būti gana sudėtinga, o kartais to visai
+nepavyks padaryti. Spėliojimo procesą gerokai palengvina šis teiginys:
+
+\begin{teig}
+Jei daugianaris $P(x)$ su sveikaisiais koeficientais turi racionaliąją
+šaknį, tai tos šaknies skaitiklis dalo laisvąjį narį, o vardiklis dalo
+vyriausiąjį koeficientą. 
+\end{teig}  
+
+\emph{Įrodymas}
+
+Tegu $P(x) = a_nx^n + \cdots +a_1x + a_0$ ir $\frac{s}{v}$ (tarkime
+trupmena suprastinta) jo šaknis. Tuomet $$a_n\frac{s^n}{v^n} + \cdots +
+a_1\frac{s}{v} + a_0 = 0.$$ Padauginkime lygybę iš $v^n$: $$a_n{s^n} +
+\cdots + a_1sv^{n-1} + a_0v^n = 0.$$ Matome, kad visi lygybės nariai
+išskyrus $a_0v^n$ dalijasi iš $s$, todėl ir $a_0$ dalijasi iš $s$. Taip
+pat, visi lygybės nariai išskyrus $a_n{s^n}$ dalijasi iš $v$, todėl ir
+$a_n$ dalijasi iš $v$.$\square$
+
+\begin{isv}
+Jei daugianaris $P(x)$ su sveikaisiais koeficientais turi sveikąją šaknį,
+tai ji dalo daugianario laisvąjį narį.
+\end{isv} 
+
+Pasinaudoję tuo raskime daugianario $x^4 + 3x^3 - 3x^2 -15x + 2$ sveikąsias
+šaknis. Kadangi laisvasis narys yra $2$, tai turime tik keturis kandidatus:
+$\pm 1$ ir $\pm 2$. Patikrinę matome, kad tik $x=2$ yra šaknis, o daugiau
+sveikųjų (ir racionaliųjų, nes vyriausiasis koeficientas lygus $1$) šaknų
+daugianaris neturi.
+
+\subsection{Daugianarių skaidymas}
+
+Daugianariams skaidyti dažnai naudojamos lygybės, kurias privalu mokėti
+mintinai. Visiems $n$:
+$$a^n - b^n = (a-b)(a^{n-1} + a^{n-2}b + a^{n-3}b^2 + \cdots +
+a^2b^{n-3}+ab^{n-2} + b^{n-1} ),$$
+nelyginiams n:
+$$a^n + b^n = (a+b)(a^{n-1} - a^{n-2}b + a^{n-3}b^2 - \cdots -
+a^2b^{n-3}+ab^{n-2} - b^{n-1} ).$$
+
+Atskirais atvejais jos pavirsta į labai dažnai sutinkamas
+$$a^2 - b^2 = (a+b)(a-b) \text{ ir } a^3+b^3 = (a+b)(a^2-ab+b^2).$$  
+
+Pavyzdžiui išskaidykime daugianarį $x^4 - x^2 - 2x - 1$ dauginamaisiais.
+Užtenka pastebėti pilną kvadratą: $$x^4 - x^2 - 2x - 1 = x^4 - (x+1)^2 =
+(x^2- x -1)(x^2+ x+ 1) = (x - \frac{-1 + \sqrt{5}}{2})(x - \frac{-1 -
+\sqrt{5}}{2})(x^2+ x+ 1).$$
+
+Atkreipkime dėmesį į tai, kad pradinio daugianario koeficientai buvo
+sveikieji skaičiai, o dviejų gautų daugiklių nebe. Toks skaidymas kartais
+gali neturėti prasmės (pavyzdžiui sprendžiant skaičių teorijos uždavinį),
+todėl prasminga yra suvokti kokių koeficientų mes skaidydami tikimės -
+sveikųjų ar realiųjų (ar kompleksinių). Tai ir nusako terminai skaidymas
+\emph{virš realiųjų skaičių} ir \emph{virš sveikųjų skaičių}. Skaidymas
+virš racionaliųjų gerokai skiriasi nuo skaidymo virš realiųjų. Pavyzdžiui
+pastarajam galioja tokia teorema:
+
+\begin{thm}
+Kiekvieną daugianarį su realiaisiais koeficientais galima virš realiųjų
+skaičių išskaidyti į kvadratinių ir pirmo laipsnio daugianarių sandaugą.
+\end{thm}
+
+Kaip bebūtų, tai dar nereiškia, kad tuos dauginamuosius mums pavyks rasti.
+Pavyzdžiui daugianaris $x^3 + x + 1$ tikrai turi bent vieną realiąją šaknį
+(ar žinote kodėl?), todėl jį galime tikėtis išskaidyti bent jau į du
+dauginamuosius. Deja, tos šaknies taip lengvai nerasime (įdomumo dėlei ji
+lygi $-\frac{(108+12\sqrt{93})^{1/3}}{6}+
+\frac{2}{(108+12\sqrt{93})^{1/3}}$.)
+
+Skaidymui virš racionaliųjų, kita vertus, galime naudoti neapibrėžtų
+koeficientų metodą. Išskaidykime pavyzdžiui daugianarį $x^4 + x^2 + 1$.
+Sveikųjų šaknų jis neturi, todėl nario $x-a$ atskelti nepavyks. Vadinasi,
+jei ir išskaidysime virš racionaliųjų, tai į dviejų kvadratinių daugianarių
+sandaugą: $$x^4 + x^2 + 1 = (A_1x^2 + B_1x + C_1)(A_2x^2 + B_2x + C_2).$$
+Aišku, kad $A_1$ ir $A_2$ turi abu būti lygūs $1$ arba $-1$. Jei abu lygūs
+$-1$, tai padauginę abu daugianarius iš $-1$ gausime skaidinį, kuriame abu
+lygūs $1$. $C_1$ ir $C_2$ irgi gali būti lygūs $-1$ arba $1$. Pabandykime
+pastarąjį variantą. Tuomet gauname: 
+$$x^4 + x^2 + 1 = (x^2 + B_1x + 1)(x^2 + B_2x + 1).$$
+Atskliaudę ir sulyginę koeficientus prie $x^3$, $x^2$ ir $x$ gausime
+$B_1+B_2 = 0$, $2+B_1B_2 = 1$, $B_1+B_2=0.$ Išsprendę lengvai randame $B_1
+= 1$, $B_2 = -1$. Vadinasi $$x^4 + x^2 + 1 = (x^2 + x + 1)(x^2 - x + 1).$$
+Jei išbandę visus variantus gauname sistemas, kurios racionaliųjų
+sprendinių neturi, tai vadinasi daugianaris virš racionaliųjų nesiskaido.
+
+\subsection{Vijeto teorema}
+
+Vijeto teorema apibrėžia santykį tarp daugianario koeficientų ir jo šaknų.
+Žinome, kad norėdami nusakyti daugianarį turime nurodyti jo koeficientus,
+bet taip pat galime nurodyti ir šaknis bei vyriausiąjį koeficientą:
+
+\begin{thm}[Vijeto teorema]
+
+Tarkime, kad daugianario $P(x)=a_nx^n + \cdots + a_1x + a_0$ šaknys yra
+$s_1, \dots, s_n$. Tuomet
+$$s_1 + \cdots + s_n = (-1)\frac{a_{n-1}}{a_n}$$
+$$s_1s_2 + s_1s_3 + \cdots s_{n}s_{n-2} + s_{n}s_{n-1} =
+(-1)^2\frac{a_{n-2}}{a_n}$$
+$$\vdots$$
+$$s_1\cdots s_n = (-1)^{n}\frac{a_{0}}{a_n}.$$
+
+\end{thm}
+
+\emph{Įrodymas}
+
+Žinome, kad $n$-tojo laipsnio daugianaris, kurio šaknys yra $s_1, \dots,
+s_n$ užsirašo kaip $a_n(x-s_1)\cdots(x-s_n).$ Atskliaudę ir gausime
+ieškomas lygybes. Pabandykite. $\square$
+
+Atskiru atveju kvadratiniam daugianariui $ax^2 + bx + c$ gauname $$s_1 +
+s_2 = -\frac{b}{a}$$ ir $$s_1s_2 = \frac{c}{a}.$$ 
+
+\begin{center} \textbf{Pavyzdžiai} \end{center}
+1. [Baltic Way 2008] Raskite visus daugianarius $p(x)$ su realiaisiais
+koeficientais, tokius, kad $$p((x+1)^3)= (p(x)+1)^3$$ ir $$p(0)=0.$$
+
+\emph{Sprendimas}
+Įstatę keletą pirmųjų reikšmių pastebime, kad $p(1) = 1$, $p(8)=8$, $p(9^3)
+= 9^3$. Taip pat matome, kad jei kažkokiai reikšmei $c$ $p(c)=c$, tai ir
+$p((c+1)^3) = (c+1)^3$. Todėl egzistuoja be galo daug skaičių, kuriuos
+įstatę vietoje $x$ gauname teisingą lygybę $p(x) = x$. Arba, performulavę
+gudriau galime teigti, kad daugianaris $p(x)-x$ turi be galo daug šaknų. Be
+galo daug šaknų turi vienintelis daugianaris - 0. Taigi gavome, kad $p(x)-x
+= 0$, arba $p(x)=x$.
+
+Tuo pačiu išmokome įrodyti labai svarbų teiginį:
+\begin{teig}
+Tarkime turime du daugianarius, kurių laipsniai neviršija $n$. Jei
+egzistuoja daugiau nei $n$ skaičių, kuriuose jų reikšmės vienodos, tai tie
+daugianariai sutampa. 
+\end{teig} 
+
+Iš ties - jų skirtumas turės daugiau šaknų, nei bus jo laipsnis, todėl bus
+lygus $0$.
+
+
+2. Raskime liekaną kurią gauname, kai daugianarį $x^{100}$ dalijame iš $x^2
+- 1$. Užsirašykime:
+ 
+$$x^{100} = Q(x)(x^2-1) + R(x).$$
+
+Įsistatę daugianario $x^2-1$ šaknis gausime $R(1) = 1$, $R(-1)=1$. Kadangi
+$R(x)$ laipsnis turi būti mažesnis už $x^2 - 1$ laipsnį, tai tinka
+vienintelis daugianaris $R(x) = 1$.  
+
+Šis metodas yra gana bendras, tačiau ne visad daugianaris iš kurio dalijame
+turės visas realiąsias šaknis. Kartais galima išsisukti naudojant
+kompleksines šaknis, bet apie tai daugianariai II užduotyje. 
+   
+\subsection{Uždaviniai}
+
+\begin{enumerate} \item Raskite daugianario $x^3 - 7x^2 +7x + 15$ šaknis.
+  \item Išskaidykite daugianarį $x^8 + x^4 + 1$ dauginamaisiais virš
+    racionaliųjų skaičių.  \item Įrodykite tapatybę $$(1+x)(1+x^2)(1+x^4)
+    \cdots (1+x^{2^{k-1}}) = 1 + x + x^2 + \cdots + x^{2^{k}-1}.$$ \item
+    Įrodykite \emph{Bezu} teoremą: dalindami daugianarį $P(x)$ iš $x-a$
+    gausime liekaną $P(a)$.  \item Įrodykite, kad jei $n$-tojo laipsnio
+    daugianario $S(x)$ vyriausiasis koeficientas lygus vienam, jis turi $n$
+    realių šaknų ir visos jos yra ir daugianario $P(x)$ šaknys, tai $P(x)$
+    dalijasi iš $S(x)$.  \item Tegu $a$, $b$, $c \in \R$. Jei $a + b + c >
+    0$, $ab + bc + ca > 0$ ir $abc > 0$, tai $a$, $b$, $c > 0.$ \item
+    Įrodykite, kad $(a+b+c)^{333} - a^{333} - b^{333} - c^{333}$ dalijasi
+    iš $(a+b+c)^3 - a^3 - b^3 - c^3$.  \item Kokią liekaną gausime
+    dalindami $x^{100} -2x^{51} + 1$ iš $x^2 - 1$?  \item Dalindami
+    daugianarį $P(x)$ iš $x-1$ gavome liekaną $2$, o dalindami iš $x-2$
+    gavome liekaną $1$. Kokią liekaną gausime jį dalindami iš $(x-1)(x-2)$?
+  \item Raskite visus daugianarius $P(x)$, kurie su kiekvienu daugianariu
+    $Q(x)$ tenkina $P(Q(x)) = Q(P(x)).$ \item Tegu $x_1$ ir $x_2$
+    daugianario $x^2 + ax + bc$ šaknys, o $x_2$ ir $x_3$ - daugianario $x^2
+    + bx + ac$ šaknys ir $ac\neq bc$. Įrodykite, kad $x_1$ ir $x_3$ yra
+    daugianario $x^2 + cx + ab$ šaknys.  \item Įrodykite, kad jei
+    daugianario su sveikaisiais koeficientas reikšmės taškuose $0$ ir $1$
+    yra nelyginės, tai daugianaris neturi sveikųjų šaknų.  \item
+    Išspręskite lygtį $x^8 + (x+2)^8 = 2$.  \item Daugianario $x^2 + px +
+    q$ šaknų santykis lygus daugianario $x^2 + 3px + q_1$ šaknų santykiui.
+    Nė vienas daugianarių koeficientas nelygus nuliui. Raskite $q$ ir $q_1$
+    santykį.  \item Išspręskite lygtį $x^6 + x^5 + x^4 + x^3 + x^2 + x + 1
+    = 0.$ \item Išskaidykite dauginamaisiais reiškinį $x^4 + a^4 +
+    (x+a)^4.$ \item Su kuriomis $q$ reikšmėmis daugianario $x^4 - 2x^2 + q
+    = 0$ šaknys sudaro aritmetinę progresiją?  \item Daugianaris $x^3 + px
+    + q$ turi tris skirtingas realiąsias šaknis. Įrodykite, kad $p<0$.
+  \item Tegu $P$ - daugianaris su sveikaisiais koeficientais ir $P(x) = 5$
+    su penkiomis skirtingomis sveikosiomis $x$ reikšmėmis. Įrodykite, kad
+    nėra tokio sveikojo skaičiaus $x$, kad $-6\leq P(x)\leq 4$ arba $6 \leq
+    P(x) \leq 16.$ \item Raskite visus daugianarius $P(x)$ su sveikaisiais
+    koeficientais, kurie tenkina $P(x)^2|P(P(x)+x)$.  \item Tegu $P(x) =
+    x^2 + 2007x + 1.$ Įrodykite, kad su kiekviena $n\in \N$ reikšme
+    daugianaris $\underbrace{P(P(...(P}_{\text{n kartų}}(x))...))$ turi
+    bent vieną realią šaknį.  \item Tarkime daugianaris $P(x) = x^3 + ax^2
+    + bx +c$ turi tris realiais šaknis ir tegu $Q(x) = 5x^2 - 16x + 2004$.
+    Žinome, kad $P(Q(x))=0$ neturi realiųjų šaknų. Įrodykite, kad $P(2004)
+    > 2004$.  \end{enumerate}
+
+  
+\section{Daugianariai II} \bigskip \noindent
+
+Šioje dalyje truputį giliau susipažinsime su daugianarių šaknimis bei
+skaidymu dauginamaisiais. Iš pradžių panagrinėsime skaidymą virš realiųjų
+ir kompleksinių skaičių, o po to virš sveikųjų ir racionaliųjų.
+
+Prisiminkime vieną iš pagrindinių teoremų:
+
+\begin{thm}[Fundamentalioji algebros teorema] Kiekvienas $n$-tojo laipsnio
+  daugianaris turi $n$ kompleksinių šaknų.  \end{thm}
+
+Šios teoremos įrodymas yra labai sudėtingas, tad jo įrodymo nepateiksime.
+Pažiūrėkime, kaip praktiškai galime pritaikyti šią teoremą:  
+
+Įrodysime, kad $x^{9999} + x^{8888} + \cdots + x^{1111} + 1$ dalijasi iš
+$x^{9} + x^{8} + \cdots + x^{1} + 1.$
+
+Tam užteks parodyti, kad visos mažojo daugianario šaknys yra ir didžiojo
+šaknys. Tačiau mažojo daugianario šaknų mes kol kas nemokame rasti!
+Išsisukime - tiesiog imkime bet kurią šaknį $\omega$. Žinome, kad
+$\omega^{9} + \omega^{8} + \cdots + \omega^{1} + 1 = 0$. Maža to, padauginę
+abi lygybės puses iš $\omega - 1$ ($\omega \neq 1$, nes $1$ nėra šaknis, o
+jei net ir būtų tai panagrinėtume atskirai) gauname, kad $\omega^{10} = 1$.
+Dabar visiškai nesunkiai galime įsitikinti, kad $\omega$ yra ir didžiojo
+daugianario šaknis, mat $\omega^{9999} = (\omega^{10})^{999}\cdot \omega^9$
+ir t.t., todėl  $$ \omega^{9999} + \omega^{8888} + \cdots + \omega^{1111} +
+1 = \omega^{9} + \omega^{8} + \cdots + \omega^{1} + 1 = 0.$$
+
+Prisiminkime pirmosios daugianarių dalies užduotį: 
+
+Įrodykite, kad jei $n$-tojo laipsnio daugianario $S(x)$ vyriausiasis
+koeficientas lygus vienam, jis turi $n$ \textbf{realių} šaknų ir visos jos
+yra ir daugianario $P(x)$ šaknys, tai $P(x)$ dalijasi iš $S(x)$. 
+
+Nežinodami apie kompleksinius skaičius ir norėdami daugianarį išskaidyti
+mes privalėjome rasti jo realiąsias šaknis. Jei daugianaris jų neturėjo
+(pvz. $x^2+1$), tai išskaidyti negalėdavome. Todėl sąlyga, kad visos
+daugianario šaknys yra realios buvo būtina.
+
+Žinodami apie kompleksinius skaičius mes visuomet galime pilnai išskaidyti
+daugianarį virš kompleksinių skaičių, todėl tai ar šaknys realios ar ne
+nebeturi įtakos. Pabandykime apibendrinti:
+
+Bet koks $n$-tojo laipsnio daugianaris $S(x)$ turi lygiai $n$ kompleksinių
+šaknų, kai kurios iš jų gali būti realios ($\R \subset \C$!). Jei
+daugianario vyriausias koeficientas lygus vienetui, tai jis užsirašo kaip
+$(x-x_1)\cdots(x-x_n)$. Jei jis dalo kokį nors daugianarį $P(x)$, tai $x_1,
+\dots, x_n$ yra ir $P(x)$ šaknys. 
+
+Gali kilti klausimas, ar daugianariui, kurio šaknys kompleksinės galioja
+Vijeto teorema. Atsakymas žinoma! Įrodymas visiškai nesiskiria - tiesiog
+atskliaudžiame išraišką $(x-x_1)\cdots(x-x_n)$. Nepaisant to, panagrinėkime
+ir konkretų atvejį:
+
+$x^2 + 1$ šaknys yra dvi: $i$ ir $-i$. Jų suma lygi nuliui, o sandauga
+$-i^2 = 1$. Veikia.
+
+Remdamiesi fundamentaliąja algebros teorema įrodykime praeito skyrelio
+teiginį, sakantį, kad kiekvieną daugianarį virš realiųjų skaičių galima
+išskaidyti į pirmo ir antro laipsnio daugianarius. Tam prireiks teiginio,
+kuris ir pats savaime yra svarbus:
+
+\begin{teig} Daugianario su realiaisiais koeficientais šakniai
+  kompleksiškai jungtinis skaičius taip pat yra daugianario šaknis.
+\end{teig}
+
+\emph{Įrodymas}
+
+Tegu $s$ daugianario šaknis. Užrašykime tai kaip $a_ns^n + a_{n-1}s^{n-1} +
+\cdots + a_1s + a_0 = 0.$ Kadangi sumos jungtinis lygus jungtinių sumai,
+kaip ir sandaugos jungtinis lygus jungtinių sandaugai, tai gauname, kad
+$$\overline{a_ns^n + a_{n-1}s^{n-1} + \cdots + a_1s + a_0} = \overline{0}
+\Rightarrow$$ $$\overline{a}_n\overline{s}^n +
+\overline{a}_{n-1}\overline{s}^{n-1} + \cdots + \overline{a}_1\overline{s}
++ \overline{a_0} = 0 \Rightarrow$$ $$a_n\overline{s}^n +
+a_{n-1}\overline{s}^{n-1} + \cdots + a_1\overline{s} + a_0 = 0,$$ vadinasi
+ir $\overline{s}$ yra to paties daugianario šaknis. $\square$
+
+
+Tad jei daugianaris turi realią šaknį $a$, tai galime atskelti dauginamąjį
+$(x-a)$, o jei turi kompleksinę $s$, tai kartu turi ir jai jungtinę
+$\overline{s}$. Sudauginę $(x-s)(x-\overline{s})$ gauname kvadratinį
+dauginamąjį su realiaisiais koeficientais.
+
+\subsection{Daugianariai su sveikaisiais koeficientais}
+
+Daugianarius, kurių negalime nė kiek išskaidyti vadinsime neredukuojamais,
+nurodydami kokių koeficientų tikimės skaidydami. Pavyzdžiui $x^2 + 1$ yra
+neredukuojamas virš sveikųjų, racionaliųjų ir realiųjų skaičių, bet yra
+redukuojamas virš kompleksinių. Įrodykime tris naudingas teoremas.
+
+\begin{thm}[Gauso lema] Jei daugianaris yra neredukuojamas virš sveikųjų
+  skaičių, tai jis yra neredukuojamas ir virš racionaliųjų.  \end{thm}
+
+\emph{Įrodymas}
+
+Daugianarį su sveikaisiais koeficientais, kurių didžiausias bendras
+daliklis lygus vienetui vadinkime primityviuoju. Neprarasdami bendrumo
+laikykime, kad nagrinėjamas daugianaris $p(x)$ yra primityvus ir tarkime
+priešingai - tegu jis yra neredukuojamas virš sveikųjų, bet redukuojamas
+virš racionaliųjų. Tada $p(x)=s(x)t(x)$, kur $s$, $t$ - daugianariai su
+racionaliaisiais koeficientais. Padauginkime abu juos atitinkamai iš $a$,
+$b \in \Z$, kad gautume du primityviuosius daugianarius: $$abp(x) =
+(as(x))(bt(x)).$$ Taigi kairėje pusėje turime neprimityvų daugianarį (jo
+visi koeficientai dalijasi iš $ab\neq 1$), o dešinėje dviejų primityvių
+daugianarių sandaugą. Parodysime, kad tokia lygybė yra negalima, nes dviejų
+primityvių daugianarių sandauga yra primityvus daugianaris, ir gausime
+prieštarą.  Tegu $a_nx^n + \cdots + a_1x + a_0$ ir $b_mx^m + \cdots + b_1x
++ b_0$ primityvūs daugianariai. Tegu jų sandauga nėra primityvusis
+daugianaris, t.y. visi koeficientai dalinasi iš kažkokio pirminio skaičiaus
+$p$ : $$p\cdot c_{n+m}x^{m+n} + \cdots + p\cdot c_1x + p\cdot c_0 = (a_nx^n
++ \cdots + a_1x + a_0)(b_mx^m + \cdots + b_1x + b_0).$$
+
+Abiejų daugianarių visi koeficientai negali dalintis iš $p$, kitaip jie
+nebūtų primityvūs. Imkime pirmus koeficientus (prie mažiausių laipsnių)
+nesidalijančius iš $p$ $a_i$ ir $b_j$. Tada $$p\cdot c_{i+j} =
+a_{1}b_{i+j-1} + \cdots + a_{i}b_{j} + \cdots a_{i+j-1}b_{1}.$$ Matome, kad
+visi sumos nariai dalijasi iš $p$, išskyrus $a_{i}b_{j}$ - prieštara. (Suma
+nebūnai turi prasidėti nuo $a_{1}b_{i+j-1}$, nes gali būti taip, kad $i+j-1
+> m$, bet tai nieko nekeičia) $\square$
+
+\begin{thm}[Eizenšteino neredukuojamumo kriterijus] Tegu $p(x) = a_nx^n +
+  a_{n-1}x^{n-1} + \cdots + a_1x+a_0$ - daugianaris su sveikaisiais
+  koeficientais. Jei egzistuoja toks pirminis skaičius $p$, kad $p \not |
+  a_n$, $p|a_i, i=0\dots n-1$ ir $p^2 \not | a_0$, tai daugianaris
+  neredukuojamas virš sveikųjų skaičių (ir virš racionalių pagal Gauso
+  lemą).  \end{thm}
+
+Prieš įrodymą panagrinėkime teoremos sąlygos. Reikalaujama, kad iš $p$
+dalintųsi visi koeficientai išskyrus pirmąjį, bei paskutinis nesidalintų iš
+$p^2$. Pavyzdžiui $x^5 + 2x + 2$. Jei nors vienos iš sąlygų atsisakysime,
+tai lengvai rasime kontrapavyzdžių. Pavyzdžiui jei leisime pirmam
+koeficientui dalintis iš $p$, tai redukuojamas bus $3x^2 - 3$, jei leisime
+paskutiniam dalintis iš $p^2$, tai redukuojamas bus $x^2 + 10x + 25$.
+
+\emph{Įrodymas} Tegu $p(x)$ tenkina teoremos sąlygas. Tarkime, kad jis
+redukuojamas, tada galime užrašyti jį kaip dviejų daugianarių sandaugą:
+$$a_nx^n + \cdots + a_1x+a_0 = (b^kx^k + \cdots + b_1x +
+b_0)(c^{n-k}x^{n-k} + \cdots + c_1x + c_0)$$
+
+Kadangi $a_0$ dalijasi iš $p$ ir $a_0 = b_0c_0$, tai $b_0$ arba $c_0$
+dalijasi iš $p$. Tegu tai bus $b_0$. Kadangi $a_0$ nesidalija iš $p^2$, tai
+$c_0$ nesidalija iš $p$.\\ Kadangi $a_1$ dalijasi iš $p$ ir $a_1 = b_0c_1 +
+b_1c_0$, kur $b_0$ dalijasi iš $p$, o $c_0$ ne, tai $b_1$ irgi dalijasi iš
+$p$.\\ Kadangi $a_2$ dalijasi iš $p$ ir $a_2 = b_0c_2 + b_1c_1 + b_2c_0$,
+kur $b_0$, $b_1$ dalijasi iš $p$, o $c_0$ ne, tai ir $b_2$ dalijasi iš
+$p$.\\ Taip tęsdami gauname, kad visi koeficientai $b_0, b_1, \cdots, b_k$
+dalijasi iš $p$, o tai reiškia, kad ir $a_n$ dalijasi iš $p$.
+Prieštara.$\square$
+
+Iš pirmo žvilgsnio gali pasirodyti, kad ši teorema yra gana ribota dėl
+daugybės kriterijų, kuriuos turi atitikti daugianaris, jei mes norime ją
+pritaikyti. Tačiau pasirodo kad naudojant ją kūrybiškai galima gerokai
+praplėsti jos taikymo ratą.
+
+Išspręskime tokį uždavinį - Įrodykite, kad daugianaris $p(x) = x^{p-1} +
+x^{p-2} + \cdots + x + 1$ yra neredukuojamas virš sveikųjų skaičių. Nė
+vienas koeficientas nesidalija iš nė vieno sveikojo skaičiaus, kaip čia
+pasinaudoti Eizenšteino kriterijumi? Pagudraukime - jei daugianarį $p(x)$
+galime išskaidyti, tai galėsime išskaidyti ir $p(x+1)$ - tereiks $p(x)$
+skaidinyje $x$ pakeisti į $x+1$. Tad jei įrodysime, kad $p(x+1)$
+neredukuojamas, tai neredukuojamas bus ir $p(x)$. Užsirašykime $$p(x) =
+x^{p-1} + x^{p-2} + \cdots + x + 1 = \frac{x^p - 1}{x-1},$$ tada $$p(x+1) =
+\frac{(x+1)^p - 1}{x} = \frac{x^p + px^{p-1} + \cdots + \frac{p(p-1)}{2}
+x^2 + px}{p} = x^{p-1} + \cdots + \frac{p(p-1)}{2} x + p.$$
+
+Kadangi visi koeficientai dalinsis iš $p$ (prisiminkite šią binominio
+koeficiento savybę), paskutinis koeficientas nesidalija iš $p^2$, o
+pirmasis iš $p$, tai šis daugianaris yra neredukuojamas. Įrodėme.
+
+Paskutinei teoremai reiks prisiminti dalybos liekanas. Kadangi jos irgi
+sudaro kūną, kaip ir $\Z, \Q, \R, \C,$ t.y. liekanas galima įprastai
+dauginti, dalinti(išskyrus iš nulio), sudėti ir atimti, tai galime
+nagrinėti daugianarius, kurių koeficientai yra dalybos liekanos moduliu
+kažkokio pirminio skaičiaus $p$. Kad atskirtume nuo sveikųjų skaičių, juos
+žymėsime su brūkšniu. Pavyzdžiui $\overline{2}x^2 + \overline{3}$.
+
+Pastebėkime, kad tokių daugianarių skaidymas gerokai skiriasi nuo skaidymo
+virš sveikųjų. Pavyzdžiui daugianaris $x^2$ + $\overline{1}$, kur
+koeficientai yra moduliu $2$ išsiskaido į $(x+\overline{1})^2$, nes $2
+\equiv 0$.  
+
+Iš kitos pusės, patikrinti ar daugianaris skaidosi tampa lengviau, nes
+liekanų yra nedaug (ypač jei pasirenkame nedidelį pirminį $p$) ir galime
+tiesiog perrinkti visus variantus. Tai ir motyvuoja tolesnę teoremą:
+
+    
+\begin{thm} Jei daugianaris su sveikaisiais koeficientais ir vyriausiuoju
+  koeficientu lygiu vienetui yra neredukuojamas moduliu kažkokio pirminio
+  skaičiaus $p$, tai jis yra neredukuojamas ir virš sveikųjų.  \end{thm}
+
+
+
+\emph{Įrodymas} Jei jis būtų redukuojamas virš sveikųjų, tai jo skaidinį
+paėmę moduliu $p$ gautume, jog jis skaidosi ir moduliu $p$.  $\square$
+
+Panaudokime šią teoremą klausimui ar daugianaris $x^3+1001x^2 + 1111^2$ yra
+redukuojamas virš sveikųjų atsakyti. Jei nagrinėsime jį moduliu $2$,
+gausime $x^3 + x^2 + \overline{1}$. Pabandę visas kombinacijas
+(kvadratiniai dauginamieji gali būti $x^2 + x + \overline{1}$, $x^2 + x$,
+$x^2 + \overline{1}$, $x^2$, tiesiniai $x+\overline{1}$ ir $x$, taigi $8$
+variantai) gauname, kad šis daugianaris moduliu $2$ yra neredukuojamas.
+Vadinasi jis yra neredukuojamas ir virš sveikųjų.
+  
+Atkreipsime dėmesį, kad jei gauname, jog daugianaris yra redukuojamas
+moduliu pirminio skaičiaus, tai dar nieko negalime pasakyti apie jo
+redukuojamumą virš sveikųjų. Atsiminkime $x^2 + 1$. 
+
+
+\newpage
+
+\subsection{Uždaviniai}
+
+\begin{enumerate}
+
+\item Tegu $\alpha$, $\beta$, ir $\gamma$ daugianario $x^3 - x - 1$ šaknys.
+  Raskite $\frac{1+\alpha}{1-\alpha} + \frac{1+\beta}{1-\beta} +
+  \frac{1+\gamma}{1-\gamma}.$ \item Tegul
+  $F(x)=a_0+a_1x+a_2x^2+\ldots+a_nx^n\in\mathbb{Z}[X]$. Parodykite, kad
+  $F(x)$ yra neredukuojamas virš $\mathbb{Q}[X]$, jei $a_0$ yra pirminis
+  skaičius, kuris tenkina $|a_0|>|a_1|+|a_2|+\ldots+|a_n|$.  \item Duoti du
+  daugianariai $F, G\in\mathbb{N}[X]$. Tegul $m$ yra didžiausias $F$
+  koeficientas. Be to egzistuoja du natūralieji skaičiai $a<b$, tokie kad
+  $F(a)=G(a)$ ir $F(b)=G(b)$. Įrodykite, kad $F=G$, jei $m<b$.  \item
+  Įrodykite, kad kiekvienam natūraliajam $n$ egzistuoja toks daugianaris
+  $P\in\mathbb{Z}[X]$, $P(x)=x^n+a_1x^{n-1}+\ldots+a_{n-1}x+a_n$, kad i.)
+  $a_1a_2\cdot\ldots\cdot a_n\neq 0$, \\ ii.)  $P$ nėra dvieju daugianarių
+  su teigiamais laipsniais iš $\mathbb{Z}[X]$ sandauga\\ iii.) $|P(x)|$
+  nėra pirminis su bet kuriuo sveikuoju $x$.  \item Įrodykite, kad su
+  kiekvienu natūraliuoju $n\ge5$ ir skirtingais $a_1$, $a_2$, $\ldots$,
+  $a_n$ daugianaris $P(x)=(x-a_1)(x-a_2)\ldots(x-a_n)+1$ yra neredukuojamas
+  virš $\mathbb{Z}[X]$.  \item Raskite dauginarius tenkinančius sąlygą
+  $P(x^2) + P(x)P(x+1) = 0$ su visais $x \in \R$.
+%Perrašykime lygybę patogiau: $$P(x^2) = -P(x)P(x+1).$$ Pirmiausia
+%įrodysime, kad visos daugianario tenkinančio šią lygtį šaknys yra
+%išsidėsčiusios ant vienetinio apskritimo arba nuliai. Tarkime priešingai -
+%tegu bus šaknų, kurių moduliai didesni už vienetą. Imkime vieną iš jų $x$,
+%su didžiausiu moduliu. Jos kvadratas taip pat bus šaknis, bet |x^2|> |x| -
+%prieštara. Analogiškai ir su mažesniais už vienetą moduliais.  Taip pat
+%pastebėkime, kad jei x+1 yra daugianario šaknis, tai x^2 irgi yra šaknis.
+%Iš čia gauname tris atvejus: |x+1| = 1 |x^2| = 1, |x+1| = 0 |x^2| = 1,
+%|x+1| = 1 |x^2| = 0, iš kur x = e^{\frac{2 \pi}{3}}, x = e^{\frac{- 2
+%\pi}{3}} x = -1, x = 0, o x+1 tuomet lygus \omega, \omega^5, 0, 1, kur
+%\omega = e^{\frac{2 \pi}{6}}.  Gauname, kad ieškomas daugianaris yra
+%pavidalo P(x)=ax^n(x-1)^m(x-\omega)^p(x-\omega^5)^q. Įstatę į lygtį
+%gauname a=-1, p=q=0, m=n \Rightarrow P(x)=0 arba P(x)=-x^n(x-1)^n, n\in\N. 
+%http://www.mathlinks.ro/resources.php?c=60&cid=82&year=2005&p=243253
+%http://www.mathlinks.ro/viewtopic.php?p=342476#342476
+\end{enumerate}

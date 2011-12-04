@@ -1,0 +1,97 @@
+\subsection{Begalinis nusileidimas}
+
+Begalinis nusileidimas yra Pierre de Fermat sugalvota (todėl kartais vadinama Ferma
+nusileidimu) technika leidžianti kai kuriais atvėjais įrodyti, kad
+diofantinė lygtis neturi sprendinių arba turi tik kai kuriuos išimtinius.
+Ji remiasi idėja, kurią negriežtai galima suformuluoti taip:
+
+\begin{center}
+  \emph{
+    Jei iš kiekvieno teigiamo diofantinės lygties sprendinio galima gauti
+    mažesnį teigiamą sprendinį, tai tuomet diofantinė lygtis teigiamų
+    sprendinių turėti negali.}
+\end{center}
+
+Sąvokos ``teigiamas'' ar ``mažesnis'' sprendinys bendru atveju, žinoma,
+nėra apibrėžtos, todėl kas tiksliai jomis yra nusakoma priklauso nuo
+konkretaus uždavinio.  
+
+\begin{pav} Raskite lygties $x^2 = 2y^2$ sveikuosius sprendinius.
+\end{pav}
+
+\begin{sprendimas}
+  Tarkime, kad ši lygtis turi sprendinį $(x_0,y_0)$, kur $x_0>0$ ir
+  $y_0>0$. Kadangi dešinioji lygybės $x_0^2 = 2y_0^2$ pusė dalijasi iš $2$,
+  tai ir kairioji turi dalintis iš $2$. Bet tada $x_0$ dalinsis iš $2$,
+  $x_0^2$ dalinsis iš $4$ todėl ir $y_0$ turės dalintis iš $2$. Pažymėkime
+  $x_0=2x_1$ ir $y_0=2y_1$. Įsistatę į lygtį ir suprastinę gausime $x_1^2 =
+  2y_1^2$ - t.y. $(x_1, y_1)$ taip pat bus sprendinys. Taip tęsdami toliau
+  gausime begalo daug sprendinių, kurių kiekviena iš koordinačių mažės, bet
+  visuomet liks teigiama. Tačiau to būti negali, vadinasi lygtis negali
+  turėti sprendinių su $x$ ir $y$ teigiamais. Kadangi abiejose pusėse
+  kvadratai, tai negali turėti ir jokių kitų, išskyrus $(0,0)$, kuris
+  vienintėlis ir tinka.
+
+  Beveik visuomet samprotavimą apie begalinę seką galima pakeisti kiek
+  kitokiu, tačiau ta pačia idėja iš esmės besiremiančiu argumentu. Šiuo
+  atveju tai atrodytų taip: tegu duota lygtis turi sprendinį $(x_0, y_0)$.
+  Jei $x_0$ ir $y_0$ turi bendrų daliklių, tai suprastinkime, ir gausime
+  sprendinį $(x_1,y_1)$, kurio $x_1$ ir $y_1$ yra tarpusavyje pirminiai.
+  Tačiau, kaip jau matėme, tuomet gausime, kad $x_1$ ir $y_1$ dalijasi iš
+  $2$ - prieštara. Lieka vienintėlė sveikųjų skaičių pora, kurios neįmanoma
+  suprastinti taip, kad skaičiai nebeturėtų bendrų daliklių - $(0,0)$.
+\end{sprendimas}
+
+\subsubsection{Uždaviniai}
+
+\begin{enumerate}
+  \item Raskite lygties $x^3 + 2y^3 + 4z^3 = 6xyz$ sveikuosius
+    sprendinius.
+  \item Raskite lygties $x^3 + 2y^3 + 4z^3 = 9w^3$ sveikuosius
+    sprendinius.
+    %Tarkime lygtis turi sprendinį (x,y,z,w). Kadangi $a^3\equiv \pm 1,
+    %0\m{9}$, tai $3|x, 3|y, 3|z$, o tada ir $3|z$. Gauname naują sprendinį
+    %($x/3, y/3, z/3, w/3$). Taikydami begalinio nusileidimo principą
+    %gauname, kad sprendinys yra tik (0,0,0,0).
+  \item Raskite lygties $5x^3 + 11y^3 + 13z^3 = 0$ sveikuosius sprendinius.
+    %mod $13$
+  \item Raskite lygties $( (px)^2 -1)^p + 1 = py^2$ natūraliuosius
+    sprendinius.
+  \item \text{[Austria 2002]} Raskite lygties $(19a + b)^{18} + (a+b)^{18} + (19b + a)^{18} =
+    c^2$ sveikuosius sprendinius.
+  \item Raskite sveikuosius lygčių sistemos sprendinius 
+    $$\left\{ 
+    \begin{array}{l} 3a^4 + 2b^3 = c^2 \\
+      3a^6 + b^5 = d^2
+    \end{array}\right.$$
+  %Spręsdami antrąją lygtį moduliu $3$ gausime, kad $b\not \equiv 1
+  %\m{3}$, o nagrinėdami pirmąją gausime, kad $b \not \equiv 2 \m{3}$.
+  %Vadinasi $b$ dalijasi iš trijų. Lieka pritaikyti begalinį nusileidimą:
+  %
+  %
+  %$$3|b \implies 3|c, 3|d \implies 3|a \implies 3^2|c, 3^2|d \implies 3^2|b
+  %\implies 3^3|c, 3^4 |d \implies 3^2|a, \implies 3^3|c, 3^5|d.$$ Pažymėję
+  %$a=3^2a_1, b=3^2b_1, c=3^3c_1, d=3^5d_1$, įstatę ir suprastinę gausime
+  %sistemą $$\left\{ 
+  %  \begin{array}{l} 3^3a_1^4 + 2b_1^3 = c_1^2 \\
+  %    3^3a_1^6 + b_1^5 = d_1^2
+  %  \end{array}\right.$$
+  %Pakartoję samprotavimus vėl gausime tas pačias išvadas apie $a_1$,
+  %$b_1$, $c_1$ ir $d_1$ dalumus iš $3$ ir taip galėsime tęsti kiek tik
+  %norėsime, nes po suprastimų sistema visuomet atrodys panašiai, skirsis
+  %nebent koeficientai prie $a$, bet išliks nelyginiai trejeto laipsniai.
+  %Vadinasi pradinio sprendinio $a$, $b$, $c$ ir $d$ kiek norima kartų
+  %daliasi iš trijų, todėl tegali būti lygus $(0,0,0,0)$.
+
+
+    	
+  \item Raskite visus sveikųjų skaičių ketvertus $(a,b,c,d)$, su kuriais
+    $$a^2 + 5b^2 = 2c^2 + 2cd + 3d^2$$.
+  %Padauginkime lygtį iš dviejų: $2a^2 + 10b^2 = (2c+d)^2 + 5d^2$.
+  %Pažymėkime $2c+d = e$, parodysime, kad lygtis $2a^2 + 10b^2 = e^2 +
+  %5d^2$ neturi sveikųjų sprendinių. Spręsdami lygtį moduliu $5$ gauname
+  %$2a^2 \equiv e^2 \implies 5|a, 5e$. Pažymėję $a=5x$, $e=5y$, įstatę ir
+  %suprastinę gauname $10a^2 + 2b^2 = 5e^2 + d^2$. Vėl nagrinėdami moduliu
+  %$5$ gauname, kad ir $5|b, 5|d$, vadinasi lygtis turi tik nulinį
+  %sprendinį $(0,0,0,0)$.
+\end{enumerate}

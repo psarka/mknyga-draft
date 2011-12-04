@@ -1,0 +1,1387 @@
+\chapter{ToDo}
+\section{Rekursija}
+
+\noindent Rekursija - vienas iš galingiausių kombinatorikos metodų, leidžiantis greitai ir patogiai spręsti iš pažiūros sunkius uždavinius. Jo esmė yra gal truputį panaši į matematinės indukcijos - naudotis prieš tai buvusiais atvejais. Lengviausia bus rekursiją suvokti panagrinėjus pavyzdžius. 
+\bigskip
+
+1. Sekos iš $1$ ir $0$.
+
+Suskaičiuokime, kiek galima sudaryti $n$ ilgio sekų iš $1$ ir $0$. Uždavinys labai paprastas - jei ieškomą dydį pažymėsime $a_n$, tai gausime, jog $a_n = 2a_{n-1}$. Iš ties, $n$ ilgio seka prasidės vienetu arba nuliu, o kas liks bus $n-1$ ilgio seka. Kitaip sakant, iš kiekvienos $n-1$ ilgio sekos mes galėsime padaryti dvi $n$ ilgio sekas, todėl pastarųjų bus dvigubai daugiau. 
+\begin{center}
+  \includegraphics[scale=1]{./iliustracijos/10sekos.pdf}
+\end{center}
+
+Kadangi $a_1 = 2$, tai akivaizdu, jog $a_n = 2^n.$ Panagrinėkime kiek įdomesnį pavyzdį:
+
+\bigskip
+
+2. Hanojaus bokštai.
+
+\bigskip
+
+\begin{center}
+  \includegraphics[scale=0.5]{./iliustracijos/hanojaus.pdf}
+\end{center}
+
+Duoti trys pagaliai ir $n$ skirtingo dydžio diskų su skyle vidury, sumautų ant pirmojo pagalio mažėjimo tvarka, kaip paveikslėlyje. viršutinį diską galima numauti nuo pagalio ir užmauti ant kito, bet niekada didesnis diskas negali būti virš mažesnio. Pirmas klausimas, ar galima taip maustant sumauti visus diskus ant kito pagalio, nei pradinis? Atsakymas galima, ir nesunku tuo įsitikinti. Antrasis - per kiek mažiausiai ėjimų tai galima padaryti? Atrodytų suskaičiuoti bus gana sudėtinga, bet naudodami rekursiją lengvai išsisuksime. 
+
+Norėdami perkelti visus diskus nuo vieno pagalio ant kito, turėsime kažkada perkelti didžiausiąjį diską, t.y. turėsime atsidurti tokioje padėtyje:
+
+\bigskip
+
+%\begin{center}
+%  \includegraphics[scale=0.5]{./iliustracijos/hanojaus2.pdf}
+%\end{center}
+
+Pažymėkime $r_n$ mažiausią ėjimų skaičių per kuriuos įmanoma perkelti $n$
+diskų nuo vieno pagalio ant kito. Tuomet remdamiesi savo pastebėjimu,
+gauname, kad $r_n = r_{n-1}$ viršuj esančiai padėčiai pasiekti $+ 1$
+didžiajam diskui perkelti $+ r_{n-1}$ sukelti $n-1$ diską ant didžiojo.
+T.y. $$r_n = 2r_{n-1} + 1.$$ Gauta lygybė ir yra vadinama \emph{rekursine
+lygybe} ar rekursiniu sąryšiu, ar tiesiog rekursija. Tokia lygybe mes
+nepasitenkinsime, ir rasime rekursijos sprendinį. Žinoma, nepridėjus jokių
+tolesnių apribojimų, tokių sprendinių turėsime be galo, tad pridėkime
+pradinę sąlygą : $r_1 = 1$. Dabar jau aišku, kad egzistuoja vienintelis
+sprendinys. Kaip jį rasti? Bendro recepto nėra, o su kai kuriais metodais
+susipažinsite generuojančių funkcijų užduotyje. Kol kas pasitenkinsime
+įvairiomis gudrybėmis. Įsižiūrėkime į mūsų lygybę: jei nebūtų $+1$, tai
+$r_n$ būtų tiesiog $2^{n-1}$, kaip ir praeitame pavyzdyje. Kitaip sakant
+"kvepia dvejetų laipsniais". Paskaičiuokime: $$r_1 =1, r_2 = 3, r_3 = 7,
+r_4 = 15, r_5 = 31.$$ Panašu į ką nors gero? Panašu. Matome, kad turėtų
+tikti $$r_n = 2^n - 1.$$ Patikrinkime, ar tenkinama rekursinė lygybė: $2^n
+- 1 = 2(2^{n-1} - 1) + 1$. Tinka. O kadangi sprendinys buvo vienintelis, tai mes jį ir radome.
+
+\bigskip
+
+3. Fibonačio skaičiai.
+
+\bigskip
+
+Fibonačio skaičiai yra labai įžymus matematikos objektas, pavadintas matematiko Fibonacci garbei. Dažniausiai jie kildinami iš štai tokio uždavinio. Triušių porelė praėjus dviems mėnesiams nuo gimimo, ir nuo to laiko kas mėnesį, atsiveda vieną palikuonių porelę. Jei pradžioje turime vieną vos gimusių triušių porelę, kiek porelių turėsime po $n$ mėnesių? Pradinę padėtį pažymėję kaip $F_1 = 1$ gauname, kad po mėnesio turėsime vis dar vieną porelę $F_2=1$, o po dviejų jau dvi $F_3 = 2$. Truputį pamąsčius tampa aišku, kad $F_n = F_{n-1} + F_{n-2}$. Šios rekursijos sprendinio dar kol kas neieškosime, bet ją žinoti privalu! 
+
+\bigskip
+
+4. Atrankos į IMO 2008 užduotis.
+
+\begin{center}
+  \begin{tabular}{ |p {0,2cm} | p {0,2cm} | p{0,2cm} | p{0,2cm}| }
+    \hline
+     &  &  &\\ \hline
+     &  &  &\\ \hline
+     &  &  &\\ \hline
+     &  &  &\\ \hline
+  \end{tabular}
+\end{center}
+
+\bigskip
+
+Duota lentelė $4 \times 4$. Keliais skirtingais būdais galima į ją surašyti vienetus ir nulius, taip, kad jokie du vienetai neturėtų bendros kraštinės? Kaip ir pridera olimpiadiniam uždaviniui, visai neakivaizdu nuo kurio galo jį pradėti doroti. Net ir žinodami, kad taikysime rekursiją, vis vien turime pasikankinti, kol rasime iš kurios pusės pradėti skaičiuoti. Jei norite, pamėginkite patys, jei ne - žiūrime sprendimą.
+
+Patyrinėkime, kaip nulius ir vienetus galima surašyti į centrinį $2\times 2$ kvadratėlį. Aišku, kad galima surašyti visus keturis nulius. Taip pat galima bet kaip surašyti tris nulius ir vieną vienetą. Trečiu būdu galime įrašyti du vienetus ir du nulius, bet vienetai turi stovėti priešinguose kampuose. Prisiminę, kad du vienetai negali stovėti greta, gauname tris galimas situacijas:
+
+\begin{figure}[h]
+  \centering
+  \subfloat[]{\begin{tabular}{ |p {0,2cm} | p {0,2cm} | p{0,2cm} | p{0,2cm}| }
+    \hline
+     &  &  &\\ \hline
+     & 0 & 0 &\\ \hline
+     & 0 & 0 &\\ \hline
+     &  &  &\\ \hline
+  \end{tabular}} 
+  \hspace{2cm}               
+  \subfloat[]{\begin{tabular}{ |p {0,2cm} | p {0,2cm} | p{0,2cm} | p{0,2cm}| }
+    \hline
+     & 0 &  &\\ \hline
+    0 & 1 & 0 &\\ \hline
+     & 0 & 0 &\\ \hline
+     &  &  &\\ \hline
+  \end{tabular}}
+  \hspace{2cm}
+  \subfloat[]{\begin{tabular}{ |p {0,2cm} | p {0,2cm} | p{0,2cm} | p{0,2cm}| }
+    \hline
+     & 0 &  &\\ \hline
+    0 & 1 & 0 &\\ \hline
+     & 0 & 1 & 0\\ \hline
+     &  & 0 &\\ \hline
+  \end{tabular}}
+\end{figure}
+
+Pastebėkime, kad (a) turime suskaičiuoti kiek yra galimų būdų užpildyti $12$ langelių ilgio žiedą, (b) - $9$ langelių ilgio juostą, o (c) labai paprastas.
+
+Skaičiuokime, kiek yra būdų užpildyti $n$ ilgio juostą. Jei į pirmą langelį rašome nulį, tai į likusius galėsim surašyt bet kokią $n-1$ ilgio juostą. 
+Jei į pirmą langelį rašome vienetą, tai tada į antrą būtinai nulį, o į likusius bet kokią $n-2$ ilgio juostą. Arba, būdų skaičių pažymėję $j_n$, gauname $$j_n = j_{n-1} + j_{n-2}.$$ Paskaičiavę pirmus keletą narių $j_1 = 2, j_2 = 3, j_3 = 5, ...$ matome, kad gavome ne ką kitą, kaip Fibonačio skaičius, tik truputį pastumtus: $$j_n = F_{n+2}.$$
+
+Skaičiuokime, kiek yra būdų užpildyti $n$ ilgio žiedą. Fiksuokime bet kurį langelį. Jei į jį įrašome nulį, tai į likusius galime įrašyti bet kokią $n-1$ ilgio juostą, jei į jį įrašome vienetą, tai į du kaimynus būtinai nulius, o į likusius bet kokią $n-3$ ilgio juostą. Taigi $$z_n = j_{n-1} + j_{n-3} = F_{n+1} + F_{n-1}.$$ 
+
+Savaime suprantama, po tokių pastebėjimų uždavinį pribaigti vieni juokai.
+
+\newpage
+\bigskip
+\begin{center}\textbf{Uždaviniai}\end{center}
+
+\begin{enumerate}
+
+\item Raskite rekursinę aritmetinės ir geometrinės progresijos išraišką.
+    
+\item Kiek aibės $\{1,2,...,n\}$ poaibių neturi dviejų iš eilės einančių elementų? 
+  
+\item Keliais skirtingais būdais galima padengti juostą $2\times n$ domino kaladėlėmis?
+  
+\item Iš "raidžių" $\{0,1,2\}$ sudaromi žodžiai. Tegu $f(n)$ bus skaičius žodžių, kurių ilgis $n$ ir kurie neturi greta stovinčių "0". Raskite rekursinę $f(n)$ formulę. 
+
+\item Duota rekursija $v_{n+1} = v_{n-1} - v_{n}, v_0 =3, v_1=-1$. Išreikškite $v_n$ per Fibonačio skaičius.
+  
+\item Raskite rekursiją nusakančią keliais skirtingais būdais aibė iš $n$ elementų gali būti išskaidyta į skirtingas aibes. Pvz. $\{1,2,3\}$ gali būti išskaidyta į $\{1,2,3\}$; \hspace{0.2cm} $\{1,2\},\{3\}$;\hspace{0.2cm} $\{1,3\},\{2\}$;\hspace{0.2cm} $\{2,3\},\{1\}$;\hspace{0.2cm} $\{1\},\{2\},\{3\}.$
+  
+\item Aibės $\{1,2,...,n\}$ perstatą vadinsime involiucija, jei perstatę du kartus gauname pradinę aibę (pvz. involiucija būtų pirmo ir paskutinio elementų apkeitimas). Raskite rekursiją nusakančią kiek tokių involiucijų yra.
+
+\item Keliais būdais galima iškylą $n$-kampį supjaustyti į trikampius nesikertančiomis įstrižainėmis? Raskite rekursiją.
+  
+\item Į kiek daugiausia sričių galima padalinti plokštumą naudojant $n$ tiesių?
+
+\item Iš ilgio $1$ raudonų, ilgio $1$ mėlynų ir ilgio $2$ žalių kaladėlių dėliojame $n$ ilgio eilę. Kiek yra skirtingų būdų tą padaryti, jei reikalaujame, kad nebūtų šalia stovinčių trijų iš eilės ilgio $1$ kaladėlių? Raskite rekusinį sąryšį. 
+  
+\item Keliais skirtingais būdais skaičių $n$ galima užrašyti kaip dvejeto laipsnių sumą? Raskite rekursinius sąryšius ir pabandykite juos išspręsti.
+
+\item Paštininkas pristatinėja laiškus devyniolikai namų, stovinčių vienoje gatvės pusėje. Jis pastebėjo, kad kokia diena bebūtų, niekuomet neatsiranda dviejų šalia stovinčių namų, kurie abu gautų laiškų, ir niekuomet neatsiranda trijų šalia stovinčių namų, kurie visi trys negautų laiškų. Keliais skirtingais būdais remdamasis šiuo dėsningumu paštininkas gali pristatyti laiškus?  
+
+\item Kiek yra n-ženklių skaičių, kurių visi skaitmenys nelyginiai ir bet kurie gretimi skaitmenys skiriasi per 2? 
+
+\item Keliais būdais galima iš kaladėlių $1\times 1\times 2$ pastatyti bokštą $2 \times 2 \times 5$, taip kad niekas nekyšotų ir nebūtų skylių?
+
+\item Kiek yra aibės $\{1,\dots, n\}$ "nedalių" perstatų $\{a_1,\dots, a_n\}$, t.y. tokių, kad $\{a_1,\dots, a_i\}$ nebūtų $\{1,\dots,i\}$ perstata su bet kokiu $i$? 
+
+\item Nagrinėkime tokias aibės $\{1,2,\dots,n\}$ perstatas $\{a_1, a_2,\dots,a_n\}$, kad $1 \leq |a_i - i| \leq 2, i=1,\dots,n$. Jų skaičių pažymėkime $S_n$. Įrodykite, kad $7S_{n-1}<4S_n<8S_{n-1}.$
+
+\item Keliais būdais galima stačiakampį $2\times n$ padalinti į sveikus kraštinių ilgius turinčius stačiakampius? Raskite rekursiją. 
+
+\item Nuobodžiaujantis moksleivis vaikšto koridoriumi, pagal kurio sieną stovi 1024 uždarytos spintelės. Eidamas į priekį jis atidaro kas antrą spintelę pradėdamas nuo pirmosios. Grįždamas atgal, jis atidaro kas antrą iš likusių uždarytų spintelių, pradėdamas nuo pirmos uždarytos. Kurią spintelę taip vaikščiodamas pirmyn-atgal jis atidarys paskutinę?
+
+\item Pažymėkime $A_n$ kiek yra būdų iškloti stačiakampį $4 \times n$ plytelėmis $2 \times 1$. Įrodykite, kad $A_n$ dalijasi iš dviejų tada ir tik tada, kai $A_n$ dalijasi iš $3.$
+
+\item Nagrinėkime skaičius, kurie yra sudaryti iš skaitmenų $\{1,2,3,4\}$, kurių jokie du gretimi skatmenys nėra vienodi ir jokie trys iš eilės einantys skaitmenys nesudaro didėjančios arba mažėjančios sekos. 
+
+{\bf a.} \ Kiek yra tokių dešimtženklių skaičių?
+
+{\bf b.} \,Kokią liekaną gauname, kai sąlygą tenkinančių $2008$-ženklių skaičių kiekį dalijame iš $13$?
+
+\end{enumerate}
+
+%\bibitem{ConcreteMath}
+%R.L. Graham, D.E. Knuth, and O. Patashnik, \emph{Concrete
+%Mathematics}, Addison-Wesley, Reading, MA, 1989.
+%\bibitem{titu}
+%T. Andreescu, Z. Feng, \emph{102 Combinatorial Problems From the Training of the USA IMO Team}, Birkhauser, Boston, 2002.
+%\bibitem{titu2}
+%T. Andreescu, Z. Feng, \emph{A Path to Combinatorics for Undergraduates}, Birkhauser, Boston, 2004.
+\section{Rekursijos Sprendimai}
+
+\bigskip
+\begin{enumerate}
+
+\item {\bf Raskite rekursinę aritmetinės ir geometrinės progresijos išraišką.}
+
+Aritmetinę progresiją galime užrašyti kaip $$a_1 = a, a_n = a_{n-1} + d,$$ o geometrinę kaip $$g_1 = b, g_n = g_{n-1}\cdot q.$$ \medskip
+  
+\item {\bf Kiek aibės $\{1,2,...,n\}$ poaibių neturi dviejų iš eilės einančių elementų?} 
+
+Aibės $\{1,2,...,n\}$ poaibių be elemento n yra tiek pat kiek aibės $\{1,2,...,n-1\}$ poaibių. O poaibių su elementu n (ir automatiškai be elemento $n-1$) tiek pat kiek ir aibės $\{1,2,...,n-2\}$ poaibių. Taigi gauname $p_n = p_{n-1} + p_{n-2}, p_1 = 2$ (nepamirškime tuščios aibės), $p_2 = 3,$ arba $p_n = F_{n+2}$. \medskip
+  
+\item {\bf Keliais skirtingais būdais galima padengti juostą $2\times n$ domino kaladėlėmis?}
+
+Padengimų skaičių pažymėkime $a_n$. Tuomet $a_n = a_{n-1}$ (jei pirmą domino dedam stačiai) $+ a_{n-2}$ (jei pirmą domino kartu su "kolege" dedam gulsčiai). Vėl gauname Fibonačio skaičius: $a_n = F_{n+1}.$ \medskip
+  
+\item {\bf Iš "raidžių" $\{0,1,2\}$ sudaromi žodžiai. Tegu $f(n)$ bus skaičius žodžių, kurių ilgis $n$ ir kurie neturi greta stovinčių "$0$". Raskite rekursinę $f(n)$ formulę.} 
+
+Paprastai samprotaudami gauname: $f(n) = 2f(n-1)$ (jei pirmas skaičius $1$ arba $2$) $+ 2f(n-2)$ (jei pirmi du skaičiai $01$ arba $02$).\medskip
+
+\item {\bf Duota rekursija $v_{n+1} = v_{n-1} - v_{n}, v_0 =3, v_1=-1$. Išreikškite $v_n$ per Fibonačio skaičius.}
+
+Pirmiausia pamatome, kad po teigiamo eina neigiamas, o po neigiamo teigiamas. Tai užrašę kaip $v_n = (-1)^nw_n$, gauname sąryšį $w_n = w_{n-1} + w_{n-2}.$ Čia iš pirmo žvilgsnio turėtų tikti Fibonačio skaičiai, tačiau jie netenkina pradinių sąlygų. Kiek palaužę galvą suprantame, kad turėtų tikti ir įvairios Fibonačio skaičių kombinacijos. Tuomet jau lengvai gauname $w_n = F_{n} + 3F_{n-1}$ ir $v_n = (-1)^n(F_{n} + 3F_{n-1}).$ \medskip
+    
+\item {\bf Raskite rekursiją nusakančią keliais skirtingais būdais aibė iš $n$ elementų gali būti išskaidyta į skirtingas aibes. Pvz. $\{1,2,3\}$ gali būti išskaidyta į $\{1,2,3\}$; \hspace{0.2cm} $\{1,2\},\{3\}$;\hspace{0.2cm} $\{1,3\},\{2\}$;\hspace{0.2cm} $\{2,3\},\{1\}$;\hspace{0.2cm} $\{1\},\{2\},\{3\}.$}
+
+Pažymėkime išskaidymų skaičių $a_n$. Suskirstykime juos pagal tai, su keliais elementais viename poaibyje yra elementas $n$. Jei jis yra pats sau poaibis, tai likusius elementus išskaidysime $a_{n-1}$ būdu. Jei jis su kuo nors poroje, tai porininką parinksime ir likusius išskaidysime $\binom{1}{n-1}a_{n-2}$ būdais. Tęsdami taip toliau matome, kad $$a_n = \binom{0}{n-1}a_{n-1} + \binom{1}{n-1}a_{n-2}+ \cdots + \binom{n-2}{n-1}a_{1}.$$\medskip  
+  
+\item {\bf Aibės $\{1,2,...,n\}$ perstatą vadinsime involiucija, jei perstatę du kartus gauname pradinę aibę (pvz. involiucija būtų pirmo ir paskutinio elementų apkeitimas). Raskite rekursiją nusakančią kiek tokių involiucijų yra.}
+
+Pastebėkime, kad involiucija yra tas pats kas elementų suporavimas (tik elementą galime suporuoti su savimi), mat jei $a$ pervedame į $b$, tai $b$ būtinai turime pervesti atgal į $a$. Jei involiucijų skaičių pažymėsime $a_n$, tai $n$ suporavimą su $k\neq n$ atitiks $a_{n-2}$ involiucijos, o $n$ suporavimą su $n$ atitiks $a_{n-1}$. Taigi $a_n = (n-1)a_{n-2} + a_{n-1}.$  \medskip
+
+\item {\bf Keliais būdais galima iškylą $n$-kampį supjaustyti į trikampius nesikertančiomis įstrižainėmis? Raskite rekursiją}
+
+Fiksuokime vieną iš $n$-kampio kraštinių. Ji turės priklausyti kažkokiam trikampiui. Sujungę įstrižaines apribojančias tą trikampį gausime du daugiakampius kaip piešinyje:
+\begin{figure}[h]
+\centering\includegraphics[scale=0.5]{./iliustracijos/enkampis.pdf}
+\end{figure}
+
+Jei iškylą $n$-kampį galime padalinti $C_n$ būdais, tai jungdami pasirinktą kraštinę su visomis viršūnėmis gausime, kad $C_2 = 1$, $C_3 = 1$, $$C_n = C_2C_{n-1} + C_3C_{n-2} + \cdots + C_{n-2}C_3 + C_{n-1}C_2.$$\medskip
+
+\item {\bf Į kiek daugiausia dalių galima padalinti plokštumą naudojant $n$ tiesių?}
+
+Tarkime, kad plokštumoje yra $n-1$ tiesė, ir mes brėžiame $n$-tąją. Ji prasidės vienoje iš (begalinių) dalių, ir ją tikrai padalins į dvi. Jei norime dar papildomų dalių, tai brėžiama tiesė turės patekti į kokią kitą dalį, o taip atsitiks tik tada, jei ji kirs vieną iš seniau buvusių tiesių. Kadangi tiesių buvo $n-1$, tai daugiausia pateks į $n-1$ naują dalį, taip atkirsdama iš viso n naujų dalių. Gauname rekursiją $p_n = p_{n-1} + n$. Kadangi $p_1 = 2$, tai $p_n = n + n-1 + \cdots + 2 + 2 = \frac{n(n+1)}{2} +1.$   \medskip
+
+\item {\bf Iš ilgio $1$ raudonų, ilgio $1$ mėlynų ir ilgio $2$ žalių kaladėlių dėliojame $n$ ilgio eilę. Kiek yra skirtingų būdų tą padaryti, jei reikalaujame, kad nebūtų šalia stovinčių trijų iš eilės ilgio $1$ kaladėlių? Raskite rekursinį sąryšį.}
+
+Pažymėję ieškomą dydį $a_n$ nagrinėkime atvejus. Jei pirmoji kaladėlė žalia, tai turime $a_{n-2}$ išdėstymų. Jei pirma raudona arba mėlyna, o antra žalia, tai dar $2a_{n-3}$ išdėstymų. Jei pirmos dvi raudona arba mėlyna, o trečia žalia, tai dar $4a_{n-4}$ išdėstymų. Taigi $$a_n = a_{n-2} + 2a_{n-3} + 4a_{n-4}.$$ 
+
+
+\item {\bf Keliais skirtingais būdais skaičių $n$ galima užrašyti kaip dvejeto laipsnių sumą? Raskite rekursiją.}
+
+Jei skaičius $n$ nelyginis, tai jo išskaidymų į dvejeto laipsnius bus tiek pat, kiek ir skaičiaus $n-1$ (išskaidymai skirsis per $+1$). Jei lyginis, tai išskaidymų su dėmeniu $+1$ bus tiek pat kiek skaičiaus $n-1$ išskaidymų, o be dėmens $+1$ tiek pat, kiek $n/2$ išskaidymų. Gauname rekursiją $a_n = a_{n-1}$, kai $n$ nelyginis ir $a_{n} = a_{n-1} + a_{n/2}$, kai $n$ lyginis.\medskip
+
+\item {\bf [AIME 2001] Paštininkas pristatinėja laiškus devyniolikai namų, stovinčių vienoje gatvės pusėje. Jis pastebėjo, kad kokia diena bebūtų, niekuomet neatsiranda dviejų šalia stovinčių namų, kurie abu gautų laiškų, ir niekuomet neatsiranda trijų šalia stovinčių namų, kurie visi trys negautų laiškų. Keliais skirtingais būdais remdamasis šiuo dėsningumu paštininkas gali pristatyti laiškus?}
+
+Performulavę užduotį ieškome, kiek yra sekų iš $1$ ir $0$, kur jokie du $1$ ir jokie trys $0$ nestovi greta. Tokių ilgio $n$ sekų skaičių pažymėkime $s_n$. Kiekviena tokia seka gali prasidėti $100$, $0100$, $00100$ arba $101$, $0101$, $00101.$ Pirmos rūšies yra tiek pat, kiek $s_{n-3}$ (gaunama išimant $100$), o antros tiek pat, kiek $s_{n-2}$ (gaunama išimant $10$). Gauname rekursiją $$s_n = s_{n-3} + s_{n-2}.$$ Kadangi $s_1 = 2$, $s_2 = 3$, $s_3 = 4$, tai lengvai suskaičiuojame $s_{19} = 351.$\medskip
+
+\item {\bf Kiek yra n-ženklių skaičių, kurių visi skaitmenys nelyginiai ir bet kurie gretimi skaitmenys skiriasi per 2?}
+
+Pažymėkime $a_{n}^i$ - kiek yra $n$-ilgio skaičių, kurių paskutinis skaitmuo $i$. Tuomet gausime akivaizdžius rekursinius sąryšius: $a_{n}^1 = a_{n-1}^3$, $a_{n}^3 = a_{n-1}^1 + a_{n-1}^5$, $a_{n}^5 = a_{n-1}^3 + a_{n-1}^7$, $a_{n}^7 = a_{n-1}^5 + a_{n-1}^9$, $a_{n}^9 = a_{n-1}^7$. Pagal simetriją $a_{n}^3 = a_{n}^7$ ir $a_{n}^1 = a_{n}^9.$ Išsireiškę ir įsistatę lengvai gauname, kad $a_{n}^{5} = a_{n+1}^3 - a_{n-1}^3 = 2a_{n-1}^3.$ Likusi sprendimo eiga akivaizdi. \medskip
+
+
+\item {\bf keliais būdais galima iš kaladėlių $1\times 1\times 2$ pastatyti bokštą $2 \times 2 \times 5$, taip kad niekas nekyšotų ir nebūtų skylių?}
+
+Pažymėkime būdų skaičių $a_n$ ir nagrinėkime atvejus. Jei pirmas dvi kaladėles dėsime gulsčiai, gausime $a_{n-1}$ variantą, jei keturias statmenai - $a_{n-2}$, jei vieną gulsčiai ir šalia dvi statmenai, tai ant gulsčios arba dar vieną gulsčią ($a_{n-2}$) arba dvi stačias. Jei dvi stačias, vėl kryžkelė - arba gulsčią ($a_{n-3}$) arba dar dvi stačias ir taip toliau. Atsižvelgę į galimus pasukimus gauname $$a_n = 2a_{n-1} + a_{n-2} + 4a_{n-2} + 4a_{n-3} + \cdots 4a_1.$$  
+Sutvarkome: $$a_n = 3a_{n-1} + 3a_{n-2} - a_{n-3}.$$
+Pirmąsias reikšmes randame lengvai: $a_1 = 2, a_2=9, a_3=32,$ o tada naudodamiesi rekursija gauname $a_5 = 450.$ \medskip
+
+\item {\bf Kiek yra aibės $\{1,\dots, n\}$ "nedalių" perstatų $\{a_1,\dots, a_n\}$, t.y. tokių, kad $\{a_1,\dots, a_i\}$ nebūtų $\{1,\dots,i\}$ perstata su bet kokiu $i$?}
+
+Pažymėkime ieškomą nedalių perstatų skaičių $a_n.$ Iš viso perstatų yra $n!$, iš kurių $a_1(n-1)!$ "dalosi" jau po pirmo elemento (tos, kur $1$ perveda į $1$), $a_2(n-2)!$ "dalosi" po antro elemento, $a_3(n-3)!$ po trečio ir t.t. Gauname bjauroką rekursiją $$a_n = n! - \sum_{i=1}^{n-1}{a_i(n-i)!}.$$
+
+\item {\bf [Vietnamas 2003] Nagrinėkime tokias aibės $\{1,2,\dots,n\}$ perstatas $\{a_1, a_2,\dots,a_n\}$, kad $1 \leq |a_i - i| \leq 2, i=1,\dots,n$. Jų skaičių pažymėkime $S_n$. Įrodykite, kad $7S_{n-1}<4S_n<8S_{n-1}.$}
+
+Tiesiausiu (bet ne gudriausiu) būdu skaidydami atvejais gauname rekursiją $$S_n = S_{n-2} + S_{n-3} + \cdots + S_1 + S_{n-4} + S_{n-3} + S_{n-4} + \cdots + S_1.$$ Pertvarkę ir pamanipuliavę gauname dar du sąryšius: \begin{equation}\label{a}S_n = S_{n-1} + S_{n-2} + S_{n-3} + S_{n-4} - S_{n-5}\end{equation} ir \begin{equation}\label{b}S_n = 2S_{n-1} -2S_{n-5} + S_{n-6}.\end{equation} Naudodamiesi nelygybe $S_{i} > S_{i-1}$ iš (\ref{b}) gauname nelygybę $$4S_n < 8S_{n-1},$$ o truputį padirbėję su (\ref{a}) gauname, kad nelygybė $7S_{n-1} < 4S_n$ yra ekvivalenti $$S_{n-2} + S_{n-3} + S_{n-4} + 3S_{n-6} > 7S_{n-5}.$$ Ją įrodome naudodamiesi $$S_n > S_{n-1} + S_{n-2} + S_{n-3},$$ iš kur $S_{n-2} > 3S_{n-5}$, $S_{n-3} > 2S_{n-5}$, $S_{n-4} > S_{n-5}$, o taip pat žinome, kad $2S_{n-6} > S_{n-5}.$ \medskip
+
+\item {\bf [Turkija TST] Keliais būdais galima stačiakampį $2\times n$ padalinti į sveikus kraštinių ilgius turinčius stačiakampius? Raskite rekursiją.}
+
+%Padalijimų skaičių pažymėkime a_n. Nuo stačiakampio $2\times n$ pradžios atskelti stačiakampį 2\times i galime a_{n-1} %+ a_{n-2} + \dots + a_0 būdų. Lieka skaičiuoti atvejus, kai bandome atskelti stačiakampį suklijuotą iš gulinčių 1\times %n
+Stačiakampį $2\times n$ padalinti į plonus stačiakampius (t.y. $1\times i$) galime $2^{n-1}2^{n-1}$ būdais. Stačiakampį $2\times n$ padalinti į plonus stačiakampius, taip, kad dalijimas būdų "nedalus" (t.y. negalėtume per dalijimo linijas atskirti dviejų stačiakampių $2\times a$, $2\times n-a$) galime $2^{n-1}2^{n-1} - \binom{n}{1}2^{n-2}2^{n-2} + \binom{n}{2}2^{n-3}2^{n-3} - \cdots \pm \binom{n-1}{n-1}2^{0}2^{0} = (2\cdot 2 - 1)^{n-1}$ būdais. Gauname rekursiją:
+$$a_n = a_{n-1} + \cdots + a_0 + 3^0a_{n-1} + \cdots + 3^{n-1}a_0.$$ Ją pertvarkome: 
+$$a_n = 5a_{n-1} - 2(a_{n-2} + \cdots + a_0),$$ ir dar pertvarkome:
+$$a_n = 6a_{n-1} - 7a_{n-2}.$$ \medskip
+
+\item {\bf [AIME 1996] Nuobodžiaujantis moksleivis vaikšto koridoriumi, pagal kurio sieną stovi 1024 uždarytos spintelės. Eidamas į priekį jis atidaro kas antrą spintelę pradėdamas nuo pirmosios. Grįždamas atgal, jis atidaro kas antrą iš likusių uždarytų spintelių, pradėdamas nuo pirmos uždarytos. Kurią spintelę taip vaikščiodamas pirmyn-atgal jis atidarys paskutinę?}
+
+Sunumeruokime spinteles nuo pradžios iki galo skaičiais $1,\dots,1024$. Pastebėkime, kad praeidamas pro spinteles vieną kartą moksleivis atidaro lygiai pusę spintelių. Tad jei norime rasti kelintą spintelę jis atidarys paskutinę, užtektų išspręsti kiek lengvesnį uždavinį - rasti kelintą spintelę jis uždarys paskutinę, jei spintelių yra $2^9$ ir jos sunumeruotos nuo galo, ir kaip susiję numeriai šitų skirtingų numeravimų. Truputį padirbėję gausime rekursinį sąryšį.
+
+Tegu bus $2^k$ uždarytų iš eilės sunumeruotų spintelių. Moksleivis pereina, uždaro kas antrą ir lieka $2^{k-1}$ uždarytų spintelių. Jas sunumeruojame iš naujo nuo to galo, kur stovi moksleivis. Tuomet naują numerį $n$ atitiks senas numeris $2^k - 2n + 2$ (įsitikinkite!). Todėl jei paskutiniosios spintelės numerį numeravimo sistemoje $2^k$ pažymėsime $N_k$, tai gausime $$N_k = 2^k - 2N_{k-1} + 2= 2^k - 2(2^{k-1} - 2 N_{k-2} + 2) + 2 = 4N_{k-2} - 2.$$ Jei turime $2^0$ spintelių, tai aišku, kad paskutinioji liks pažymėta numeriu $1$, ir pagal rekursiją lengvai suskaičiuojame: $N_0 = 1$, $N_2 = 2$, $N_4 = 6$, $N_6 = 22$, $N_8 = 86$, $N_{10} = 342.$\medskip  
+
+\item {\bf [Pietų Afrika 2000] Pažymėkime $A_n$ kiek yra būdų iškloti stačiakampį $4 \times n$ plytelėmis $2 \times 1$. Įrodykite, kad $A_n$ dalijasi iš dviejų tada ir tik tada, kai $A_n$ dalijasi iš $3.$}
+
+Pažymėkime $s_n$, $a_n$ ir $b_n$ keliais būdais galima padengti n-ilgio figūras, pavaizduotas paveikslėlyje. 
+
+\begin{figure}[h]
+\centering\includegraphics[scale=0.5]{./iliustracijos/rekursijasp4xn.pdf}
+\end{figure}
+
+Tuomet $$s_n = a_n + b_{n-1} + a_{n-1} + s_{n-2}.$$ Pastebėkime, kad $a_n = s_{n-1} + a_{n-1}$ ir $b_n = s_{n-1} + b_{n-2}.$ Įsistatę gauname $$s_n = s_{n-1} + s_{n-2} + \cdots + s_0 + s_{n-2} + s_{n-4} + \cdots + s_{n\text{ mod } 2} + s_{n-2} + s_{n-3} + \cdots s_0 + s_{n-2}.$$ 
+Sutvarkome: $$s_n = s_{n-1} + 5s_{n-2} + s_{n-3} - s_{n-4}.$$ Moduliu $6$ ši rekursija atrodo kaip $$s_n = s_{n-1} - s_{n-2} + s_{n-3} - s_{n-4},$$ o pirmosios reikšmės (moduliu $6$) $1,1,-1,-1,0,-1,-1,1,1,0,1,1,-1,-1,0,\dots$ Akivaizdu, kad ši seka periodinė ir tenkina dalumo sąlygą.\medskip
+
+
+\item {\bf [CSMO 2008] Nagrinėkime skaičius, kurie yra sudaryti iš skaitmenų $\{1,2,3,4\}$, kurių jokie du gretimi skatmenys nėra vienodi ir jokie trys iš eilės einantys skaitmenys nesudaro didėjančios arba mažėjančios sekos. 
+
+{\bf a.} \ Kiek yra tokių dešimtženklių skaičių?
+
+{\bf b.} Kokią liekaną gauname, kai sąlygą tenkinančių $2008$-ženklių skaičių kiekį dalijame iš $13$?}
+
+Nagrinėkime tik skaičius, turinčius lyginį skaičių skaitmenų, ir kurių antras skaitmuo didesnis už pirmąjį. Prasidedančių $1$ ir $2k$ ilgio skaičių kiekį pažymėkime $a_{2k}^1$, prasidedančių $2$ - $a_{2k}^2$, ir $3$ - $a_{2k}^3$ (ketvertu prasidėti negali). Tuomet lengvai gauname rekursinius sąryšius:
+
+\begin{eqnarray*}
+a_{2k}^1 &=& 3a_{2k-2}^1 +2a_{2k-2}^2 + a_{2k-2}^3 \\ a_{2k}^2 &=& 2a_{2k-2}^1 +2a_{2k-2}^2 + a_{2k-2}^3 \\ a_{2k}^3 &=& a_{2k-2}^1 +a_{2k-2}^2 + a_{2k-2}^3. 
+\end{eqnarray*}
+
+Žinodami, kad $a_{2}^1 = 3, a_{2}^2 = 2, a_{2}^3 = 1$ išskaičiuojame $a_{10}^1 + a_{10}^2 + a_{10}^3 = 4004$, ir padauginę iš dviejų gauname pirmosios dalies atsakymą. Taip pat pastebime, kad moduliu $13$ $a_{14}^1 \equiv 3, a_{14}^2 \equiv 2, a_{14}^3 \equiv 1,$ taigi sekos periodinės (su periodu $12$), ir $$a_{2008}^1 + a_{2008}^2 + a_{2008}^3 \equiv a_{4}^1 + a_{4}^2 + a_{4}^3 \equiv 5 \text{ mod } 13.$$ 
+
+\end{enumerate}  
+\
+\section{Generuojančios funkcijos}
+
+Pirmoje užduoties dalyje susipažinsime su Generuojančių funkcijų pritaikymu paprastoms rekursijoms spręsti. Antroje įsitikinsime, kad jos pačios yra galingas, bet nemažai kūrybiškumo reikalaujantis metodas. 
+
+Generuojančių funkcijų esmė nepaprastai elegantiška - kiekvieną seką $\{a_0, a_1, ...\}$ galime susieti su {\itshape laipsnine eilute} $f(x) = a_0 + a_1x + a_2x^2 + ...$. Eilutė savo ruožtu neretai susisumuoja, tad sąryšiai tarp sekos narių atsispindi sąryšiuose tarp funkcijų. Pažiūrėkime, kaip tai atrodo praktiškai. Kol kas pasitenkinsime žiniomis apie vienintelę laipsninę eilutę - nykstančią geometrinę progresiją. Žinome, kad kai $|x|<1$ yra teisinga lygybė $$1 + x + x^2 + ... = \frac{1}{1-x}.$$ 
+
+{\bf \itshape Pavyzdys} 
+
+Išspręskime Hanojaus bokštų uždavinyje gautą rekursiją $a_n = 2a_{n-1} + 1$. 
+Užrašykime eilutę $f(x) = a_0 + a_1x + a_2x^2 + ...$ Kiekvienam iš koeficientų pritaikę rekursijos formulę, gauname \begin{eqnarray*}f(x) &=& a_0 + (2a_0 + 1)x + (2a_1 + 1)x^2 + ... \\&=& a_0 + 2x(a_0 + a_1x + ...) + (x + x^2 + ...) \\&=& 2xf(x) + \frac{1}{1-x}.\end{eqnarray*}
+
+Išsireiškime $f(x)$: $$f(x)= \frac{1}{(1-x)(1-2x)}.$$
+
+Radome seką generuojančią funkciją. Lieka ją išskleisti laipsnine eilute ir rasti koeficientus:
+
+$$f(x)= \frac{1}{(1-x)(1-2x)} = \frac{2}{(1-2x)} - \frac{1}{(1-x)} = 2(1 + (2x)^2 + (2x)^3 + ...) - (1 + x + x^2 + ...).$$
+Koeficientas prie $x^n$: $$a_n = 2^{n+1} - 1.$$
+
+Taigi strategija paprasta: Užsirašę bendrą eilutę, koeficientus siejantį sąryšį "perkeliame" į eilutes siejantį sąryšį. Jį išsprendę randame eilutę, o tada ją paskleidžiame ir randame koeficientų bendrą pavidalą. 
+
+Vis dar neatrodo paprasta? Na gerai, dar vienas paprastas pavyzdys "sulėtintai".
+
+{\bf \itshape Pavyzdys} 
+
+Išspręskime rekursiją $a_n = 2a_{n-1}+3a_{n-2}, a_0 = 1, a_1=3.$
+
+Pirma: užsirašome eilutę: $$f(x) = a_0 + a_1x + a_2x^2 + ...$$
+Antra: koeficientams pritaikome rekursiją:
+$$f(x) = a_0 + a_1x + a_2x^2 + ... = 1 + 3x + (2a_1 + 3a_0)x^2 + (2a_2 + 3a_1)x^3 + \cdots $$
+Trečia: sumuojame viską ką galime. Šiuo atveju užteks prisiminti pirmojo žingsnio eilutę:
+\begin{eqnarray*}
+1 + 3x + (2a_1 + 3a_0)x^2 &+& (2a_2 + 3a_1)x^3 + \cdots =  \\ &=& 1+3x + 2x(a_1x + a_2x^2 + \cdots) + 3x^2(a_0 + a_1x + \cdots)\\ &=& 1 + 3x + 2xf(x) -2xa_0+ 3x^2f(x) \\ &=&1 + x + 2xf(x) + 3x^2f(x).
+\end{eqnarray*}
+Ketvirta: Iš gautos lygybės $f(x) = 1 + x + 2xf(x) + 3x^2f(x)$
+
+2. Fibonačio seka.
+
+Nagrinėkime rekursiją $$F_n = F_{n-1} + F_{n-2}, F_{0}=F_{1}=1.$$ Užsirašome eilutę: $f(x) = F_0 + F_1x + F_2x^2 + ...$
+Kiekvienam koeficientui pritaikę rekursijos sąryšį gauname  $$f(x)= F_0 + F_1x + (F_0 + F_1)x^2 + (F_1 + F_2)x^3 + ... = 
+1 + x^2f(x) + xf(x),$$ arba $$f(x)= \frac{1}{1-x-x^2}.$$
+
+Lieka išskleisti. Tai nėra sudėtinga, bet pasikapstyti tenka (pabandykite):
+\begin{eqnarray*}
+\frac{1}{1-x-x^2} &=& - \frac{1}{(x-\frac{1-\sqrt{5}}{2})(x-\frac{1+\sqrt{5}}{2})} \\&=& \frac{\frac{1+\sqrt{5}}{2}\frac{1}{\sqrt{5}}}{(x-\frac{1+\sqrt{5}}{2}} - \frac{\frac{1-\sqrt{5}}{2}\frac{1}{\sqrt{5}}}{(x-\frac{1-\sqrt{5}}{2}} \\&=&
+\frac{1}{\sqrt{5}}(\frac{1+\sqrt{5}}{2} + \left(\frac{1+\sqrt{5}}{2}\right)^2x + ... - \frac{1-\sqrt{5}}{2} - \left(\frac{1-\sqrt{5}}{2}\right)^2x - ... )
+\end{eqnarray*}
+
+Gavome $$F_n = \frac{1}{\sqrt{5}}(\left(\frac{1+\sqrt{5}}{2}\right)^{n+1}- \left(\frac{1-\sqrt{5}}{2}\right)^{n+1}).$$
+
+\bigskip
+Uždaviniai: 
+
+
+\bigskip
+
+  1. \hspace{0.15cm} Sukonstravę generuojantį daugianarį įrodykite, kad $$\binom{n}{0} + \binom{n}{1} + \cdots + \binom{n}{n} = 2^n,$$ ir $$\binom{n}{0} - \binom{n}{1} + \binom{n}{2} - \cdots  + (-1)^n \binom{n}{n} = 0 $$\smallskip
+  
+  2. \hspace{0.15cm} Pasinaudoję pirmo uždavinio daugianariu įrodykite, kad $$\binom{n}{1} + 2\binom{n}{2} + \cdots + \binom{n}{n} = n2^{n-1}.$$\smallskip
+  
+  3. \hspace{0.15cm} Išspręskite rekursiją $r_{n+1} = 2r_n + r_{n-1}$\smallskip
+  
+  5. \hspace{0.15cm}Pasinaudoję antro uždavinio gudrybe, įrodykite, kad $$1 + 2x + 3x^2 + 4x^3 + \cdots = \frac{1}{(1-x)^2}$$\smallskip
+
+	6. \hspace{0.15cm}Išspręskite rekursiją $r_{n+1} = 2r_n + n.$\smallskip
+	
+	7. \hspace{0.15cm}Tegu $u_n$ - skaičius galimų $n$ išskaidymų į skirtingų dėmenų sumą. (Pvz $u_6 = 4$, mat $6=1+5=2+4=1+2+3=6+0$).
+	Įsitikinkite, kad $U(x)=(1+x)(1+x^2)(1+x^3)(1+x^4)\cdots$ yra $u_n$ generuojanti funkcija. \smallskip
+	
+	8. \hspace{0.15cm}Tegu $v_n$ - skaičius galimų $n$ išskaidymų į nelyginių dėmenų sumą. (Pvz $v_6 = 4$, mat $6=1+5=3+3=1+1+1+3=1+1+1+1+1+1$).
+	Įsitikinkite, kad $V(x)=(1+x+x^2+x^3+\cdots)(1+x^3+x^6+x^9+\cdots)(1+x^5+x^{10}+x^(15)+\cdots)\cdots$ yra $v_n$ generuojanti funkcija.\smallskip
+	
+	78.\hspace{0.15cm}Parodykite, kad $U(x) = V(x)$\smallskip
+  
+  9.\hspace{0.15cm}Parodykite, kad skirtingų skaičiaus $n$ užrašymų kaip sumos dėmenų nedalių iš trijų yra tiek pat, kiek ir skirtingų skaičiaus $n$ užrašymų kaip sumos dėmenų, iš kurių daugiausia du kartojasi. \smallskip
+  
+  10.\hspace{0.15cm}Keliais skirtingais būdais galima sumokėti vieną litą naudojant lietuviškas monetas?\smallskip
+  
+  11.\hspace{0.15cm}Keliais skirtingais būdais galima išreikšti $25 = x_1 + x_2 + x_3,$ kur $x_1$ - nelyginis, $x_2$ - nedidesnis už penkis, $x_3$ - nemažesnis už tris?\smallskip
+  
+  12.\hspace{0.15cm}Sekos $a_n$ ir $b_n$ tenkina lygybes:
+  $a_{n+1}=a_{n} - b_{n},  b_{n+1}=2a_{n} +b_{n}+n,  a_{0}=2, b_{0}=0.$
+  Raskite jas.
+  \smallskip
+  
+  13.\hspace{0.15cm} Jei būtumėte sprendę praeito namų darbo uždavinį su daugiakampio pjaustymu į trikampius būtumėte gavę rekursiją $$C_n = C_{n-1}C_{0} + \cdots + C_0C_{n-1}.$$ Įrodykite, kad jos generuojanti funkcija yra $$f(x) = \frac{1-\sqrt{1-4x}}{2x}.$$
+  Naudodamiesi formule $$(1+y)^\alpha = 1 + \sum_{n\geq 1}\frac{\alpha(\alpha-1)\cdots(\alpha - n + 1)}{n!}y^n$$ išskleiskite gautą funkciją eilute ir įrodykite, jog $$C_n = \frac{1}{n+1}\binom{2n}{n}.$$\smallskip
+  
+  14.\hspace{0.15cm} Iš $n$ raidžių A ir $n$ raidžių B sudarinėjame tokius $2n$ ilgio žodžius, kad paėmus bet kiek raidžių nuo pradžios, visad A raidžių bus nemažiau nei B. Kiek tokių žodžių pavyks sudaryti?\smallskip
+  
+  15.\hspace{0.15cm} Išspręskite rekursiją $x_0 = a, x_1 = b, x_{n+1}=cx_nx_{n-1}.$\smallskip
+  
+  16.\hspace{0.15cm} Kiek skirtingų dėmenų gausime atskliaudę $x_1(x_1+x_2)\cdots(x_1+\cdots+x_n)$?\smallskip
+  
+  17.\hspace{0.15cm} Kiek yra aibės $\{1,2,...,2005\}$ poaibių, kurių suma lygsta $2006$ mod $2048$?\smallskip
+  
+  18.\hspace{0.15cm} Įrodykite, kad skaičiaus $n$ nelyginių daliklių skaičius yra lygus skaičiui aritmetinių progresijų su skirtumu $1$ ir suma $n$ skaičiui. Pvz $6$ turi du tokius daliklius $1$ ir $3$, bei dvi tokias progresijas $6$ ir $1,2,3$.\smallskip
+  
+  19.\hspace{0.15cm} Kiek yra aibės $\{1,2,...,2008\}$ poaibių, kurių elementų kiekis yra mažiausiasis elementas (pvz. $\{3,10,78\}$)?\smallskip
+  
+  20.\hspace{0.15cm} Kiek yra $n$ ilgio sekų sudarytų iš $k$ vienetukų ir $n-k$ nuliukų, kuriose jokie du vienetukai nestovi greta? 
+  
+\section{Šaknys iš vieneto}
+
+Šaknys iš vieneto, tai kompleksiniai skaičiai, gaunami sprendžiant lygtis $x^n = 1$. Kaip pamatysime, jos turi įdomią ir griežtą struktūrą.
+
+Prisiminkime pagrindinę algebros teoremą, sakančią, kad kiekvienas daugianaris turi bent vieną kompleksinę šaknį. Iš to seka, kad $n$-tojo laipsnio daugianaris turės $n$ kompleksinių šaknų skaičiuojant kartotinumus. Kadangi daugianariai $x^n - 1$ kartotinių šaknų neturi, tai turėsime lygiai $n$ $n$-tojo laipsnio šaknų iš vieneto. Panagrinėkime keletą paprastų atvejų.
+
+$x^2 - 1$ turi dvi šaknis $1$ ir $-1$. Abi jos yra realios, ir grafiškai jas galime pavaizduoti labai nesunkiai:
+\begin{figure}[h!]
+  \begin{center}
+    \includegraphics[scale=0.6]{./iliustracijos/kvadratine.pdf}
+  \end{center}
+  \caption{n=2}
+\end{figure}
+
+Daugianaris $x^3 - 1 = (x-1)(x^2 + x + 1)$ turi tris šaknis: 1, $\frac{-1 + i \sqrt{3}}{2}$ ir $\frac{-1 - i \sqrt{3}}{2}$. Atkreipsime dėmesį, jog antroji ir trečioji yra kompleksiškai jungtinės, t.y. viena gaunama iš kitos pakeičiant ženklą prie menamosios dalies priešingu. Taip pat, atidėję jas brėžinyje (ir prisiminę trigonometriją), matome, kad jos išsidėsto taisyklingo trikampio viršūnėse:
+
+\begin{figure}[h!]
+  \begin{center}
+    \includegraphics[scale=0.7]{./iliustracijos/kubine2.pdf}
+  \end{center}
+  \caption{n=3}
+\end{figure}
+
+\bigskip \bigskip
+
+Ketvirtojo laipsnio šaknys iš vieneto $1, -1, i, -i$ išsidėsto ant kvadrato viršūnių, tad peršte peršasi apibendrinimas:
+
+\begin{teig} $n$-tojo laipsnio šaknys kompleksinėje plokštumoje yra išsidėsčiusios ant vienetinio apskritimo, taisyklingo $n$-kampio viršūnėse. 
+\end{teig}
+
+\begin{figure}[h!]
+  \begin{center}
+    \includegraphics[scale=0.6]{./iliustracijos/vienuolika.pdf}
+  \end{center}
+  \caption{n=11}
+\end{figure}
+
+Toks iš pradžių stebinantis reguliarumas lengvai paaiškinamas prisiminus elementarius pastebėjimus iš kompleksinių skaičių daugybos. Būtent: dauginant du kompleksinius skaičius jų ilgiai susidaugina, o argumentai susideda (ilgis - atstumas iki koordinačių pradžios, argumentas - kampas, kurį sudaro atkarpa jungiantį kompleksinį skaičių su centru ir realioji ašis). Tad norint surasti, pavyzdžiui, septinto laipsnio šaknis iš vieneto užtenka imti kompleksinį skaičių atitinkantį tašką ant vienetinio apskritimo pasisukusį kampu $2\pi /7$ ir visus jo laipsnius.
+
+\begin{figure}[h!]
+  \begin{center}
+    \includegraphics[scale=1]{./iliustracijos/septyniw.pdf}
+  \end{center}
+  \caption{"pirmoji" šaknis $\omega$ ir jos laipsniai}
+\end{figure}
+
+Pabandykime trumpam nukrypti į šoną, ir pažvelgti į šaknis iš vieneto kitu kampu. Turbūt daugelis esate matę garsiąją lygybę $e^{\pi i} = -1$. Pirmas klausimas kuris kyla - ką ji reiškia? Kaip pakelti kompleksiniu laipsniu? Atsakymas visai nepaprastas, bet įdomus.
+
+Panagrinėkime, pavyzdžiui, funkciją $f(x) = x^2$ apibrėžtą realiuosiuose skaičiuose. Jos esmė labai paprasta - jei nori rasti reikšme taške $2$, tai tereikia sudaugint $2\cdot 2$. Daugyba skaičiaus iš skaičiaus labai nesudėtinga operacija, ir labai lengva ją perkelti į kompleksinius skaičius. Todėl $(1+i)^2$ mums jokių problemų nekelia - tereikia sudauginti!
+
+Eksponentė, t.y. $f(x)=e^x$ gerokai sudėtingesnė. Mes ją lengvai apibrėžiame sveikuosiuose skaičiuose, truputį pagalvoję ir racionaliuosiuose, o sugalvoti prasmę reiškiniui $e^{\sqrt{2}}$ jau sunkoka. Tenka šaknį iš dviejų aproksimuoti racionaliaisiais, ir funkcijos reikšmę apibrėžti kaip ribą. Bet kaip mums racionaliaisiais aproksimuoti $i$? Aišku, kad nepavyks... Tenka suktis iš padėties ir ieškoti kitokio priėjimo prie eksponentės, kokio nors panašaus paprastumo į kėlimą laipsniu. Bet tai ir yra idėja! Juk gerai žinome, jog eksponentė galime "pakeisti" į laipsnių sumą (plačiau \cite{wikiT}) : $$e^x = 1 + x + x^2/2! + \cdots + x^n/n! + \cdots$$ Suma begalinė, bet ką padarysi, negi tai mus gąsdina. Analizės ragavęs žmogus žino, kad šita eilutė konverguoja visur, tad su šia begaline suma problemų nebus, todėl galime drąsiai savo gerai pažįstamą eksponentę pratęsti į kompleksinius skaičius. Apskaičiuoti $e^{\pi i}$ dabar vienas juokas - tai $1 + \pi i + (\pi i)^2/2! + \cdots$. Lieka klausimas, kodėl tai lygu $-1$?
+
+Atsakymas į šį klausimą dar suktesnis, nei pajėgtume įsivaizduoti. Mums prireiks... sinusų..
+$$\sin x = x - x^3/3! + x^5/5! - x^7/7! + \cdots$$ $$\cos x = 1 - x^2/2! + x^4/4! - x^6/6! + \cdots$$
+
+Pažiūrėję į lygybes matome, kad $$e^{xi} = \cos x + i \sin x,$$ ir įstatę $x= \pi$ gauname tai ko reikia: $$e^{\pi i} = \cos \pi + i \sin \pi = -1.$$
+
+Iš lygybės $e^{xi} = \cos x + i \sin x$ mes išpešime dar daugiau. Pirmiausia pastebėkime, kad $e^{xi}$ modulis su kiekviena realia $x$ reikšme lygus vienetui. Iš ties $\sin ^2 x + \cos ^2 x = 1$. Dar daugiau, jei $x$ traktuosime kaip radianus, tai $e^{x i}$ argumentas bus lygiai $x$! Todėl jei mus domina septinto laipsnio šaknis iš vieneto, tai $e^{\frac{2\pi i}{7}}$ yra puikus pasirinkimas. Kitaip sakant,
+\begin{teig} $n$-tojo laipsnio šaknys iš vieneto yra $\{e^{\frac{2\pi i}{n}}, e^{\frac{2\cdot 2\pi i}{n}}, e^{\frac{3\cdot 2\pi i}{n}}, ... , e^{\frac{n\cdot 2\pi i}{n}}\}.$ \end{teig}
+
+\bigskip
+
+\begin{center}\textbf{Pavyzdžiai}\end{center}
+
+1. Įrodysime, kad $$x^2 + x + 1 | x^{6s + 2} + x^{3s + 1} + 1, \text{ su visais } s \in N.$$
+Prisiminkime, kad daugianaris P dalo daugianarį Q, tada ir tik tada, kai visos P šaknys yra ir Q šaknys. Mūsų atveju daugianario $x^2 + x + 1$ šaknys yra $\omega$ ir $\omega^2$, kur $\omega^3 = 1$, t.y. kubinės šaknys iš vieneto. (Iš ties: $x^3 - 1 = (x-1)(x^2+x+1)$. Pirmajam skliaustui tenka šaknis $\omega^3=1$, antrajam - likusios).
+Lieka įsitikinti, kad $\omega$ ir $\omega^2$ yra ir daugianario $x^{6s + 1} + x^{3s + 1} + 1$ šaknys. Įsistatykime pvz. pirmąją (su antra gaunasi tas pats): 
+
+$$\omega^{6s + 2} + \omega^{3s + 1} + 1 = (\omega^3)^{2s}\omega^{2} + (\omega^3)^{s}\omega + 1 = \omega^{2} + \omega + 1 = 0.$$
+\medskip
+
+2. [USO 1976] Tegu $P(x)$, $Q(x)$, $R(x)$, $S(x)$ daugianariai tenkinantys lygybę $$P(x^5) + xQ(x^5) + x^2R(x^5) = (x^4 + x^3 + x^2 + x + 1)S(x).$$ Įrodysime, kad $x-1|P(x).$
+
+\smallskip
+Iš karto atkreipkime dėmesį į reiškinį $x^4 + x^3 + x^2 + x + 1.$ Į jį įsistatę bet kokią penkto laipsnio šaknį iš vieneto (išskyrus patį vienetą) gausime nulį. Tuo ir pasinaudosime. Įsistatome $\omega$, $\omega^2$, $\omega^3$, $\omega^4$, kur $\omega^5 = 1$. Gauname 
+\begin{eqnarray*}
+P(1) + \omega Q(1) + \omega^2 R(1) &=& 0 \\
+P(1) + \omega^2 Q(1) + \omega^4 R(1) &=& 0 \\
+P(1) + \omega^3 Q(1) + \omega R(1) &=& 0 \\
+P(1) + \omega^4 Q(1) + \omega^3 R(1) &=& 0 \\
+\end{eqnarray*}
+
+Lygtis padauginę atitinkamai iš $-\omega$, $-\omega^2$, $-\omega^3$ ir $-\omega^4$ gauname dar keturias lygtis:
+
+\begin{eqnarray*}
+-\omega P(1) - \omega^2 Q(1) - \omega^3 R(1) &=& 0 \\
+-\omega^2 P(1) - \omega^4 Q(1) - \omega^1 R(1) &=& 0 \\
+-\omega^3 P(1) - \omega^1 Q(1) - \omega^4 R(1) &=& 0 \\
+-\omega^4 P(1) - \omega^3 Q(1) - \omega^2 R(1) &=& 0 \\
+\end{eqnarray*} 
+
+Visas aštuonias lygtis sudėję gausime $5P(1) = 0$, t.y. $1$ yra $P(x)$ šaknis $\Leftrightarrow x-1|P(x)$
+
+\medskip
+3. Įrodysime, kad $k|n$ \Leftrightarrow $x^k - a^k | x^n - a^n$.
+
+\smallskip
+Pažymėkime $\omega$ $k$-tojo laipsnio primityviąją (žr. antrą uždavinį) šaknį iš vieneto. Tuomet daugianario $x^k - a^k$ šaknys bus $a, \omega a, \omega^2 a, \dots, \omega^{k-1}a.$ 
+
+Tegu $k|n$. Tuomet bet kuri šaknis $\omega^i a$ bus ir daugianario $x^n - a^n$ šaknimi $((\omega^i a)^n = (\omega^k)^{in/k} a^n = a^n)$, tad teiginys "$\Rightarrow$" teisingas.
+
+Tegu $x^k - a^k | x^n - a^n.$ Tuomet $\omega a$ turi būti daugianario $x^n - a^n$ šaknimi, t.y. $(\omega a)^n = a^n \Rightarrow \omega^{n} = 1 \Rightarrow \omega^{n \text{ mod } k} = 1$, o kadangi $\omega$ primityvioji, tai $n \text{ mod } k = 0.$  
+
+\bigskip
+
+\begin{center}\textbf{Uždaviniai}\end{center}
+
+\begin{enumerate}
+
+\item Kiek yra šešto laipsnio šaknų iš vieneto, kurios nėra trečio laipsnio šaknys iš vieneto?
+
+\item Primityviąja $n$-tojo laipsnio šaknimi iš vieneto vadinsime kompleksinį skaičių $x$, tokį, kad $x^n = 1$, bet $x^k \neq 1$ su visais $k=1,\dots,n-1.$ Kiek yra primityviųjų $n$-tojo laipsnio šaknų iš vieneto?
+
+\item Pateikite geometrinį argumentą pagrindžiantį teiginį: $n$-tojo laipsnio šaknų iš vieneto suma yra $0$.
+
+\item Pateikite algebrinį argumentą pagrindžiantį teiginį: $n$-tojo laipsnio šaknų iš vieneto suma yra $0$.
+
+\item Tegu $\omega$ - bet kokia $p$-tojo laipsnio šaknis iš vieneto, kur $p$ - pirminis. Įrodykite, kad visas $p$-tojo laipsnio šaknis iš vieneto galime užrašyti, kaip $\omega^1, \omega^2, \dots, \omega^p$. Ar teiginys išlieka teisingas, jei pirminį $p$ pakeičiame į sudėtinį $n$? 
+
+\item Su kokiais $n$ yra teisinga:
+
+{\bf a.} \ $x^2 + x + 1|(x-1)^n - x^n - 1$,
+
+{\bf b.} \,$x^2 + x + 1|(x+1)^n + x^n + 1$?
+ 
+\item Įrodykite, kad $x^4 + x^3 + x^2 + x + 1|x^{44} + x^{33} + x^{22} + x^{11} + 1.$
+
+\item Tegu $f(x) = x^4 + x^3 + x^2 + x +1.$ Raskite liekaną gaunamą dalijant $f(x^5)$ iš $f(x).$
+
+\item Tegu $f(x) = (x^{1958} + x^{1957} + 2)^{1959} = a_0 + a_1x + a_2x^2 + \cdots + a_nx^n$. Raskite
+$$a_0 - a_1/2 -a_2/2 + a_3 -a_4/2 -a_5/2 + a_6 - \cdots.$$
+
+\item Raskite daugianarių $x^{2008} - 1$ ir $(x-1)^{2007} - 1$ didžiausią bendrą daliklį.
+
+\item Į vienetinį apskritimą įbrėžtas taisyklingas $n$-kampis $A_1A_2\dots A_{n}$. Raskite reiškinio 
+$$\prod_{k=1}^{n} PA_k$$ maksimalią reikšmę, kai taškas $P$ priklauso tam apskritimui. 
+
+\item Į vienetinį apskritimą įbrėžtas taisyklingas $2n$-kampis $A_1A_2\dots A_{2n}$. Įrodykite, kad 
+$$\sum_{k=0}^{n-1}PA_{k+1}^2\cdot PA_{n+k+1}^2 = 2n,$$ kai taškas $P$ priklauso tam apskritimui.
+
+\item Kiek yra aibės $\{1,\dots,2000\}$ poaibių, kurių suma dalosi iš $5$? (Užuomina: Generuojančios funkcijos)
+
+\item Kiek $n$-ženklių skaičių sudarytų iš skaitmenų $2,3,7$ ir $9$ dalijasi iš $3$?
+
+\item Kam lygi visų taisyklingo $n$-kampio, įbrėžto į vienetinį apskritimą, įstrižainių ilgių (įskaitant ir kraštines) sandauga?
+
+\item Raskite kubinį daugianarį, kurio šaknys būtų daugianario $x^3 + ax^2 + bx + c$ šaknų kubai.
+
+\item Tegu $n$ natūralusis, turintis bent du skirtingus pirminius daliklius. Įrodykite, kad egzistuoja aibės $\{1,2,\dots,n\}$ perstata $\{a_1,a_2,\dots,a_n\}$, su kuria teisinga lygybė 
+$$\sum_{k=1}^nk\cos{\frac{2\pi a_k}{n}}=0.$$
+
+\item Ratu išdėliotos $n$ lempučių, iš kurių viena įjungta. Leidžiama pakeisti lemputės būseną (įjungti ar išjungti) jei kartu pakeisime ir kiekvienos kas $d$-tosios lemputės einant ratu būseną ir tik tuo atveju, jei visos tos $n/d$ lemputės buvo vienodos būsenos ($d$ bet koks $n$ daliklis). Su kokiais $n$ įmanoma įjungti visas lemputes? 
+
+\item Tegu $m, n \in \N.$ Įrodykite, kad jei stačiakampį galima padengti naudojant horizontalias juostas $1\times n$ ir vertikalias juostas $m\times 1$, tai jį galima padengti ir naudojant tik vieno tipo ($1\times n$ arba $m\times 1$) juostas.   
+
+\item Raskite mažiausią $n$, tokį, kad kvadratą $n\times n$ būtų galima padengti naudojant dviejų rūšių kvadratus: $40\times 40$ ir $49\times 49$. 
+
+\end{enumerate}
+
+%\bibitem{wikiT} http://en.wikipedia.org/wiki/Taylor\_expansion
+
+%\bibitem{titu}
+%T. Andreescu, D. Andrica, \emph{Complex Numbers From A to Z}, Birkhauser, Boston, 2006.
+
+%\bibitem{AE}
+%A. Engel, \emph{Problem Solving Strategies}, Springer, 1998.
+
+%\bibitem{ACPS} 
+%P. Zeitz, \emph{The Art and Craft of Problem Solving}, 2nd ed., Wiley, 2007.
+
+\section{Šaknys iš vieneto. Sprendimai.}
+
+\begin{enumerate}
+
+\item {\bf Kiek yra šešto laipsnio šaknų iš vieneto, kurios nėra trečio laipsnio šaknys iš vieneto?}\medskip
+
+Šešto laipsnio šaknų yra šešios, trečio trys. Kiekviena trečio laipsnio šaknis yra ir šešto laipsnio šaknis, todėl lieka trys šešto bet ne trečio.
+\medskip
+\item {\bf Primityviąja $n$-tojo laipsnio šaknimi iš vieneto vadinsime kompleksinį skaičių $x$, tokį, kad $x^n = 1$, bet $x^k \neq 1$ su visais $k=1,\dots,n-1.$ Kiek yra primityviųjų $n$-tojo laipsnio šaknų iš vieneto?}
+
+\medskip
+
+Šis klausimas yra ekvivalentus klausimui kiek yra skaičių mažesnių už $n$ ir tarpusavyje pirminių su $n$. Atsakymas $\varphi(n)$.
+
+\medskip
+
+\item {\bf Pateikite geometrinį argumentą pagrindžiantį teiginį: $n$-tojo laipsnio šaknų iš vieneto suma yra $0$.}
+
+\medskip
+
+Žinome, kad $n$-tojo laipsnio šaknys yra išsidėsčiusios taisyklingo $n$-kampio su centru koordinačių pradžioje viršūnėse. Jį pasukus apie centrą per $2\pi/n$ gausime tą patį, vadinasi ir viršūnėse esančių kompleksinių skaičių suma, pasukta per $2\pi/n$ apie centrą išliks tokia pat. Vienintelis koordinačių taškas (atitinkantis tą sumą) turintis tokią savybę ir yra koordinačių pradžia, t.y. $0$.  
+
+\medskip
+
+\item {\bf Pateikite algebrinį argumentą pagrindžiantį teiginį: $n$-tojo laipsnio šaknų iš vieneto suma yra $0$.}
+
+\medskip
+$n$-tojo laipsnio šaknys yra visos daugianario $x^n - 1$ šaknys. Pagal Vieto teoremą šaknų suma lygi koeficientui prie $x^{n-1}$, t.y. $0$.
+
+Arba: Įstatykime į daugianarį $x^n - 1$ primityviąją šaknį iš vieneto $\omega$. Tuomet $$(\omega-1)(\omega^{n-1} + \cdots + \omega + 1) = 0 \Rightarrow \omega^{n-1} + \cdots + \omega + 1 = 0,$$ o primityviosios šaknies laipsniai kaip tik ir yra visos šaknys iš vieneto (žr. kitą uždavinį).
+
+\medskip
+
+\item {\bf Tegu $\omega$ - bet kokia $p$-tojo laipsnio šaknis iš vieneto, kur $p$ - pirminis. Įrodykite, kad visas $p$-tojo laipsnio šaknis iš vieneto galime užrašyti, kaip $\omega^1, \omega^2, \dots, \omega^p$. Ar teiginys išlieka teisingas, jei pirminį $p$ pakeičiame į sudėtinį $n$? }
+
+\medskip
+
+Tarkime priešingai, tuomet kažkurie $\omega$ laipsniai sutaps. Tuomet $\omega^k = \omega^l \Rightarrow \omega^{k-l} = 1,$ prieštara tam, kad $\omega$ primityvioji. 
+
+Su sudėtiniu $n$ reikia elgtis atsargiau. Pvz. viena iš šešto laipsnio šaknų iš vieneto yra $-1$, tačiau ją keldami laipsniais visų šaknų negausime. Tačiau jei imsime primityviąją šaknį (jų turime $\varphi(n)$), tai argumentuodami kaip ir pirminio atveju įsitikinsime, jog keldami laipsniais gausime visas šaknis.
+
+\medskip
+
+\item {\bf Su kokiais $n$ yra teisinga:
+
+{\bf a.} \ $x^2 + x + 1|(x-1)^n - x^n - 1$,
+
+{\bf b.} \,$x^2 + x + 1|(x+1)^n + x^n + 1$?}
+
+\medskip
+
+Prisimename, kad mums užtenka patikrinti, kada kubinės šaknys iš vieneto $\omega$ ir $\omega^2$ yra dešinėje stovinčių daugianarių šaknys. 
+
+{\bf a.} Pastebėkime, kad $(\omega-1)^2$ modulis lygus $3$:$$|(\omega-1)^2| = |\omega^2 + \omega + 1 - 3\omega| = 3.$$ Todėl $(\omega - 1)^n$ bus nutolęs nuo 0 toli, kai $n>1$, o $\omega^n + 1$ bus ne toliau nei per $2$. Taigi tikėtis, kad $\omega$ yra daugianario $(x-1)^n - x^n - 1$ šaknis galime tik su $n=1$, bet patikrinę matome, kad taip nėra. 
+
+{\bf b.} Šiuo atveju $\omega + 1$ lieka ant vienetinio apskritimo: $$\omega + 1 = -\omega^2.$$ Tas pats ir su $\omega^2$: $$\omega^2 + 1 = -\omega.$$ Tad lieka patikrinti, kada teisingos lygybės $(-\omega^2)^n + \omega^n + 1 = 0$ ir $(-\omega)^n + \omega^{2n}+1=0$. Lengva įsitikinti, kad jos teisingos su visomis liekaną $2$ moduliu $3$ duodančiomis $n$ reikšmėmis.  
+
+\medskip 
+
+\item {\bf Įrodykite, kad $x^4 + x^3 + x^2 + x + 1|x^{44} + x^{33} + x^{22} + x^{11} + 1.$}
+
+\medskip
+
+Daugianario kairėje pusėje šaknys yra penkto laipsnio šaknys iš vieneto $\omega$, $\omega^2$, $\dots$, $\omega^4$. Įstatę kiekvieną iš jų lengvai įsitikiname kad jos yra ir daugianario dešinėje šaknys.
+
+\medskip
+
+\item {\bf Tegu $f(x) = x^4 + x^3 + x^2 + x +1.$ Raskite liekaną gaunamą dalijant $f(x^5)$ iš $f(x).$}
+
+\medskip
+
+Užrašykime $f(x^5) = f(x)p(x) + r(x)$, kur r$(x)$ - liekana (daugianaris nedidesnio laipsnio nei $3$). Įstatykime į lygybę $\omega$, $\omega^2$, $\omega^3$, $\omega^4$, kur $\omega$ - penkto laipsnio šaknis iš vieneto. Gausime $r(\omega^i) = f(1)$, $i=1,2,3,4$, o jei nedidesnio kaip trečio laipsnio daugianaris įgyja tą pačią reikšmę keturis kartus, tai reiškia, kad jis yra konstanta: $r(x) = f(1) = 5$. 
+
+\medskip
+
+\item {\bf Tegu $f(x) = (x^{1958} + x^{1957} + 2)^{1959} = a_0 + a_1x + a_2x^2 + \cdots + a_nx^n$. Raskite
+$$a_0 - a_1/2 -a_2/2 + a_3 -a_4/2 -a_5/2 + a_6 - \cdots.$$}
+
+\medskip
+
+Įstatykime į lygybę $(x^{1958} + x^{1957} + 2)^{1959} = a_0 + a_1x + a_2x^2 + \cdots + a_nx^n$ kubines šaknis iš vieneto $\omega$ ir $\omega^2$: 
+$$1 = a_0 + a_1\omega + a_2\omega^2 + \cdots + a_n\omega^n,$$
+$$1 = a_0 + a_1\omega^2 + a_2\omega^4 + \cdots + a_n\omega^{2n}.$$
+
+Sudėję gauname
+
+$$2 = 2a_0 - a_1 - a_2 + 2a_3 - a_4 - a_5 + a_6 - \cdots$$
+arba
+$$1 = a_0 - a_1/2 -a_2/2 + a_3 -a_4/2 -a_5/2 + a_6 - \cdots$$
+
+\medskip
+
+\item {\bf Raskite daugianarių $x^{2008} - 1$ ir $(x-1)^{2007} - 1$ didžiausią bendrą daliklį.}
+
+\medskip
+
+Pirmojo daugianario šaknys išsidėsčiusios ant vienetinio apskritimo, kurio centras taške $0$, o antrojo, ant vienetinio apskritimo, kurio centras $1$. Tad daugiausiai jie gali turėti dvi bendras šaknis - apskritimų susikirtimo taškus. Apskritimai kaip tik kertasi ties šeštojo laipsnio primityviosiomis šaknimis iš vieneto, o $6$ nedalija $2008$. Daugianariai bendrų šaknų neturi, tad ir jų didžiausiais bendras daliklis lygus vienetui.
+
+\medskip
+
+\item {\bf Į vienetinį apskritimą įbrėžtas taisyklingas $n$-kampis $A_1A_2\dots A_{n}$. Raskite reiškinio 
+$$\prod_{k=1}^{n} PA_k$$ maksimalią reikšmę, kai taškas $P$ priklauso tam apskritimui.}
+
+\medskip
+
+Vienetinis apskritimas tebus kompleksinėje plokštumoje, su centru taške $0$. Tuomet $n$-kampio viršūnėmis galime laikyti $n$-tojo laipsnio šaknis iš vieneto $1, \omega, \omega^2, \dots, \omega^{n-1}$. Atstumas tarp dviejų kompleksinių skaičių yra jų skirtumo modulis. Tuomet ieškoma sandauga užsirašys kaip $$|P-1||P-\omega|\cdots|P-\omega^{n-1}| = |(P-1)(P-\omega)\cdots(P-\omega^{n-1})| = |P^n -1|.$$
+Kadangi $P$ priklauso vienetiniam apskritimui, tai jam priklausys ir $P^n$. O labiausiai nuo $1$ yra nutolęs taškas $-1$. Tad kai $P$ bus $n$-tojo laipsnio šaknis iš $-1$ gausime maksimumą $|-1-1|=2.$
+
+\medskip
+
+\item {\bf Į vienetinį apskritimą įbrėžtas taisyklingas $2n$-kampis $A_1A_2\dots A_{2n}$. Įrodykite, kad 
+$$\sum_{k=0}^{n-1}PA_{k+1}^2\cdot PA_{n+k+1}^2 = 2n,$$ kai taškas $P$ priklauso tam apskritimui.}
+
+\medskip
+
+Kaip ir praeitame uždavinyje $n$-kampio viršūnėmis laikykime $2n$-tojo laipsnio šaknis iš $1$. Tuomet gauname
+\begin{eqnarray*}
+\sum_{k=0}^{n-1}PA_{k+1}^2\cdot PA_{n+k+1}^2 &=& \sum_{k=0}^{n-1}|P-\omega^{k+1}|^2|P-\omega^{n+k+1}|^2
+\\ &=&\sum_{k=0}^{n-1}|P-\omega^{k+1}|^2|P+\omega^{k+1}|^2 
+\\ &=&\sum_{k=0}^{n-1}|P^2-\omega^{2(k+1)}|^2
+\\ &=&\sum_{k=0}^{n-1}|P^2-w^{k+1}|^2 \text{ \ ($w$ $n$-tojo laipsnio šaknis iš $1$)}
+\\ &=&\sum_{k=0}^{n-1}(P^2-w^{k+1})(\overline{P^2}-\overline{w^{k+1}})
+\\ &=&\sum_{k=0}^{n-1}( |P^2|^2 - w^{k+1}\overline{P^2} - P^2\overline{w^{k+1}}) + |w^{k+1}|^2)
+\\ &=&\sum_{k=0}^{n-1}( 2 - w^{k+1}\overline{P^2} - P^2\overline{w'^{k+1}})
+\\ &=& 2n - \overline{P^2}\sum_{k=0}^{n-1}w^{k+1} - P^2\sum_{k=0}^{n-1}\overline{w^{k+1}})
+\\ &=& 2n -\overline{P^2} \cdot 0 - P^2 \cdot 0 = 2n
+\end{eqnarray*}
+
+\medskip
+
+\item {\bf Kiek yra aibės $\{1,\dots,2000\}$ poaibių, kurių suma dalosi iš $5$? (Užuomina: Generuojančios funkcijos)}
+
+\medskip
+
+Sudarykime generuojančią funkciją $f(x) = (1+x)(1+x^2)\cdots(1+x^2000)$. Koeficientas prie $x^i$ bus lygus poaibių, kurių elementų suma $i$ skaičiui. Tarkime, kad atskliaudėme generuojančios funkcijos išraišką ir gavome $f(x) = a_0 + a_1x + a_2x^2 + \cdots$. Mus domina $a_5+ a_{10} + a_{15} + \cdots.$ Įsistatykime į generuojančios funkcijos išraišką visas penktąsias šaknis iš vieneto ir sudėkime. Gausime $$f(\omega) + f(\omega^2) + \cdots + f(\omega^5) = 5a_0 + a_1(\omega + \omega^2 + \cdots + \cdots + \omega^5) + a_2(\omega^2 + \omega^4 + \cdots + \omega^5) + \cdots.$$
+Truputį pagalvoję matome, kad prie koeficientų nedalių iš penkių turėsime visų penkto laipsnio šaknų iš viento sumą. Prie koeficientų dalių iš penkių turėsime daugiklį 5. Tad mūsų ieškomas dydis bus lygus 
+$$\frac{f(\omega) + f(\omega^2) + \cdots + f(\omega^5)}{5}.$$
+Raskime $f(\omega)$. Kadangi $\omega^{i+5} = \omega^i$, tai $f(\omega) = ((1+\omega)\cdots(1+\omega^5))^{400}$. Atskliaudę reiškinį matome, kad tai tiesiog lygu $2^{400}$. Analogiškai susitvarkę su kitais $\omega$ laipsniais gauname atsakymą 
+$\frac{2^{402} + 2^{2000}}{5}$.
+
+\medskip
+
+\item {\bf Kiek $n$-ženklių skaičių sudarytų iš skaitmenų $2,3,7$ ir $9$ dalijasi iš $3$?}
+
+\medskip
+
+Kaip ir praeitame uždavinyje sudarome generuojančią funkciją $f(x) = (x^2 + x^3 + x^7 + x^9)^n.$ Ieškomas skaičius bus lygus $\frac{f(\omega) + f(\omega^2) + f(1)}{3}$, kur $\omega$ - kubine šaknis iš vieneto. Skaičiuojame: 
+$$f(\omega) = (\omega^2 + 1 + \omega + 1)^n = 1,$$
+$$f(\omega^2) = (\omega + 1 + \omega^2 + 1)^n = 1,$$
+$$f(1) = 4^n.$$
+
+Atsakymas $\frac{4^n + 2}{3}$
+
+\medskip
+
+\item {\bf Kam lygi visų taisyklingo $n$-kampio, įbrėžto į vienetinį apskritimą, įstrižainių ilgių (įskaitant ir kraštines) sandauga?}
+
+\medskip
+
+Jei daugiakampį kaip jau įpratę užsirašysime kompleksinėmis šaknimis iš vieneto, tai ieškomoji sandauga bus lygi 
+
+
+\begin{eqnarray*}
+& &|1-\omega||1-\omega^2|\cdots|1-\omega^{n-1}||\omega - \omega^2|\cdots|\omega-\omega^{n-1}|\cdots|\omega^{n-2}-\omega^{n-1}|
+\\&=& \sqrt{|1-\omega||1-\omega^2|\cdots|1-\omega^{n-1}||\omega - 1||\omega - \omega^2|\cdots|\omega-\omega^{n-1}|\cdots|\omega^{n-1} - 1|\cdots|\omega^{n-1} - \omega^{n-2}|}
+\\&=& \sqrt{|1-\omega|\cdots|1-\omega^{n-1}||\omega||1-\omega|\cdots|1-\omega^{n-1}|\cdots|\omega^{n-1}||1-\omega|\cdots|1-\omega^{n-1}|}
+\\&=&
+\sqrt{(|1-\omega||1-\omega^2|\cdots|1-\omega^{n-1}|)^n}
+\\&=& \sqrt{n^n}
+\end{eqnarray*}
+
+Kam patogiau užrašymas su sandaugos ženklais:
+
+$$\prod_{i<j}|\omega^i - \omega^j| = \sqrt{\prod_{i\neq j}|\omega^i - \omega^j|} = \sqrt{\prod_{i\neq j}|\omega^i||1 - \omega^j|} = \sqrt{\left(\prod_{i}|1 - \omega^i|\right)^n} = \sqrt{n^n}$$
+
+Sandauga $|1-\omega||1-\omega^2|\cdots|1-\omega^{n-1}|$ lygi $n$, nes ji lygi $g(1)$, kur $g(x) = (x-\omega)(x-\omega^2)\cdots(x-\omega^{n-1}) = \frac{x^n -1}{x-1} = x^{n-1} + x^{n-2} + \cdots + 1.$
+
+\medskip
+
+\item {\bf Raskite kubinį daugianarį, kurio šaknys būtų daugianario $x^3 + ax^2 + bx + c$ šaknų kubai.}
+
+\medskip
+
+Daugianarį $x^3 + ax^2 + bx + c$ pažymėkime $f(x)$, jo šaknis $x_1, x_2, x_3$, o ieškomą $g(x)$. Tuomet $g(x^3)$ bus devintojo laipsnio daugianaris su šaknimis $x_1, x_2, x_3, x_1\omega, x_2\omega, x_3\omega, x_1\omega^2, x_2\omega^2, x_3\omega^2$, kur $\omega$ - kubinė šaknis iš vieneto. Po šio pastebėjimo lieka tik skaičiavimai:
+\begin{eqnarray*}
+g(x^3) &=& (x-x_1)(x-x_1\omega)(x-x_1\omega^2)(x-x_2)(x-x_2\omega)(x-x_2\omega^2)(x-x_3)(x-x_3\omega)(x-x_3\omega^2)
+\\ &=& (x-x_1)(x-x_2)(x-x_3)(\omega^2x-x_1)(\omega^2x-x_2)(\omega^2x-x_3)(\omega x-x_1)(\omega x-x_2)(\omega x-x_3)
+\\ &=& P(x)P(\omega x)P(\omega^2x).
+\end{eqnarray*}
+
+Atskliaudę ir sutvarkę (huff..) gauname:
+
+$$g(x) = x^3 + (a^3-3ab+3c)x^2 + (b^3+3c^2-3abc)x + c^3.$$
+
+\medskip
+
+\item {\bf [IMO proposal] Tegu $n$ natūralusis, turintis bent du skirtingus pirminius daliklius. Įrodykite, kad egzistuoja aibės $\{1,2,\dots,n\}$ perstata $\{a_1,a_2,\dots,a_n\}$, su kuria teisinga lygybė 
+$$\sum_{k=1}^nk\cos{\frac{2\pi a_k}{n}}=0.$$}
+
+\medskip
+
+Pastebėkime, kad $\cos{\frac{2\pi a_k}{n}}$ yra realioji $n$-tosios šaknies iš vieneto $e^{\frac{2\pi a_k}{n}}$ dalis. Įrodysime daugiau: kad egzistuoja tokia perstata, kad $$\sum_{k=1}^nke^{\frac{2\pi a_k}{n}}=0.$$ 
+T.y. ne tik realioji sumos dalis lygi nuliui, bet ir pati suma lygi nuliui.
+Kadangi šaknys iš vieneto yra taisyklingo $n$-kampio viršūnės, tai sąlygą galime performuluoti geometriškai. Reikia padauginti vektorius jungiančius centrą su $n$-kampio viršūnėmis iš skaičių $1,2,\dots,n$ taip, kad jų suma būtų lygi $0$.
+Žinome, kad $n$ užsirašo kaip dviejų tarpusavyje pirminių skaičių sandauga $pq$. 
+(nusibrėžkite brėžinį - rekomenduoju $n=15$)
+
+\medskip
+
+Surašykime palei laikrodžio rodyklę ant daugiakampio viršūnių skaičius $1, 2, 3, \dots, p, \\1, 2, 3, \dots, p, \dots, 1, 2, 3\dots, p.$ Dabar kas $q$-tąjį nuspalvinkime raudonai. Kadangi $p$ ir $q$ tarpusavyje pirminiai, tai nuspalvinsime vieną vienetą, vieną dvejetą, $\dots,$ vieną $p$. Imkime viršūnes su numeriais $1$. Pradedant nuo raudonos palei laikrodžio rodyklę dauginkime atitinkamus vektorius iš $1, 2, \dots,q$. Imkime viršūnes su numeriais $2$. Pradedant nuo raudonos dauginkime atitinkamus vektorius iš $q+1, q+2,\dots,q+q$ ir taip toliau. Kadangi viršūnės su vienodais numeriais sudaro simetrišką darinį, tai ar dauginsi vektorius iš $1, 2, \dots,q$ ar iš $q+1, q+2,\dots,q+q$ gausi tą patį (pagrindžiame kaip ir trečiame uždavinyje). Todėl darinio iš vektorių jungiančių viršūnes pažymėtas vienetais sumos vektorius bus toks pat kaip ir darinio iš vektorių jungiančių viršūnes pažymėtas dvejetais tik pasisukęs kampu, tokiu pat, kaip pasisukęs raudonas dvejetas nuo raudono vieneto. Kadangi raudonos viršūnės sudaro vėl tokį pat simetrinį darinį, tai ir suminiai vektoriai jį sudarys. O tai ir reiškia, kad jų suma bus lygi nuliu.
+
+\medskip
+
+\item {\bf Ratu išdėliotos $n$ lempučių, iš kurių viena įjungta. Leidžiama pakeisti lemputės būseną (įjungti ar išjungti) jei kartu pakeisime ir kiekvienos kas $d$-tosios lemputės einant ratu būseną ir tik tuo atveju, jei visos tos $n/d$ lemputės buvo vienodos būsenos ($d$ bet koks $n$ daliklis). Su kokiais $n$ įmanoma įjungti visas lemputes?} 
+
+\medskip
+
+Ratu sudėliotas lemputes sutapatiname su gerai pažįstamo $n$-kampio viršūnėmis, o įjungtąją su $1$. Jei lemputė įjungta, tai jos viršūnę "sumuojame", jei išjungta, tai ne. Pradžioje lempučių suma lygi $1$ (sumuojame tik vieną lemputę).
+Atlikdami operaciją prie sumos pridedame arba atimame kas $d$-tąją lemputę, kurios sudaro simetrinį darinį ir jų suma lygi nuliui. Jei pavyktų įjungti visas lemputes, tai jų suma būtų lygi $0$. Kadangi pradėjome nuo $1$, galime pakeisti per $0$, tai $0$ negausime.
+
+\medskip
+
+\item {\bf [Bay Area Math Circle 1999] Tegu $m, n \in \N.$ Įrodykite, kad jei stačiakampį galima padengti naudojant horizontalias juostas $1\times n$ ir vertikalias juostas $m\times 1$, tai jį galima padengti ir naudojant tik vieno tipo ($1\times n$ arba $m\times 1$) juostas.}   
+
+\medskip
+
+Tegu stačiakampio kraštinių ilgiai bus $a$ ir $b$, o $\omega$ ir $w$ tebus $n$-tojo ir $m$-tojo laipsnių šaknys iš vieneto. Padalinkime stačiakampį į vienetinius langelius, ir į kiekvieną langelį (šiuo atveju $i$-tojoje eilutėje ir $j$-tajame stulpelyje) įrašykime skaičių $\omega^iw^j$. Jei sudėsime visus vienos juostos skaičius tai gausime $0$ (mat suma bus visų šaknų iš vieneto suma padauginta iš kažko). Tad jei sudėsime visus lentelės skaičius irgi gausime nulį. Iš kitos pusės visų skaičių suma yra lygi $\omega w\frac{\omega^a - 1}{\omega-1}\frac{w^b-1}{w-1}$ ir ji lygi nuliui tada ir tik tada, kai arba $a$ dalijasi iš $n$ arba $b$ dalijasi iš $m$. Abiem atvejais gauname, kad lentelę padengsime naudodami vieno tipo juostas.
+
+\medskip
+
+\item {\bf [2000 Russian Mathematical Olympiad] Raskite mažiausią $n$, tokį, kad kvadratą $n\times n$ būtų galima padengti naudojant dviejų rūšių kvadratus: $40\times 40$ ir $49\times 49$.} 
+
+\medskip
+
+Tegu $\omega$ ir $w$ bus atitinkamai $40$ ir $49$ laipsnių šaknys iš vieneto. Į kiekvieną kvadrato $n\times n$ langelį surašykime skaičius $\omega^iw^j$. Kiekviename iš kvadratų $40\times40$ ar $49\times49$ esančių skaičių suma lygi nuliui, tad ir viso $n\times n$ kvadrato skaičių suma lygi nuliui. Gauname  $\frac{\omega^n - 1}{\omega-1}\frac{w^n-1}{w-1} = 0$, o taip yra tik tada, kai $n$ dalijasi iš $40$ arba $49$. Tarkime, kad $n$ dalijasi iš $40$ ir kvadrato padengime naudojame $x$ kvadratėlių $40\times 40$ ir $y$ kvadratėlių $49\times 49$. Tada sulyginę plotus gauname $n^2 = 40^2x + 49^2y$. Kadangi $40|n$, tai $40^2|y$ ir $n^2>49^2\cdot40^2 \Rightarrow n\geq 2000$. Tą patį gausime ir tarę, kad $n$ dalijasi iš $49$. Kita vertus, kvadratą $2000\times 2000$ padengti visai nesunku.
+
+\end{enumerate}
+
+\section{Vektoriai}
+
+Su vektoriaus sąvoka greičiausiai jau susidūrėte per pamokas, bet jei kartais ne, tai pabandykime trumpai pasiaiškinti.
+
+\medskip
+
+Įsivaizduokime koordinačių plokštumą, kurion išėjo pasivaikščioti fizikas Aleksas. Bevaikščiodamas sugebėjo absoliučiai pasiklysti ir po vargingos dienos krito miegoti. Bemiegant jam prisisapnavo išeitis: reikia eiti penkis laukelius $x$ kryptimi ir tris laukelius $y$ kryptimi. Atsikelia Aleksas ir galvoja - naktį vis sapnavau {\it vektorių} $(5,3)$ - gal derėtų išmėginti? Išmėgina, bet, deja namų neranda, ir klaidžioja toliau. Kadangi vektorius mums rūpi labiau nei vargšo Alekso likimas, tai istoriją kol kas nutrauksime.  
+
+\medskip
+
+Taigi vektorius plokštumoje žymi judesį. Jis turi ilgį ir kryptį, bet neturi pradžios taško. Iš ties - Alekso vektoriumi $(5,3)$ ($5$ į dešinę $3$ į kairę) mes galime judėti nuo bet kurio taško:
+
+\begin{figure}[h!]
+  \begin{center}
+    \includegraphics[scale=0.13]{./iliustracijos/Vektorius.pdf}
+  \end{center}
+  %\caption{n=2}
+\end{figure}
+
+\bigskip
+
+Du vektorius nesunkiai galima sudėti: Jei nuspręstume paeiti per $(5,3)$, o po to per $(1,-2)$, tai aišku, kad iš viso būsime pasistūmėję per $(5,3)+(1,-2)=(6,1)$. Tai geometriškai galime pavaizduoti pridėję antro vektoriaus pradžią prie pirmojo pabaigos ir sujungę:
+
+\begin{figure}[h!]
+  \begin{center}
+    \includegraphics[scale=0.13]{./iliustracijos/Suma.pdf}
+  \end{center}
+  %\caption{n=2}
+\end{figure}
+
+\bigskip
+
+Lygiai taip pat paprastai galima vektorius dauginti - du kart po $(5,3)$ bus $(10,6)$ ir atimti $(5,3) - (1,1) = (5,3) + (-1,-1) = (4,2)$. Tad kai antrąją naktį Aleksui prisisapnuoja instrukcija "eik per $(2,1) + 3(1,-1) -2(3,0) + (1,2)$" Aleksas visai nesutrinka: 
+
+\begin{figure}[h!]
+  \begin{center}
+    \includegraphics[scale=0.13]{./iliustracijos/Ratas.pdf}
+  \end{center}
+  %\caption{--- Kas per patarimai! Geriau jau sapnuočiau mamą...}
+\end{figure}
+
+Kaip jau sakėme, vektoriai neturi pradžios taško. O kas atsitiks, jei mes visgi priskirsime vektoriams koordinačių pradžią $O$, kaip jų pradžios tašką? Tada vektorių $(5,3)$ Galėsime sutapatinti su tašku $(5,3)$, ir vektorių $\vec{OA}$ su tašku $A$. Tuomet galėsime atlikti operacijas su taškais (sudėti, dauginti iš skaičiaus) lygiai taip pat, kaip ir su vektoriais. Pavyzdžiui: apkarpos $(A, B)$ vidurio taškas yra $\frac{A+B}{2}$. Atkreipkime dėmesį: sutrumpintą vektoriaus žymėjimą galime drąsiai naudoti tik kai turime omenyje, kad turime atskaitos tašką $O$. Dažnai jo vieta neturi reikšmės, o kartais turi ir labai didelę. Pvz. uždavinys nr. 8.
+
+\medskip
+
+\begin{center}\textbf{Skaliarinė sandauga}\end{center}
+
+\medskip
+
+Du vektorius $(a_1, a_2)$ ir $(b_1,b_2)$ (taškus, jei jau sutapatinome) galime sudauginti skaliariškai: $(a_1,a_2)\cdot(b_1,b_2) = a_1b_1 + a_2b_2$. Atkreipsiu dėmesį, kad gauname skaičių! 
+Skaliarinė sandauga yra komutatyvi ir distributyvi (patikrinkite!): 
+\begin{itemize}
+\item $A\cdot B = B\cdot A$
+\item $A\cdot(C+B) = A\cdot C + A\cdot B$.
+\end{itemize}
+
+\smallskip
+
+Jei skaliariškai dauginsime vektorių iš savęs gausime jo ilgio kvadratą $|A|^2 = A\cdot A$ (Pitagoro teorema). Tuo pasinaudoję įrodysime, kad vektorių $A$ ir $B$ skaliarinė sandauga $A\cdot B$ lygi jų ilgių sandaugai, padaugintai iš kosinuso kampo tarp jų $|A||B|\cos{\alpha}$ 
+
+\begin{figure}[h!]
+  \begin{center}
+    \includegraphics[scale=0.15]{./iliustracijos/Skal.pdf}
+  \end{center}
+  %\caption{}
+\end{figure}
+
+{\it Įrodymas} Tegu $C=A-B$. Iš kosinusų teoremos žinome, kad $$|C|^2 = |A|^2 + |B|^2 - 2|A||B|\cos{\alpha},$$ ką galime perrašyti kaip 
+
+$$(A-B)\cdot(A-B)=A\cdot A + B\cdot B - 2|A||B|\cos{\alpha} \Rightarrow$$
+$$-2A\cdot B = -2|A||B|\cos{\alpha} \Rightarrow$$
+$$A\cdot B = |A||B|\cos{\alpha}.$$
+\begin{flushright}
+$\square$
+\end{flushright}
+
+Pastebėkime, kad iš įrodyto teiginio seka, kad vektoriai $A$ ir $B$ yra statmeni tada ir tik tada, kai jų skaliarinė sandauga lygi nuliu. Panaudokime tai spręsdami nesudėtingą uždavinuką (nuo šiol vektorių $A$ ir $B$ skaliarinę sandaugą žymėsime paprasčiausiai $AB$):
+
+
+{\it Nesudėtingas uždavinukas} Keturkampio įstrižainės yra statmenos tada ir tik tada, kai priešingų kraštinių kvadratų sumos yra lygios.
+
+\smallskip
+
+{\it Įrodymas}
+
+Atimkime iš dviejų priešingų kraštinių kvadratų sumos kitų dviejų kraštinių kvadratų sumą:
+
+$$(B-A)^2 + (C-D)^2 - (B-C)^2 - (D-A)^2 = -2BA - 2CD + 2BC + 2DA = 2(A-C)(D-B).$$
+
+Matome, kad tai lygu nuliui tada ir tik tada, kai įstrižainių skaliarinė sandauga lygi nuliui. O tai ir reiškia, kad jos yra statmenos. 
+\begin{flushright}
+$\square$
+\end{flushright}
+
+Taip pat vektoriais galime nusakyti tiesę: Jei taškas $C$ priklauso tiesei einančiai per taškus $A$, $B$, tai tuomet $\vec{AC} =t\vec{AB}$, (arba $(C-A)=t(B-A)$ )su kažkokiu realiu $t$. Panaudodami tai raskime trikampio $ABC$ pusiaukraštinių susikirtimo tašką:
+
+{\it Radimas} Jei keliautume nuo taško $A$ iki atkarpos $BC$ vidurio taško $A_1$ (žr. brėžinį žemiau), tai pusiaukraštinių susikirtimo tašką sutiktume nuėję du trečdalius kelio. Tad $$G = A + \frac{2}{3}\left(\frac{B+C}{2} - A\right) = \frac{A+B+C}{3}.$$
+
+\newpage 
+
+\begin{figure}[h!]
+  \begin{center}
+    \includegraphics[scale=0.15]{./iliustracijos/Centras.pdf}
+  \end{center}
+  %\caption{}
+\end{figure}
+
+\begin{center}\textbf{Pavyzdžiai}\end{center}
+
+1. [Leningrad High School Mathematical Olympiad 1980] Įrodykite, kad jei keturkampio priešingų kraštinių vidurius jungiančių atkarpų suma lygi jo pusperimetriui, tai tas keturkampis - lygiagretainis.
+
+{\it Įrodymas} Tegu keturkampis bus ABCD. Tuomet gausime:
+
+$$|\frac{A+B}{2}- \frac{C+D}{2}| + |\frac{A+D}{2} - \frac{B+C}{2}| = \frac{|AB|}{2} + \frac{|BC|}{2} + \frac{|CD|}{2} + \frac{|DA|}{2} \Rightarrow$$
+
+$$|DA + CB| + |BA + CD| = |DA| + |CB| + |BA| + |CD| $$
+
+Iš trikampio nelygybės žinome, kad $|\vec{X}| + |\vec{Y}| \geq |\vec{X+Y}|$, ir lygybė pasiekiama, kai $X$ ir $Y$ yra lygiagretūs. Todėl gauname, kad $DA||CB$ ir $BA||CD$.
+
+\medskip
+
+2. [Israel Mathematical Olympiad 1994] Įrodykite, kad $1994$-kampio, kurio kraštinių ilgiai $a_i$ lygūs $\sqrt{4+i^2}$, visos viršūnės negali turėti sveikųjų koordinačių.
+
+{\it Įrodymas} Tarkime priešingai. Tegu $\vec{d_i}=(a_i,b_i)$ - $1994$-kampio $i$-tąją kraštinę atitinkantis vektorius ir $a_i,b_i \in \Z$. Tuomet kraštinių ilgių kvadratų suma užsirašys kaip $$\sum_{i=1}^{1994} (a_i^2 + b_i^2) = \sum_{i=1}^{1994} |\vec{d_i}|^2 = \sum_{i=1}^{1994} (4 + i^2) = 4\cdot 1994 + \frac{1994\cdot 1995\cdot 3989}{6} = 4\cdot1994 + 997\cdot 665 \cdot3989.$$
+Iš kitos pusės $$\sum_{i=1}^{1994} a_i^2 + b_i^2 = (\sum_{i=1}^{1994} a_i + b_i)^2 - 2(\sum_{i< j} a_ia_j + b_ib_j + \sum_{i,j}a_ib_j) = - 2(\sum_{i< j} a_ia_j + b_ib_j + \sum_{i,j}a_ib_j).$$
+
+($\sum_{i=1}^{1994} (a_i + b_i) = 0$, nes $\sum_{i=1}^{1994} \vec{d_i} = 0$, jei vektorių suma lygi nuliui, tai ir atitinkamų koordinačių suma lygi nuliui.)
+
+Gauname, kad lyginis skaičius lygus nelyginiam. Prieštara.
+
+\smallskip Dar daug puikių uždavinių su sprendimais rasite \cite{ex} ir \cite{pl}. Netingėkite!
+
+\newpage
+
+\begin{center}\textbf{Uždaviniai}\end{center}
+
+\begin{enumerate}
+
+\item Įrodykite, kad taškai $ABCD$ yra lygiagretainio viršūnės tada ir tik tada, kai $\frac{A+C}{2} = \frac{B+D}{2}$.
+
+\item Įrodykite, kad keturkampio įstrižainės yra statmenos tada ir tik tada, kai atkarpos, jungiančios jo priešingų kraštinių vidurio taškus yra vienodo ilgio.
+
+\item Įrodykite, kad lygiagretainio priešingų kraštinių kvadratų suma lygi įstrižainių kvadratų sumai
+
+\item Tegu $A$ ir $B$ - plokštumos taškai. Kokiems $X$ yra teisinga $AX^2 = BX^2?$
+
+\item Įrodykite, kad taškai $ABCD$ yra stačiakampio viršūnės tada ir tik tada, kai kiekvienam plokštumos taškui X teisinga lygybė $|AX|^2+ |CX|^2= |BX|^2+ |DX|^2$.
+
+\item Ant trikampio $ABC$ kraštinių pribrėžti stačiakampiai $ABDE$, $BCFG$, $CAHI$. Įrodykite, kad atkarpų $HE$, $DG$, $FI$ vidurio statmenys susikerta viename taške. 
+
+\item Tegu $P$ ir $Q$ iškilojo keturkampio $ABCD$ įstrižainių vidurio taškai. Įrodykite, kad $$AB^2 + BC^2 + CD^2 + DA^2 = AC^2 + BD^2 + 4PQ^2$$  
+
+\item Įrodykite, kad bet kokiam taškui $P$, priklausančiam lygiašonio stataus trikampio $ABC$ įžambinei $AB$ yra teisinga lygybė $2CP^2 = AP^2 + PB^2.$
+
+\item Sutapatinkime koordinačių pradžią su trikampio $ABC$ apibrėžtinio (apibrėžto apie trikampį) apskritimo centru. Raskite aukštinių susikirtimo tašką (išreikškite per vektorius $A$, $B$, $C$) 
+
+\item Raskite visus plokštumos taškus $X$ tenkinančius lygybę $\vec{AX}\cdot\vec{CX} = \vec{CB}\cdot\vec{AX}.$
+
+\item Duoti vektoriai $a_1, \dots, a_n$, kurių ilgiai neviršija $1$. Įrodykite, kad sumoje $c=\pm a_1 \pm a_2\pm \cdots \pm a_n$ galima taip sudėlioti ženklus, kad gautume $|c|\leq \sqrt{2}.$
+
+\item Tegu iškilojo keturkampio įstrižainės susikerta taške $O$. Įrodykite, kad lygybė
+$$AB^2 + BC^2 + CD^2 + DA^2 = 2(AO^2 + BO^2 + CO^2 + DO^2)$$
+yra teisinga tada ir tik tada, kai arba $AC$ statmena $BD$ arba $O$ dalija vieną iš įstrižainių pusiau.
+
+\item Turime tašką $P$ apskritimo viduje. Iš taško $P$ išeinantys du vienas kitam statmeni spinduliai kerta apskritimą taškuose $A$ ir $B$. Tegu taškas $Q$ "įstrižai" priešingas taškui $P$ stačiakampio generuoto $PA$ ir $PB$ atžvilgiu. Raskite visų tokių taškų $Q$ geometrinę vietą visoms įmanomoms spindulių išeinančių iš $P$ poroms.
+
+\item Tegu $ABCD$ - į apskritimą įbrėžtas keturkampis. Įrodykite, kad šešios linijos, einančios per kiekvienos iš kraštinių vidurį ir statmenos priešingai kraštinei susikerta viename taške. (Įstrižaines taip pat laikome priešingomis kraštinėmis).
+
+\item Tegu $A$, $B$, $C$, $D$ keturi erdvės taškai, tenkinantys lygybes $\angle ABC = \angle BCD = \angle CDA = \angle DAB = \pi/2.$ Įrodykite, kad jie priklauso vienai plokštumai.
+
+\item Turime tašką $P$ sferos viduje. Iš taško $P$ išeinantys trys vienas kitam statmeni spinduliai kerta sferą taškuose $A$, $B$, $C$. Tegu taškas $Q$ "įstrižai" priešingas taškui $P$ stačiakampio gretasienio generuoto $PA$, $PB$, $PC$ atžvilgiu. Raskite visų tokių taškų $Q$ geometrinę vietą visiems įmanomiems spindulių išeinančių iš $P$ trejetams.
+
+\item Tegu $A$, $B$, $C$, $D$ - keturi erdvės taškai. Įrodykite, kad $AC^2 + BD^2 + AD^2 + BC^2 \geq AB^2 + CD^2.$
+
+\item Tegu $G$ bus taisyklingos piramidės $ABCD$ sienos $BCD$ pusiaukraštinių susikirtimo taškas. Įrodykite, kad atkarpa $AG$ statmena sienai $BCD$. 
+
+\item Smailiojo trikampio $ABC$ viršūnė $A$ yra vienodai nutolusi nuo apibrėžtinio apskritimo centro ir nuo aukštinių susikirtimo centro. Kokio dydžio gali būti trikampio kampas prie viršūnės $A$? 
+
+\item Žinome, kad atstumas tarp kiekvienų priešingų iškilojo šešiakampio kraštinių vidurio taškų yra lygus $\frac{\sqrt{3}}{2}$ padauginta iš tų kraštinių ilgių sumos. Įrodykite, kad visi šešiakampio kampai lygūs.
+
+\end{enumerate}
+
+
+\section{Kompleksinių skaičių geometrija}
+
+Kompleksinių skaičių geometrija panaši į vektorių geometriją, tik "praturtinta" kai kuriomis kompleksiniams skaičiams būdingomis savybėmis. Atsiminkime - kompleksinių skaičių ir vektorių sudėtis, atimtis ir daugyba iš {\it skaliaro} niekuo nesiskiria, tačiau daugyba ir dalyba (kurios apskritai nėra vektoriuose) - skirtinga. Jei sudauginę du vektorius gaudavome {\it skaliarą}, tai sudauginę du kompleksinius skaičius, gausime vėl kompleksinį skaičių. Negriežtai galime kompleksinius skaičius įsivaizduoti kaip "rodykles, kurias galima dauginti"
+
+
+\begin{figure}[h!]
+  \begin{center}
+    \includegraphics[scale=0.13]{./iliustracijos/Kompdaug.pdf}
+  \end{center}
+  %\caption{}
+\end{figure}
+
+
+Šios daugybos pagalba kompleksinėje plokštumoje labai nesudėtinga vektorius sukioti norimais kampais. Pavyzdžiui, turime du taškus $a$ ir $b$, ir norime rasti tokį tašką $c$, kad trikampis $abc$ būtų lygiakraštis. Tam mums pakaktų tašką $b$ pasukti apie tašką $a$ $60^{\circ}$ kampu. Ar žinome nors vieną kompleksinį skaičių, kurio argumentas būtų $60^{\circ}$? Žinome - 'pirmoji' šešto laipsnio šaknis iš $1$. Tad užtenka paimti vektorių $(b-a)$, pasukti $60^{\circ}$ kampu $(b-a)\omega$ ir pridėti prie $a$: $c=a+(b-a)\omega$
+
+
+\begin{figure}[h!]
+  \begin{center}
+    \includegraphics[scale=0.13]{./iliustracijos/Lygiakrastis.pdf}
+  \end{center}
+  %\caption{}
+\end{figure}
+
+Panašu į teisybę, bet vistiek kažkodėl skamba neįtikinamai? Ir turėtų! Kompleksinė daugyba mums yra pažįstama, kai dauginame du skaičius, o ne skaičių iš vektoriaus. Pažiūrėkime, kokie procesai iš ties slypi po dviejų vektorių daugyba: 
+
+\begin{figure}[h!]
+  \begin{center}
+    \includegraphics[scale=0.12]{./iliustracijos/Lygiakrastis2.pdf}
+  \end{center}
+  %\caption{}
+\end{figure}
+
+Pirmu žingsniu mes tašką $b$ pernešame per $-a$ (= sutapatiname koordinačių pradžią su $a$ = atliekame plokštumos poslinkį $x \mapsto x-a$) antruoju žingsniu gautą tašką $(b-a)$ pasukame per $60^{\circ}$ naudodami įprastą kompleksinę daugybą (= pasukame plokštumą $x\mapsto \omega x$), trečiuoju žingsniu gautąjį tašką gražiname per $a$ (= atliekame plokštumos poslinkį $x \mapsto x+a$). Pamąstykite apie tai įtemptai, labai svarbu suprasti, kad manipuliacijos vektoriais ir plokštumos transformacijos yra vienas ir tas pats. Įsitikinkite, kad kompleksinėje plokštumoje vektorių  daugyba tikrai yra tas pats, kaip ir vektorius atitinkančių kompleksinių skaičių daugyba. 
+
+\begin{center}\textbf{Pavyzdžiai}\end{center}
+
+\medskip
+
+1. Matėme, kad lygiakraštį trikampį galime nusakyti sąryšiu $c-a = (b-a)\omega$, kur $\omega$ yra šeštojo laipsnio šaknis iš vieneto $e^{\frac{2\pi i}{6}}$ (arba $c-a = (b-a)\omega^5$, jei norime, kad viršūnė $c$ būtų kitoje pusėje). Pabandykime gauti kitokią išraišką.  
+
+\begin{figure}[h!]
+  \begin{center}
+    \includegraphics[scale=0.12]{./iliustracijos/Lygiakrastis3.pdf}
+  \end{center}
+  %\caption{}
+\end{figure}
+
+Aprašykime naudodami kubines šaknis iš vieneto. Daugyba iš jos atitiks $120^{\circ}$ posūkį, o tai irgi tinka: $b-a = (a-c)\omega$. Arba, prisiminę, kad $1 + \omega + \omega^2 = 0,$ gauname $b + \omega c + \omega^2a = 0$. {\it Cikliškai} pakeitę pažymėjimus gauname lengviau įsimenamą lygybę: $a + \omega b + \omega^2 c = 0$. 
+
+Ja pasinaudokime spręsdami patį populiariausią kompleksinės geometrijos pavyzdį. Įrodysime, kad ant bet kokio trikampio viršūnių nubrėžtų lygiakraščių trikampių centrai sudaro lygiakraštį trikampį. Šis teiginys yra vadinamas Napoleono teorema.
+
+\begin{figure}[h!]
+  \begin{center}
+    \includegraphics[scale=0.12]{./iliustracijos/Napaleonas.pdf}
+  \end{center}
+  %\caption{}
+\end{figure}
+
+Pagal brėžinio pažymėjimus trikampių centrai bus $\frac{-b\omega - \omega^2 a + b + a}{3}$, $\frac{-c\omega - \omega^2 a + c + b}{3}$ ir $\frac{-a\omega - \omega^2 c + a + c}{3}$. Atitinkamai juos padauginę iš $1$, $\omega$ ir $\omega ^2$ ir sudėję gausime nulį, t.y. trikampis tikrai lygiakraštis.
+
+
+2. Atstumas arba vektoriaus ilgis. Paprastoje vektorių geometrijoje vektoriaus $\vec{a}$ ilgį (tiksliau jo kvadratą) rasdavome skaliariškai sudaugindami $\vec{a}\cdot\vec{a}$. Kompleksinėje plokštumoje pakėlę $a^2$ gausime kompleksinį skaičių. Jo modulis išties bus lygus $a$ ilgio kvadratui, bet mums rūpi ilgis - realus skaičius. Tad užuot dauginę $a\cdot a$, mes dauginsime iš $a$ {\it jungtinio} $\bar{a}$, kuris yra simetriškas $a$ Realiosios ašies atžvilgiu:
+
+\begin{figure}[h!]
+  \begin{center}
+    \includegraphics[scale=0.10]{./iliustracijos/Atstumas.pdf}
+  \end{center}
+  %\caption{}
+\end{figure}
+
+Sudaugine gauname kompleksinį skaičių su menamąja dalimi $0$, t.y. - realųjį skaičių lygų ilgio kvadratui. Kad daugindami iš jungtinio gauname ilgio kvadratą galime įsitikinti ir algebriškai. Jei skaičių užrašysime kaip $m+ni$, tai jo jungtinis bus $m-ni$, o jų sandauga $m^2 + n^2$. 
+
+3. Kolinearūs taškai. Jei taškai $a$, $b$, $c$ guli vienoje tiesėje, tai vektorius $c-a$ yra tos pačios krypties, kaip ir vektorius $b-a$. Todėl jų santykis yra realusis skaičius. Realiojo skaičiaus kompleksinis jungtinis yra jis pats, todėl gauname, kad $a$, $b$, $c$ yra kolinearūs, kai $\frac{c-a}{b-a} = \frac{\bar{c}-\bar{a}}{\bar{b}-\bar{a}}$. Tuo pasinaudodami išspręsime nesudėtingą uždavinį.
+\smallskip
+
+{\it Ant trikampio $ABC$ kraštinių sukonstruoti kvadratai $AC_BC_AB$, $BA_CA_BC$ ir $CB_AB_CA$. Ant paskutiniojo kraštinės $B_CB_A$ sukonstruotas dar vienas kvadratas $B_AB_{CC}B_{AA}B_C$. Jo centrą pažymėkime $P$. Įrodykite, kad atkarpos $BP$, $A_CB_C$ ir $C_AB_A$ susikerta viename taške.} 
+
+\begin{figure}[h!]
+  \begin{center}
+    \includegraphics[scale=0.09]{./iliustracijos/Iranas.pdf}
+  \end{center}
+  %\caption{}
+\end{figure}
+ 
+{\it Sprendimas.} Sutapatinkime atskaitos tašką su $A_CB_C$ ir $C_AB_A$ susikirtimo tašku. Tuomet $\frac{A_C}{B_C} = \frac{\bar{A_C}}{\bar{B_C}}$ ir $\frac{C_A}{B_A} = \frac{\bar{C_A}}{\bar{B_A}}$. Reikia parodyti, kad $\frac{B}{P} = \frac{\bar{B}}{\bar{P}}$. Lengvai randame, kad $$P = \frac{A+C}{2} + \frac{3}{2}(A-C)i,$$ $$A_C = B + (C-B)i,$$ $$\dots$$ Įstatę gauname nelabai elegantiškas lygybes:
+$$\frac{A+Ai-Ci}{B-Bi+Ci} = \frac{\bar{A} - \bar{A}i+\bar{C}i}{\bar{B}+\bar{B}i-\bar{C}i},$$  
+$$\frac{B+Bi-Ai}{C-Ci+Ai} = \frac{\bar{B} - \bar{B}i+\bar{A}i}{\bar{C}+\bar{C}i-\bar{A}i},$$
+$$\frac{B}{\frac{1}{2}(A+C) + \frac{3}{2}(A-C)i} = \frac{\bar{B}}{\frac{1}{2}(\bar{A}+\bar{C}) + \frac{3}{2}(\bar{C} - \bar{A})i}.$$
+Reikia parodyti, kad iš pirmų dviejų seka trečia, bet taip ir yra - pakanka jas sutvarkyti ir sudėti.
+\smallskip
+
+4. Įbrėžtas keturkampis ir Ptolemėjaus nelygybė. 
+
+{\it Tegu $A$,$B$,$C$,$D$ - keturi plokštumos taškai. Tuomet $$|AB|\cdot |CD| + |BC|\cdot |AD| \geq |AC|\cdot |BD|,$$ ir lygybė galioja, kai visi keturi taškai duota tvarka guli ant apskritimo arba tiesės}
+\smallskip
+
+{\it Įrodymas} Tegu taškus $A$, $B$, $C$, $D$ atitinka kompleksiniai skaičiai $a$, $b$, $c$, $d$. Yra teisinga lygybė
+$$(b-a)(d-c) + (c-b)(d-a) = (c-a)(d-b).$$ Pritaikę trikampio nelygybę gauname tai ko reikia.
+
+\smallskip
+
+Lygybė galios, kai kompleksiniai skaičiai $(b-a)(d-c)$ ir $(c-b)(d-a)$ bus vienos krypties, t.y. jų santykis bus realusis teigiamas skaičius: $\frac{(b-a)(d-c)}{(c-b)(d-a)}\in \R_{+}$ arba $\frac{(b-a)}{(d-a)}\frac{(d-c)}{(b-c)} \in \R_{-}$. Jei dviejų kompleksinių skaičių sandauga yra neigiamas realusis, tai jų argumentų suma lygi $\pi$. Bet $$arg\left(\frac{(b-a)}{(d-a)}\right) = \angle BAD$$ ir $$arg\left(\frac{(d-c)}{(b-c)}\right) = \angle DCB,$$ todėl $ABCD$ - įbrėžtinis keturkampis. $\square$
+
+
+
+\begin{center}\textbf{Uždaviniai}\end{center}
+
+\begin{enumerate}
+ 
+\item Lygiakraštį trikampį aprašančią lygybę $a + \omega b + \omega^2 c = 0$ galima traktuoti ir tiesiogiai. Pavaizduokite sau pradinius vektorius, pasukite kiekvieną atitinkamai kiek reikia ir įsitikinkite, kad suma tikrai yra lygi nuliui. 
+
+\item Kuo skiriasi lygybių $a+\omega b + \omega^2 c = 0$ ir $a + \omega c + \omega^2 b = 0$ aprašomi trikampiai?
+
+\item Ant keturkampio $ABCD$ kraštinių sukonstruoti lygiakraščiai trikampiai. $ABM$ ir $CDP$ į išorę, $BCN$ ir $DAQ$ - į vidų. Įrodykite, kad $MNPQ$ yra lygiagretainis
+
+\item Trikampio $ABC$ išorėje yra du taškai $E$ ir $H$ tokie, kad $AE \bot AC$, $AE=AC$ ir $BH\bot BC$, $BH = BC$ bei $E$ ir $B$ yra skirtingose $AC$ pusėse, o $H$ ir $A$ skirtingose $BC$ pusėse. Pažymėkime atkarpos $EH$ vidurio tašką $D$. Įrodykite, kad $DAB$ - statusis lygiašonis. 
+
+\item Ant trikampio $ABC$ kraštinių į išorę sukonstruoti kvadratai $BCDE$, $CAFG$ ir $ABHI$. Tegu $GCDQ$ ir $EBHP$ lygiagretainiai. Įrodykite, kad $APQ$ yra statusis lygiašonis
+
+\item Kodėl vektorių sumos jungtinis vektorius lygus jungtinių sumai $(\overline{a + b} = \bar{a} + \bar{b})$ ? Kodėl tas pats galioja sandaugoms? Kodėl tas pats galioja bet kokiai sumų ir sandaugų kombinacijai?
+
+\item Ant simetriško taško atžvilgiu šešiakampio kraštinių į išorę nubrėžti taisyklingi trikampiai. Gretimų trikampių viršūnės, nepriklausančios šešiakampiui sujungtos atkarpomis. Įrodykite, kad tų atkarpų vidurio taškai sudaro taisyklingą šešiakampį. 
+
+\item Tegu kompleksinis skaičius $z$ toks, kad taškai $z^3$, $2z^3 + z^2$, $3z^3 + 3z^2 + z$ ir $4z^3 + 6z^2 + 4z + 1$ priklauso apskritimui. Raskite $Re(z)$.
+
+\item Ant apskritimo parinkti šeši taškai $A$, $B$ ,$C$ ,$D$ ,$E$ ,$F$ (būtent šita tvarka) taip, kad lankai $AB$, $CD$, $EF$ yra $60^{\circ}$ didumo. Įrodykite, kad stygų $BC$, $DE$, $FA$ vidurio taškai sudaro lygiakraštį trikampį. 
+
+\item Lygiakraščiai trikampiai $ABC$, $CDE$, $EHK$ (viršūnės surašytos prieš laikrodžio rodyklę) tenkina sąlygą $\vec{AD} = \vec{DK}$. Įrodykite, kad BHD - lygiakraštis.
+
+\item Į spindulio $r$ ir centro $O$ apskritimą įbrėžta trapecija $ABCD$. Žinome, kad $|BC|=|DA|=r$. Įrodykite, kad $OA$, $OB$ ir $CD$ vidurio taškai sudaro lygiakraštį trikampį. 
+
+\item Tegu taškai $D$ ir $E$ priklauso trikampio $ABC$ kraštinėms $BC$ ir $AB$. Tegu $F$ kraštinės $AC$ taškas toks, kad $EF||BC$ ir $G$ kraštinės $BC$ taškas toks, kad $EG||AD$. Įrodykite, kad atkarpų $AD$, $BC$ ir $FG$ vidurio taškai priklauso vienai tiesei.  
+
+\item Kompleksinėje plokštumoje duoti taškai $a$, $b$, $c$. Raskite statinio iš $a$ į atkarpą jungiančią $b$ ir $c$ pagrindo išraišką. 
+
+\item Kompleksinėje plokštumoje duoti taškai $a$, $b$, $c$. Įrodykite, kad jų sudaromo trikampio plotas lygus $$\frac{\bar{a}b + \bar{b}c + \bar{c}a - a\bar{b} - b\bar{c} - c\bar{a}}{4i}.$$ 
+
+\item Tegu $ABC$ - lygiakraštis trikampis. Tiesė lygiagreti $AC$ kerta $AB$ ir $BC$ taškuose $M$ ir $P$. Tegu $D$ trikampio $PMB$ pusiaukraštinių susikirtimo taškas o $E$ - $AP$ vidurio taškas. Raskite trikampio $DEC$ kampus.
+
+\item [CMO 1998] Duotas trikampis $ABC$. Raskite visus plokštumos taškus $D$, tokius, kad $DA\cdot DB\cdot AB$ + $DB\cdot DC\cdot BC$ + $DC\cdot DA\cdot CA$ = $AB\cdot BC\cdot AC$
+
+\item Tegu $ABC$ - lygiakraštis trikampis, $O$ - jo centras, $P$ - bet koks taškas erdvėje, $Q$ simetriškas $P$ taško $O$ atžvilgiu. Įrodykite, kad iš atkarpų $PA$, $PB$, $PC$ galima sudaryti trikampį, ir kad jo plotas lygus trikampio, sudaryto iš $QA$, $QB$, $QC$ plotui.
+
+\item [IMO SL 1996] Pažymėkime trikampio $ABC$ aukštinių susikirtimo tašką $H$. Tegu $P$ - taškas ant apibrėžto apie trikampį apskritimo, $E$ - aukštinės $BH$ pagrindas, $PAQB$ ir $PARC$ - lygiagretainiai, $AQ$ susikerta su $HR$ taške $X$. Įrodykite, kad $EX$ lygiagretu $AP$.
+
+\item [IMO 1993] Trikampio $ABC$, kurio jokie du kampai nelygūs, viduje taškas $D$ yra parinktas taip, kad $\angle ADB = \angle ACB + 90^{\circ}$ ir $|AC|\cdot|BD| = |AD|\cdot|BC|$. Raskite $\frac{|AB|\cdot|CD|}{|AC|\cdot|BD|}$
+
+\item [IMO SL 1998] Tegu $ABCDEF$ - iškilasis šešiakampis, tenkinantis $\angle B + \angle D + \angle F = 360^{\circ}$ ir $$\frac{AB}{BC}\frac{CD}{DE}\frac{EF}{FA} = 1.$$ Įrodykite, kad $$\frac{BC}{CA}\frac{AE}{EF}\frac{FD}{DB} = 1.$$
+
+\end{enumerate}
+
+%\bibitem{ex1} http://www.math.ust.hk/excalibur/v1\_n3.pdf
+
+%\bibitem{ex2} http://www.math.ust.hk/excalibur/v9\_n1.pdf
+
+%\bibitem{AZ} T. Andreescu, D. Andrica \emph{Complex numbers from A to Z}, Birkhauser, 2006
+
+%\bibitem{AE} A. Engel, \emph{Problem Solving Strategies}, Springer, 1998.
+
+%\bibitem{kompgeo} Hahn L.-S. \emph{Complex numbers and geometry}, MAA, 1994
+
+
+\section{Kompleksinių skaičių geometrija. Sprendimai.} 
+
+
+\begin{enumerate}
+ 
+\item \textbf{ Lygiakraštį trikampį aprašančią lygybę $a + \omega b + \omega^2 c = 0$ galima traktuoti ir tiesiogiai. Pavaizduokite sau pradinius vektorius, pasukite kiekvieną atitinkamai kiek reikia ir įsitikinkite, kad suma tikrai yra lygi nuliui.} 
+\medskip
+
+  \includegraphics[scale=0.13]{./iliustracijos/SpLygiakrastis1.pdf}
+\medskip
+\item \textbf{ Kuo skiriasi lygybių $a+\omega b + \omega^2 c = 0$ ir $a + \omega c + \omega^2 b = 0$ aprašomi trikampiai?}
+\medskip
+
+Pirmame viršūnės surašytos prieš laikrodžio rodyklę, antrame pagal.
+\medskip
+
+\item \textbf{ Ant keturkampio $ABCD$ kraštinių sukonstruoti lygiakraščiai trikampiai. $ABM$ ir $CDP$ į išorę, $BCN$ ir $DAQ$ - į vidų. Įrodykite, kad $MNPQ$ yra lygiagretainis}
+\medskip
+
+Duota: 
+\begin{eqnarray*}
+M&=&-\omega B - \omega ^2 A \\
+Q&=&-\omega D - \omega ^2 A \\
+P&=&-\omega D - \omega ^2 C \\
+N&=&-\omega B - \omega ^2 C 
+\end{eqnarray*}
+
+kur $\omega$ - kubinė šaknis iš vieneto. Atėmę gauname $M - N = P - Q$, t.y., keturkampis $MNPQ$ tikrai lygiagretainis. 
+\medskip
+
+\item \textbf{ Trikampio $ABC$ išorėje yra du taškai $E$ ir $H$ tokie, kad $AE \bot AC$, $AE=AC$ ir $BH\bot BC$, $BH = BC$. Pažymėkime atkarpos $EH$ vidurio tašką $D$. Įrodykite, kad $DAB$ - statusis lygiašonis. }
+\medskip
+
+Duota:
+\begin{eqnarray*}
+H &=& B + (B-C)i\\
+E &=& A + (C-A)i
+\end{eqnarray*}
+
+Iš čia Atkarpos $EH$ vidurio taškas $D$ yra $\frac{A+B}{2} + \frac{B-A}{2}i$, t.y. yra ant $AB$ vidurio statmens nutolęs per pusę $AB$ ilgio, todėl $DAB$ statusis lygiašonis.
+\medskip
+
+\item \textbf{Ant trikampio $ABC$ kraštinių į išorę sukonstruoti kvadratai $BCDE$, $CAFG$ ir $ABHI$. Tegu $GCDQ$ ir $EBHP$ lygiagretainiai. Įrodykite, kad $APQ$ yra statusis lygiašonis}
+\medskip
+
+Sutapatinkime koordinačių pradžią su $A$. Tuomet
+
+\begin{eqnarray*}
+E &=& B + (C-B)i\\
+P &=& E + Bi\\
+D &=& C + (C-B)i\\
+Q &=& D - Ci
+\end{eqnarray*}
+
+Gauname, kad $P = B + Ci, Q = C - Bi \Rightarrow P = Qi$, t.y. $APQ$ - statusis lygiašonis.  
+\medskip
+
+\item \textbf{Kodėl vektorių sumos jungtinis vektorius lygus jungtinių sumai $(\overline{a + b} = \bar{a} + \bar{b})$ ? Kodėl tas pats galioja sandaugoms? Kodėl tas pats galioja bet kokiai sumų ir sandaugų kombinacijai?}
+\medskip
+
+Kompleksinio skaičiaus jungtinis - jam simetriškas realiosios ašies atžvilgiu. Nesunku įsivaizduoti, kad nėra jokios skirtumo, ar atliksi veiksmus su kompleksiniais skaičiais ir atvaizduosi rezultatą, ar pirma atvaizduosi skaičius, o tik tada atliksi veiksmus. 
+\medskip
+
+\item \textbf{Ant simetriško taško atžvilgiu šešiakampio kraštinių į išorę nubrėžti taisyklingi trikampiai. Gretimų trikampių viršūnės, nepriklausančios šešiakampiui sujungtos atkarpomis. Įrodykite, kad tų atkarpų vidurio taškai sudaro taisyklingą šešiakampį. }
+\medskip
+
+Sutapatinkime koordinačių pradžią su simetrijos centru. Duota, kad $D = -A$, $E = -B$, $F = -C$. Tegu $\omega$ - kubinė šaknis iš vieneto. Pribrėžtų lygiakraščių trikampių viršūnės tuomet bus 
+\begin{eqnarray*}
+a &=& -B\omega - A\omega^2\\  
+b &=& -C\omega - B\omega^2\\
+c &=& A \omega - C\omega^2\\
+d &=& B \omega + A\omega^2\\
+e &=& C \omega + B\omega^2\\
+f &=& -A\omega + C\omega^2
+\end{eqnarray*}
+
+Jų vidurio taškai
+\begin{eqnarray*}
+A_1 &=& \frac{-B\omega - A\omega^2-C\omega - B\omega^2}{2} = \frac{B - A\omega^2-C\omega }{2}\\
+A_2 &=& \frac{-C\omega - B\omega^2+A\omega - C\omega^2}{2} = \frac{C - B\omega^2+A\omega }{2}\\
+&\dots&
+\end{eqnarray*}
+
+Įsitikinkime, kad $A_2$ yra $A_1$ pasukta apie koordinačių pradžią per $60^{\circ}$. Tokį posūkį atitiks daugyba iš $1 + \omega = -\omega^2$. Išties $(B - A\omega^2-C\omega)(-\omega ^2) = C - B\omega^2+A\omega$. Analogiškai gauname ir su likusiomis viršūnėmis. 
+\medskip
+
+\item \textbf{Tegu kompleksinis skaičius $z$ toks, kad taškai $z^3$, $2z^3 + z^2$, $3z^3 + 3z^2 + z$ ir $4z^3 + 6z^2 + 4z + 1$ priklauso apskritimui. Raskite $Re(z)$.}
+\medskip
+
+Naudodamiesi Ptolemėjaus nelygybės išvada gauname, kad $$\frac{(b-a)(b-c)}{(d-a)(d-c)} = -\frac{(z^3+ 3z^2 + 3z + 1)(z^3 + z^2)}{(3z^3 + 6z^2 + 4z + 1)(z^3 + 2z^2 + z)} = -\frac{z^3 + 2z^2 + z}{3z^3 + 6z^2 + 4z +1} \in \R_{-} \Rightarrow$$
+$$-\frac{3z^3 + 6z^2 + 4z +1}{z^3 + 2z^2 + z} = - 3 - \frac{z+1}{z^3 + 2z^2 + z} \in \R_{-} \Rightarrow$$
+$$\frac{z^3 + 2z^2 + z}{z+1} = z(z+1) \in \R.$$
+
+Pažymėję $z = x+yi$ gauname, kad $\Im(z(z+1)) = y(2x+1)$. Jei $y=0$, tai $z\in \R$ ir duoti keturi taškai yra vienoje tiesėje, o kadangi jie turi būti ant apskritimo, tai turi būti $\Re(z) = x = - \frac{1}{2}.$
+
+\medskip
+
+\item \textbf{Ant apskritimo parinkti šeši taškai $A$, $B$, $C$, $D$, $E$, $F$ (būtent šita tvarka) taip, kad lankai $AB$, $CD$, $EF$ yra $60^{\circ}$ didumo. Įrodykite, kad stygų $BC$, $DE$, $FA$ vidurio taškai sudaro lygiakraštį trikampį. }
+\medskip
+
+Sutapatinkime koordinačių pradžią su apskritimo centru. Tuomet šešiakampio viršūnes galime pažymėti $a$, $a\omega$, $b$, $b\omega$, $c$, $c\omega$, kur $\omega$ - šešto laipsnio šaknis iš vieneto. Vidurio taškų sudaromas trikampis bus lygiakraštis, jei bus tenkinama lygybė $$(\frac{c\omega + a}{2} - \frac{b\omega + c}{2})\omega = \frac{a\omega + b}{2} - \frac{b\omega + c}{2}$$ Norit tuo įsitikinti tereikia pastebėti, kad $\omega$ tenkina lygybę $\omega^2 - \omega + 1 = 0$.
+\medskip
+
+\item \textbf{Lygiakraščiai trikampiai $ABC$, $CDE$, $EHK$ (viršūnės surašytos prieš laikrodžio rodyklę) tenkina sąlygą $\vec{AD} = \vec{DK}$. Įrodykite, kad BHD - lygiakraštis.}
+\medskip
+
+Sąlygą perrašome:
+\begin{eqnarray*}
+A + B\omega + C\omega^2 &=& 0\\
+C + D\omega + E\omega^2 &=& 0\\
+E + H\omega + K\omega^2 &=& 0\\
+2D-A -K &=& 0
+\end{eqnarray*}
+
+kur $\omega$ - kubinė šaknis iš vieneto. Sudėję (1)$\cdot\omega^2 + $(2)$\cdot\omega +$(3)$ - $(4)$\cdot\omega^2$ gauname $B + \omega H + \omega^2D = 0$.
+\medskip
+
+\item \textbf{Į spindulio $r$ ir centro $O$ apskritimą įbrėžta trapecija $ABCD$. Žinome, kad $|BC|=|DA|=r$. Įrodykite, kad $OA$, $OB$ ir $CD$ vidurio taškai sudaro lygiakraštį trikampį. }
+\medskip
+
+Pastebėkime, kad $OBC$ ir $ODA$ - lygiakraščiai. Tuomet galime peržymėti trapecijos viršūnes $B$, $\omega B$, $D$, $\omega D$, kur $\omega$ - šešto laipsnio šaknis iš vieneto. Nesunkiai patikriname, kad $$\frac{\omega B + D}{2} - \frac{\omega D}{2} = (\frac{\omega D}{2} - \frac{B}{2}) \omega.$$ Pastebėkime, kad įrodėme kiek bendresnį teiginį - nesinaudojome pagrindų lygiagretumu.
+\medskip
+
+\item \textbf{Tegu taškai $D$ ir $E$ priklauso trikampio $ABC$ kraštinėms $BC$ ir $AB$. Tegu $F$ kraštinės $AC$ taškas toks, kad $EF||BC$ ir $G$ kraštinės $BC$ taškas toks, kad $EG||AD$. Įrodykite, kad atkarpų $AD$, $BC$ ir $FG$ vidurio taškai priklauso vienai tiesei.}  
+\medskip
+
+\includegraphics[scale=0.13]{./iliustracijos/Sp12.pdf}
+
+Pagal Talio teoremą $\frac{DG}{GB} = \frac{AE}{EB} = \frac{AF}{AC} = \alpha$. Tuomet
+$$G = D + (B-D)\frac{\alpha}{\alpha + 1} = \frac{D+\alpha B}{\alpha + 1}$$
+ir analogiškai
+$$F = \frac{A+\alpha C}{\alpha + 1}.$$
+
+Tuomet atkarpų viduriai bus $\frac{A+D}{2}$, $\frac{B+C}{2}$ ir $\frac{D+A+\alpha(B+C)}{2(\alpha + 1)}$
+
+Lieka patikrinti: $$\frac{\frac{D+A+\alpha(B+C)}{2(\alpha + 1)} - \frac{B+C}{2}}{\frac{A+D}{2} - \frac{B+C}{2}} = \frac{1}{1+\alpha} \in \R.$$
+\medskip
+
+\item \textbf{Kompleksinėje plokštumoje duoti taškai $a$, $b$, $c$. Raskite statinio iš $a$ į atkarpą jungiančią $b$ ir $c$ pagrindo išraišką. }
+\medskip
+
+(\emph{Pagal Luką Melninką})
+Statinio pagrindą pažymėkime $d$. 
+Atlikime plokštumos transformacijas $$x \mapsto x - b \text{ ir } x \mapsto \frac{x}{c-b}.$$ 
+
+Tuomet $b$ pereis į $0$, $c$ pereis į $1$, $a$ pereis į $\frac{a-b}{c-b}$ ir $d$ pereis į $\frac{d-b}{c-b}$.
+
+Gautame trikampyje turėsime $$\frac{a-b}{c-b} - \frac{d-b}{c-b} = \frac{\frac{a-b}{c-b} - \frac{\bar{a}-\bar{b}}{\bar{c}-\bar{b}}}{2},$$ iš kur lengvai randame 
+$$d = \frac{a+b}{2} + \frac{(\bar{a}-\bar{b})(c-b)}{2\bar{c}-2\bar{b}}.$$
+\medskip
+
+\item \textbf{Kompleksinėje plokštumoje duoti taškai $a$, $b$, $c$. Įrodykite, kad jų sudaromo trikampio plotas lygus $$\frac{\bar{a}b + \bar{b}c + \bar{c}a - a\bar{b} - b\bar{c} - c\bar{a}}{4i}.$$} 
+\medskip
+
+Pirma raskime trikampio plotą sutapatinę viršūnę $a$ su koordinačių pradžia. Tuomet turėsime du vektorius $b$ ir $c$. Norėdami rasti trikampio $0bc$ plotą turime žinoti $b$ ir $c$ ilgius bei kampo tarp jų sinusą. Kampas tarp jų (pažymėkime $\alpha$) lygus $arg(\frac{b}{c})$, o kampo sinusą rasime naudodami menamąją dalį: $\Im(\frac{b}{c}) = \sin(\alpha)\frac{|b|}{|c|}$. Tuomet $$S = \frac{1}{2}|b||c|\sin \alpha = \frac{1}{2}|c|^2 \Im(\frac{b}{c}) = \frac{1}{2} \Im(\frac{b}{c} |c|^2) = \frac{1}{2} \Im(b\bar{c}).$$
+Kompleksinio skaičiaus menamąją dalį randame nesunkiai: $\Im x = \frac{x-\bar{x}}{2}$.  Gauname
+$$S = \frac{b\bar{c} + \bar{b}c}{4i}.$$
+Norėdami rasti trikampio $abc$ ploto formulę į lygybę įsistatome $b = b-a$ ir $c = c-a$. 
+\medskip
+
+\item \textbf{Tegu $ABC$ - lygiakraštis trikampis. Tiesė lygiagreti $AC$ kerta $AB$ ir $BC$ taškuose $M$ ir $P$. Tegu $D$ trikampio $PMB$ pusiaukraštinių susikirtimo taškas o $E$ - $AP$ vidurio taškas. Raskite trikampio $DEC$ kampus.}
+\medskip
+
+(\emph{Pagal Paulių Kantautą})
+Sutapatinkime koordinačių pradžią su $E$ ir tegu $\omega$ - kubinė šaknis iš vieneto. Tada:
+\begin{eqnarray*}
+C &=& -\omega A - \omega^2 B\\
+P &=& -A\\
+M &=& -\omega B + \omega^2 A\\
+\end{eqnarray*}
+Tada $$D = \frac{B+M+P}{3} = \frac{B-\omega B +\omega^2 A -A}{3} = \frac{-\omega C - \omega B - A}{3} = \frac{C\omega^2 - C\omega }{3} = C\cdot\frac{\sqrt{3}}{3}i.$$ Gavome, kad $DEC$ statusis, o statinių ilgių santykis $\frac{\sqrt{3}}{3}$. Vadinasi jo kampai $30^{\circ}$, $60^{\circ}$ ir $90^{\circ}$.
+\medskip
+
+\item \textbf{Duotas trikampis $ABC$. Raskite visus plokštumos taškus $D$, tokius, kad $DA\cdot DB\cdot AB$ + $DB\cdot DC\cdot BC$ + $DC\cdot DA\cdot CA$ = $AB\cdot BC\cdot AC$}
+\medskip
+
+Sprendimas identiškas Ptolemėjo nelygybės įrodymui.
+\medskip
+
+\item \textbf{Tegu $ABC$ - lygiakraštis trikampis, $O$ - jo centras, $P$ - bet koks taškas erdvėje, $Q$ simetriškas $P$ taško $O$ atžvilgiu. Įrodykite, kad iš atkarpų $PA$, $PB$, $PC$ galima sudaryti trikampį, ir kad jo plotas lygus trikampio, sudaryto iš $QA$, $QB$, $QC$ plotui.}
+\medskip
+
+Neprarasdami bendrumo sutapatinkime trikampio $ABC$ viršūnes su kubinėmis šaknimis iš vieneto $1$, $\omega$ ir $\omega^2$. Tegu $p$ bus taško $P$ projekcija trikampio $ABC$ plokštumoje, o $-p$ taško $Q$ projekcija. Pirmiausia įsitikinsime, kad uždavinio sąlyga teisinga plokštumoje.
+
+Mus domina atkarpos $p-1$, $p-\omega$, $p-\omega^2$. Trikampio nelygybė (viena iš trijų) užsirašys kaip
+$$(p-1)(\bar{p}-1) + (p-\omega)(\bar{p}-\bar{\omega}) \geq (p-\omega^2)(\bar{p}-\bar{\omega^2}),$$ kuri susitvarko iki
+$$|p|^2 + 1 + \Re\omega^2p \geq \Re\omega p + \Re p.$$ Blogiausias atvejis bus, kai $\omega^2 p$ bus ant neigiamos realiosios ašies dalies, tuomet gausime $$|p|^2 + 1 -|p| \geq \frac{|p|}{2} + \frac{|p|}{2},$$ kas yra akivaizdu.
+
+Plotų lygybę gauname taikydami Herono formulę ir įsitikindami, kad pakeičiant $p \to -p$ rezultatas nesikeičia:
+$$4S^2=-(a^2 - b^2)^2 + c^2(c^2 - 2a^2 - 2b^2) = (-\omega \bar{p} - \bar{\omega}p + \omega ^2 \bar{p} + \bar{\omega^2}p)^2 + 3((|p|^2 + 1)^2 - (p+\bar{p})^2).$$
+
+Taip pat labai paprastai gauname, kad abiejų trikampių (su $p$ ir su $-p$) kraštinių kvadratų sumos vienodos.
+\\
+Lieka perkelti viską į erdvę. Kadangi tai jau nesusiję su kompleksiniais skaičiais, tai pateiksime tik įrodymo santrumpą.
+Trikampio nelygybė lengvai seka iš nelygybės plokštumoje. Užtenka nagrinėti kraštinių ilgių kvadratus ir grubiai įvertinti.
+\\
+Trikampio plotas (tiksliau keturi ploto kvadratai) kraštinių ilgių kvadratus padidinus per $x^2$ padidėja (vėl iš Herono formulės) per $2x^2(a^2 + b^2 + c^2) + 3x^4$, o kadangi plokštumos trikampių kraštinių ilgių kvadratų sumos buvo lygios, tai plotai padidės po vienodai.
+ 
+\medskip
+
+\item \textbf{[IMO Shortlist 1996] Pažymėkime trikampio $ABC$ aukštinių susikirtimo tašką $H$. Tegu $P$ - taškas ant apibrėžto apie trikampį apskritimo, $E$ - aukštinės $BH$ pagrindas, $PAQB$ ir $PARC$ - lygiagretainiai, $AQ$ susikerta su $HR$ taške $X$. Įrodykite, kad $EX$ lygiagretu $AP$.}
+\medskip
+
+\includegraphics[scale=0.1]{./iliustracijos/Sp18.pdf}
+
+Sutapatinkime koordinačių pradžią su apibrėžto apskritimo centru. Tuomet žinome, kad $Q = A + B - P$, $R = A + C - P$, $H = A + B + C.$
+
+Klausimas: Kodėl $E = \frac{1}{2}(A+B+C - \frac{AC}{B})$?
+
+Toliau užsirašome $X$ susikirtimo taško ir $EX$ $AP$ lygiagretumo lygtis ir jas patikriname (nebandžiau, gali būti bjauroka). 
+\medskip
+
+\item \textbf{[IMO 1993]Trikampio $ABC$, kurio jokie du kampai nelygūs, viduje taškas $D$ yra parinktas taip, kad $\angle ADB = \angle ACB + 90^{\circ}$ ir $|AC|\cdot|BD| = |AD|\cdot|BC|$. Raskite $\frac{|AB|\cdot|CD|}{|AC|\cdot|BD|}$}
+\medskip
+
+Sutapatiname koordinačių pradžią su $D$. Tegu $\frac{|AC|}{|AD|} = \frac{|BC|}{|BD|} = s$, $\angle CAD = \alpha$.
+Tuomet: 
+
+\begin{eqnarray*}
+A-C &=& se^{i\alpha}A\\
+C-B &=& sie^{i\alpha}B
+\end{eqnarray*}
+
+Iš čia gauname $$(A-B)C = s(e^{i\alpha}AC + ie^{i\alpha}BC) = sAB(e^{i\alpha}(1+sie^{i\alpha}) + ie^{i\alpha}(1-se^{i\alpha})) = sABe^{i\alpha}(i+1).$$ 
+
+Iš čia jau nesunkiai randame $$\frac{|AB|\cdot|CD|}{|AC|\cdot|BD|}=\frac{|C||A-B|}{s|A||B|} = \sqrt{2}$$
+\medskip
+
+\item \textbf{[IMO Shortlist 1998]Tegu $ABCDEF$ - iškilasis šešiakampis, tenkinantis $\angle B + \angle D + \angle F = 360^{\circ}$ ir $$\frac{AB}{BC}\frac{CD}{DE}\frac{EF}{FA} = 1.$$ Įrodykite, kad $$\frac{BC}{CA}\frac{AE}{EF}\frac{FD}{DB} = 1.$$}
+\medskip
+
+Pastebėkime, jog kampų sumos lygybė ekvivalenti tam, kad $$\frac{(b-a)(d-c)(f-e)}{(c-b)(e-d)(a-f)} \in \R_{-}.$$
+Tačiau šio skaičiaus modulis (ilgis) lygus $1$ pagal sąlygą, todėl 
+$$(b-a)(d-c)(f-e) = - (c-b)(e-d)(a-f).$$ Ši lygybė persitvarko į 
+$$(f - e)(c - a)(b - d) = -(c - b)(f - d)(e - a),$$ iš ko ir gauname norimą rezultatą. 
+
+\end{enumerate}
